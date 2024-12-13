@@ -6,6 +6,98 @@ function Afzallig() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
 
+  // Add language detection from URL
+  const searchParams = new URLSearchParams(window.location.search);
+  const currentLang = searchParams.get('lang') || 'uz';
+
+  // Add translations object
+  const translations = {
+    en: {
+      title: "✨ Travel Adventures Await You! ✨",
+      card1: {
+        title: "🌟 Amazing Travel Experience",
+        description: "Every journey is a new story! 🌄 Majestic mountain peaks, 🏞️ beautiful valley landscapes, 🌺 historical monuments and modern cities - all waiting for you!"
+      },
+      card2: {
+        title: "World Heritage Sites",
+        description: "🏛️ Discover UNESCO heritage wonders! Experience the magnificent domes of Registan Square, 🏺 unique art of Gijduvan pottery, ⚜️ and the incomparable architecture of Shakhrisabz!"
+      },
+      card3: {
+        title: "Great Silk Road History",
+        description: "🐪 Travel through thousand years of history! Ancient caravanserais, 🏺 oriental bazaars, 🎭 ancient culture and traditions - all await you. Journey into the magical world of the Silk Road!"
+      },
+      subscribe: {
+        title: "🎉 Be the First to Know About Special Offers!",
+        description: "Be among the first to learn about premium travel packages, special discounts, and new destinations! ✈️",
+        placeholder: "✉️ Enter your email address",
+        button: "🚀 Subscribe",
+        sending: "✨ Sending..."
+      },
+      modal: {
+        title: "🎊 Congratulations! 🎊",
+        description: "Your subscription has been successfully received! The most exciting offers will be in your inbox soon! ✨",
+        close: "Close ✨"
+      }
+    },
+    ru: {
+      title: "✨ Путешествия ждут вас! ✨",
+      card1: {
+        title: "🌟 Удивительный опыт путешествий",
+        description: "Каждое путешествие - новая история! 🌄 Величественные горные вершины, 🏞️ красивые долины, 🌺 исторические памятники и современные города - всё ждёт вас!"
+      },
+      card2: {
+        title: "Объекты Всемирного наследия",
+        description: "🏛️ Откройте для себя чудеса наследия ЮНЕСКО! Полюбуйтесь величественными куполами площади Регистан, 🏺 уникальным искусством гиждуванской керамики, ⚜️ и несравненной архитектурой Шахрисабза!"
+      },
+      card3: {
+        title: "История Великого Шёлкового пути",
+        description: "🐪 Путешествуйте сквозь тысячелетнюю историю! Древние караван-сараи, 🏺 восточные базары, 🎭 древняя культура и традиции - всё ждёт вас. Погрузитесь в волшебный мир Шёлкового пути!"
+      },
+      subscribe: {
+        title: "🎉 Узнавайте первыми о специальных предложениях!",
+        description: "Будьте в числе первых, кто узнает о премиальных турпакетах, специальных скидках и новых направлениях! ✈️",
+        placeholder: "✉️ Введите ваш email адрес",
+        button: "🚀 Подписаться",
+        sending: "✨ Отправка..."
+      },
+      modal: {
+        title: "🎊 Поздравляем! 🎊",
+        description: "Ваша подписка успешно оформлена! Самые интересные предложения скоро появятся в вашей почте! ✨",
+        close: "Закрыть ✨"
+      }
+    },
+    uz: {
+      title: "✨ Sayohat Sarguzashtlari Sizni Kutmoqda! ✨",
+      card1: {
+        title: "🌟 Ajoyib Sayohat Tajribasi",
+        description: "Har bir sayohat - yangi hikoya! 🌄 Mahobatli tog' cho'qqilari, 🏞️ go'zal vodiy manzaralari, 🌺 tarixiy yodgorliklar va zamonaviy shaharlar - barchasi sizni kutmoqda!"
+      },
+      card2: {
+        title: "Jahon Merosi Obidalari",
+        description: "🏛️ UNESCO merosi mo'jizalarini kashf eting! Registon maydonining hashamatli gumbazlari, 🏺 Gijduvon kulolchiligining noyob san'ati, ⚜️ va Shahrisabzning tengsiz me'morchiligi!"
+      },
+      card3: {
+        title: "Buyuk Ipak Yo'li Tarixi",
+        description: "🐪 Ming yillik tarix bo'ylab sayohat! Qadimiy karvonsaroylar, 🏺 sharq bozorlari, 🎭 qadimiy madaniyat va an'analar - barchasi sizni kutmoqda. Ipak yo'lining sehrli dunyosiga sayohat qiling!"
+      },
+      subscribe: {
+        title: "🎉 Maxsus Takliflar Haqida Birinchilardan Bo'lib Xabardor Bo'ling!",
+        description: "Premium sayohat paketlari, maxsus chegirmalar va yangi yo'nalishlar haqida birinchilardan bo'lib xabardor bo'ling! ✈️",
+        placeholder: "✉️ Email manzilingizni kiriting",
+        button: "🚀 Obuna bo'lish",
+        sending: "✨ Yuborilmoqda..."
+      },
+      modal: {
+        title: "🎊 Tabriklaymiz! 🎊",
+        description: "Sizning obunangiz muvaffaqiyatli qabul qilindi! Eng qiziqarli takliflar tez orada pochta qutingizda bo'ladi! ✨",
+        close: "Yopish ✨"
+      }
+    }
+  };
+
+  // Get current language translations
+  const t = translations[currentLang];
+
   // Email validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -46,7 +138,7 @@ function Afzallig() {
   return (
     <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-20 bg-gradient-to-b from-purple-50 to-white">
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-center mb-8 lg:mb-16 hover:scale-105 transition-transform cursor-pointer animate-gradient">
-        ✨ Travel Adventures Await You! ✨
+        {t.title}
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
@@ -61,10 +153,10 @@ function Afzallig() {
             </div>
           </div>
           <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 bg-clip-text text-transparent">
-            🌟 Amazing Travel Experience
+            {t.card1.title}
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
-            Every journey is a new story! 🌄 Majestic mountain peaks, 🏞️ beautiful valley landscapes, 🌺 historical monuments and modern cities - all waiting for you!
+            {t.card1.description}
           </p>
         </div>
 
@@ -79,10 +171,10 @@ function Afzallig() {
             </div>
           </div>
           <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
-            World Heritage Sites
+            {t.card2.title}
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
-            🏛️ Discover UNESCO heritage wonders! Experience the magnificent domes of Registan Square, 🏺 unique art of Gijduvan pottery, ⚜️ and the incomparable architecture of Shakhrisabz!
+            {t.card2.description}
           </p>
         </div>
 
@@ -98,10 +190,10 @@ function Afzallig() {
             </div>
           </div>
           <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
-            Great Silk Road History
+            {t.card3.title}
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
-            🐪 Travel through thousand years of history! Ancient caravanserais, 🏺 oriental bazaars, 🎭 ancient culture and traditions - all await you. Journey into the magical world of the Silk Road!
+            {t.card3.description}
           </p>
         </div>
       </div>
@@ -109,10 +201,10 @@ function Afzallig() {
       {/* Email subscription form */}
       <div className="max-w-2xl mx-auto mt-8 sm:mt-12 lg:mt-20 bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 transform hover:scale-[1.02] transition-all duration-300">
         <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 bg-clip-text text-transparent">
-          🎉 Be the First to Know About Special Offers!
+          {t.subscribe.title}
         </h3>
         <p className="text-gray-600 text-center mb-6">
-          Be among the first to learn about premium travel packages, special discounts, and new destinations! ✈️
+          {t.subscribe.description}
         </p>
         <form onSubmit={handleSubmit} className="relative">
           <div className="flex flex-col gap-2">
@@ -121,7 +213,7 @@ function Afzallig() {
                 type="email"
                 value={email}
                 onChange={handleEmailChange}
-                placeholder="✉️ Enter your email address"
+                placeholder={t.subscribe.placeholder}
                 required
                 pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                 className={`flex-1 px-3 sm:px-4 py-2 sm:py-3 rounded-xl border ${
@@ -133,7 +225,7 @@ function Afzallig() {
                 disabled={loading || error || !email}
                 className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap transform hover:scale-105 active:scale-95"
               >
-                {loading ? "✨ Sending..." : "🚀 Subscribe"}
+                {loading ? t.subscribe.sending : t.subscribe.button}
               </button>
             </div>
             {error && (
@@ -167,16 +259,16 @@ function Afzallig() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 mb-2">
-                🎊 Congratulations! 🎊
+                {t.modal.title}
               </h3>
               <p className="text-gray-600 text-lg">
-                Your subscription has been successfully received! The most exciting offers will be in your inbox soon! ✨
+                {t.modal.description}
               </p>
               <button
                 onClick={() => setShowModal(false)}
                 className="mt-6 px-8 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95"
               >
-                Close ✨
+                {t.modal.close}
               </button>
             </div>
           </div>

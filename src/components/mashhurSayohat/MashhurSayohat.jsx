@@ -1,112 +1,333 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const tourData = [
-  {
-    id: 1,
-    title: "New Year in Uzbekistan - 2024-2025",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "774",
-    duration: "7 days / 6 nights",
-    rating: 4.8
+const translations = {
+  en: {
+    pageTitle: "Popular Tours",
+    subtitle: "The best and favorite travel destinations",
+    duration: "days / nights",
+    bookNow: "Book Now",
+    tourData: [
+      
+      
+      {
+        id: 1,
+        title: "New Year in Uzbekistan - 2024-2025",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "774",
+        duration: "7 days / 6 nights",
+        rating: 4.8
+      },
+      {
+        id: 2,
+        title: "Thousand and One Nights of Uzbekistan",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "715",
+        duration: "10 days / 9 nights",
+        rating: 4.5
+      },
+      {
+        id: 3,
+        title: "Along the Ancient Caravan Routes",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "520",
+        duration: "8 days / 7 nights",
+        rating: 4.2
+      },
+      {
+        id: 4,
+        title: "Journey Along the Great Silk Road",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "850",
+        duration: "12 days / 11 nights",
+        rating: 4.7
+      },
+      {
+        id: 5,
+        title: "Tashkent - Samarkand Tour",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "450",
+        duration: "3 days / 2 nights",
+        rating: 4.6
+      },
+      {
+        id: 6,
+        title: "Through the History of Bukhara",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "580",
+        duration: "4 days / 3 nights",
+        rating: 4.4
+      },
+      {
+        id: 7,
+        title: "Khiva - The Ancient City",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "620",
+        duration: "5 days / 4 nights",
+        rating: 4.3
+      },
+      {
+        id: 8,
+        title: "Through the Fergana Valley",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "480",
+        duration: "6 days / 5 nights",
+        rating: 4.5
+      },
+      // Yana 4 ta element
+      {
+        id: 9,
+        title: "Termiz - History of Buddhism",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "590",
+        duration: "4 days / 3 nights",
+        rating: 4.2
+      },{
+        id: 10,
+        title: "Shahrisabz - Homeland of Amir Temur",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "420",
+        duration: "3 days / 2 nights",
+        rating: 4.4
+      },
+      {
+        id: 11,
+        title: "To the Nurota Mountains",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "680",
+        duration: "5 days / 4 nights",
+        rating: 4.6
+      },
+      {
+        id: 12,
+        title: "Through the Zarafshan Valley",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "550",
+        duration: "4 days / 3 nights",
+        rating: 4.3
+      }
+    
+    ]
   },
-  {
-    id: 2,
-    title: "Thousand and One Nights of Uzbekistan",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "715",
-    duration: "10 days / 9 nights",
-    rating: 4.5
+  uz: {
+    pageTitle: "Mashhur Sayohatlar",
+    subtitle: "Eng yaxshi va sevimli sayohat yo'nalishlari",
+    duration: "kun / tun",
+    bookNow: "Buyurtma berish",
+    tourData: [
+      {
+        id: 1,
+        title: "O'zbekistonda Yangi Yil - 2024-2025",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "774",
+        duration: "7 kun / 6 tun",
+        rating: 4.8
+      },
+      {
+        id: 2,
+        title: "O'zbekistonning Ming bir kechasi",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "715",
+        duration: "10 kun / 9 tun",
+        rating: 4.5
+      },
+      {
+        id: 3,
+        title: "Qadimiy karvon yo'llari bo'ylab",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "520",
+        duration: "8 kun / 7 tun",
+        rating: 4.2
+      },
+      {
+        id: 4,
+        title: "Buyuk Ipak yo'li bo'ylab sayohat",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "850",
+        duration: "12 kun / 11 tun",
+        rating: 4.7
+      },
+      {
+        id: 5,
+        title: "Toshkent - Samarqand sayohati",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "450",
+        duration: "3 kun / 2 tun",
+        rating: 4.6
+      },
+      {
+        id: 6,
+        title: "Buxoro tarixi bo'ylab",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "580",
+        duration: "4 kun / 3 tun",
+        rating: 4.4
+      },
+      {
+        id: 7,
+        title: "Xiva - Qadimiy shahar",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "620",
+        duration: "5 kun / 4 tun",
+        rating: 4.3
+      },
+      {
+        id: 8,
+        title: "Farg'ona vodiysi bo'ylab",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "480",
+        duration: "6 kun / 5 tun",
+        rating: 4.5
+      },
+      {
+        id: 9,
+        title: "Termiz - Buddizm tarixi",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "590",
+        duration: "4 kun / 3 tun",
+        rating: 4.2
+      },
+      {
+        id: 10,
+        title: "Shahrisabz - Amir Temur vatani",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "420",
+        duration: "3 kun / 2 tun",
+        rating: 4.4
+      },
+      {
+        id: 11,
+        title: "Nurota tog'lariga sayohat",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "680",
+        duration: "5 kun / 4 tun",
+        rating: 4.6
+      },
+      {
+        id: 12,
+        title: "Zarafshon vodiysi bo'ylab",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "550",
+        duration: "4 kun / 3 tun",
+        rating: 4.3
+      }
+    ]
   },
-  {
-    id: 3,
-    title: "Along the Ancient Caravan Routes",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "520",
-    duration: "8 days / 7 nights",
-    rating: 4.2
-  },
-  {
-    id: 4,
-    title: "Journey Along the Great Silk Road",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "850",
-    duration: "12 days / 11 nights",
-    rating: 4.7
-  },
-  {
-    id: 5,
-    title: "Tashkent - Samarkand Tour",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "450",
-    duration: "3 days / 2 nights",
-    rating: 4.6
-  },
-  {
-    id: 6,
-    title: "Through the History of Bukhara",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "580",
-    duration: "4 days / 3 nights",
-    rating: 4.4
-  },
-  {
-    id: 7,
-    title: "Khiva - The Ancient City",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "620",
-    duration: "5 days / 4 nights",
-    rating: 4.3
-  },
-  {
-    id: 8,
-    title: "Through the Fergana Valley",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "480",
-    duration: "6 days / 5 nights",
-    rating: 4.5
-  },
-  // Yana 4 ta element
-  {
-    id: 9,
-    title: "Termiz - History of Buddhism",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "590",
-    duration: "4 days / 3 nights",
-    rating: 4.2
-  },{
-    id: 10,
-    title: "Shahrisabz - Homeland of Amir Temur",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "420",
-    duration: "3 days / 2 nights",
-    rating: 4.4
-  },
-  {
-    id: 11,
-    title: "To the Nurota Mountains",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "680",
-    duration: "5 days / 4 nights",
-    rating: 4.6
-  },
-  {
-    id: 12,
-    title: "Through the Zarafshan Valley",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "550",
-    duration: "4 days / 3 nights",
-    rating: 4.3
+  ru: {
+    pageTitle: "Популярные Туры",
+    subtitle: "Лучшие и любимые направления путешествий",
+    duration: "дней / ночей",
+    bookNow: "Забронировать",
+    tourData: [
+      {
+        id: 1,
+        title: "Новый Год в Узбекистане - 2024-2025",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "774",
+        duration: "7 дней / 6 ночей",
+        rating: 4.8
+      },
+      {
+        id: 2,
+        title: "Тысяча и одна ночь Узбекистана",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "715",
+        duration: "10 дней / 9 ночей",
+        rating: 4.5
+      },
+      {
+        id: 3,
+        title: "По древним караванным путям",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "520",
+        duration: "8 дней / 7 ночей",
+        rating: 4.2
+      },
+      {
+        id: 4,
+        title: "Путешествие по Великому Шелковому пути",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "850",
+        duration: "12 дней / 11 ночей",
+        rating: 4.7
+      },
+      {
+        id: 5,
+        title: "Ташкент - Самарканд тур",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "450",
+        duration: "3 дня / 2 ночи",
+        rating: 4.6
+      },
+      {
+        id: 6,
+        title: "По истории Бухары",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "580",
+        duration: "4 дня / 3 ночи",
+        rating: 4.4
+      },
+      {
+        id: 7,
+        title: "Хива - Древний город",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "620",
+        duration: "5 дней / 4 ночи",
+        rating: 4.3
+      },
+      {
+        id: 8,
+        title: "По Ферганской долине",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "480",
+        duration: "6 дней / 5 ночей",
+        rating: 4.5
+      },
+      {
+        id: 9,
+        title: "Термез - История буддизма",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "590",
+        duration: "4 дня / 3 ночи",
+        rating: 4.2
+      },
+      {
+        id: 10,
+        title: "Шахрисабз - Родина Амира Темура",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "420",
+        duration: "3 дня / 2 ночи",
+        rating: 4.4
+      },
+      {
+        id: 11,
+        title: "К горам Нураты",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "680",
+        duration: "5 дней / 4 ночи",
+        rating: 4.6
+      },
+      {
+        id: 12,
+        title: "По Зеравшанской долине",
+        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        price: "550",
+        duration: "4 дня / 3 ночи",
+        rating: 4.3
+      }
+    ]
   }
-];
+};
 
 function PopularTours() {
+  const [searchParams] = useSearchParams();
+  const currentLang = searchParams.get('lang') || 'uz';
+
   const settings = {
     dots: true,
-    dotsClass: "slick-dots custom-dots",
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -133,17 +354,19 @@ function PopularTours() {
     ]
   };
 
+  const currentTranslation = translations[currentLang];
+
   return (
     <div className="w-full bg-gray-50 overflow-hidden">
       <div className="py-12 px-4 w-full max-w-[1920px] mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold">
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Popular Tours
+              {currentTranslation.pageTitle}
             </span>
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
-            The best and favorite travel destinations
+            {currentTranslation.subtitle}
           </p>
           <div className="flex items-center justify-center gap-2 mt-3">
             <span className="h-1 w-20 bg-gradient-to-r from-purple-600 to-transparent rounded-full"></span>
@@ -156,7 +379,7 @@ function PopularTours() {
         
         <div className="w-full">
           <Slider {...settings} className="!w-full">
-            {tourData.map((tour) => (
+            {currentTranslation.tourData.map((tour) => (
               <div key={tour.id} className="px-2">
                 <div className="relative w-full h-[320px] sm:h-[350px] lg:h-[380px] rounded-3xl overflow-hidden shadow-xl group bg-white">
                   <div className="absolute inset-0 overflow-hidden">
@@ -220,7 +443,7 @@ function PopularTours() {
                           </div>
 
                           <Link 
-                            to={`/contact?tour=${encodeURIComponent(tour.title)}`}
+                            to={`/contact?tour=${encodeURIComponent(tour.title)}&lang=${currentLang}`}
                             className="group/book relative"
                           >
                             <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full transition-all duration-300 group-hover/book:bg-purple-600">
@@ -241,7 +464,7 @@ function PopularTours() {
                             </div>
                             <div className="absolute opacity-0 group-hover/book:opacity-100 transition-all duration-300 -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap">
                               <div className="bg-white text-gray-900 px-4 py-2 rounded-lg shadow-lg text-sm font-medium">
-                                Book Now
+                                {currentTranslation.bookNow}
                               </div>
                               <div className="w-3 h-3 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2"></div>
                             </div>

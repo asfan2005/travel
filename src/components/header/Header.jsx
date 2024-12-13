@@ -1,12 +1,45 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+
 function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
+  
+  // Get language from URL parameters
   const [selectedLanguage, setSelectedLanguage] = useState(() => {
-    const savedLanguage = localStorage.getItem('selectedLanguage');
-    return savedLanguage && ['en', 'ru', 'uz'].includes(savedLanguage) ? savedLanguage : 'en';
+    const params = new URLSearchParams(location.search);
+    const langParam = params.get('lang');
+    return langParam && ['en', 'ru', 'uz'].includes(langParam) ? langParam : 'en';
   });
+
+  const handleLanguageChange = (event) => {
+    const newLang = event.target.value;
+    setSelectedLanguage(newLang);
+    
+    // Update URL with new language parameter
+    const params = new URLSearchParams(location.search);
+    params.set('lang', newLang);
+    
+    // Preserve current path while updating language
+    navigate(`${location.pathname}?${params.toString()}`);
+    
+    // Update localStorage and document language
+    localStorage.setItem('selectedLanguage', newLang);
+    document.documentElement.lang = newLang;
+  };
+
+  // Update language when URL changes
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const langParam = params.get('lang');
+    if (langParam && ['en', 'ru', 'uz'].includes(langParam)) {
+      setSelectedLanguage(langParam);
+      localStorage.setItem('selectedLanguage', langParam);
+      document.documentElement.lang = langParam;
+    }
+  }, [location.search]);
 
   const translations = {
     en: {
@@ -101,10 +134,6 @@ function Header() {
       default:
         return null;
     }
-  };
-
-  const handleLanguageChange = (event) => {
-    setSelectedLanguage(event.target.value);
   };
 
   const getSelectedLanguage = () => selectedLanguage;

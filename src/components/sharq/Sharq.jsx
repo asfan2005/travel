@@ -1,63 +1,184 @@
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from 'react-router-dom';
 
 function Sharq() {
+  const [searchParams] = useSearchParams();
+  const currentLang = searchParams.get('lang') || 'uz';
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
-  const famousPlaces = [
-    {
-      id: 1,
-      name: "Registan Square",
-      location: "Samarkand",
-      description: "The most famous architectural monument of Uzbekistan, a historic square surrounded by three madrasahs.",
-      additionalInfo: "Built in the 15th century | UNESCO Heritage | Ulugbek, Sher-Dor, and Tillya-Kori Madrasahs",
-      facts: [
-        "One of the most beautiful squares in the world",
-        "Visited by thousands of tourists daily",
-        "Ancient center of science and education"
-      ],
-      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+  const translations = {
+    en: {
+      famousPlaces: [
+        {
+          id: 1,
+          name: "Registan Square",
+          location: "Samarkand",
+          description: "The most famous architectural monument of Uzbekistan, a historic square surrounded by three madrasahs.",
+          additionalInfo: "Built in the 15th century | UNESCO Heritage | Ulugbek, Sher-Dor, and Tillya-Kori Madrasahs",
+          facts: [
+            "One of the most beautiful squares in the world",
+            "Visited by thousands of tourists daily",
+            "Ancient center of science and education"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 2,
+          name: "Ichan Qala",
+          location: "Khiva",
+          description: "A UNESCO World Heritage site, an ancient city with over 400 historic buildings.",
+          additionalInfo: "Built in the 12th century | UNESCO Heritage | Over 400 historic structures",
+          facts: [
+            "One of the oldest cities in Central Asia",
+            "Inner city walls stretch for 2.2 km",
+            "Example of ancient architecture"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 3,
+          name: "Chorsu Bazaar",
+          location: "Tashkent",
+          description: "One of the oldest and most colorful bazaars in Central Asia.",
+          additionalInfo: "Operating since the 19th century | National Trading Center",
+          facts: [
+            "Largest central market",
+            "Traditional crafts center",
+            "Center for national cuisine"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 4,
+          name: "Ark Fortress",
+          location: "Bukhara",
+          description: "A historic fortress in ancient Bukhara that served as the residence of its rulers.",
+          additionalInfo: "Built in the 5th century | Residence of Bukhara Emirs | Historical Museum",
+          facts: [
+            "Has 2000 years of history",
+            "Masterpiece of ancient architecture",
+            "Symbol of Bukhara's history"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        }
+      ]
     },
-    {
-      id: 2,
-      name: "Ichan Qala",
-      location: "Khiva",
-      description: "A UNESCO World Heritage site, an ancient city with over 400 historic buildings.",
-      additionalInfo: "Built in the 12th century | UNESCO Heritage | Over 400 historic structures",
-      facts: [
-        "One of the oldest cities in Central Asia",
-        "Inner city walls stretch for 2.2 km",
-        "Example of ancient architecture"
-      ],
-      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+    uz: {
+      famousPlaces: [
+        {
+          id: 1,
+          name: "Registon Maydoni",
+          location: "Samarqand",
+          description: "O'zbekistonning eng mashhur me'moriy yodgorligi, uch madrasa bilan o'ralgan tarixiy maydon.",
+          additionalInfo: "15-asrda qurilgan | UNESCO merosi | Ulug'bek, Sherdo'r va Tillakori madrasalari",
+          facts: [
+            "Dunyodagi eng go'zal maydonlardan biri",
+            "Har kuni minglab sayyohlar tashrif buyuradi",
+            "Qadimiy ilm-fan markazi"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 2,
+          name: "Ichan Qal'a",
+          location: "Xiva",
+          description: "UNESCO Jahon merosi ro'yxatiga kiritilgan, 400 dan ortiq tarixiy binolarga ega qadimiy shahar.",
+          additionalInfo: "12-asrda qurilgan | UNESCO merosi | 400 dan ortiq tarixiy inshootlar",
+          facts: [
+            "Markaziy Osiyodagi eng qadimiy shaharlardan biri",
+            "Ichki shahar devorlari 2.2 km masofaga cho'zilgan",
+            "Qadimiy arxitekturaning namunasi"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 3,
+          name: "Chorsu Bozori",
+          location: "Toshkent",
+          description: "Markaziy Osiyodagi eng qadimiy va rang-barang bozorlardan biri.",
+          additionalInfo: "19-asrdan buyon faoliyat yuritadi | Milliy savdo markazi",
+          facts: [
+            "Eng yirik markaziy bozor",
+            "An'anaviy hunarmandchilik markazi",
+            "Milliy taomlar markazi"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 4,
+          name: "Ark Qal'asi",
+          location: "Buxoro",
+          description: "Qadimiy Buxoroda hukmdorlar qarorgohi bo'lgan tarixiy qal'a.",
+          additionalInfo: "5-asrda qurilgan | Buxoro amirlari qarorgohi | Tarixiy muzey",
+          facts: [
+            "2000 yillik tarixga ega",
+            "Qadimiy arxitektura durdonasi",
+            "Buxoro tarixining ramzi"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        }
+      ]
     },
-    {
-      id: 3,
-      name: "Chorsu Bazaar",
-      location: "Tashkent",
-      description: "One of the oldest and most colorful bazaars in Central Asia.",
-      additionalInfo: "Operating since the 19th century | National Trading Center",
-      facts: [
-        "Largest central market",
-        "Traditional crafts center",
-        "Center for national cuisine"
-      ],
-      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
-    },
-    {
-      id: 4,
-      name: "Ark Fortress",
-      location: "Bukhara",
-      description: "A historic fortress in ancient Bukhara that served as the residence of its rulers.",
-      additionalInfo: "Built in the 5th century | Residence of Bukhara Emirs | Historical Museum",
-      facts: [
-        "Has 2000 years of history",
-        "Masterpiece of ancient architecture",
-        "Symbol of Bukhara's history"
-      ],
-      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
-    },
-  ];
+    ru: {
+      famousPlaces: [
+        {
+          id: 1,
+          name: "Площадь Регистан",
+          location: "Самарканд",
+          description: "Самый известный архитектурный памятник Узбекистана, историческая площадь, окруженная тремя медресе.",
+          additionalInfo: "Построен в 15 веке | Наследие ЮНЕСКО | Медресе Улугбека, Шер-Дор и Тилля-Кори",
+          facts: [
+            "Одна из красивейших площадей мира",
+            "Ежедневно посещают тысячи туристов",
+            "Древний центр науки и образования"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 2,
+          name: "Ичан-Кала",
+          location: "Хива",
+          description: "Объект Всемирного наследия ЮНЕСКО, древний город с более чем 400 историческими зданиями.",
+          additionalInfo: "Построен в 12 веке | Наследие ЮНЕСКО | Более 400 исторических сооружений",
+          facts: [
+            "Один из древнейших городов Центральной Азии",
+            "Стены внутреннего города протяженностью 2,2 км",
+            "Образец древней архитектуры"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 3,
+          name: "Базар Чорсу",
+          location: "Ташкент",
+          description: "Один из старейших и самых красочных базаров в Центральной Азии.",
+          additionalInfo: "Действует с 19 века | Национальный торговый центр",
+          facts: [
+            "Крупнейший центральный рынок",
+            "Центр традиционных ремесел",
+            "Центр национальной кухни"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        },
+        {
+          id: 4,
+          name: "Крепость Арк",
+          location: "Бухара",
+          description: "Историческая крепость в древней Бухаре, служившая резиденцией правителей.",
+          additionalInfo: "Построена в 5 веке | Резиденция бухарских эмиров | Исторический музей",
+          facts: [
+            "Имеет 2000-летнюю историю",
+            "Шедевр древней архитектуры",
+            "Символ истории Бухары"
+          ],
+          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+        }
+      ]
+    }
+  };
+
+  const famousPlaces = translations[currentLang].famousPlaces;
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 

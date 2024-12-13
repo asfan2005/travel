@@ -4,106 +4,328 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const recommendationData = [
-  {
-    id: 1,
-    title: "Family Vacation - Charvak Lake",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "350",
-    duration: "3 days / 2 nights",
-    rating: 4.9
+const translations = {
+  en: {
+    recommendedTours: "Recommended Tours",
+    subtitle: "Our specially selected and premium travel programs",
+    bookNow: "Book Now"
   },
-  {
-    id: 2,
-    title: "Youth Adventure - Chimgan Mountains",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "280",
-    duration: "2 days / 1 night",
-    rating: 4.7
+  uz: {
+    recommendedTours: "Tavsiya etilgan sayohatlar",
+    subtitle: "Maxsus tanlangan va premium sayohat dasturlarimiz",
+    bookNow: "Buyurtma berish"
   },
-  {
-    id: 3,
-    title: "Keksalar uchun shifobaxsh sayohat - Zomin",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "420",
-    duration: "5 kun / 4 kecha",
-    rating: 4.8
-  },
-  {
-    id: 4,
-    title: "Talabalar uchun budget sayohat - Samarqand",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "200",
-    duration: "2 kun / 1 kecha",
-    rating: 4.5
-  },
-  {
-    id: 5,
-    title: "Fotosurat ishqibozlari uchun - Aydarkol",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "380",
-    duration: "3 kun / 2 kecha",
-    rating: 4.6
-  },
-  {
-    id: 6,
-    title: "Tarixiy joylar bo'ylab - Buxoro",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "450",
-    duration: "4 kun / 3 kecha",
-    rating: 4.8
-  },
-  {
-    id: 7,
-    title: "Gastronomik sayohat - Xorazm",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "520",
-    duration: "5 kun / 4 kecha",
-    rating: 4.7
-  },
-  {
-    id: 8,
-    title: "Ekstremal sayohat - Ugom tizmasi",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "340",
-    duration: "3 kun / 2 kecha",
-    rating: 4.4
-  },
-  {
-    id: 9,
-    title: "Qishki dam olish - Beldersoy",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "390",
-    duration: "2 kun / 1 kecha",
-    rating: 4.6
-  },
-  {
-    id: 10,
-    title: "Sog'lomlashtiruvchi sayohat - Chortoq",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "480",
-    duration: "6 kun / 5 kecha",
-    rating: 4.9
-  },
-  {
-    id: 11,
-    title: "Arxeologik sayohat - Termiz",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "410",
-    duration: "4 kun / 3 kecha",
-    rating: 4.5
-  },
-  {
-    id: 12,
-    title: "Pilgrimage Tourism - Kashkadarya",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
-    price: "360",
-    duration: "3 days / 2 nights",
-    rating: 4.7
+  ru: {
+    recommendedTours: "Рекомендуемые туры",
+    subtitle: "Наши специально отобранные и премиальные туристические программы",
+    bookNow: "Забронировать"
   }
-];
+};
+
+const recommendationData = {
+  en: [
+    {
+      id: 1,
+      title: "Family Vacation - Charvak Lake",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "350",
+      duration: "3 days / 2 nights",
+      rating: 4.9
+    },
+    {
+      id: 2,
+      title: "Youth Adventure - Chimgan Mountains",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "280",
+      duration: "2 days / 1 night",
+      rating: 4.7
+    },
+    {
+      id: 3,
+      title: "Healing Tour for Elderly - Zomin",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "420",
+      duration: "5 days / 4 nights",
+      rating: 4.8
+    },
+    {
+      id: 4,
+      title: "Student Budget Tour - Samarkand",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "200",
+      duration: "2 days / 1 night",
+      rating: 4.5
+    },
+    {
+      id: 5,
+      title: "Photography Tour - Aydarkol",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "380",
+      duration: "3 days / 2 nights",
+      rating: 4.6
+    },
+    {
+      id: 6,
+      title: "Historical Sites Tour - Bukhara",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "450",
+      duration: "4 days / 3 nights",
+      rating: 4.8
+    },
+    {
+      id: 7,
+      title: "Gastronomic Tour - Khorezm",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "520",
+      duration: "5 days / 4 nights",
+      rating: 4.7
+    },
+    {
+      id: 8,
+      title: "Extreme Adventure - Ugam Range",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "340",
+      duration: "3 days / 2 nights",
+      rating: 4.4
+    },
+    {
+      id: 9,
+      title: "Winter Vacation - Beldersoy",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "390",
+      duration: "2 days / 1 night",
+      rating: 4.6
+    },
+    {
+      id: 10,
+      title: "Wellness Tour - Chartok",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "480",
+      duration: "6 days / 5 nights",
+      rating: 4.9
+    },
+    {
+      id: 11,
+      title: "Archaeological Tour - Termez",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "410",
+      duration: "4 days / 3 nights",
+      rating: 4.5
+    },
+    {
+      id: 12,
+      title: "Pilgrimage Tour - Kashkadarya",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "360",
+      duration: "3 days / 2 nights",
+      rating: 4.7
+    }
+  ],
+  uz: [
+    {
+      id: 1,
+      title: "Oilaviy dam olish - Chorvoq ko'li",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "350",
+      duration: "3 kun / 2 kecha",
+      rating: 4.9
+    },
+    {
+      id: 2,
+      title: "Yoshlar sarguzashti - Chimyon tog'lari",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "280",
+      duration: "2 kun / 1 kecha",
+      rating: 4.7
+    },
+    {
+      id: 3,
+      title: "Keksalar uchun shifobaxsh sayohat - Zomin",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "420",
+      duration: "5 kun / 4 kecha",
+      rating: 4.8
+    },
+    {
+      id: 4,
+      title: "Talabalar uchun budget sayohat - Samarqand",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "200",
+      duration: "2 kun / 1 kecha",
+      rating: 4.5
+    },
+    {
+      id: 5,
+      title: "Fotosurat ishqibozlari uchun - Aydarkol",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "380",
+      duration: "3 kun / 2 kecha",
+      rating: 4.6
+    },
+    {
+      id: 6,
+      title: "Tarixiy joylar bo'ylab - Buxoro",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "450",
+      duration: "4 kun / 3 kecha",
+      rating: 4.8
+    },
+    {
+      id: 7,
+      title: "Gastronomik sayohat - Xorazm",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "520",
+      duration: "5 kun / 4 kecha",
+      rating: 4.7
+    },
+    {
+      id: 8,
+      title: "Ekstremal sayohat - Ugom tizmasi",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "340",
+      duration: "3 kun / 2 kecha",
+      rating: 4.4
+    },
+    {
+      id: 9,
+      title: "Qishki dam olish - Beldersoy",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "390",
+      duration: "2 kun / 1 kecha",
+      rating: 4.6
+    },
+    {
+      id: 10,
+      title: "Sog'lomlashtiruvchi sayohat - Chortoq",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "480",
+      duration: "6 kun / 5 kecha",
+      rating: 4.9
+    },
+    {
+      id: 11,
+      title: "Arxeologik sayohat - Termiz",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "410",
+      duration: "4 kun / 3 kecha",
+      rating: 4.5
+    },
+    {
+      id: 12,
+      title: "Ziyorat turizmi - Qashqadaryo",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "360",
+      duration: "3 kun / 2 kecha",
+      rating: 4.7
+    }
+  ],
+  ru: [
+    {
+      id: 1,
+      title: "Семейный отдых - Озеро Чарвак",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "350",
+      duration: "3 дня / 2 ночи",
+      rating: 4.9
+    },
+    {
+      id: 2,
+      title: "Молодежное приключение - Чимганские горы",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "280",
+      duration: "2 дня / 1 ночь",
+      rating: 4.7
+    },
+    {
+      id: 3,
+      title: "Оздоровительный тур для пожилых - Заамин",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "420",
+      duration: "5 дней / 4 ночи",
+      rating: 4.8
+    },
+    {
+      id: 4,
+      title: "Бюджетный тур для студентов - Самарканд",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "200",
+      duration: "2 дня / 1 ночь",
+      rating: 4.5
+    },
+    {
+      id: 5,
+      title: "Фототур - Айдаркуль",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "380",
+      duration: "3 дня / 2 ночи",
+      rating: 4.6
+    },
+    {
+      id: 6,
+      title: "Исторический тур - Бухара",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "450",
+      duration: "4 дня / 3 ночи",
+      rating: 4.8
+    },
+    {
+      id: 7,
+      title: "Гастрономический тур - Хорезм",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "520",
+      duration: "5 дней / 4 ночи",
+      rating: 4.7
+    },
+    {
+      id: 8,
+      title: "Экстремальный тур - Угамский хребет",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "340",
+      duration: "3 дня / 2 ночи",
+      rating: 4.4
+    },
+    {
+      id: 9,
+      title: "Зимний отдых - Бельдерсай",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "390",
+      duration: "2 дня / 1 ночь",
+      rating: 4.6
+    },
+    {
+      id: 10,
+      title: "Оздоровительный тур - Чартак",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "480",
+      duration: "6 дней / 5 ночей",
+      rating: 4.9
+    },
+    {
+      id: 11,
+      title: "Археологический тур - Термез",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "410",
+      duration: "4 дня / 3 ночи",
+      rating: 4.5
+    },
+    {
+      id: 12,
+      title: "Паломнический тур - Кашкадарья",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+      price: "360",
+      duration: "3 дня / 2 ночи",
+      rating: 4.7
+    }
+  ]
+};
 
 function Recommendations() {
+  const searchParams = new URLSearchParams(window.location.search);
+  const currentLang = searchParams.get('lang') || 'uz';
+  
+  const t = translations[currentLang];
+  const currentTours = recommendationData[currentLang];
+
   const settings = {
     dots: true,
     dotsClass: "slick-dots custom-dots",
@@ -140,7 +362,7 @@ function Recommendations() {
           <div className="inline-block">
             <h1 className="text-4xl md:text-5xl font-extrabold relative">
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Recommended Tours
+                {t.recommendedTours}
               </span>
               <div className="absolute -top-6 -right-6 w-12 h-12 opacity-20 animate-spin-slow">
                 <svg viewBox="0 0 24 24" fill="none" className="text-purple-600">
@@ -149,7 +371,7 @@ function Recommendations() {
               </div>
             </h1>
             <p className="mt-4 text-gray-600 text-lg font-medium">
-              Our specially selected and premium travel programs
+              {t.subtitle}
             </p>
             <div className="mt-3 flex items-center justify-center gap-3">
               <div className="h-[2px] w-16 bg-gradient-to-r from-transparent to-purple-600"></div>
@@ -165,7 +387,7 @@ function Recommendations() {
         
         <div className="w-full">
           <Slider {...settings} className="!w-full">
-            {recommendationData.map((recommendation) => (
+            {currentTours.map((recommendation) => (
               <div key={recommendation.id} className="px-2">
                 <div className="relative w-full h-[370px] sm:h-[400px] lg:h-[430px] rounded-3xl overflow-hidden shadow-xl group bg-white">
                   <div className="absolute inset-0 overflow-hidden">
@@ -250,7 +472,7 @@ function Recommendations() {
                             </div>
                             <div className="absolute opacity-0 group-hover/book:opacity-100 transition-all duration-300 -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap">
                               <div className="bg-white text-gray-900 px-4 py-2 rounded-lg shadow-lg text-sm font-medium">
-                                Book Now
+                                {t.bookNow}
                               </div>
                               <div className="w-3 h-3 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2"></div>
                             </div>

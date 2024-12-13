@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Image1, Image2, Image3, Image4,Image5,Image6,Image7 } from "../index";
+import { useSearchParams } from 'react-router-dom';
 
 function SharxPage() {
+  const [searchParams] = useSearchParams();
+  const lang = searchParams.get('lang') || 'uz'; // default to 'uz' if no lang parameter
+
+  // Title translations
+  const titles = {
+    uz: "Kompaniya sharhlari",
+    en: "Company reviews",
+    ru: "Отзывы о компании"
+  };
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = [Image1, Image2, Image3, Image4,Image5,Image6,Image7,Image2];
 
@@ -36,9 +47,9 @@ function SharxPage() {
 
   return (
     <div className="w-full py-4 md:py-6 lg:py-10">
-      {/* Sarlavha */}
+      {/* Multi-language Title */}
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-6 lg:mb-10 text-gray-800">
-      Company reviews
+        {titles[lang]}
       </h1>
 
       <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">

@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-function Home({ selectedLanguage }) {
+function Home() {
+  const location = useLocation();
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    const langParam = params.get('lang');
+    return langParam && ['en', 'ru', 'uz'].includes(langParam) ? langParam : 'en';
+  });
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const langParam = params.get('lang');
+    if (langParam && ['en', 'ru', 'uz'].includes(langParam)) {
+      setSelectedLanguage(langParam);
+    }
+  }, [location.search]);
+
   const [counts, setCounts] = useState({
     years: 0,
     hotels: 0,
@@ -33,9 +49,20 @@ function Home({ selectedLanguage }) {
         guides: "Гиды",
       },
     },
+    en: {
+      header: "Travel to Uzbekistan with Canaan Travel",
+      subHeader: "Discover the legendary East!",
+      searchPlaceholder: "Where do you want to travel?",
+      searchButton: "Search",
+      stats: {
+        years: "Years of Experience",
+        hotels: "Hotels",
+        guides: "Guides",
+      },
+    }
   };
 
-  const t = translations[selectedLanguage] || translations.uz;
+  const t = translations[selectedLanguage];
 
   const popularPlaces = [
     { name: "Samarkand - Registan Square", rating: 4.9 },

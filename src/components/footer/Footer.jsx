@@ -2,59 +2,107 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useSearchParams } from "react-router-dom";
 
 const partnerLogos = [
   {
     id: 1,
     name: "Booking.com",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
-    description: "Dunyo bo'ylab mehmonxonalar bronlash tizimi",
+    description: {
+      uz: "Dunyo bo'ylab mehmonxonalar bronlash tizimi",
+      en: "Worldwide hotel booking system",
+      ru: "Система бронирования отелей по всему миру"
+    }
   },
   {
     id: 2,
     name: "Turkish Airlines",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
-    description: "Evropaning eng yaxshi aviakompaniyasi",
+    description: {
+      uz: "Evropaning eng yaxshi aviakompaniyasi",
+      en: "Best airline in Europe",
+      ru: "Лучшая авиакомпания Европы"
+    }
   },
   {
     id: 3,
     name: "Uzbekistan Airways",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
-    description: "O'zbekistonning milliy aviakompaniyasi",
+    description: {
+      uz: "O'zbekistonning milliy aviakompaniyasi",
+      en: "National airline of Uzbekistan",
+      ru: "Национальная авиакомпания Узбекистана"
+    }
   },
   {
     id: 4,
     name: "Hilton Hotels",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png",
-    description: "Premium darajadagi mehmonxonalar tarmog'i",
+    description: {
+      uz: "Premium darajadagi mehmonxonalar tarmog'i",
+      en: "Premium hotel chain",
+      ru: "Сеть отелей премиум-класса"
+    }
   },
   {
     id: 5,
     name: "Hyatt",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/2560px-Emirates_logo.svg.png",
-    description: "Hashamatli mehmonxonalar tarmog'i",
+    description: {
+      uz: "Hashamatli mehmonxonalar tarmog'i",
+      en: "Luxury hotel chain",
+      ru: "Сеть роскошных отелей"
+    }
   },
   {
     id: 6,
     name: "Emirates",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/2560px-Emirates_logo.svg.png",
-    description: "Dunyoning eng yaxshi aviakompaniyasi",
+    description: {
+      uz: "Dunyoning eng yaxshi aviakompaniyasi",
+      en: "World's best airline",
+      ru: "Лучшая авиакомпания мира"
+    }
   },
   {
     id: 7,
     name: "Qatar Airways",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/2560px-Emirates_logo.svg.png",
-    description: "5 yulduzli aviakompaniya",
+    description: {
+      uz: "5 yulduzli aviakompaniya",
+      en: "5-star airline",
+      ru: "5-звездочная авиакомпания"
+    }
   },
   {
     id: 8,
     name: "Aeroflot",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/2560px-Emirates_logo.svg.png",
-    description: "Rossiyaning eng yirik aviakompaniyasi",
-  },
+    description: {
+      uz: "Rossiyaning eng yirik aviakompaniyasi",
+      en: "Russia's largest airline",
+      ru: "Крупнейшая авиакомпания России"
+    }
+  }
 ];
 
+const titles = {
+  uz: "Bizning Hamkorlar",
+  en: "Our Partners",
+  ru: "Наши Партнеры"
+};
+
+const quotes = {
+  uz: "Ishonchli hamkorlik - muvaffaqiyatli sayohatlar garovi",
+  en: "Reliable cooperation is the guarantee of successful trips",
+  ru: "Надежное сотрудничество - залог успешных путешествий"
+};
+
 function Footer() {
+  const [searchParams] = useSearchParams();
+  const currentLang = searchParams.get('lang') || 'uz';
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -86,7 +134,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 mb-4 relative inline-block group">
-          Our Partners
+            {titles[currentLang]}
             <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 group-hover:w-full transition-all duration-500 ease-in-out"></span>
             <span className="absolute -top-2 right-0 w-0 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-600 group-hover:w-full transition-all duration-500 ease-in-out delay-100"></span>
             <span className="absolute -left-2 top-0 h-0 w-1 bg-gradient-to-b from-blue-600 via-purple-500 to-pink-500 group-hover:h-full transition-all duration-500 ease-in-out delay-200"></span>
@@ -109,7 +157,7 @@ function Footer() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/90 to-purple-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-100 scale-95">
                     <p className="text-sm text-white text-center px-4 font-medium">
-                      {logo.description}
+                      {logo.description[currentLang]}
                     </p>
                   </div>
                 </div>
@@ -122,7 +170,7 @@ function Footer() {
             <span className="absolute -left-6 top-0 text-3xl text-blue-500 opacity-50">
               ❝
             </span>
-            Reliable cooperation is the guarantee of successful trips
+            {quotes[currentLang]}
             <span className="absolute -right-6 bottom-0 text-3xl text-blue-500 opacity-50">
               ❞
             </span>
