@@ -131,7 +131,7 @@ function TenDaysTour() {
   // Sahifa yuklanganda yoki yangilanganda tepaga scroll qilish
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, []); // Scroll to top when page loads or refreshes
 
   const toggleDay = (day) => {
     setExpandedDays((prev) => ({
@@ -517,7 +517,7 @@ function TenDaysTour() {
                   {[
                     {
                       day: 1,
-                      title: "Toshkent – kelish",
+                      title: "Tashkent - Arrival",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -525,35 +525,28 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 01:05-03:00
                               </span>
-                              <p>Toshkent xalqaro aeroportiga uchish.</p>
+                              <p>Flight to Tashkent International Airport.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 03:00-04:00
                               </span>
                               <p>
-                                Toshkent aeroportiga yetib kelish va haydovchi
-                                tomonidan kutib olish (haydovchi sizning
-                                ism-familiyangiz yozilgan belgini ushlab turadi)
-                                va mehmonxonaga transfer.
+                                Arrival at Tashkent airport and meeting with driver (driver will hold a sign with your name) and transfer to hotel.
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>Mehmonxonada nonushta.</p>
+                              <p>Breakfast at hotel.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-13:00
                               </span>
                               <p>
-                                Shahar bo'ylab sayohat: Hazrati Imom majmuasini
-                                ziyorat qilish (Kaffol Shoshiy maqbarasi, Muyi
-                                Muborak madrasasi, Baroqxon madrasasi, Namozgoh
-                                masjidi, Hazrati Imom masjidi), o'zbek mahallasini
-                                ko'rish, Mingtepa eski shahri, Minor masjidi.
+                                City tour: Visit to Hazrati Imam Complex (Mausoleum of Kaffal Shashi, Muyi Muborak Madrasah, Barak Khan Madrasah, Namozgoh Mosque, Hazrati Imam Mosque), tour of Uzbek mahalla, Mingtepa old city, Minor Mosque.
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -561,39 +554,27 @@ function TenDaysTour() {
                                 13:00-14:00
                               </span>
                               <p>
-                                Mahalliy restoranda tushlik ("Besh qozon"
-                                oshxonasida Toshkent oshi).
+                                Lunch at local restaurant (Tashkent pilaf at "Besh Qozon" restaurant).
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                14:00-17:00
+                                Evening
                               </span>
                               <p>
-                                Toshkentni kashf etishda davom etamiz: Amir Temur
-                                haykali va muzeyi, Jasorat monumenti, Mustaqillik
-                                maydoni, Toshkent teleminorasi, Chorsu bozori.
-                              </p>
-                            </div>
-                            <div className="flex items-start">
-                              <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
-                              </span>
-                              <p>
-                                Mahalliy restoranda kechki ovqat va mehmonxonada
-                                tunash.
+                                Dinner at local restaurant and overnight at hotel.
                               </p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 8 soat
+                            Tour duration: 8 hours
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 2,
-                      title: "Toshkent – Samarqand",
+                      title: "Tashkent - Samarkand",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -602,8 +583,7 @@ function TenDaysTour() {
                                 07:00-09:00
                               </span>
                               <p>
-                                Mehmonxonada nonushta. Mehmonxonadan chiqish
-                                (check-out).
+                                Breakfast at hotel. Hotel check-out.
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -611,8 +591,7 @@ function TenDaysTour() {
                                 09:00-13:00
                               </span>
                               <p>
-                                Tog' sayohati: Chimyon tog'lariga tashrif: Amirsoy
-                                va Bildersoy.
+                                Mountain tour: Visit to Chimgan Mountains: Amirsoy and Beldersoy.
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -620,7 +599,7 @@ function TenDaysTour() {
                                 13:00-14:00
                               </span>
                               <p>
-                                Mahalliy restoranda tushlik (mastava va xonim).
+                                Lunch at local restaurant (mastava soup and khanim dumplings).
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -628,54 +607,51 @@ function TenDaysTour() {
                                 14:00-17:00
                               </span>
                               <p>
-                                Kurort sayohati: Chorvoq va Sukok kurortlariga
-                                tashrif.
+                                Resort tour: Visit to Charvak and Sukok resorts.
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 17:00-18:30
                               </span>
-                              <p>Mahalliy restoranda kechki ovqat.</p>
+                              <p>Dinner at local restaurant.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 18:30-19:00
                               </span>
-                              <p>Temir yo'l vokzaliga transfer.</p>
+                              <p>Transfer to railway station.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 19:41-22:10
                               </span>
-                              <p>Samarqandga yuqori tezlikdagi poyezd.</p>
+                              <p>High-speed train to Samarkand.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 22:10-22:30
                               </span>
                               <p>
-                                Kelish va haydovchi tomonidan vokzalda kutib olish
-                                (haydovchi sizning ism-familiyangiz yozilgan
-                                belgini ushlab turadi) va mehmonxonaga transfer.
+                                Arrival and meeting with driver at station (driver will hold a sign with your name) and transfer to hotel.
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
+                                Evening
                               </span>
-                              <p>Mehmonxonada tunash.</p>
+                              <p>Overnight at hotel.</p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 15 soat
+                            Tour duration: 15 hours
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 3,
-                      title: "Samarqand",
+                      title: "Samarkand",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -683,19 +659,14 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>Mehmonxonada nonushta.</p>
+                              <p>Breakfast at hotel.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-13:00
                               </span>
                               <p>
-                                Shahar bo'ylab sayohat: Gʻo'ri Amir maqbarasi
-                                (Amir Temur va uning oilasi dafn etilgan afsonaviy
-                                maqbara), Registon maydoni - jahonga mashhur 3 ta
-                                madrasa majmuasi (Ulugʻbek, Tillakori, Sherdon),
-                                Bibi Xonim masjidi - Markaziy Osiyoda qurilgan eng
-                                katta masjid, Siyob bozori (mahalliy bozor).
+                                City tour: Gur-e-Amir Mausoleum (legendary tomb of Amir Timur and his family), Registan Square - world-famous complex of 3 madrasahs (Ulugbek, Tillya-Kori, Sher-Dor), Bibi-Khanym Mosque - the biggest mosque built in Central Asia, Siyob Bazaar (local market).
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -703,8 +674,7 @@ function TenDaysTour() {
                                 13:00-14:00
                               </span>
                               <p>
-                                Mahalliy restoranda tushlik (Samarqand oshi -
-                                "Zigʻir osh").
+                                Lunch at local restaurant (Samarkand pilaf - "Zigir osh").
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -712,34 +682,27 @@ function TenDaysTour() {
                                 14:00-17:00
                               </span>
                               <p>
-                                Samarqandni kashf etishda davom etamiz: Shohizinda
-                                ansambli (Temuriylar sulolasi qabrlar va
-                                Payg'ambarimizning amakivachchalari dafn etilgan
-                                muqaddas joy va qabristonni ziyorat qilish),
-                                Hazrati Xizr masjidi, Afrosiyob muzeyi, "El
-                                merosi" teatr tomoshasi (Markaziy Osiyo xalqlari
-                                tarixi).
+                                Continue exploring Samarkand: Shakhi-Zinda Ensemble (necropolis of Timurid dynasty and sacred place with tomb of Prophet's cousin), Hazrat Khizr Mosque, Afrasiab Museum, "El Merosi" theater performance (history of Central Asian peoples).
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
+                                Evening
                               </span>
                               <p>
-                                Mahalliy restoranda kechki ovqat va mehmonxonada
-                                tunash.
+                                Dinner at local restaurant and overnight at hotel.
                               </p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 8 soat
+                            Tour duration: 8 hours
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 4,
-                      title: "Samarqand – Buxoro",
+                      title: "Samarkand - Bukhara",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -747,19 +710,14 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>
-                                Mehmonxonada nonushta. Mehmonxonadan chiqish
-                                (check-out).
-                              </p>
+                              <p>Breakfast at hotel. Hotel check-out.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-13:00
                               </span>
                               <p>
-                                Shahar bo'ylab sayohat: Xo'ja Doniyor maqbarasi,
-                                Ulug'bek rasadxonasi va muzeyi, "Ko'nigil-Meros"
-                                ipak qog'oz ishlab chiqarish ustaxonasi.
+                                City tour: Visit to St. Daniel's Tomb, Ulugbek Observatory and Museum, "Konigil-Meros" paper making workshop.
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -767,51 +725,47 @@ function TenDaysTour() {
                                 13:00-14:00
                               </span>
                               <p>
-                                Mahalliy restoranda tushlik (Samarqand manti va
-                                no'xat-sho'rak).
+                                Lunch at local restaurant (Samarkand manti and nohot-shorak).
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 14:00-14:30
                               </span>
-                              <p>Temir yo'l vokzaliga transfer.</p>
+                              <p>Transfer to railway station.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 15:00-17:00
                               </span>
-                              <p>Buxoroga yuqori tezlikdagi poyezd.</p>
+                              <p>High-speed train to Bukhara.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 17:00-17:30
                               </span>
                               <p>
-                                Kelish va haydovchi tomonidan vokzalda kutib olish
-                                (haydovchi sizning ism-familiyangiz yozilgan
-                                belgini ushlab turadi) va mehmonxonaga transfer.
+                                Arrival and meeting with driver at station (driver will hold a sign with your name) and transfer to hotel.
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
+                                Evening
                               </span>
                               <p>
-                                Mahalliy restoranda kechki ovqat va mehmonxonada
-                                tunash.
+                                Dinner at local restaurant and overnight at hotel.
                               </p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 10 soat
+                            Tour duration: 10 hours
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 5,
-                      title: "Buxoro",
+                      title: "Bukhara",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -819,18 +773,14 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>Mehmonxonada nonushta.</p>
+                              <p>Breakfast at hotel.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-13:00
                               </span>
                               <p>
-                                Shahar bo'ylab sayohat: Ark qal'asi, Bolo Hovuz
-                                masjidi, Po-i Kalon majmuasi (Kalon minorasi,
-                                Kalon masjidi, Mir Arab madrasasi), Ulug'bek
-                                madrasasi, Abdulazizxon madrasasi, Magʻoki Attori
-                                masjidi.
+                                City tour: Ark Fortress, Bolo Hauz Mosque, Po-i Kalyan Complex (Kalyan Minaret, Kalyan Mosque, Mir Arab Madrasah), Ulugbek Madrasah, Abdulaziz Khan Madrasah, Magoki Attori Mosque.
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -838,8 +788,7 @@ function TenDaysTour() {
                                 13:00-14:00
                               </span>
                               <p>
-                                Mahalliy restoranda tushlik (Buxoro palov va
-                                shurva).
+                                Lunch at local restaurant (Bukhara pilaf and shurpa).
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -847,11 +796,7 @@ function TenDaysTour() {
                                 14:00-17:00
                               </span>
                               <p>
-                                Buxoroni kashf etishda davom etamiz: Chor Minor
-                                madrasasi, Labi Hovuz majmuasi (Nodir Devonbegi
-                                madrasasi va xonaqosi, Kukaldosh madrasasi), Toki
-                                Zargaron, Telpak Furushon va Sarrofon savdo
-                                rastalari.
+                                Continue exploring Bukhara: Chor Minor Madrasah, Lyabi Hauz Complex (Nodir Devonbegi Madrasah and Khanaka, Kukeldash Madrasah), Trading Domes of Toki Zargaron, Telpak Furushon, and Sarrafon.
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -859,30 +804,27 @@ function TenDaysTour() {
                                 17:00-18:30
                               </span>
                               <p>
-                                Milliy hunarmandchilik ustaxonalariga tashrif:
-                                zargarlik, kashtachilik, qo'g'irchoqlar va
-                                boshqalar.
+                                Visit to local craft workshops: jewelry, embroidery, puppets, and more.
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
+                                Evening
                               </span>
                               <p>
-                                Mahalliy restoranda kechki ovqat va mehmonxonada
-                                tunash.
+                                Dinner at local restaurant and overnight at hotel.
                               </p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 9 soat
+                            Tour duration: 9 hours
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 6,
-                      title: "Buxoro",
+                      title: "Bukhara",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -890,18 +832,14 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>Mehmonxonada nonushta.</p>
+                              <p>Breakfast at hotel.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-13:00
                               </span>
                               <p>
-                                Buxoro atrofidagi sayohat: Bahovuddin Naqshband
-                                (XIV asr avliyo va faylasufi) memorial-me'moriy
-                                majmuasi, Sitorai Mohi Xosa saroyi (XX asr oxirgi
-                                Buxoro amirining yozgi qarorgohi), Chor Bakr
-                                nekropoli va memorial-me'moriy majmuasi (XVI asr).
+                                Suburban tour: Bahauddin Naqshband Memorial Complex (14th-century saint and philosopher), Sitorai Mokhi Khosa Palace (summer residence of the last Bukhara Emir, 20th century), Chor Bakr Necropolis and Memorial Complex (16th century).
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -909,8 +847,7 @@ function TenDaysTour() {
                                 13:00-14:00
                               </span>
                               <p>
-                                Mahalliy restoranda tushlik ("Chor Bakr Temur ota"
-                                oshxonasida tandirda pishirilgan go'sht).
+                                Lunch at local restaurant (tandoor-cooked meat at "Chor Bakr Temur ota").
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -918,31 +855,27 @@ function TenDaysTour() {
                                 14:00-17:00
                               </span>
                               <p>
-                                Buxoro eski shahrini kashf etishda davom etamiz:
-                                Fayzullo Xo'jayev uy-muzeyi (boy savdogar va
-                                siyosatchi), Qo'sh madrasa majmuasi (Modarixon va
-                                Abdullaxon madrasalari - XVI asr).
+                                Continue exploring old Bukhara: Fayzulla Khojaev House Museum (wealthy merchant and politician), Kosh Madrasah Complex (Modarikhan and Abdullah Khan Madrasahs - 16th century).
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
+                                Evening
                               </span>
                               <p>
-                                Mahalliy restoranda kechki ovqat va mehmonxonada
-                                tunash.
+                                Dinner at local restaurant and overnight at hotel.
                               </p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 8 soat
+                            Tour duration: 8 hours
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 7,
-                      title: "Buxoro – Xiva",
+                      title: "Bukhara - Khiva",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -950,37 +883,30 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>
-                                Mehmonxonada nonushta. Mehmonxonadan chiqish
-                                (check-out).
-                              </p>
+                              <p>Breakfast at hotel. Hotel check-out.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-13:00
                               </span>
                               <p>
-                                Romitan tumanidagi "Buxoro cho'l vohasi va spa"
-                                turistik klasteriga tashrif: hovuz va qumli sohil,
-                                Qizilqum cho'lida tuya va otda sayr qilish,
-                                kvadrosikl poygalari, kamondan o'q otish.
+                                Visit to "Bukhara Desert Oasis & Spa" tourist cluster in Romitan district: swimming pool and sandy beach, camel and horse riding in Kyzylkum desert, quad bike racing, archery.
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                12:00-13:00
+                                13:00-14:00
                               </span>
                               <p>
-                                Mahalliy restoranda tushlik (G'ijduvon kaboblari
-                                va Olot somsasi).
+                                Lunch at local restaurant (Gijduvan kebabs and Olot samsa).
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                13:00-19:00
+                                14:00-19:00
                               </span>
                               <p>
-                                Xivaga avtomobilda transfer (sedan yoki miniven).
+                                Transfer to Khiva by car (sedan or minivan).
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -988,30 +914,27 @@ function TenDaysTour() {
                                 19:00-19:30
                               </span>
                               <p>
-                                Ichan Qal'a qo'rg'oni ichida joylashgan
-                                mehmonxonaga piyoda yurish (haydovchi yuklarni
-                                ko'tarishda yordam beradi).
+                                Walk to hotel located inside Ichan Kala fortress (driver will help with luggage).
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
+                                Evening
                               </span>
                               <p>
-                                Mahalliy restoranda kechki ovqat va mehmonxonada
-                                tunash.
+                                Dinner at local restaurant and overnight at hotel.
                               </p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 12 soat
+                            Tour duration: 12 hours
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 8,
-                      title: "Xiva",
+                      title: "Khiva",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -1019,47 +942,28 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>Mehmonxonada nonushta.</p>
+                              <p>Breakfast at hotel.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-13:00
                               </span>
                               <p>
-                                Xiva eski shahrini ziyorat: Ichan Qal'a
-                                darvozalari va devorlari, Muhammad Aminxon
-                                madrasasi, Kalta Minor minorasi, Ko'hna Ark
-                                qarorgohi, Muhammad Rahimxon madrasasi, Shayx Said
-                                Alouddin maqbarasi, Musiqa muzeyi, Juma masjidi.
+                                Visit to old Khiva: Gates and walls of Ichan Kala, Muhammad Amin Khan Madrasah, Kalta Minor Minaret, Kukhna Ark Citadel, Muhammad Rahim Khan Madrasah, Sheikh Said Alouddin Mausoleum, Music Museum, Juma Mosque.
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 13:00-14:00
                               </span>
-                              <p>Mahalliy restoranda tushlik (Shivit oshi).</p>
+                              <p>Lunch at local restaurant (Shivit oshi).</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 14:00-17:00
                               </span>
                               <p>
-                                Xiva eski shahrini kashf etishda davom etamiz:
-                                Arabxona madrasasi, Do'st Olim madrasasi,
-                                Abdullaxon madrasasi, Oq masjid, Anushaxon
-                                hammomi, Olloqulixon madrasasi, Kutlug'murod Inoq
-                                madrasasi, Karvonsaroy, Tosh Hovli saroyi,
-                                Islomxo'ja madrasasi va minorasi, Pahlavon
-                                Muhammad maqbarasi, Sherg'ozixon madrasasi.
-                              </p>
-                            </div>
-                            <div className="flex items-start">
-                              <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                                Kechqurun
-                              </span>
-                              <p>
-                                Mahalliy restoranda kechki ovqat va mehmonxonada
-                                tunash.
+                                Continue exploring old Khiva: Arab Khan Madrasah, Dost Alim Madrasah, Abdullah Khan Madrasah, Ak Mosque, Anush Khan Baths, Allakuli Khan Madrasah, Kutlug Murad Inak Madrasah, Caravanserai, Tash Khauli Palace, Islam Khoja Madrasah and Minaret, Pakhlavan Mahmud Mausoleum, Sherghazi Khan Madrasah.
                               </p>
                             </div>
                           </div>
@@ -1071,7 +975,7 @@ function TenDaysTour() {
                     },
                     {
                       day: 9,
-                      title: "Xiva – Urganch – Toshkent",
+                      title: "Khiva - Urgench - Tashkent",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -1079,86 +983,93 @@ function TenDaysTour() {
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 07:00-09:00
                               </span>
-                              <p>
-                                Mehmonxonada nonushta. Mehmonxonadan chiqish
-                                (check-out).
-                              </p>
+                              <p>Breakfast at hotel. Hotel check-out.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 09:00-10:00
                               </span>
-                              <p>Xivani ziyorat: Nurullaboy saroyini ko'rish.</p>
+                              <p>Visit to Khiva: Nurullaboy Palace and Museum.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 10:00-11:00
                               </span>
-                              <p>Urganch shahriga transfer.</p>
+                              <p>Transfer to Urgench city with comfortable air-conditioned vehicle.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 11:00-13:00
                               </span>
                               <p>
-                                Urganchda Avesto muzeyi va yodgorligi hamda
-                                Jaloliddin Manguberdi yodgorligini ziyorat qilish.
+                                Sightseeing in Urgench:
+                                <ul className="list-disc pl-4 mt-2">
+                                  <li>Visit to Avesta Museum and Monument</li>
+                                  <li>Jaloliddin Manguberdi Memorial Complex</li>
+                                  <li>Al-Khwarizmi Monument</li>
+                                  <li>Modern Urgench attractions</li>
+                                </ul>
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 13:00-14:00
                               </span>
-                              <p>Mahalliy restoranda tushlik (tuxumbarrak).</p>
+                              <p>
+                                Lunch at premium local restaurant featuring traditional Khorezmian cuisine.
+                              </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 14:00-19:00
                               </span>
                               <p>
-                                Qadimgi Xorazm arxeologik yodgorliklari - Ayaz
-                                qal'a va Tuproq qal'ani ziyorat.
+                                Archaeological tour:
+                                <ul className="list-disc pl-4 mt-2">
+                                  <li>Visit to ancient Ayaz Kala fortress (1st-2nd centuries)</li>
+                                  <li>Explore Toprak Kala palace (3rd century)</li>
+                                  <li>Photo stops at desert viewpoints</li>
+                                  <li>Visit to local yurt camp (optional tea break)</li>
+                                </ul>
                               </p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 19:00-21:30
                               </span>
-                              <p>Mahalliy restoranda kechki ovqat.</p>
+                              <p>Farewell dinner at traditional restaurant with folk music.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 21:30-22:00
                               </span>
-                              <p>Urganch aeroportiga transfer.</p>
+                              <p>Transfer to Urgench International Airport.</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 23:00-00:20
                               </span>
-                              <p>Toshkentga uchish.</p>
+                              <p>Evening flight to Tashkent (1 hour 20 minutes).</p>
                             </div>
                             <div className="flex items-start">
                               <span className="font-medium text-blue-500 w-24 flex-shrink-0">
                                 00:20-01:00
                               </span>
                               <p>
-                                Toshkent aeroportiga yetib kelish va haydovchi
-                                tomonidan kutib olish (haydovchi sizning
-                                ism-familiyangiz yozilgan belgini ushlab turadi)
-                                va mehmonxonaga transfer.
+                                Meet and greet at Tashkent airport (driver will hold a sign with your name), 
+                                comfortable transfer to hotel, check-in assistance.
                               </p>
                             </div>
                           </div>
                           <p className="text-sm italic mt-4">
-                            Sayohat davomiyligi: 18 soat
+                            Tour duration: 18 hours | Distance covered: ~550 km
                           </p>
                         </div>
                       ),
                     },
                     {
                       day: 10,
-                      title: "Toshkent – jo'nash",
+                      title: "Tashkent - Departure",
                       content: (
                         <div className="text-gray-600 space-y-4">
                           <div className="space-y-2">
@@ -1167,9 +1078,7 @@ function TenDaysTour() {
                                 07:00-09:00
                               </span>
                               <p>
-                                Mehmonxonada nonushta. Mehmonxonadan chiqish
-                                (check-out) (yuklar mehmonxona qabulxonasida
-                                qoldirilishi mumkin).
+                                Breakfast at hotel. Hotel check-out (luggage storage available at reception).
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -1177,11 +1086,15 @@ function TenDaysTour() {
                                 10:00-16:00
                               </span>
                               <p>
-                                Dam olish uchun bo'sh vaqt (O'zbekiston
-                                poytaxtining yangi diqqatga sazovor joylarini
-                                kashf etishingiz mumkin: Toshkent shahri bog'i,
-                                Magic city bog'i, Ashxobod bog'i, Amaliy san'at
-                                muzeyi).
+                                Free time for leisure activities (suggested places to visit):
+                                <ul className="list-disc pl-4 mt-2">
+                                  <li>Tashkent City Park - modern urban space</li>
+                                  <li>Magic City Theme Park - entertainment complex</li>
+                                  <li>Ashkhabad Park - green recreation area</li>
+                                  <li>Museum of Applied Arts - cultural heritage</li>
+                                  <li>Shopping at Samarkand Darvoza Mall</li>
+                                  <li>Local markets for souvenirs</li>
+                                </ul>
                               </p>
                             </div>
                             <div className="flex items-start">
@@ -1266,14 +1179,13 @@ function TenDaysTour() {
           {/* Check-in/Check-out Information */}
           <div className="bg-gray-50 p-6 rounded-lg">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">
-              Mehmonxona ma'lumotlari
+              Hotel Information
             </h3>
             <ul className="space-y-2 text-gray-600">
-              <li>Mehmonxonaga kirish vaqti – 14:00</li>
-              <li>Mehmonxonadan chiqish vaqti – 12:00</li>
+              <li>Check-in time – 14:00</li>
+              <li>Check-out time – 12:00</li>
               <li>
-                (Standart chiqish vaqtlari qo'llaniladi. Zarur bo'lsa, yuklar
-                saqlash xizmati haqida mehmonxona qabulxonasidan so'rang)
+                (Standard check-out times apply. If needed, ask at hotel reception about luggage storage service)
               </li>
             </ul>
           </div>
@@ -1282,33 +1194,19 @@ function TenDaysTour() {
           <div className="space-y-6">
             <div className="bg-blue-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                AEROPORT TRANSFERLARI HAQIDA MA'LUMOT
+                AIRPORT TRANSFER INFORMATION
               </h3>
               <p className="text-gray-600">
-                Transfer haydovchisi sizni kelish zalida kutib oladi va ismingiz
-                hamda familiyangiz yozilgan belgini ko'rsatadi. Ba'zi
-                aeroportlarda bojxonadan bir nechta chiqish yo'li mavjud, shuning
-                uchun haydovchingizni diqqat bilan qidiring. Agar parvozingiz bir
-                soatdan ko'proq kechiksa yoki haydovchini topa olmasangiz,
-                yuqorida ko'rsatilgan raqamga qo'ng'iroq qiling. Aeroportlarda
-                yuklar tashish xizmati har bir sumka uchun $3 dan ortiq bo'lishi
-                mumkin; yuklar aravalari har doim ham mavjud emas.
+                The transfer driver will meet you in the arrival hall with a sign showing your name. Some airports have multiple customs exits, so please look carefully for your driver. If your flight is delayed by more than an hour or you cannot find your driver, please call the number shown above. Airport porter service may cost more than $3 per bag; luggage carts are not always available.
               </p>
             </div>
 
             <div className="bg-blue-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                TEMIR YO'L VOKZALI TRANSFERLARI HAQIDA MA'LUMOT
+                RAILWAY STATION TRANSFER INFORMATION
               </h3>
               <p className="text-gray-600">
-                Imkon qadar, transfer haydovchisi poyezddan tushganingizda
-                platformada vagoningiz yonida bo'ladi. Poyezddan tushganda
-                ismingiz va familiyangiz yozilgan belgini qidiring. Iltimos, bu
-                joyda kamida besh daqiqa kuting. Agar transfer agenti bilan
-                bog'lana olmasangiz, poyezdning bosh qismiga qarab yuring va
-                vokzal kirishida kuting. Ko'p joylarda yuklar aravalari mavjud
-                emasligini unutmang. Temir yo'l vokzallarida yuklar tashish
-                xizmati har bir sumka uchun $5 dan ortiq bo'lishi mumkin.
+                When possible, the transfer driver will be on the platform next to your carriage when you get off the train. Look for a sign with your name when disembarking. Please wait at least five minutes at this location. If you cannot connect with the transfer agent, walk towards the front of the train and wait at the station entrance. Please note that luggage carts are not available in many locations. Railway station porter service may cost more than $5 per bag.
               </p>
             </div>
           </div>
@@ -1328,55 +1226,46 @@ function TenDaysTour() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-green-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                Tur narxiga quyidagilar kiradi:
+                The tour price includes:
               </h3>
               <ol className="list-decimal list-inside space-y-2 text-gray-600">
                 <li>
-                  Toshkent, Samarqand, Buxoro va Xivada 3* mehmonxonada
-                  SGL/DBL/TWN xonada nonushta bilan joylashtirish;
+                  Accommodation in 3* hotels in Tashkent, Samarkand, Bukhara, and Khiva with breakfast in SGL/DBL/TWN rooms;
                 </li>
                 <li>
-                  Toshkent-Samarqand iqtisodiy poyezd chiptasi (Afrosiyob/Sharq)
-                  tashrif kuni chiptalar mavjudligiga qarab;
+                  Economy train ticket Tashkent-Samarkand (Afrosiyob/Sharq) subject to availability on travel date;
                 </li>
                 <li>
-                  Samarqand-Buxoro iqtisodiy poyezd chiptasi (Afrosiyob/Sharq)
-                  tashrif kuni chiptalar mavjudligiga qarab;
+                  Economy train ticket Samarkand-Bukhara (Afrosiyob/Sharq) subject to availability on travel date;
                 </li>
-                <li>Buxoro-Xiva-Urganch qulay sedan avtomobilida;</li>
-                <li>Urganch-Toshkent ichki parvoz;</li>
+                <li>Comfortable sedan car transfer Bukhara-Khiva-Urgench;</li>
+                <li>Domestic flight Urgench-Tashkent;</li>
+                <li>Professional English-speaking guide services in all cities;</li>
                 <li>
-                  Barcha shaharlarda professional ingliz tilida so'zlashuvchi gid
-                  xizmatlari;
-                </li>
-                <li>
-                  Barcha transferlar, sayohatlar, shahar bo'ylab sayohatlar
-                  konditsionerli sedan avtomobil/minibus/avtobus bilan dasturga
-                  muvofiq;
+                  All transfers, excursions, city tours by air-conditioned sedan car/minibus/bus according to the program;
                 </li>
               </ol>
             </div>
 
             <div className="bg-red-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                Tur narxiga quyidagilar kirmaydi:
+                The tour price does not include:
               </h3>
               <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                <li>Xalqaro aviachiptalar;</li>
-                <li>Turistik e-viza to'lovlari;</li>
-                <li>Erta kirish va kech chiqish;</li>
-                <li>Tushlik va kechki ovqatlar;</li>
-                <li>Mehmonxonalarda qo'shimcha xizmatlar uchun to'lovlar;</li>
+                <li>International air tickets;</li>
+                <li>Tourist e-visa fees;</li>
+                <li>Early check-in and late check-out;</li>
+                <li>Lunches and dinners;</li>
+                <li>Additional services at hotels;</li>
                 <li>
-                  Diqqatga sazovor joylarda suratga va videoga olish uchun
-                  to'lovlar;
+                  Photo and video shooting fees at sightseeing locations;
                 </li>
-                <li>Shaxsiy sug'urta;</li>
-                <li>Choy puli va xizmat haqlari;</li>
-                <li>Yuqoridagi dasturga kiritilmagan har qanday xizmatlar.</li>
+                <li>Personal insurance;</li>
+                <li>Tips and service charges;</li>
+                <li>Any services not included in the above program.</li>
               </ol>
               <p className="mt-4 text-gray-600">
-                Diqqatga sazovor joylarga kirish to'lovlari o'z hisobingizdan.
+                Entrance fees to attractions are at your own expense.
               </p>
             </div>
           </div>

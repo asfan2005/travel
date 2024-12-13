@@ -38,7 +38,7 @@ function SharxPage() {
     <div className="w-full py-4 md:py-6 lg:py-10">
       {/* Sarlavha */}
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-6 lg:mb-10 text-gray-800">
-        Kompaniya sharhlari
+      Company reviews
       </h1>
 
       <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">

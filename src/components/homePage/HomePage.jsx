@@ -22,7 +22,7 @@ function HomePage() {
 
   return (
     <div>
-      <Home />
+      <Home/>
       <Mashhur />
       <MashhurSayohat />
       <Tavsiya />

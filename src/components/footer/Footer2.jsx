@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaTelegram, FaWhatsapp, FaFacebook } from "react-icons/fa";
 import {Link,useNavigate} from "react-router-dom"
 function Footer2() {
   const navigate=useNavigate();
@@ -14,7 +14,7 @@ function Footer2() {
             className="h-20 object-contain"
           />
           <p className="text-gray-400 text-xs max-w-[250px]">
-            © All site materials belong to Bekirova travel LLC and are protected by copyright.
+            © All site materials belong to Canaan Travel LLC and are protected by copyright.
           </p>
         </div>
 
@@ -75,12 +75,12 @@ function Footer2() {
             The site is not a public offer.
           </p>
           <p className="text-gray-400 max-w-[250px]">
-            Licensed tour operator in Uzbekistan. We are in the register of companies of the country
+            Licensed tour operator in Uzbekistan. We are officially registered in the national company registry.
           </p>
           {/* Social icons */}
           <div className="flex space-x-4">
             <a 
-              href="https://instagram.com" 
+              href="https://instagram.com/travelcationsuz" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-full p-2.5 hover:opacity-80 transition-opacity"
@@ -88,7 +88,15 @@ function Footer2() {
               <FaInstagram className="w-5 h-5 text-black" />
             </a>
             <a 
-              href="https://telegram.org" 
+              href="https://facebook.com/travelcationsuz" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-full p-2.5 hover:opacity-80 transition-opacity"
+            >
+              <FaFacebook className="w-5 h-5 text-black" />
+            </a>
+            <a 
+              href="https://t.me/travelcationsuz" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-full p-2.5 hover:opacity-80 transition-opacity"
@@ -96,7 +104,7 @@ function Footer2() {
               <FaTelegram className="w-5 h-5 text-black" />
             </a>
             <a 
-              href="https://whatsapp.com" 
+              href="https://wa.me/998907113338" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-full p-2.5 hover:opacity-80 transition-opacity"

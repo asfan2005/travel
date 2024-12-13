@@ -6,7 +6,7 @@ function Afzallig() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
 
-  // Email validatsiya uchun regex
+  // Email validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleEmailChange = (e) => {
@@ -14,7 +14,7 @@ function Afzallig() {
     setEmail(value);
     
     if (value && !emailRegex.test(value)) {
-      setError("Noto'g'ri email format");
+      setError("Invalid email format");
     } else {
       setError("");
     }
@@ -24,7 +24,7 @@ function Afzallig() {
     e.preventDefault();
     
     if (!emailRegex.test(email)) {
-      setError("Noto'g'ri email format");
+      setError("Invalid email format");
       return;
     }
 
@@ -46,11 +46,11 @@ function Afzallig() {
   return (
     <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-20 bg-gradient-to-b from-purple-50 to-white">
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-center mb-8 lg:mb-16 hover:scale-105 transition-transform cursor-pointer animate-gradient">
-        ✨ Sayohat Sarguzashtlari Sizni Kutmoqda! ✨
+        ✨ Travel Adventures Await You! ✨
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
-        {/* Birinchi card */}
+        {/* First card */}
         <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-purple-500 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           <div className="flex justify-center mb-4 lg:mb-8">
@@ -61,14 +61,14 @@ function Afzallig() {
             </div>
           </div>
           <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 bg-clip-text text-transparent">
-            🌟 Ajoyib Sayohat Tajribasi
+            🌟 Amazing Travel Experience
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
-            Har bir sayohat – yangi hikoya! 🌄 Tog'larning mag'rur cho'qqilari, 🏞️ vodiylarning go'zal manzaralari, 🌺 tarixiy obidalaru zamonaviy shaharsozlik – barchasi sizni kutmoqda!
+            Every journey is a new story! 🌄 Majestic mountain peaks, 🏞️ beautiful valley landscapes, 🌺 historical monuments and modern cities - all waiting for you!
           </p>
         </div>
 
-        {/* Ikkinchi card */}
+        {/* Second card */}
         <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-purple-500 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           <div className="flex justify-center mb-4 lg:mb-8">
@@ -79,14 +79,14 @@ function Afzallig() {
             </div>
           </div>
           <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
-            Jahon Meros Obidalari
+            World Heritage Sites
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
-            🏛️ UNESCO merosi bo'lgan mo'jizalarni kashf eting! Registon maydonining hashamatli gumbazlari, 🏺 Gʻijduvon kulolchiligining noyob san'ati, ⚜️ Shohizinda ansamblining betakror me'morchiligi sizni kutmoqda!
+            🏛️ Discover UNESCO heritage wonders! Experience the magnificent domes of Registan Square, 🏺 unique art of Gijduvan pottery, ⚜️ and the incomparable architecture of Shakhrisabz!
           </p>
         </div>
 
-        {/* Uchinchi card */}
+        {/* Third card */}
         <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-purple-500 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           <div className="flex justify-center mb-4 lg:mb-8">
@@ -98,10 +98,10 @@ function Afzallig() {
             </div>
           </div>
           <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
-            Buyuk Ipak Yo'li Tarixi
+            Great Silk Road History
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
-            🐪 Ming yillik tarix izidan sayohat! Qadimiy karvonsaroylar, 🏺 sharq bozorlarining tarovati, 🎭 ko'hna madaniyat va an'analar – barchasi sizni kutmoqda. Ipak yo'lining sehrli dunyosiga sayohat qiling!
+            🐪 Travel through thousand years of history! Ancient caravanserais, 🏺 oriental bazaars, 🎭 ancient culture and traditions - all await you. Journey into the magical world of the Silk Road!
           </p>
         </div>
       </div>
@@ -109,10 +109,10 @@ function Afzallig() {
       {/* Email subscription form */}
       <div className="max-w-2xl mx-auto mt-8 sm:mt-12 lg:mt-20 bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 transform hover:scale-[1.02] transition-all duration-300">
         <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 bg-clip-text text-transparent">
-          🎉 Maxsus Takliflardan Birinchi Bo'lib Xabardor Bo'ling!
+          🎉 Be the First to Know About Special Offers!
         </h3>
         <p className="text-gray-600 text-center mb-6">
-          Eng sara sayohat paketlari, maxsus chegirmalar va yangi yo'nalishlar haqida birinchilardan bo'lib biling! ✈️
+          Be among the first to learn about premium travel packages, special discounts, and new destinations! ✈️
         </p>
         <form onSubmit={handleSubmit} className="relative">
           <div className="flex flex-col gap-2">
@@ -121,7 +121,7 @@ function Afzallig() {
                 type="email"
                 value={email}
                 onChange={handleEmailChange}
-                placeholder="✉️ Email manzilingizni kiriting"
+                placeholder="✉️ Enter your email address"
                 required
                 pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
                 className={`flex-1 px-3 sm:px-4 py-2 sm:py-3 rounded-xl border ${
@@ -133,7 +133,7 @@ function Afzallig() {
                 disabled={loading || error || !email}
                 className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap transform hover:scale-105 active:scale-95"
               >
-                {loading ? "✨ Yuborilmoqda..." : "🚀 Obuna bo'lish"}
+                {loading ? "✨ Sending..." : "🚀 Subscribe"}
               </button>
             </div>
             {error && (
@@ -167,16 +167,16 @@ function Afzallig() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 mb-2">
-                🎊 Tabriklaymiz! 🎊
+                🎊 Congratulations! 🎊
               </h3>
               <p className="text-gray-600 text-lg">
-                Sizning so'rovingiz muvaffaqiyatli qabul qilindi! Tez orada eng qiziqarli takliflar sizning pochtangizda bo'ladi! ✨
+                Your subscription has been successfully received! The most exciting offers will be in your inbox soon! ✨
               </p>
               <button
                 onClick={() => setShowModal(false)}
                 className="mt-6 px-8 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95"
               >
-                Yopish ✨
+                Close ✨
               </button>
             </div>
           </div>

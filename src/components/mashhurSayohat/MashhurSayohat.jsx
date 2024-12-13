@@ -7,103 +7,103 @@ import "slick-carousel/slick/slick-theme.css";
 const tourData = [
   {
     id: 1,
-    title: "O'zbekistonda Yangi Yil - 2024-2025",
+    title: "New Year in Uzbekistan - 2024-2025",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "774",
-    duration: "7 kun / 6 kecha",
+    duration: "7 days / 6 nights",
     rating: 4.8
   },
   {
     id: 2,
-    title: "O'zbekistonning Ming bir kechasi",
+    title: "Thousand and One Nights of Uzbekistan",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "715",
-    duration: "10 kun / 9 kecha",
+    duration: "10 days / 9 nights",
     rating: 4.5
   },
   {
     id: 3,
-    title: "Qadimiy Karvon yo'llari bo'ylab",
+    title: "Along the Ancient Caravan Routes",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "520",
-    duration: "8 kun / 7 kecha",
+    duration: "8 days / 7 nights",
     rating: 4.2
   },
   {
     id: 4,
-    title: "Buyuk Ipak yo'li bo'ylab sayohat",
+    title: "Journey Along the Great Silk Road",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "850",
-    duration: "12 kun / 11 kecha",
+    duration: "12 days / 11 nights",
     rating: 4.7
   },
   {
     id: 5,
-    title: "Toshkent - Samarqand sayohati",
+    title: "Tashkent - Samarkand Tour",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "450",
-    duration: "3 kun / 2 kecha",
+    duration: "3 days / 2 nights",
     rating: 4.6
   },
   {
     id: 6,
-    title: "Buxoro tarixi bo'ylab",
+    title: "Through the History of Bukhara",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "580",
-    duration: "4 kun / 3 kecha",
+    duration: "4 days / 3 nights",
     rating: 4.4
   },
   {
     id: 7,
-    title: "Xiva - Qadimiy shahar",
+    title: "Khiva - The Ancient City",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "620",
-    duration: "5 kun / 4 kecha",
+    duration: "5 days / 4 nights",
     rating: 4.3
   },
   {
     id: 8,
-    title: "Farg'ona vodiysi bo'ylab",
+    title: "Through the Fergana Valley",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "480",
-    duration: "6 kun / 5 kecha",
+    duration: "6 days / 5 nights",
     rating: 4.5
   },
   // Yana 4 ta element
   {
     id: 9,
-    title: "Termiz - Buddaviylik tarixi",
+    title: "Termiz - History of Buddhism",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "590",
-    duration: "4 kun / 3 kecha",
+    duration: "4 days / 3 nights",
     rating: 4.2
   },{
     id: 10,
-    title: "Shahrisabz - Amir Temur vatani",
+    title: "Shahrisabz - Homeland of Amir Temur",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "420",
-    duration: "3 kun / 2 kecha",
+    duration: "3 days / 2 nights",
     rating: 4.4
   },
   {
     id: 11,
-    title: "Nurota tog'lari sari",
+    title: "To the Nurota Mountains",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "680",
-    duration: "5 kun / 4 kecha",
+    duration: "5 days / 4 nights",
     rating: 4.6
   },
   {
     id: 12,
-    title: "Zarafshon vodiysi bo'ylab",
+    title: "Through the Zarafshan Valley",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "550",
-    duration: "4 kun / 3 kecha",
+    duration: "4 days / 3 nights",
     rating: 4.3
   }
 ];
 
-function MashhurSayohat() {
+function PopularTours() {
   const settings = {
     dots: true,
     dotsClass: "slick-dots custom-dots",
@@ -139,11 +139,11 @@ function MashhurSayohat() {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold">
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Mashhur Sayohatlar
+              Popular Tours
             </span>
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
-            Eng sara va sevimli sayohat yo'nalishlari
+            The best and favorite travel destinations
           </p>
           <div className="flex items-center justify-center gap-2 mt-3">
             <span className="h-1 w-20 bg-gradient-to-r from-purple-600 to-transparent rounded-full"></span>
@@ -241,7 +241,7 @@ function MashhurSayohat() {
                             </div>
                             <div className="absolute opacity-0 group-hover/book:opacity-100 transition-all duration-300 -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap">
                               <div className="bg-white text-gray-900 px-4 py-2 rounded-lg shadow-lg text-sm font-medium">
-                                Band qilish
+                                Book Now
                               </div>
                               <div className="w-3 h-3 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2"></div>
                             </div>
@@ -260,4 +260,4 @@ function MashhurSayohat() {
   );
 }
 
-export default MashhurSayohat;
+export default PopularTours;

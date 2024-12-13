@@ -12,7 +12,6 @@ function Contact() {
       <Contact1 />
       <Contact2 />
       <Contact3 />
-      <Footer2 />
     </div>
   );
 }

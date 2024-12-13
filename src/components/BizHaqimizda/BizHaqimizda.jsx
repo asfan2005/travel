@@ -4,35 +4,35 @@ import { BiTargetLock, BiSupport } from 'react-icons/bi';
 import { MdSecurity, MdTravelExplore } from 'react-icons/md';
 import CountUp from 'react-countup';
 
-// Statistika ma'lumotlari
+// Statistics data
 const stats = [
   {
     icon: FaUsers,
     end: 1000,
     suffix: "+",
-    title: "Mamnun mijozlar",
+    title: "Satisfied Clients",
   },
   {
     icon: MdTravelExplore,
     end: 50,
     suffix: "+",
-    title: "Sayohat yo'nalishlari",
+    title: "Travel Destinations",
   },
   {
     icon: FaHandshake,
     end: 100,
     suffix: "+",
-    title: "Hamkorlar",
+    title: "Partners",
   },
   {
     icon: FaAward,
     end: 15,
     suffix: "+",
-    title: "Yillik tajriba",
+    title: "Years of Experience",
   },
 ];
 
-// Counter komponenti
+// Counter component
 const StatCounter = ({ icon: Icon, end, suffix, title }) => {
   return (
     <div className="bg-blue-50 p-4 rounded-lg text-center transform hover:scale-105 transition-transform duration-300">
@@ -51,24 +51,24 @@ const StatCounter = ({ icon: Icon, end, suffix, title }) => {
   );
 };
 
-function BizHaqimizda() {
+function AboutUs() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 sm:mt-24">
-      {/* Sarlavha */}
+      {/* Title */}
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-blue-600 mb-8">
-        Advantour - Buyuk Ipak Yo'lidagi Sayohat Operatori
+        TravelCations - Your Trusted Travel Partner in Uzbekistan
       </h1>
 
-      {/* Asosiy rasm */}
+      {/* Main image */}
       <div className="mb-12">
         <img
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
-          alt="Advantour jamoasi"
+          alt="Advantour Team"
           className="w-full h-[250px] sm:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg"
         />
       </div>
 
-      {/* Statistika */}
+      {/* Statistics */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
         {stats.map((stat, index) => (
           <StatCounter
@@ -81,110 +81,71 @@ function BizHaqimizda() {
         ))}
       </div>
 
-      {/* Vision bo'limi */}
+      {/* Company Introduction */}
       <div className="mb-16 bg-gradient-to-r from-blue-50 to-white p-6 sm:p-8 rounded-xl shadow-lg">
-        <div className="flex items-center mb-6">
-          <BiTargetLock className="w-8 h-8 text-blue-600 mr-3" />
-          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800">Bizning maqsadimiz</h2>
-        </div>
         <div className="space-y-4 text-gray-700">
           <p className="text-base sm:text-lg leading-relaxed">
-            Markaziy Osiyoning qadimiy madaniyati va zamonaviy hayotini dunyoga namoyon etish orqali, 
-            Yevropa va Osiyo sayohatchilarini birlashtiruvchi ishonchli ko'prik vazifasini o'tash.
+            Established on December 10, 2024, our travel company offers the highest level of service 
+            on all routes across Uzbekistan while maintaining affordable prices.
           </p>
           <p className="text-base sm:text-lg leading-relaxed">
-            Biz nafaqat sayohat tashkilotchisi, balki madaniyatlar o'rtasidagi muloqot elchisi bo'lishga intilamiz. 
-            Har bir sayohatchi uchun Markaziy Osiyoning betakror go'zalligini, boy tarixini va mehmondo'st xalqini 
-            kashf etish imkoniyatini yaratamiz.
+            We specialize in hosting guests from Europe, Asia, and America, as well as providing 
+            local tourism services. For residents and visitors of our beautiful republic, we develop 
+            interesting routes and exciting tours throughout Uzbekistan.
           </p>
         </div>
       </div>
 
-      {/* Mission bo'limi */}
-      <div className="mb-16 bg-gradient-to-r from-white to-blue-50 p-6 sm:p-8 rounded-xl shadow-lg">
-        <div className="flex items-center mb-6">
-          <FaGlobe className="w-8 h-8 text-blue-600 mr-3" />
-          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800">Bizning vazifamiz</h2>
-        </div>
-        <div className="space-y-4 text-gray-700">
-          <p className="text-base sm:text-lg leading-relaxed">
-            Biz yuqori malakali sayohat operatori sifatida, har bir mijozga alohida e'tibor va individual yondashuv 
-            bilan xizmat ko'rsatamiz. Bizning professional jamoamiz sizning sayohatingizni unutilmas taassurotlarga 
-            boy qilish uchun tinimsiz mehnat qiladi.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="flex items-start space-x-4">
-              <MdSecurity className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold mb-2">Xavfsizlik va ishonch</h3>
-                <p className="text-sm text-gray-600">Mijozlarimiz xavfsizligi va qulayligi bizning ustuvor vazifamiz</p>
-              </div>
+      {/* Additional Services */}
+      <div className="mb-16 bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+        <h2 className="text-2xl font-bold text-blue-800 mb-6">Our Additional Services</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-blue-50 p-4 rounded-lg">
+            <h3 className="font-semibold text-blue-800 mb-2">Travel Support</h3>
+            <p className="text-gray-700">Visa support for Uzbekistan</p>
+            <p className="text-gray-700">Hotel bookings across the country</p>
+          </div>
+          
+          <div className="bg-blue-50 p-4 rounded-lg">
+            <h3 className="font-semibold text-blue-800 mb-2">Tour Types</h3>
+            <div className="grid grid-cols-2 gap-2">
+              <p className="text-gray-700">Mountain tours</p>
+              <p className="text-gray-700">Hiking tours</p>
+              <p className="text-gray-700">Horse riding tours</p>
+              <p className="text-gray-700">Camel tours</p>
+              <p className="text-gray-700">Cycling tours</p>
+              <p className="text-gray-700">Agritourism</p>
+              <p className="text-gray-700">Botanical tours</p>
+              <p className="text-gray-700">Business tours</p>
             </div>
-            <div className="flex items-start space-x-4">
-              <BiSupport className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold mb-2">24/7 qo'llab-quvvatlash</h3>
-                <p className="text-sm text-gray-600">Professional jamoamiz doimo yordam berishga tayyor</p>
-              </div>
-            </div>
+          </div>
+          
+          <div className="bg-blue-50 p-4 rounded-lg md:col-span-2">
+            <h3 className="font-semibold text-blue-800 mb-2">Entertainment Programs</h3>
+            <p className="text-gray-700">
+              We offer various entertainment programs in excursion cities including folklore shows,
+              factory visits, pottery workshops, and airport/station transfers with national artists
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Xizmatlar */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-12">
-        <div className="text-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-          <img 
-            src="https://cdn-icons-png.flaticon.com/512/2158/2158475.png" 
-            alt="Turlar va ekskursiyalar" 
-            className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4" 
-          />
-          <p className="text-sm sm:text-base font-medium">Turlar va ekskursiyalar</p>
-        </div>
-        <div className="text-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-          <img 
-            src="https://cdn-icons-png.flaticon.com/512/1475/1475996.png" 
-            alt="Mehmonxonalar" 
-            className="w-16 h-16 mx-auto mb-4" 
-          />
-          <p>Mehmonxonalar</p>
-        </div>
-        <div className="text-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-          <img 
-            src="https://cdn-icons-png.flaticon.com/512/3159/3159466.png" 
-            alt="San'at va madaniyat" 
-            className="w-16 h-16 mx-auto mb-4" 
-          />
-          <p>San'at va madaniyat</p>
-        </div>
-        <div className="text-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-          <img 
-            src="https://cdn-icons-png.flaticon.com/512/3774/3774278.png" 
-            alt="Transport" 
-            className="w-16 h-16 mx-auto mb-4" 
-          />
-          <p>Transport</p>
-        </div>
-      </div>
-
-      {/* Kontakt ma'lumotlari */}
+      {/* Contact Information */}
       <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
         <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <h3 className="font-semibold text-lg mb-4 text-blue-800">Toshkent ofisi:</h3>
+          <h3 className="font-semibold text-lg mb-4 text-blue-800">Contact Us:</h3>
           <div className="space-y-2 text-gray-600">
-            <p>Mirzo Ulug'bek tumani</p>
-            <p>Toshkent, O'zbekiston</p>
-            <p className="font-medium">Tel: +998 71 230-11-27</p>
-            <p className="font-medium">Email: info@advantour.com</p>
+            <p className="font-medium">Phone: +998 90 711 33 38</p>
+            <p className="text-sm">(Available on WhatsApp & Telegram)</p>
+            <p className="font-medium">Email: travelcationsuz@gmail.com</p>
           </div>
         </div>
         <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <h3 className="font-semibold text-lg mb-4 text-blue-800">Samarqand ofisi:</h3>
+          <h3 className="font-semibold text-lg mb-4 text-blue-800">Working Hours:</h3>
           <div className="space-y-2 text-gray-600">
-            <p>Registon maydoni</p>
-            <p>Samarqand, O'zbekiston</p>
-            <p className="font-medium">Tel: +998 91 555-55-55</p>
-            <p className="font-medium">Email: samarkand@advantour.com</p>
+            <p>Monday - Friday: 9:00 - 18:00</p>
+            <p>Saturday: 10:00 - 15:00</p>
+            <p>Sunday: Closed</p>
           </div>
         </div>
       </div>
@@ -192,4 +153,4 @@ function BizHaqimizda() {
   );
 }
 
-export default BizHaqimizda;
+export default AboutUs;

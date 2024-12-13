@@ -86,7 +86,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 mb-4 relative inline-block group">
-            Bizning Hamkorlar
+          Our Partners
             <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 group-hover:w-full transition-all duration-500 ease-in-out"></span>
             <span className="absolute -top-2 right-0 w-0 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-600 group-hover:w-full transition-all duration-500 ease-in-out delay-100"></span>
             <span className="absolute -left-2 top-0 h-0 w-1 bg-gradient-to-b from-blue-600 via-purple-500 to-pink-500 group-hover:h-full transition-all duration-500 ease-in-out delay-200"></span>
@@ -122,7 +122,7 @@ function Footer() {
             <span className="absolute -left-6 top-0 text-3xl text-blue-500 opacity-50">
               ❝
             </span>
-            Ishonchli hamkorlik - muvaffaqiyatli sayohatlar garovi
+            Reliable cooperation is the guarantee of successful trips
             <span className="absolute -right-6 bottom-0 text-3xl text-blue-500 opacity-50">
               ❞
             </span>

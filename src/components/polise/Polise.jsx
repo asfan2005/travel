@@ -11,219 +11,219 @@ function Polise() {
       {/* 2-bo'lim: Umumiy qoidalar */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          1. Umumiy qoidalar
+          1. General rules
         </h2>
         <p className="mb-4 leading-relaxed">
-          Ushbu shaxsiy ma'lumotlarni qayta ishlash siyosati 27.07.2006 yildagi
-          "Shaxsiy ma'lumotlar to'g'risida"gi Federal qonun talablariga muvofiq
-          tuzilgan va "Bekirova travel" MChJ (keyingi o'rinlarda - Operator)
-          tomonidan shaxsiy ma'lumotlarni qayta ishlash tartibini va shaxsiy
-          ma'lumotlar xavfsizligini ta'minlash choralarini belgilaydi.
+          This personal data processing policy is dated 27.07.2006
+          In accordance with the requirements of the Federal Law "On Personal Data".
+          was established and "Bekirova travel" LLC (hereinafter - Operator)
+          The procedure for processing personal data and personal
+          defines measures to ensure data security.
         </p>
         <p className="mb-4 leading-relaxed">
-          1.1. Operator o'z faoliyatining eng muhim maqsadi va sharti sifatida
-          fuqarolarning shaxsiy ma'lumotlarini qayta ishlashda ularning huquq va
-          erkinliklarini, shu jumladan shaxsiy hayot daxlsizligi, shaxsiy va
-          oilaviy sir huquqlarini himoya qilishni belgilaydi.
+          1.1. The operator as the most important goal and condition of his activity
+          citizens' rights in processing personal data and
+          freedoms, including privacy, personal and
+          defines the protection of family privacy rights.
         </p>
         <p className="mb-4 leading-relaxed">
-          1.2. Ushbu siyosat Operator http://bekirova.uz/ veb-saytining tashrif
-          buyuruvchilari haqida olishi mumkin bo'lgan barcha ma'lumotlarga
-          nisbatan qo'llaniladi.
+          1.2. This policy is for the visit of the website of the Operator http://bekirova.uz/
+          to all the information he can get about his orders
+          applied to.
         </p>
       </section>
       {/* 3-bo'lim: Asosiy tushunchalar */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          2. Asosiy tushunchalar
+          2. Basic concepts
         </h2>
         <p className="mb-4 leading-relaxed">
-          2.1. Shaxsiy ma'lumotlarni avtomatlashtirilgan qayta ishlash —
-          kompyuter texnologiyalaridan foydalangan holda shaxsiy ma'lumotlarni
-          qayta ishlash.
+          2.1. Automated processing of personal data —
+          personal data using computer technologies
+          processing.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.2. Shaxsiy ma'lumotlarni bloklash — shaxsiy ma'lumotlarni qayta
-          ishlashni vaqtincha to'xtatish (shaxsiy ma'lumotlarni aniqlash uchun
-          qayta ishlash zarur bo'lgan holatlar bundan mustasno).
+          2.2. Blocking personal data — re-enter personal data
+          temporary suspension of work (to identify personal data
+          except where processing is necessary).
         </p>
         <p className="mb-4 leading-relaxed">
-          2.3. Veb-sayt —{" "}
+          2.3. Website —{" "}
           <a
             href="http://bekirova.uz"
             className="text-blue-600 hover:text-blue-800 hover:underline"
           >
             http://bekirova.uz
           </a>{" "}
-          tarmoq manzili bo'yicha internetda joylashgan grafik va axborot
-          materiallari, shuningdek ularning dasturiy ta'minoti va ma'lumotlar
-          bazalari majmui.
+          graphics and information located on the Internet by network address
+          materials, as well as their software and data
+          set of bases.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.4. Shaxsiy ma'lumotlar axborot tizimi — ma'lumotlar bazalarida
-          mavjud bo'lgan shaxsiy ma'lumotlar va ularni qayta ishlashni
-          ta'minlovchi axborot texnologiyalari va texnik vositalar majmui.
+          2.4. Personal information information system — in databases
+          personal data available and their processing
+          a set of providing information technologies and technical tools.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.5. Shaxsiy ma'lumotlarni maxfiylash — qo'shimcha ma'lumotlardan
-          foydalanmasdan turib ma'lum bir Foydalanuvchi yoki boshqa shaxsiy
-          ma'lumotlar subyektiga tegishli shaxsiy ma'lumotlarni aniqlash
-          imkonini bermaydigan harakatlar.
+          2.5. Confidentiality of personal information - from additional information
+          without using a specific User or other personal
+          identification of personal data relating to the data subject
+          actions that do not allow.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.6. Shaxsiy ma'lumotlarni qayta ishlash — avtomatlashtirish
-          vositalari yordamida yoki bunday vositalardan foydalanmasdan shaxsiy
-          ma'lumotlar bilan amalga oshiriladigan har qanday harakat (operatsiya)
-          yoki harakatlar (operatsiyalar) majmui, jumladan yig'ish, yozish,
-          tizimlashtirish, to'plash, saqlash, aniqlashtirish (yangilash,
-          o'zgartirish), olish, foydalanish, uzatish (tarqatish, taqdim etish,
-          kirish), maxfiylash, bloklash, o'chirish, yo'q qilish.
+          2.6. Processing of personal data - automation
+          personal with or without the use of such tools
+          any action (operation) performed with data
+          or a set of actions (operations), including collecting, writing,
+          systematization, collection, storage, clarification (updating,
+          change), obtain, use, transmit (distribute, provide,
+          access), privacy, blocking, deletion, destruction.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.7. Operator — davlat organi, munitsipal organ, yuridik yoki jismoniy
-          shaxs bo'lib, mustaqil ravishda yoki boshqa shaxslar bilan birgalikda
-          shaxsiy ma'lumotlarni qayta ishlashni tashkil etuvchi va (yoki) amalga
-          oshiruvchi, shuningdek shaxsiy ma'lumotlarni qayta ishlash
-          maqsadlarini, qayta ishlanadigan shaxsiy ma'lumotlar tarkibini,
-          shaxsiy ma'lumotlar bilan bajariladigan harakatlarni (operatsiyalarni)
-          belgilovchi shaxs.
+          2.7. The operator is a state body, municipal body, legal entity or individual
+          being a person, independently or together with other persons
+          organizing and (or) performing personal data processing
+          increasing as well as personal data processing
+          purposes, content of personal data processed,
+          actions (operations) performed with personal data
+          determining person.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.8. Shaxsiy ma'lumotlar —{" "}
+          2.8. Personal information —{" "}
           <a
             href="http://bekirova.uz"
             className="text-blue-600 hover:text-blue-800 hover:underline"
           >
             http://bekirova.uz
           </a>{" "}
-          veb-sayti Foydalanuvchisiga to'g'ridan-to'g'ri yoki bilvosita tegishli
-          bo'lgan har qanday ma'lumot.
+          directly or indirectly owned by the User of the website
+          any information that is.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.9. Tarqatish uchun ruxsat etilgan shaxsiy ma'lumotlar — shaxsiy
-          ma'lumotlar subyekti tomonidan Shaxsiy ma'lumotlar to'g'risidagi
-          qonunda nazarda tutilgan tartibda tarqatish uchun ruxsat etilgan
-          shaxsiy ma'lumotlarni qayta ishlashga rozilik berish orqali
-          cheklanmagan doiradagi shaxslar foydalanishi mumkin bo'lgan shaxsiy
-          ma'lumotlar.
+          2.9. Personal information authorized for distribution is personal
+          on Personal Data by the data subject
+          authorized for distribution in accordance with the law
+          by consenting to the processing of personal data
+          private that can be used by an unlimited number of people
+          data.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.10. Foydalanuvchi —{" "}
+          2.10. User —{" "}
           <a
             href="http://bekirova.uz"
             className="text-blue-600 hover:text-blue-800 hover:underline"
           >
             http://bekirova.uz
           </a>{" "}
-          veb-saytining har qanday tashrif buyuruvchisi.
+          any visitor to the website.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.11. Shaxsiy ma'lumotlarni taqdim etish — shaxsiy ma'lumotlarni
-          ma'lum bir shaxsga yoki ma'lum bir doiradagi shaxslarga oshkor
-          qilishga qaratilgan harakatlar.
+          2.11. Provision of Personal Information — Personal Information
+          disclosure to a specific person or group of persons
+          actions aimed at doing.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.12. Shaxsiy ma'lumotlarni tarqatish — shaxsiy ma'lumotlarni noma'lum
-          doiradagi shaxslarga oshkor qilishga (shaxsiy ma'lumotlarni uzatish)
-          yoki cheklanmagan doiradagi shaxslarni shaxsiy ma'lumotlar bilan
-          tanishtirish, shu jumladan ommaviy axborot vositalarida e'lon qilish,
-          axborot-telekommunikatsiya tarmoqlarida joylashtirish yoki boshqa
-          usulda shaxsiy ma'lumotlarga kirishni ta'minlashga qaratilgan har
-          qanday harakatlar.
+          2.12. Disclosure of personal information — personal information is anonymous
+          to disclose to persons within the scope (transfer of personal data)
+          or non-restricted persons with personal information
+          introduction, including publication in the mass media,
+          placement in information and telecommunication networks or other
+          method aimed at providing access to personal data
+          what actions
         </p>
         <p className="mb-4 leading-relaxed">
-          2.13. Shaxsiy ma'lumotlarni transchegaraviy uzatish — shaxsiy
-          ma'lumotlarni chet davlat hududiga, chet davlat hokimiyat organiga,
-          chet el jismoniy yoki yuridik shaxsiga uzatish.
+          2.13. Cross-border transfer of personal data — personal
+          data to the territory of a foreign state, to the authority of a foreign state,
+          transfer to a foreign individual or legal entity.
         </p>
         <p className="mb-4 leading-relaxed">
-          2.14. Shaxsiy ma'lumotlarni yo'q qilish — shaxsiy ma'lumotlar axborot
-          tizimida shaxsiy ma'lumotlar mazmunini keyinchalik tiklash
-          imkoniyatisiz qaytarib bo'lmas darajada yo'q qilish va/yoki shaxsiy
-          ma'lumotlarning moddiy tashuvchilarini yo'q qilish natijasida amalga
-          oshiriladigan har qanday harakatlar.
+          2.14. Deletion of personal data — personal data is information
+          later restore the content of personal data in the system
+          irretrievably destroyed without possibility and/or personal
+          carried out as a result of the destruction of material carriers of information
+          any actions to be taken.
         </p>
       </section>
 
       {/* 4-bo'lim: Operator huquq va majburiyatlari */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          3. Operator huquq va majburiyatlari
+          3. Rights and obligations of the operator
         </h2>
 
         <div className="mb-6">
           <h3 className="font-semibold mb-3">
-            3.1. Operator quyidagi huquqlarga ega:
+            3.1. The operator has the following rights:
           </h3>
           <ul className="list-disc pl-6 space-y-3">
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlar subyektidan ishonchli ma'lumotlar va/yoki
-              shaxsiy ma'lumotlarni o'z ichiga olgan hujjatlarni olish;
+              Reliable information from the personal data subject and/or
+              receive documents containing personal information;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlar subyekti tomonidan shaxsiy ma'lumotlarni qayta
-              ishlashga rozilik bekor qilingan taqdirda, shuningdek shaxsiy
-              ma'lumotlarni qayta ishlashni to'xtatish talabi bilan murojaat
-              qilingan taqdirda, Operator Shaxsiy ma'lumotlar to'g'risidagi
-              qonunda ko'rsatilgan asoslar mavjud bo'lganda shaxsiy ma'lumotlar
-              subyektining roziligisiz shaxsiy ma'lumotlarni qayta ishlashni
-              davom ettirish huquqiga ega;
+              Processing of personal data by the subject of personal data
+              in case of cancellation of consent to work, as well as personal
+              request to stop data processing
+              in case of making, the Operator on Personal Data
+              personal data when there are grounds specified by law
+              processing personal data without the subject's consent
+              has the right to continue;
             </li>
             <li className="leading-relaxed">
-              Agar Shaxsiy ma'lumotlar to'g'risidagi qonun yoki boshqa federal
-              qonunlarda boshqacha tartib nazarda tutilmagan bo'lsa, Shaxsiy
-              ma'lumotlar to'g'risidagi qonun va unga muvofiq qabul qilingan
-              me'yoriy-huquqiy hujjatlarda nazarda tutilgan majburiyatlarni
-              bajarilishini ta'minlash uchun zarur va yetarli bo'lgan choralar
-              tarkibi va ro'yxatini mustaqil belgilash;
+              If the Personal Data Act or other federal
+              unless otherwise provided by law, Personal
+              Data Act and adopted thereunder
+              obligations provided for in regulatory legal documents
+              necessary and sufficient measures to ensure its implementation
+              independent determination of content and list;
             </li>
           </ul>
         </div>
 
         <div>
           <h3 className="font-semibold mb-3">
-            3.2. Operator quyidagi majburiyatlarga ega:
+            3.2. The operator has the following obligations:
           </h3>
           <ul className="list-disc pl-6 space-y-3">
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlar subyektiga uning iltimosiga ko'ra o'z shaxsiy
-              ma'lumotlarini qayta ishlashga oid ma'lumotlarni taqdim etish;
+              Personal data to the subject at his request
+              provide information on data processing;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlarni O'zbekiston Respublikasining amaldagi
-              qonunchiligida belgilangan tartibda qayta ishlashni tashkil etish;
+              Personal data is valid in the Republic of Uzbekistan
+              organization of processing in accordance with the law;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlar subyektlari va ularning qonuniy vakillarining
-              murojaatlari va so'rovlariga Shaxsiy ma'lumotlar to'g'risidagi
-              qonun talablariga muvofiq javob berish;
+              Personal data subjects and their legal representatives
+              About Personal Data to applications and requests
+              comply with legal requirements;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlar subyektlarining huquqlarini himoya qilish
-              bo'yicha vakolatli organga ushbu organ so'rovini olgan kundan
-              boshlab 10 kun ichida zarur ma'lumotlarni taqdim etish;
+              Protection of the rights of personal data subjects
+              from the day of receiving the request of this body to the competent body
+              provide the necessary information within 10 days from the beginning;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlarni qayta ishlash bo'yicha ushbu Siyosatga
-              cheklanmagan kirish imkoniyatini nashr etish yoki boshqa usulda
-              ta'minlash;
+              To this Policy on the processing of personal data
+              publishing or otherwise providing unrestricted access
+              provide;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlarni noqonuniy yoki tasodifiy kirish, yo'q
-              qilish, o'zgartirish, bloklash, nusxa ko'chirish, taqdim etish,
-              tarqatish, shuningdek shaxsiy ma'lumotlarga nisbatan boshqa
-              noqonuniy harakatlardan himoya qilish uchun huquqiy, tashkiliy va
-              texnik choralarni ko'rish;
+              Illegal or accidental access to personal data, no
+              make, modify, block, copy, provide,
+              distribution, as well as other regarding personal data
+              legal, organizational and to protect against illegal activities
+              take technical measures;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlar to'g'risidagi qonunda nazarda tutilgan tartib
-              va hollarda shaxsiy ma'lumotlarni uzatishni (tarqatish, taqdim
-              etish, kirish) to'xtatish, qayta ishlashni to'xtatish va shaxsiy
-              ma'lumotlarni yo'q qilish;
+              The procedure provided for in the Personal Data Act
+              and in cases of transfer of personal data (distribution, presentation
+              reach, enter) stop, stop processing and private
+              data destruction;
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlar to'g'risidagi qonunda nazarda tutilgan boshqa
-              majburiyatlarni bajarish.
+              Other provided by the law on personal data
+              fulfill obligations.
             </li>
           </ul>
         </div>
@@ -237,62 +237,62 @@ function Polise() {
 
         <div className="mb-6">
           <h3 className="font-semibold mb-3">
-            4.1. Shaxsiy ma'lumotlar subyektlari quyidagi huquqlarga ega:
+            4.1. Personal data subjects have the following rights:
           </h3>
           <ul className="list-disc pl-6 space-y-3">
             <li className="leading-relaxed">
-              Federal qonunlarda nazarda tutilgan holatlar bundan mustasno, o'z
-              shaxsiy ma'lumotlarining qayta ishlanishiga oid ma'lumotlarni
-              olish. Ma'lumotlar shaxsiy ma'lumotlar subyektiga Operator
-              tomonidan tushunarli shaklda taqdim etiladi va ularda boshqa
-              shaxsiy ma'lumotlar subyektlariga tegishli ma'lumotlar bo'lmasligi
-              kerak, bunday ma'lumotlarni oshkor qilish uchun qonuniy asoslar
-              mavjud bo'lgan holatlar bundan mustasno. Ma'lumotlar ro'yxati va
-              ularni olish tartibi Shaxsiy ma'lumotlar to'g'risidagi qonun bilan
-              belgilangan;
+              With the exception of cases provided for by federal laws
+              information on the processing of personal data
+              get Data to the subject of personal data Operator
+              presented in an understandable form by and in them other
+              lack of information about personal data subjects
+              necessary, legal grounds for disclosing such information
+              except where applicable. Data list and
+              the procedure for obtaining them is with the Personal Data Act
+              specified;
             </li>
             <li className="leading-relaxed">
-              Agar shaxsiy ma'lumotlar to'liq bo'lmasa, eskirgan, noto'g'ri,
-              noqonuniy olingan yoki qayta ishlashning e'lon qilingan maqsadi
-              uchun zarur bo'lmasa, operatordan o'z shaxsiy ma'lumotlarini
-              aniqlashtirish, bloklash yoki yo'q qilishni talab qilish,
-              shuningdek o'z huquqlarini himoya qilish bo'yicha qonunda nazarda
-              tutilgan choralarni ko'rish;
+              If personal information is incomplete, outdated, inaccurate,
+              illegally obtained or declared purpose of processing
+              If not necessary, your personal data from the operator
+              request clarification, blocking or deletion,
+              as well as the law on the protection of their rights
+              action taken;
             </li>
             <li className="leading-relaxed">
-              Tovarlar, ishlar va xizmatlarni bozorda ilgari surish maqsadida
-              shaxsiy ma'lumotlarni qayta ishlashda dastlabki rozilik shartini
-              qo'yish;
+              In order to promote goods, works and services in the market
+              the condition of preliminary consent in the processing of personal data
+              to put
             </li>
             <li className="leading-relaxed">
-              Shaxsiy ma'lumotlarni qayta ishlashga berilgan rozilikni qaytarib
-              olish, shuningdek shaxsiy ma'lumotlarni qayta ishlashni to'xtatish
-              talabini yuborish;
+              Withdraw consent to personal data processing
+              stop receiving and processing personal data
+              send a request;
             </li>
             <li className="leading-relaxed">
-              Operator tomonidan uning shaxsiy ma'lumotlarini qayta ishlashda
-              qilingan noqonuniy harakatlar yoki harakatsizlik ustidan shaxsiy
-              ma'lumotlar subyektlarining huquqlarini himoya qilish bo'yicha
-              vakolatli organga yoki sud tartibida shikoyat qilish;
+              When processing his personal data by the operator
+              personal over illegal actions or omissions
+              on the protection of the rights of data subjects
+              appeal to an authorized body or in court;
             </li>
             <li className="leading-relaxed">
-              O'zbekiston Respublikasi qonunchiligida nazarda tutilgan boshqa
-              huquqlarni amalga oshirish.
+              Other provided by the legislation of the Republic of Uzbekistan
+              exercise rights.
             </li>
           </ul>
         </div>
 
         <div className="mb-6">
           <h3 className="font-semibold mb-3">
-            4.2. Shaxsiy ma'lumotlar subyektlari quyidagi majburiyatlarga ega:
+            4.2. Subjects of personal data have the following obligations:
           </h3>
           <ul className="list-disc pl-6 space-y-3">
             <li className="leading-relaxed">
-              Operatorga o'zi haqida ishonchli ma'lumotlarni taqdim etish;
+              Providing the operator with reliable information about himself;
             </li>
             <li className="leading-relaxed">
-              O'z shaxsiy ma'lumotlarining aniqlanishi (yangilanishi,
-              o'zgarishi) haqida Operatorga xabar berish.
+              Identifying (updating,
+              change) to notify the Operator.
             </li>
           </ul>
         </div>
@@ -300,112 +300,112 @@ function Polise() {
         <div>
           <h3 className="font-semibold mb-3">4.3. Qo'shimcha shartlar:</h3>
           <p className="leading-relaxed">
-            Operatorga o'zi haqida noto'g'ri ma'lumotlarni yoki boshqa shaxsiy
-            ma'lumotlar subyekti haqida uning roziligisiz ma'lumotlarni taqdim
-            etgan shaxslar O'zbekiston Respublikasi qonunchiligiga muvofiq
-            javobgar bo'ladilar.
+            Provide false information about yourself or other personal information to the operator
+            provide information about the data subject without his consent
+            in accordance with the legislation of the Republic of Uzbekistan
+            are responsible.
           </p>
         </div>
       </section>
       {/* 6-bo'lim: Shaxsiy ma'lumotlarni qayta ishlash tamoyillari */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          5. Shaxsiy ma'lumotlarni qayta ishlash tamoyillari
+          5. Principles of personal data processing
         </h2>
 
         <div className="space-y-4">
           <p className="leading-relaxed">
-            5.1. Shaxsiy ma'lumotlarni qayta ishlash qonuniy va adolatli asosda
-            amalga oshiriladi.
+            5.1. Processing of personal data is lawful and fair
+            is done.
           </p>
 
           <p className="leading-relaxed">
-            5.2. Shaxsiy ma'lumotlarni qayta ishlash aniq, oldindan belgilangan
-            va qonuniy maqsadlarga erishish bilan cheklanadi. Shaxsiy
-            ma'lumotlarni yig'ish maqsadlariga mos kelmaydigan tarzda qayta
-            ishlashga yo'l qo'yilmaydi.
+            5.2. The processing of personal data is clear, predetermined
+            and is limited to achieving legitimate goals. Personal
+            again in a manner inconsistent with the purposes of data collection
+            not allowed to work.
           </p>
 
           <p className="leading-relaxed">
-            5.3. O'zaro mos kelmaydigan maqsadlarda qayta ishlanadigan shaxsiy
-            ma'lumotlarni o'z ichiga olgan ma'lumotlar bazalarini birlashtirish
-            taqiqlanadi.
+            5.3. Personal processed for non-reciprocal purposes
+            integration of databases containing data
+            is prohibited.
           </p>
 
           <p className="leading-relaxed">
-            5.4. Faqat qayta ishlash maqsadlariga javob beradigan shaxsiy
-            ma'lumotlargina qayta ishlanishi mumkin.
+            5.4. Personal for processing purposes only
+            only data can be processed.
           </p>
 
           <p className="leading-relaxed">
-            5.5. Qayta ishlanadigan shaxsiy ma'lumotlarning mazmuni va hajmi
-            e'lon qilingan qayta ishlash maqsadlariga mos kelishi kerak. E'lon
-            qilingan maqsadlarga nisbatan qayta ishlanadigan shaxsiy
-            ma'lumotlarning ortiqchaligiga yo'l qo'yilmaydi.
+            5.5. Content and extent of personal data processed
+            must be consistent with the stated processing objectives. Announcement
+            personal to be processed for the purposes made
+            data redundancy is not allowed.
           </p>
 
           <p className="leading-relaxed">
-            5.6. Shaxsiy ma'lumotlarni qayta ishlashda shaxsiy ma'lumotlarning
-            aniqligi, yetarliligi, zarur hollarda esa shaxsiy ma'lumotlarni
-            qayta ishlash maqsadlariga nisbatan dolzarbligi ta'minlanadi.
-            Operator to'liq bo'lmagan yoki noaniq ma'lumotlarni o'chirish yoki
-            aniqlash bo'yicha zarur choralarni ko'radi va/yoki ularning qabul
-            qilinishini ta'minlaydi.
+            5.6. of personal data in the processing of personal data
+            accuracy, adequacy, and in necessary cases, personal data
+            relevance to the purposes of processing is ensured.
+            Operator delete incomplete or unclear data or
+            takes the necessary measures to identify and/or accept them
+            ensures that it is done.
           </p>
 
           <p className="leading-relaxed">
-            5.7. Shaxsiy ma'lumotlarni saqlash shaxsiy ma'lumotlar subyektini
-            aniqlash imkonini beradigan shaklda, agar shaxsiy ma'lumotlarni
-            saqlash muddati federal qonun, shartnoma bilan belgilanmagan bo'lsa
-            (uning tomoni, naf oluvchisi yoki kafili shaxsiy ma'lumotlar
-            subyekti hisoblanadi), shaxsiy ma'lumotlarni qayta ishlash
-            maqsadlari talab qiladigan muddatdan ortiq bo'lmagan muddatda amalga
-            oshiriladi. Qayta ishlanadigan shaxsiy ma'lumotlar, agar federal
-            qonunda boshqacha tartib nazarda tutilmagan bo'lsa, qayta ishlash
-            maqsadlariga erishilganda yoki bu maqsadlarga erishish zarurati
-            yo'qolganda yo'q qilinadi yoki maxfiylanadi.
+            5.7. Storage of personal data subject of personal data
+            if personal data in a form that allows identification
+            if the storage period is not determined by the federal law, the contract
+            (personal information of its party, beneficiary or guarantor
+            is the subject), processing personal data
+            carried out in a period not exceeding the period required by the objectives
+            is increased. Personal data to be processed, if federal
+            processing unless otherwise provided by law
+            when the goals are achieved or the need to achieve these goals
+            destroyed or anonymized when lost.
           </p>
         </div>
       </section>
       {/* 7-bo'lim: Shaxsiy ma'lumotlarni qayta ishlash maqsadlari */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          6. Shaxsiy ma'lumotlarni qayta ishlash maqsadlari
+          6. Purposes of personal data processing
         </h2>
 
         <div className="space-y-6">
           {/* Qayta ishlash maqsadi */}
           <div className="mb-6">
-            <h3 className="font-semibold mb-3">Qayta ishlash maqsadi:</h3>
+            <h3 className="font-semibold mb-3">Purpose of processing:</h3>
             <p className="leading-relaxed">
-              Foydalanuvchiga elektron xatlar yuborish orqali xabar berish
+              Notify the user by sending emails
             </p>
           </div>
 
           {/* Shaxsiy ma'lumotlar */}
           <div className="mb-6">
-            <h3 className="font-semibold mb-3">Shaxsiy ma'lumotlar:</h3>
+            <h3 className="font-semibold mb-3">Personal information:</h3>
             <ul className="list-disc pl-6 space-y-3">
-              <li className="leading-relaxed">familiya, ism, sharif</li>
-              <li className="leading-relaxed">elektron pochta manzili</li>
-              <li className="leading-relaxed">telefon raqamlari</li>
+              <li className="leading-relaxed">surname, name, sheriff</li>
+              <li className="leading-relaxed">email address</li>
+              <li className="leading-relaxed">phone numbers</li>
               <li className="leading-relaxed">
-                tug'ilgan yil, oy, sana va joy
+                year, month, date and place of birth
               </li>
-              <li className="leading-relaxed">fotosuratlari</li>
+              <li className="leading-relaxed">photos</li>
             </ul>
           </div>
 
           {/* Huquqiy asoslar */}
           <div className="mb-6">
-            <h3 className="font-semibold mb-3">Huquqiy asoslar:</h3>
+            <h3 className="font-semibold mb-3">Legal bases:</h3>
             <ul className="list-disc pl-6 space-y-3">
               <li className="leading-relaxed">
-                Operatorning ta'sis hujjatlari
+                Founding documents of the operator
               </li>
               <li className="leading-relaxed">
-                Operator va shaxsiy ma'lumotlar subyekti o'rtasida tuziladigan
-                shartnomalar
+                Formed between the operator and the subject of personal data
+                contracts
               </li>
             </ul>
           </div>
@@ -413,15 +413,15 @@ function Polise() {
           {/* Shaxsiy ma'lumotlarni qayta ishlash turlari */}
           <div className="mb-6">
             <h3 className="font-semibold mb-3">
-              Shaxsiy ma'lumotlarni qayta ishlash turlari:
+              Types of personal data processing:
             </h3>
             <ul className="list-disc pl-6 space-y-3">
               <li className="leading-relaxed">
-                Shaxsiy ma'lumotlarni yig'ish, yozish, tizimlashtirish,
-                to'plash, saqlash, yo'q qilish va maxfiylash
+                Collection, writing, systematization of personal data,
+                collection, storage, destruction and confidentiality
               </li>
               <li className="leading-relaxed">
-                Elektron pochta manziliga axborot xatlarini yuborish
+                Sending newsletters to an e-mail address
               </li>
             </ul>
           </div>
@@ -430,60 +430,60 @@ function Polise() {
       {/* 8-bo'lim: Shaxsiy ma'lumotlarni qayta ishlash shartlari */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          7. Shaxsiy ma'lumotlarni qayta ishlash shartlari
+          7. Terms of personal data processing
         </h2>
 
         <div className="space-y-4">
           <p className="leading-relaxed">
-            7.1. Shaxsiy ma'lumotlarni qayta ishlash shaxsiy ma'lumotlar
-            subyektining o'z shaxsiy ma'lumotlarini qayta ishlashga roziligi
-            bilan amalga oshiriladi.
+            7.1. Personal data processing personal data
+            subject's consent to processing their personal data
+            is done with
           </p>
 
           <p className="leading-relaxed">
-            7.2. Shaxsiy ma'lumotlarni qayta ishlash O'zbekiston
-            Respublikasining xalqaro shartnomasi yoki qonunida nazarda tutilgan
-            maqsadlarga erishish uchun, O'zbekiston Respublikasi qonunchiligida
-            operatorga yuklatilgan funksiyalar, vakolatlar va majburiyatlarni
-            amalga oshirish uchun zarur.
+            7.2. Processing of personal data Uzbekistan
+            It is stipulated in the international agreement or law of the Republic
+            to achieve the goals, in accordance with the legislation of the Republic of Uzbekistan
+            functions, powers and obligations assigned to the operator
+            necessary for implementation.
           </p>
 
           <p className="leading-relaxed">
-            7.3. Shaxsiy ma'lumotlarni qayta ishlash odil sudlovni amalga
-            oshirish, sud qarori, boshqa organ yoki mansabdor shaxsning
-            O'zbekiston Respublikasining ijro ishi yuritish to'g'risidagi
-            qonunchiligiga muvofiq ijro etilishi lozim bo'lgan hujjatini ijro
-            etish uchun zarur.
+            7.3. The processing of personal data is carried out in justice
+            increase, court decision, other body or official
+            On conducting executive proceedings of the Republic of Uzbekistan
+            execution of a document that must be executed in accordance with the law
+            necessary to achieve.
           </p>
 
           <p className="leading-relaxed">
-            7.4. Shaxsiy ma'lumotlarni qayta ishlash shaxsiy ma'lumotlar
-            subyekti tomon, naf oluvchi yoki kafil bo'lib hisoblanadigan
-            shartnomani bajarish uchun, shuningdek shaxsiy ma'lumotlar
-            subyektining tashabbusi bilan shartnoma tuzish yoki shaxsiy
-            ma'lumotlar subyekti naf oluvchi yoki kafil bo'ladigan shartnoma
-            tuzish uchun zarur.
+            7.4. Personal data processing personal data
+            subject party, beneficiary or guarantor
+            to fulfill the contract, as well as personal data
+            conclusion of a contract at the initiative of the subject or personal
+            a contract in which the data subject is the beneficiary or guarantor
+            needed to create.
           </p>
 
           <p className="leading-relaxed">
-            7.5. Shaxsiy ma'lumotlarni qayta ishlash operator yoki uchinchi
-            shaxslarning huquqlari va qonuniy manfaatlarini amalga oshirish
-            uchun yoki jamoat ahamiyatiga ega maqsadlarga erishish uchun zarur,
-            bunda shaxsiy ma'lumotlar subyektining huquq va erkinliklari
-            buzilmasligi shart.
+            7.5. Operator or third party processing personal data
+            implementation of the rights and legal interests of individuals
+            necessary for or to achieve goals of public importance,
+            rights and freedoms of the subject of personal data
+            must not be broken.
           </p>
 
           <p className="leading-relaxed">
-            7.6. Shaxsiy ma'lumotlar subyekti tomonidan yoki uning iltimosiga
-            ko'ra cheklanmagan doiradagi shaxslar foydalanishi mumkin bo'lgan
-            shaxsiy ma'lumotlarni qayta ishlash amalga oshiriladi (bundan keyin
-            — ommaviy shaxsiy ma'lumotlar).
+            7.6. By or at the request of the subject of personal data
+            which can be used by an unlimited number of people
+            processing of personal data is carried out (hereinafter
+            — public personal data).
           </p>
 
           <p className="leading-relaxed">
-            7.7. Federal qonunga muvofiq e'lon qilinishi yoki majburiy oshkor
-            qilinishi kerak bo'lgan shaxsiy ma'lumotlarni qayta ishlash amalga
-            oshiriladi.
+            7.7. Publication or mandatory disclosure under federal law
+            processing of personal data to be carried out
+            is increased.
           </p>
         </div>
       </section>
@@ -491,107 +491,107 @@ function Polise() {
       {/* 9-bo'lim: Shaxsiy ma'lumotlarni yig'ish, saqlash, uzatish va boshqa turdagi qayta ishlash tartibi */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          8. Shaxsiy ma'lumotlarni yig'ish, saqlash, uzatish va boshqa turdagi
-          qayta ishlash tartibi
+          8. Collection, storage, transmission and other types of personal data
+          processing procedure
         </h2>
 
         <div className="space-y-4">
           <p className="leading-relaxed">
-            Operator tomonidan qayta ishlanadigan shaxsiy ma'lumotlarning
-            xavfsizligi shaxsiy ma'lumotlarni himoya qilish sohasidagi amaldagi
-            qonunchilik talablarini to'liq hajmda bajarish uchun zarur bo'lgan
-            huquqiy, tashkiliy va texnik choralarni amalga oshirish orqali
-            ta'minlanadi.
+            Personal data processed by the operator
+            security in the field of personal data protection
+            necessary to fully comply with legal requirements
+            by implementing legal, organizational and technical measures
+            is provided.
           </p>
 
           <p className="leading-relaxed">
-            8.1. Operator shaxsiy ma'lumotlarning saqlanishini ta'minlaydi va
-            vakolatli bo'lmagan shaxslarning shaxsiy ma'lumotlarga kirishini
-            istisno qiluvchi barcha mumkin bo'lgan choralarni ko'radi.
+            8.1. The operator ensures the preservation of personal data and
+            access to personal information by unauthorized persons
+            the exception will take all possible measures.
           </p>
 
           <p className="leading-relaxed">
-            8.2. Foydalanuvchining shaxsiy ma'lumotlari hech qachon, hech qanday
-            sharoitda uchinchi shaxslarga berilmaydi, amaldagi qonunchilikni
-            bajarish bilan bog'liq holatlar yoki shaxsiy ma'lumotlar subyekti
-            fuqarolik-huquqiy shartnoma bo'yicha majburiyatlarni bajarish uchun
-            uchinchi shaxsga ma'lumotlarni uzatishga Operatorga rozilik bergan
-            holatlar bundan mustasno.
+            8.2. The user's personal data is never, ever
+            is not given to third parties under the current legislation
+            performance-related circumstances or personal data subject
+            to fulfill obligations under the civil law contract
+            gave consent to the Operator to transfer data to a third party
+            except for cases.
           </p>
 
           <p className="leading-relaxed">
-            8.3. Shaxsiy ma'lumotlarda noaniqliklar aniqlangan taqdirda,
-            Foydalanuvchi ularni Operatorning{" "}
+            8.3. In case of inaccuracies in personal data,
+            User them Operator{" "}
             <a
               href="mailto:bekirovatravel@gmail.com"
               className="text-blue-600 hover:underline"
             >
               bekirovatravel@gmail.com
             </a>{" "}
-            elektron pochta manziliga "Shaxsiy ma'lumotlarni yangilash" belgisi
-            bilan xabarnoma yuborish orqali mustaqil ravishda yangilashi mumkin.
+            "Update Personal Information" icon to the email address
+            can update independently by sending a notification with
           </p>
 
           <p className="leading-relaxed">
-            8.4. Shaxsiy ma'lumotlarni qayta ishlash muddati, agar shartnoma
-            yoki amaldagi qonunchilikda boshqa muddat nazarda tutilmagan bo'lsa,
-            shaxsiy ma'lumotlar yig'ilgan maqsadlarga erishish bilan
-            belgilanadi. Foydalanuvchi istalgan vaqtda Operatorning{" "}
+            8.4. The term of personal data processing, if the contract
+            or if no other term is provided by the current legislation,
+            with the achievement of the purposes for which personal data is collected
+            is determined. User at any time Operator{" "}
             <a
               href="mailto:bekirovatravel@gmail.com"
               className="text-blue-600 hover:underline"
             >
               bekirovatravel@gmail.com
             </a>{" "}
-            elektron pochta manziliga "Shaxsiy ma'lumotlarni qayta ishlashga
-            rozilikni qaytarib olish" belgisi bilan xabarnoma yuborish orqali
-            shaxsiy ma'lumotlarni qayta ishlashga roziligini qaytarib olishi
-            mumkin.
+            to the e-mail address "Processing of personal data
+            by sending a notice with the withdrawal of consent" symbol
+            withdrawal of consent to personal data processing
+            possible
           </p>
 
           <p className="leading-relaxed">
-            8.5. To'lov tizimlari, aloqa vositalari va boshqa xizmat
-            ko'rsatuvchi provayderlar kabi tashqi xizmatlar tomonidan
-            yig'iladigan barcha ma'lumotlar ko'rsatilgan shaxslar (Operatorlar)
-            tomonidan ularning Foydalanuvchi kelishuvi va Maxfiylik siyosatiga
-            muvofiq saqlanadi va qayta ishlanadi. Operator, shu jumladan ushbu
-            bandda ko'rsatilgan xizmat ko'rsatuvchi provayderlarning harakatlari
-            uchun javobgar emas.
+            8.5. Payment systems, communication tools and other services
+            by external services such as rendering providers
+            all data to be collected specified persons (Operators)
+            by their User Agreement and Privacy Policy
+            stored and processed accordingly. Operator, including this one
+            actions of service providers specified in clause
+            is not responsible for
           </p>
 
           <p className="leading-relaxed">
-            8.6. Shaxsiy ma'lumotlar subyekti tomonidan tarqatish uchun ruxsat
-            etilgan shaxsiy ma'lumotlarni uzatish (kirishni ta'minlashdan
-            tashqari), shuningdek qayta ishlash yoki qayta ishlash shartlari
-            (kirishni olishdan tashqari) bo'yicha belgilangan taqiqlar
-            O'zbekiston Respublikasi qonunchiligida belgilangan davlat, jamoat
-            va boshqa ommaviy manfaatlar yo'lida shaxsiy ma'lumotlarni qayta
-            ishlash holatlarida amal qilmaydi.
+            8.6. Permission for distribution by the subject of personal data
+            transfer of personal data (from providing access
+            except), as well as processing or processing conditions
+            (except for obtaining access) established prohibitions
+            State, public defined by the legislation of the Republic of Uzbekistan
+            and process personal data in other public interests
+            does not apply in case of operation.
           </p>
 
           <p className="leading-relaxed">
-            8.7. Operator shaxsiy ma'lumotlarni qayta ishlashda shaxsiy
-            ma'lumotlarning maxfiyligini ta'minlaydi.
+            8.7. The operator is private in processing personal data
+            ensures the confidentiality of information.
           </p>
 
           <p className="leading-relaxed">
-            8.8. Operator shaxsiy ma'lumotlarni shaxsiy ma'lumotlar subyektini
-            aniqlash imkonini beradigan shaklda, agar shaxsiy ma'lumotlarni
-            saqlash muddati federal qonun, shartnoma bilan belgilanmagan bo'lsa
-            (uning tomoni, naf oluvchisi yoki kafili shaxsiy ma'lumotlar
-            subyekti hisoblanadi), shaxsiy ma'lumotlarni qayta ishlash
-            maqsadlari talab qiladigan muddatdan ortiq bo'lmagan muddatda
-            saqlaydi.
+            8.8. Operator personal data personal data subject
+            if personal data in a form that allows identification
+            if the storage period is not determined by the federal law, the contract
+            (personal information of its party, beneficiary or guarantor
+            is the subject), processing personal data
+            within a period not exceeding the period required by the objectives
+            keeps
           </p>
 
           <p className="leading-relaxed">
-            8.9. Shaxsiy ma'lumotlarni qayta ishlashni to'xtatish sharti shaxsiy
-            ma'lumotlarni qayta ishlash maqsadlariga erishish, shaxsiy
-            ma'lumotlar subyektining roziligi amal qilish muddatining tugashi,
-            shaxsiy ma'lumotlar subyektining roziligini qaytarib olishi yoki
-            shaxsiy ma'lumotlarni qayta ishlashni to'xtatish talabi, shuningdek
-            shaxsiy ma'lumotlarni noqonuniy qayta ishlash holati aniqlanishi
-            bo'lishi mumkin.
+            8.9. The condition for stopping the processing of personal data is personal
+            achieve the purposes of data processing, personal
+            expiration of the data subject's consent,
+            withdrawal of the consent of the subject of personal data or
+            request to stop processing personal data, as well as
+            detection of illegal processing of personal data
+            it can.
           </p>
         </div>
       </section>
@@ -599,24 +599,24 @@ function Polise() {
       {/* 10-bo'lim: Operator tomonidan olingan shaxsiy ma'lumotlar bilan amalga oshiriladigan harakatlar ro'yxati */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          9. Operator tomonidan olingan shaxsiy ma'lumotlar bilan amalga
-          oshiriladigan harakatlar ro'yxati
+          9. Dealing with personal data received by the operator
+          list of actions to increase
         </h2>
 
         <div className="space-y-4">
           <p className="leading-relaxed">
-            9.1. Operator shaxsiy ma'lumotlarni yig'ish, yozish,
-            tizimlashtirish, to'plash, saqlash, aniqlash (yangilash,
-            o'zgartirish), olish, foydalanish, uzatish (tarqatish, taqdim etish,
-            kirish), maxfiylash, bloklash, o'chirish va yo'q qilish ishlarini
-            amalga oshiradi.
+            9.1. The operator collects, writes,
+            systematization, collection, storage, identification (updating,
+            change), obtain, use, transmit (distribute, provide,
+            access), privacy, blocking, deletion and destruction
+            does.
           </p>
 
           <p className="leading-relaxed">
-            9.2. Operator shaxsiy ma'lumotlarni axborot-telekommunikatsiya
-            tarmoqlari orqali olingan ma'lumotlarni qabul qilish va/yoki uzatish
-            bilan yoki bunday imkoniyatsiz avtomatlashtirilgan qayta ishlashni
-            amalga oshiradi.
+            9.2. Operator personal data information-telecommunications
+            receiving and/or transmitting data received through networks
+            with or without automated processing
+            does.
           </p>
         </div>
       </section>
@@ -624,25 +624,25 @@ function Polise() {
       {/* 11-bo'lim: Shaxsiy ma'lumotlarni transchegaraviy uzatish */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          10. Shaxsiy ma'lumotlarni transchegaraviy uzatish
+          10. Cross-Border Transfer of Personal Data
         </h2>
 
         <div className="space-y-4">
           <p className="leading-relaxed">
-            10.1. Operator shaxsiy ma'lumotlarni transchegaraviy uzatish
-            bo'yicha faoliyatni boshlashdan oldin shaxsiy ma'lumotlar
-            subyektlarining huquqlarini himoya qilish bo'yicha vakolatli organni
-            shaxsiy ma'lumotlarni transchegaraviy uzatish niyati haqida xabardor
-            qilishi shart (bunday xabarnoma shaxsiy ma'lumotlarni qayta ishlash
-            niyati to'g'risidagi xabarnomadan alohida yuboriladi).
+            10.1. Operator cross-border transfer of personal data
+            personal data before starting the activity
+            the competent body for the protection of the rights of its subjects
+            informed about the intention of cross-border transfer of personal data
+            must do (such notice processing of personal data
+            sent separately from the notice of intent).
           </p>
 
           <p className="leading-relaxed">
-            10.2. Operator yuqorida ko'rsatilgan xabarnomani topshirishdan
-            oldin, shaxsiy ma'lumotlarni transchegaraviy uzatish
-            rejalashtirilayotgan chet davlat hokimiyat organlari, chet el
-            jismoniy shaxslari, chet el yuridik shaxslaridan tegishli
-            ma'lumotlarni olishi shart.
+            10.2. The operator shall submit the above notification
+            before, cross-border transfer of personal data
+            planned foreign state authorities, foreign
+            natural persons, foreign legal entities
+            must receive information.
           </p>
         </div>
       </section>
@@ -650,55 +650,54 @@ function Polise() {
       {/* 12-bo'lim: Shaxsiy ma'lumotlarning maxfiyligi */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          11. Shaxsiy ma'lumotlarning maxfiyligi
+          11. Confidentiality of Personal Information
         </h2>
 
         <div className="space-y-4">
           <p className="leading-relaxed">
-            Operator va shaxsiy ma'lumotlarga kirish huquqini olgan boshqa
-            shaxslar, agar federal qonunda boshqacha tartib nazarda tutilmagan
-            bo'lsa, shaxsiy ma'lumotlar subyektining roziligisiz shaxsiy
-            ma'lumotlarni uchinchi shaxslarga oshkor qilmaslik va tarqatmaslik
-            majburiyatiga egadirlar.
+            Operator and others who have access to personal data
+            persons, unless otherwise provided by federal law
+            personal without the consent of the subject of personal data
+            not to disclose and distribute information to third parties
+            have an obligation.
           </p>
         </div>
       </section>
 
       {/* 13-bo'lim: Yakuniy qoidalar */}
+      {/* 13-section: Final provisions */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-          12. Yakuniy qoidalar
+          12. Final provisions
         </h2>
 
         <div className="space-y-4">
           <p className="leading-relaxed">
-            12.1. Foydalanuvchi o'zining shaxsiy ma'lumotlarini qayta ishlash
-            bo'yicha qiziqtirgan har qanday savollar bo'yicha{" "}
+            12.1. The user can contact the Operator regarding any questions about the processing
+            of their personal data via email at{" "}
             <a
               href="mailto:bekirovatravel@gmail.com"
               className="text-blue-600 hover:underline"
             >
               bekirovatravel@gmail.com
             </a>{" "}
-            elektron pochta orqali Operatorga murojaat qilib tushuntirish olishi
-            mumkin.
+            to receive clarification.
           </p>
 
           <p className="leading-relaxed">
-            12.2. Ushbu hujjatda Operator tomonidan shaxsiy ma'lumotlarni qayta
-            ishlash siyosatidagi har qanday o'zgarishlar aks ettiriladi. Siyosat
-            yangi versiyasi bilan almashtirilgunga qadar muddatsiz amal qiladi.
+            12.2. Any changes to the personal data processing policy by the Operator
+            will be reflected in this document. The Policy remains valid indefinitely
+            until replaced with a new version.
           </p>
 
           <p className="leading-relaxed">
-            12.3. Siyosatning joriy versiyasi Internetda{" "}
+            12.3. The current version of the Policy is freely available on the Internet at{" "}
             <a
               href="http://bekirova.uz/privacy"
               className="text-blue-600 hover:underline"
             >
               http://bekirova.uz/privacy
-            </a>{" "}
-            manzili bo'yicha erkin foydalanish uchun joylashtirilgan.
+            </a>
           </p>
         </div>
       </section>

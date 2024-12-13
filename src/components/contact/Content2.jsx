@@ -7,86 +7,86 @@ function Content2() {
     {
       day: 1,
       points: ["Tashkent"],
-      title: "🌟 Toshkentga Xush Kelibsiz!",
+      title: "🌟 Welcome to Tashkent!",
       details:
-        "🛬 Toshkentga kelish va joylashish\n🚗 VIP transport bilan aeroportdan kutib olish\n🏨 Premium mehmonxonaga joylashish\n🌆 Erkin vaqt - shahar bilan tanishish\n🌙 Mehmonxonada tunash",
+        "🛬 Arrival and check-in in Tashkent\n🚗 VIP transfer from airport\n🏨 Check-in at Premium hotel\n🌆 Free time - city exploration\n🌙 Overnight at hotel",
       highlights: [
         "Premium transfer",
-        "5 yulduzli mehmonxona",
-        "Professional gid",
+        "5-star hotel",
+        "Professional guide",
       ],
     },
     {
       day: 2,
       points: ["Tashkent"],
-      title: "🏛 Toshkent Bo'ylab Sayohat",
+      title: "🏛 Tashkent City Tour",
       details:
-        "🌅 Ertalabki nonushta\n🏛 Toshkentning tarixiy obidalari bo'ylab sayohat\n🍽 Milliy taomlarga boy tushlik\n🛍 Shopping va ko'ngilochar maskanlarga tashrif\n🌙 Mehmonxonada tunash",
-      highlights: ["Tarixiy joylar", "Milliy taomlar", "Shopping imkoniyati"],
+        "🌅 Breakfast\n🏛 Tour of historical monuments in Tashkent\n🍽 Traditional lunch\n🛍 Shopping and entertainment venues\n🌙 Overnight at hotel",
+      highlights: ["Historical sites", "Traditional cuisine", "Shopping opportunity"],
     },
     {
       day: 3,
       points: ["Tashkent", "Samarkand"],
-      title: "🏰 Samarqand Sari",
+      title: "🏰 Journey to Samarkand",
       details:
-        "🌅 Ertalabki nonushta\n🚅 Toshkentdan Samarqandga yo'l olish\n🏰 Registon maydoniga tashrif\n🍽 Milliy taomlarga boy tushlik\n🌙 Mehmonxonada tunash",
-      highlights: ["Temir yo'l sayohati", "Tarixiy obidalar", "Milliy taomlar"],
+        "🌅 Breakfast\n🚅 Train journey to Samarkand\n🏰 Visit to Registan Square\n🍽 Traditional lunch with local cuisine\n🌙 Overnight at hotel",
+      highlights: ["Train journey", "Historical monuments", "Local cuisine"],
     },
     {
       day: 4,
       points: ["Samarkand", "Bukhara"],
-      title: "🕌 Buxoro Sari",
+      title: "🕌 Journey to Bukhara",
       details:
-        "🌅 Ertalabki nonushta\n🚅 Samarqanddan Buxoroga yo'l olish\n🕌 Ark qal'asiga tashrif\n🍽 Milliy taomlarga boy tushlik\n🌙 Mehmonxonada tunash",
-      highlights: ["Temir yo'l sayohati", "Tarixiy obidalar", "Milliy taomlar"],
+        "🌅 Breakfast\n🚅 Train journey to Bukhara\n🕌 Visit to Ark Fortress\n🍽 Traditional lunch with local dishes\n🌙 Overnight at hotel",
+      highlights: ["Train journey", "Historical monuments", "Local cuisine"],
     },
     {
       day: 5,
       points: ["Bukhara"],
-      title: "🏺 Buxoro Bo'ylab Sayohat",
+      title: "🏺 Exploring Bukhara",
       details:
-        "🌅 Ertalabki nonushta\n🏺 Buxoroning tarixiy obidalari bo'ylab sayohat\n🍽 Milliy taomlarga boy tushlik\n🛍 An'anaviy bozorga tashrif\n🌙 Mehmonxonada tunash",
-      highlights: ["Tarixiy joylar", "Milliy taomlar", "Shopping imkoniyati"],
+        "🌅 Breakfast\n🏺 Tour of Bukhara's historical monuments\n🍽 Traditional lunch\n🛍 Visit to traditional bazaar\n🌙 Overnight at hotel",
+      highlights: ["Historical sites", "Local cuisine", "Shopping opportunity"],
     },
     {
       day: 6,
       points: ["Bukhara", "Khiva"],
-      title: "🕍 Xiva Sari",
+      title: "🕍 Journey to Khiva",
       details:
-        "🌅 Ertalabki nonushta\n🚗 Buxorodan Xivaga yo'l olish\n🕍 Ichan-Qal'aga tashrif\n🍽 Milliy taomlarga boy tushlik\n🌙 Mehmonxonada tunash",
-      highlights: ["Premium transfer", "Tarixiy obidalar", "Milliy taomlar"],
+        "🌅 Breakfast\n🚗 Drive to Khiva\n🕍 Visit to Ichan-Kala\n🍽 Traditional lunch\n🌙 Overnight at hotel",
+      highlights: ["Premium transfer", "Historical monuments", "Local cuisine"],
     },
     {
       day: 7,
       points: ["Khiva", "Tashkent"],
-      title: "✈️ Toshkentga Qaytish",
+      title: "✈️ Return to Tashkent",
       details:
-        "🌅 Ertalabki nonushta\n✈️ Xivadan Toshkentga uchish\n🌆 Shahar bo'ylab sayohat\n🍽 Milliy taomlarga boy tushlik\n🌙 Mehmonxonada tunash",
-      highlights: ["Havo sayohati", "Shahar sayohati", "Milliy taomlar"],
+        "🌅 Breakfast\n✈️ Flight to Tashkent\n🌆 City exploration\n🍽 Traditional lunch\n🌙 Overnight at hotel",
+      highlights: ["Air travel", "City tour", "Local cuisine"],
     },
     {
       day: 8,
       points: ["Tashkent"],
-      title: "🌆 Toshkent Bo'ylab Sayohat",
+      title: "🌆 Modern Tashkent Tour",
       details:
-        "🌅 Ertalabki nonushta\n🌆 Zamonaviy Toshkent bo'ylab sayohat\n🍽 Milliy taomlarga boy tushlik\n🛍 Shopping imkoniyati\n🌙 Mehmonxonada tunash",
-      highlights: ["Zamonaviy joylar", "Milliy taomlar", "Shopping imkoniyati"],
+        "🌅 Breakfast\n🌆 Tour of modern Tashkent\n🍽 Traditional lunch\n🛍 Shopping opportunity\n🌙 Overnight at hotel",
+      highlights: ["Modern attractions", "Local cuisine", "Shopping opportunity"],
     },
     {
       day: 9,
       points: ["Tashkent", "Chimgan"],
-      title: "⛰️ Chimyon Sari",
+      title: "⛰️ Journey to Chimgan",
       details:
-        "🌅 Ertalabki nonushta\n🚗 Toshkentdan Chimyonga yo'l olish\n⛰️ Tog' sayohati\n🍽 Milliy taomlarga boy tushlik\n🌙 Mehmonxonada tunash",
-      highlights: ["Tog' sayohati", "Tabiat qo'ynida", "Premium transfer"],
+        "🌅 Breakfast\n🚗 Drive to Chimgan\n⛰️ Mountain excursion\n🍽 Traditional lunch\n🌙 Overnight at hotel",
+      highlights: ["Mountain tour", "Nature experience", "Premium transfer"],
     },
     {
       day: 10,
       points: ["Tashkent"],
-      title: "👋 Xayrlashuv Kuni",
+      title: "👋 Farewell Day",
       details:
-        "🌅 Ertalabki nonushta\n🛍 So'nggi xaridlar\n🍽 Xayrlashuv ziyofati\n✈️ Aeroportga jo'nash\n👋 Xayrlashuv",
-      highlights: ["Shopping imkoniyati", "Maxsus ziyofat", "Premium transfer"],
+        "🌅 Breakfast\n🛍 Last-minute shopping\n🍽 Farewell dinner\n✈️ Transfer to airport\n👋 Departure",
+      highlights: ["Shopping opportunity", "Special dinner", "Premium transfer"],
     },
   ];
 
@@ -218,7 +218,7 @@ function Content2() {
       >
         <h2 className="text-3xl font-bold mb-6 text-center text-gray-800 relative">
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-            Ajoyib Sayohat Kunlari
+          Great Travel Days
           </span>
           <div className="absolute w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 bottom-0 left-1/2 transform -translate-x-1/2 mt-2"></div>
         </h2>
@@ -274,20 +274,17 @@ function Content2() {
         </div>
         <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
           <h3 className="font-bold text-xl mb-3 text-gray-800">
-            ✨ Maxsus Imkoniyatlar:
+            ✨ Special Features:
           </h3>
           <ul className="space-y-2">
             <li className="flex items-center gap-2 text-gray-700">
-              <span className="text-blue-500">🚗</span> Premium transport
-              xizmati
+              <span className="text-blue-500">🚗</span> Premium transport service
             </li>
             <li className="flex items-center gap-2 text-gray-700">
-              <span className="text-blue-500">👨‍🏫</span> Professional gid
-              hamrohligi
+              <span className="text-blue-500">👨‍🏫</span> Professional guide service
             </li>
             <li className="flex items-center gap-2 text-gray-700">
-              <span className="text-blue-500">📸</span> Bepul fotosessiya
-              xizmati
+              <span className="text-blue-500">📸</span> Free photoshoot service
             </li>
           </ul>
         </div>

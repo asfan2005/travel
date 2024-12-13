@@ -3,115 +3,115 @@ import React, { useState, useEffect } from "react";
 function Mashhur() {
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const mashhurJoylar = [
+  const popularPlaces = [
     {
       id: 1,
-      shahar: "Toshkent",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Toshkentga 2000 yildan ortiq. Bu yerda ko'plab muhim tarixiy voqealar sodir bo'lgan va shahar madaniyatimizning markazi hisoblanadi.",
-      reyting: 4.8
+      city: "Tashkent",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Tashkent is over 2000 years old. It has been the site of many important historical events and is considered the center of our culture.",
+      rating: 4.8
     },
     {
       id: 2,
-      shahar: "Buxoro",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Buxoro diqqatga sazovor joylari bilan mashhur. Bir kun ham shaharni to'liq ko'rish uchun yetarli emas.",
-      reyting: 4.5
+      city: "Bukhara",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Bukhara is famous for its attractions. Even one day is not enough to fully see the city.",
+      rating: 4.5
     },
     {
       id: 3,
-      shahar: "Samarqand",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Samarqand o'zining ko'k gumbazlari bilan butun dunyoga mashhur. Bu shahar haqida minglab afsonalar bor.",
-      reyting: 4.7
+      city: "Samarqand",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Samarqand is known for its blue domes and has been famous around the world. There are many tales about this city.",
+      rating: 4.7
     },
     {
       id: 4,
-      shahar: "Xiva",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Xorazmshohlar davlatining yirik shaharlaridan biri bo'lgan Xiva boy tarixga ega.",
-      reyting: 4.6
+      city: "Xiva",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Xiva is one of the important cities of the Khorezm State, which is a part of the ancient Silk Road.",
+      rating: 4.6
     },
     {
       id: 5,
-      shahar: "Shahrisabz",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Amir Temurning vatani bo'lgan Shahrisabz o'zining tarixiy obidalari bilan mashhur.",
-      reyting: 4.9
+      city: "Shahrisabz",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Shahrisabz is famous for being the birthplace of Amir Temur. It has a rich historical heritage.",
+      rating: 4.9
     },
     {
       id: 6,
-      shahar: "Termiz",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Qadimiy buddaviylik markazlaridan biri, Surxondaryo viloyatining markaziy shahri.",
-      reyting: 4.8
+      city: "Termiz",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Termiz is one of the ancient Buddhist centers, located in the center of the Surkhandarya region.",
+      rating: 4.8
     },
     {
       id: 7,
-      shahar: "Marg'ilon",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Atlas va adras to'qish markazi, qadimiy hunarmandchilik an'analari saqlanib qolgan shahar.",
-      reyting: 4.7
+      city: "Marg'ilon",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Marg'ilon is a city of Atlas and Adras, which was the site of the Silk Road caravans. It has a rich historical heritage.",
+      rating: 4.7
     },
     {
       id: 8,
-      shahar: "Qo'qon",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Xudoyorxon saroyi, ko'plab masjid va madrasalari bilan mashhur. Qo'qon xonligining poytaxti bo'lgan.",
-      reyting: 4.9
+      city: "Qo'qon",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Qo'qon is a city with many mosques and madrassas. It is the capital of the Qo'qon region.",
+      rating: 4.9
     },
     {
       id: 9,
-      shahar: "Andijon",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Bobur vatani, O'zbekistonning eng gavjum shaharlaridan biri. Zamonaviy sanoat markazi.",
-      reyting: 4.8
+      city: "Andijon",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Andijon is one of the most important cities of Uzbekistan. It is a modern industrial center.",
+      rating: 4.8
     },
     {
       id: 10,
-      shahar: "Nukus",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Qoraqalpog'iston Respublikasining poytaxti, Savitskiy muzeyi bilan dunyo tan olgan shahar.",
-      reyting: 4.7
+      city: "Nukus",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Nukus is the capital of the Qoraqalpog'iston Respublikas. It is famous for the Savitskiy Museum and the world's largest salt lake.",
+      rating: 4.7
     },
     {
       id: 11,
-      shahar: "Navoiy",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Zamonaviy sanoat shahri, NKMK va boshqa yirik korxonalar joylashgan. Yangi qurilishlar markazi.",
-      reyting: 4.9
+      city: "Navoiy",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Navoiy is a modern city with many large companies. It is a center for new construction projects.",
+      rating: 4.9
     },
     {
       id: 12,
-      shahar: "Jizzax",
-      rasm: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
-      malumot: "Qadimiy Silk Road yo'lidagi shahar, So'g'd madaniyati merosi saqlanib qolgan. Zamonaviy industrial markaz.",
-      reyting: 4.8
+      city: "Jizzax",
+      image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+      description: "Jizzax is a city on the ancient Silk Road. It has a rich historical heritage and is a modern industrial center.",
+      rating: 4.8
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => 
-        prevIndex + 4 >= mashhurJoylar.length ? 0 : prevIndex + 4
+        prevIndex + 4 >= popularPlaces.length ? 0 : prevIndex + 4
       );
     }, 5000); // 5 sekundga o'zgartirildi (3000 -> 5000)
 
     return () => clearInterval(timer);
   }, []);
 
-  const visibleItems = mashhurJoylar.slice(currentIndex, currentIndex + 4);
+  const visibleItems = popularPlaces.slice(currentIndex, currentIndex + 4);
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
-        Mashhur Yo'nalishlar
+        Popular Destinations
       </h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {visibleItems.map((joy) => (
+        {visibleItems.map((place) => (
           <div
-            key={joy.id}
+            key={place.id}
             className="relative group h-[400px] rounded-2xl overflow-hidden cursor-pointer transform transition-all duration-700 hover:shadow-2xl"
           >
             <div className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1.5 group-hover:scale-110 transition-transform duration-300">
@@ -130,7 +130,7 @@ function Mashhur() {
                   <svg
                     key={star}
                     className={`w-4 h-4 ${
-                      star <= Math.floor(joy.reyting)
+                      star <= Math.floor(place.rating)
                         ? "text-yellow-400"
                         : "text-gray-300"
                     }`}
@@ -142,13 +142,13 @@ function Mashhur() {
                 ))}
               </div>
               <span className="font-semibold text-gray-800">
-                {joy.reyting.toFixed(1)}
+                {place.rating.toFixed(1)}
               </span>
             </div>
 
             <img
-              src={joy.rasm}
-              alt={joy.shahar}
+              src={place.image}
+              alt={place.city}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             
@@ -158,10 +158,10 @@ function Mashhur() {
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-700 group-hover:translate-y-[-8px]">
               <h2 className="text-2xl font-bold text-white mb-3">
-                {joy.shahar}
+                {place.city}
               </h2>
               <p className="text-white/90 text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                {joy.malumot}
+                {place.description}
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@ function Mashhur() {
 
       {/* Navigation dots */}
       <div className="flex justify-center mt-6 gap-2">
-        {Array.from({ length: Math.ceil(mashhurJoylar.length / 4) }).map((_, index) => (
+        {Array.from({ length: Math.ceil(popularPlaces.length / 4) }).map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index * 4)}

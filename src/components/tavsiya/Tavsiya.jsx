@@ -7,18 +7,18 @@ import "slick-carousel/slick/slick-theme.css";
 const recommendationData = [
   {
     id: 1,
-    title: "Oilaviy dam olish - Chorvoq ko'li",
+    title: "Family Vacation - Charvak Lake",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "350",
-    duration: "3 kun / 2 kecha",
+    duration: "3 days / 2 nights",
     rating: 4.9
   },
   {
     id: 2,
-    title: "Yoshlar uchun sarguzasht - Chimyon tog'lari",
+    title: "Youth Adventure - Chimgan Mountains",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "280",
-    duration: "2 kun / 1 kecha",
+    duration: "2 days / 1 night",
     rating: 4.7
   },
   {
@@ -95,15 +95,15 @@ const recommendationData = [
   },
   {
     id: 12,
-    title: "Ziyorat turizmi - Qashqadaryo",
+    title: "Pilgrimage Tourism - Kashkadarya",
     image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
     price: "360",
-    duration: "3 kun / 2 kecha",
+    duration: "3 days / 2 nights",
     rating: 4.7
   }
 ];
 
-function Tavsiya() {
+function Recommendations() {
   const settings = {
     dots: true,
     dotsClass: "slick-dots custom-dots",
@@ -140,7 +140,7 @@ function Tavsiya() {
           <div className="inline-block">
             <h1 className="text-4xl md:text-5xl font-extrabold relative">
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Tavsiya Etilgan Sayohatlar
+                Recommended Tours
               </span>
               <div className="absolute -top-6 -right-6 w-12 h-12 opacity-20 animate-spin-slow">
                 <svg viewBox="0 0 24 24" fill="none" className="text-purple-600">
@@ -149,7 +149,7 @@ function Tavsiya() {
               </div>
             </h1>
             <p className="mt-4 text-gray-600 text-lg font-medium">
-              Eng sara va maxsus tanlangan sayohat dasturlarimiz
+              Our specially selected and premium travel programs
             </p>
             <div className="mt-3 flex items-center justify-center gap-3">
               <div className="h-[2px] w-16 bg-gradient-to-r from-transparent to-purple-600"></div>
@@ -250,7 +250,7 @@ function Tavsiya() {
                             </div>
                             <div className="absolute opacity-0 group-hover/book:opacity-100 transition-all duration-300 -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap">
                               <div className="bg-white text-gray-900 px-4 py-2 rounded-lg shadow-lg text-sm font-medium">
-                                Band qilish
+                                Book Now
                               </div>
                               <div className="w-3 h-3 bg-white rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2"></div>
                             </div>
@@ -269,4 +269,4 @@ function Tavsiya() {
   );
 }
 
-export default Tavsiya;
+export default Recommendations;

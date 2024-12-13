@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Header />
-      <main style={{ marginTop: "70px" }}>
+      <main style={{ marginTop: "55px" }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<Contact />} />
