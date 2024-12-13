@@ -10,10 +10,12 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<Booking />} />
-          <Route path="/polise" element={<Polise/>}/>
+          <Route path="/polise" element={<Polise/>}/>   
+          {/* polis page xali 3 tillik qilinmadi */}    
           <Route path="/5-days-tour" element={<FiveDaysTour/>}/>
           <Route path="/6-days-tour" element={<SixDaysTour/>}/>
           <Route path="/10-days-tour" element={<TenDaysTour/>}/>
+          {/* shungacha birontasi 3 tillik emas  */}
           <Route path="/our-mission" element={<BizHaqimizda/>}/>
           <Route path="/individual-tours" element={<IndividualTurs/>}/>
           <Route path="/tours" element={<Sayohatlar/>}/>

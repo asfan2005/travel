@@ -1,6 +1,89 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 function IndividualTurs() {
+  const [searchParams] = useSearchParams();
+  const currentLang = searchParams.get("lang") || "en";
+  
+  // Translations object
+  const translations = {
+    en: {
+      tourRequest: "Tour Request",
+      contactDetails: "Contact Details",
+      contactDescription: "We use this information solely for the purpose of corresponding regarding your travel.",
+      selectTitle: "Select Title",
+      firstName: "First Name",
+      lastName: "Last Name",
+      selectCitizenship: "Select Citizenship",
+      email: "E-mail",
+      phone: "Phone (+code)",
+      arrivingFrom: "Arriving from",
+      travelInfo: "Travel Info",
+      accommodationType: "Accommodation Type",
+      economy: "Economy",
+      comfort: "Comfort",
+      deluxe: "Deluxe",
+      allOptions: "All options",
+      numberOfTravelers: "Number of Travelers",
+      person: "person",
+      people: "people",
+      groupTour: "Group tour",
+      comments: "Comments and additional information",
+      sendRequest: "Send request",
+      successMessage: "Tour request submitted successfully!"
+    },
+    ru: {
+      tourRequest: "Заявка на тур",
+      contactDetails: "Контактная информация",
+      contactDescription: "Мы используем эту информацию исключительно для переписки относительно вашего путешествия.",
+      selectTitle: "Выберите обращение",
+      firstName: "Имя",
+      lastName: "Фамилия",
+      selectCitizenship: "Выберите гражданство",
+      email: "Эл. почта",
+      phone: "Телефон (+код)",
+      arrivingFrom: "Прибытие из",
+      travelInfo: "Информация о поездке",
+      accommodationType: "Тип размещения",
+      economy: "Эконом",
+      comfort: "Комфорт",
+      deluxe: "Люкс",
+      allOptions: "Все варианты",
+      numberOfTravelers: "Количество путешественников",
+      person: "человек",
+      people: "человек",
+      groupTour: "Групповой тур",
+      comments: "Комментарии и дополнительная информация",
+      sendRequest: "Отправить заявку",
+      successMessage: "Заявка на тур успешно отправлена!"
+    },
+    uz: {
+      tourRequest: "Sayohat uchun ariza",
+      contactDetails: "Aloqa ma'lumotlari",
+      contactDescription: "Ushbu ma'lumotlardan faqat sizning sayohatingiz bo'yicha yozishmalar uchun foydalanamiz.",
+      selectTitle: "Murojaat turini tanlang",
+      firstName: "Ism",
+      lastName: "Familiya",
+      selectCitizenship: "Fuqarolikni tanlang",
+      email: "Elektron pochta",
+      phone: "Telefon (+kod)",
+      arrivingFrom: "Qayerdan kelish",
+      travelInfo: "Sayohat ma'lumotlari",
+      accommodationType: "Turar joy turi",
+      economy: "Iqtisodiy",
+      comfort: "Komfort",
+      deluxe: "Lyuks",
+      allOptions: "Barcha variantlar",
+      numberOfTravelers: "Sayohatchilar soni",
+      person: "kishi",
+      people: "kishi",
+      groupTour: "Guruh turi",
+      comments: "Izohlar va qo'shimcha ma'lumotlar",
+      sendRequest: "Arizani yuborish",
+      successMessage: "Sayohat uchun ariza muvaffaqiyatli yuborildi!"
+    }
+  };
+
   // Add new state for form
   const [formData, setFormData] = useState({
     title: "",
@@ -51,7 +134,7 @@ function IndividualTurs() {
     });
 
     // Show success message
-    alert("Tour request submitted successfully!");
+    alert(translations[currentLang].successMessage);
   };
   return (
     <div>
@@ -59,18 +142,17 @@ function IndividualTurs() {
       <div className="mt-12 w-full max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-sm">
         <form onSubmit={handleSubmit}>
           <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-            Tour Request
+            {translations[currentLang].tourRequest}
           </h2>
 
           <div className="space-y-8">
             {/* Contact Details */}
             <div className="w-full">
               <h3 className="text-lg font-medium text-gray-700 mb-2">
-                Contact Details
+                {translations[currentLang].contactDetails}
               </h3>
               <p className="text-sm text-gray-500 mb-6">
-                We use this information solely for the purpose of corresponding
-                regarding your travel.
+                {translations[currentLang].contactDescription}
               </p>
 
               <div className="w-full space-y-4">
@@ -81,7 +163,7 @@ function IndividualTurs() {
                     onChange={handleInputChange}
                     className="w-full border rounded-md p-3 bg-white text-gray-700"
                   >
-                    <option value="">Select Title</option>
+                    <option value="">{translations[currentLang].selectTitle}</option>
                     <option value="Mr">Mr.</option>
                     <option value="Mrs">Mrs.</option>
                     <option value="Ms">Ms.</option>
@@ -94,7 +176,7 @@ function IndividualTurs() {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    placeholder="First Name"
+                    placeholder={translations[currentLang].firstName}
                     className="w-full border rounded-md p-3"
                   />
 
@@ -103,7 +185,7 @@ function IndividualTurs() {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    placeholder="Last Name"
+                    placeholder={translations[currentLang].lastName}
                     className="w-full border rounded-md p-3"
                   />
                 </div>
@@ -115,7 +197,7 @@ function IndividualTurs() {
                     onChange={handleInputChange}
                     className="w-full border rounded-md p-3 bg-white text-gray-700"
                   >
-                    <option value="">Select Citizenship</option>
+                    <option value="">{translations[currentLang].selectCitizenship}</option>
 
                     {/* Asia */}
                     <optgroup label="Asia">
@@ -407,7 +489,7 @@ function IndividualTurs() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="E-mail"
+                    placeholder={translations[currentLang].email}
                     className="w-full border rounded-md p-3"
                   />
 
@@ -416,7 +498,7 @@ function IndividualTurs() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Phone (+code)"
+                    placeholder={translations[currentLang].phone}
                     className="w-full border rounded-md p-3"
                   />
                 </div>
@@ -427,7 +509,7 @@ function IndividualTurs() {
                     name="arrivingFrom"
                     value={formData.arrivingFrom}
                     onChange={handleInputChange}
-                    placeholder="Arriving from"
+                    placeholder={translations[currentLang].arrivingFrom}
                     className="w-full border rounded-md p-3"
                   />
                 </div>
@@ -437,7 +519,7 @@ function IndividualTurs() {
             {/* Travel Info */}
             <div className="w-full">
               <h3 className="text-lg font-medium text-gray-700 mb-4">
-                Travel Info
+                {translations[currentLang].travelInfo}
               </h3>
 
               <div className="w-full space-y-4">
@@ -466,11 +548,11 @@ function IndividualTurs() {
                     onChange={handleInputChange}
                     className="w-full border rounded-md p-3 bg-white text-gray-700"
                   >
-                    <option value="">Accommodation Type</option>
-                    <option value="economy">Economy</option>
-                    <option value="comfort">Comfort</option>
-                    <option value="deluxe">Deluxe</option>
-                    <option value="all">All options</option>
+                    <option value="">{translations[currentLang].accommodationType}</option>
+                    <option value="economy">{translations[currentLang].economy}</option>
+                    <option value="comfort">{translations[currentLang].comfort}</option>
+                    <option value="deluxe">{translations[currentLang].deluxe}</option>
+                    <option value="all">{translations[currentLang].allOptions}</option>
                   </select>
 
                   <select
@@ -479,14 +561,14 @@ function IndividualTurs() {
                     onChange={handleInputChange}
                     className="w-full border rounded-md p-3 bg-white text-gray-700"
                   >
-                    <option value="">Number of Travelers</option>
-                    <option value="1">1 person</option>
-                    <option value="2">2 people</option>
-                    <option value="3">3 people</option>
-                    <option value="4">4 people</option>
-                    <option value="5">5 people</option>
-                    <option value="6">6+ people</option>
-                    <option value="group">Group tour</option>
+                    <option value="">{translations[currentLang].numberOfTravelers}</option>
+                    <option value="1">{translations[currentLang].person}</option>
+                    <option value="2">{translations[currentLang].people}</option>
+                    <option value="3">{translations[currentLang].person}</option>
+                    <option value="4">{translations[currentLang].people}</option>
+                    <option value="5">{translations[currentLang].person}</option>
+                    <option value="6">{translations[currentLang].people}</option>
+                    <option value="group">{translations[currentLang].groupTour}</option>
                   </select>
                 </div>
 
@@ -495,7 +577,7 @@ function IndividualTurs() {
                     name="comments"
                     value={formData.comments}
                     onChange={handleInputChange}
-                    placeholder="Comments and additional information"
+                    placeholder={translations[currentLang].comments}
                     className="w-full border rounded-md p-3 h-32 resize-none"
                   ></textarea>
                 </div>
@@ -507,7 +589,7 @@ function IndividualTurs() {
                 type="submit"
                 className="w-full md:w-auto bg-green-500 text-white px-8 py-3 rounded-md hover:bg-green-600 transition-colors"
               >
-                Send request
+                {translations[currentLang].sendRequest}
               </button>
             </div>
           </div>
