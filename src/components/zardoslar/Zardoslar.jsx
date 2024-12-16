@@ -254,7 +254,7 @@ const translations = {
     bookingTitle: "Would you like to book a tour?",
     bookingSubtitle: "Fill out the form below and we will contact you within 24 hours",
     formLabels: {
-      name: "Your Name",
+      name: "Your name and surname",
       phone: "Phone Number",
       additionalInfo: "Additional Information"
     },
@@ -268,7 +268,7 @@ const translations = {
     bookingTitle: "Sayohat buyurtma qilmoqchimisiz?",
     bookingSubtitle: "Quyidagi formani to'ldiring va biz 24 soat ichida siz bilan bog'lanamiz",
     formLabels: {
-      name: "Ismingiz",
+      name: "Ismingiz va familiyangiz",
       phone: "Telefon raqamingiz",
       additionalInfo: "Qo'shimcha ma'lumot"
     },
@@ -282,7 +282,7 @@ const translations = {
     bookingTitle: "Хотите забронировать тур?",
     bookingSubtitle: "Заполните форму ниже и мы свяжемся с вами в течение 24 часов",
     formLabels: {
-      name: "Ваше имя",
+      name: "Ваше имя и фамилия",
       phone: "Номер телефона",
       additionalInfo: "Дополнительная информация"
     },

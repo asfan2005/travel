@@ -43,7 +43,7 @@ function Header() {
 
   const translations = {
     en: {
-      tours: "Tours",
+      tours: "Private tours",
       individualTours: "Individual Tours",
       blog: "Blog",
       aboutUs: "About Us",
@@ -188,7 +188,7 @@ function Header() {
 
               <div className="flex items-center space-x-4 text-sm">
                 <a
-                  href="tel:+998918218195"
+                  href="tel:+998907113338"
                   className="flex items-center text-gray-700 hover:text-purple-700 transform hover:scale-110 transition-all duration-300"
                   title="Call"
                 >
@@ -197,7 +197,7 @@ function Header() {
                   </svg>
                 </a>
                 <a
-                  href="mailto:asfan.coder@gmail.com?subject=Canaan Travel - Inquiry&body=Hello,%0D%0A%0D%0AI am contacting you through the Canaan Travel website.%0D%0A%0D%0ABest regards,"
+                  href="mailto:travelcationsuz@gmail.com?subject=Canaan Travel - Inquiry&body=Hello,%0D%0A%0D%0AI am contacting you through the Canaan Travel website.%0D%0A%0D%0ABest regards,"
                   className="flex items-center text-gray-700 hover:text-purple-700"
                   title="Send Email"
                   target="_blank"

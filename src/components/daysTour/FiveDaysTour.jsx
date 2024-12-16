@@ -98,25 +98,25 @@ function FiveDaysTour() {
 
   const prices = {
     economy: {
-      "1 person": 3000,
-      "2 persons": 1760,
-      "3 persons": 1510,
-      "4 persons": 1330,
-      "Single supplement": 290,
+      "1 person": 1000,
+      "2 persons": 900,
+      "3 persons": 800,
+      "4 persons": 700,
+      "Single supplement": 280,
     },
     comfort: {
-      "1 person": 3350,
-      "2 persons": 1950,
-      "3 persons": 1700,
-      "4 persons": 1520,
-      "Single supplement": 360,
+      "1 person": 1250,
+      "2 persons": 1060,
+      "3 persons": 960,
+      "4 persons": 860,
+      "Single supplement": 300,
     },
     deluxe: {
-      "1 person": 3940,
-      "2 persons": 2220,
-      "3 persons": 1980,
-      "4 persons": 1790,
-      "Single supplement": 680,
+      "1 person": 1760,
+      "2 persons": 1280,
+      "3 persons": 1190,
+      "4 persons": 1080,
+      "Single supplement": 330,
     },
   };
 
@@ -294,7 +294,7 @@ function FiveDaysTour() {
             </div>
 
             <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">
-              Prices are for 2024 in US$ per person
+            Prices are for 2025 in US$ per person, with discounted prices for larger groups available on request.
             </p>
 
             <button className="mt-4 sm:mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg transition-all hover:scale-105 text-sm sm:text-base">

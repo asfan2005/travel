@@ -88,8 +88,7 @@ const contactInfo = {
     },
     hours: {
       title: "Working Hours:",
-      weekdays: "Monday - Friday: 9:00 - 18:00",
-      saturday: "Saturday: 10:00 - 15:00",
+      weekdays: "Monday - Saturday: 9:00 - 18:00",
       sunday: "Sunday: Closed"
     }
   },
@@ -102,8 +101,7 @@ const contactInfo = {
     },
     hours: {
       title: "Часы работы:",
-      weekdays: "Понедельник - Пятница: 9:00 - 18:00",
-      saturday: "Суббота: 10:00 - 15:00",
+      weekdays: "Понедельник - Суббота: 9:00 - 18:00",
       sunday: "Воскресенье: Выходной"
     }
   },
@@ -116,8 +114,7 @@ const contactInfo = {
     },
     hours: {
       title: "Ish vaqti:",
-      weekdays: "Dushanba - Juma: 9:00 - 18:00",
-      saturday: "Shanba: 10:00 - 15:00",
+      weekdays: "Dushanba - Shanba: 9:00 - 18:00",
       sunday: "Yakshanba: Dam olish kuni"
     }
   }

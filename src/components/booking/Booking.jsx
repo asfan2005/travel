@@ -5,8 +5,8 @@ import { useSearchParams } from "react-router-dom";
 const translations = {
   en: {
     title: "Submit Your Travel Request",
-    fullName: "Full Name",
-    fullNamePlaceholder: "Enter your full name",
+    fullName: "Full name and surname",
+    fullNamePlaceholder: "Enter your full name and surname",
     travelDate: "Travel Date",
     email: "Email",
     emailPlaceholder: "example@mail.com",
@@ -21,8 +21,8 @@ const translations = {
   },
   uz: {
     title: "Sayohat so'rovingizni yuboring",
-    fullName: "To'liq ism",
-    fullNamePlaceholder: "To'liq ismingizni kiriting",
+    fullName: "To'liq ism va familiya",
+    fullNamePlaceholder: "To'liq ism va familiya",
     travelDate: "Sayohat sanasi",
     email: "Elektron pochta",
     emailPlaceholder: "misol@pochta.com",
@@ -37,8 +37,8 @@ const translations = {
   },
   ru: {
     title: "Отправьте заявку на путешествие",
-    fullName: "Полное имя",
-    fullNamePlaceholder: "Введите ваше полное имя",
+    fullName: "Полное имя и фамилия",
+    fullNamePlaceholder: "Введите ваше полное имя и фамилия",
     travelDate: "Дата путешествия",
     email: "Электронная почта",
     emailPlaceholder: "primer@pochta.com",

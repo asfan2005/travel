@@ -5,7 +5,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 // Til ma'lumotlari obyekti
 const translations = {
   en: {
-    main: "MAIN",
+    main: "MAIN PAGE",
     programs: "PROGRAMS:",
     individualTours: "Individual tours",
     fiveDaysTour: "5 days (groups)",
@@ -14,12 +14,12 @@ const translations = {
     documents: "DOCUMENTS:",
     license: "License",
     privacyPolicy: "Privacy Policy",
-    copyright: "© All site materials belong to Canaan Travel LLC and are protected by copyright.",
+    copyright: "© All site materials belong to Travelcations LLC and are protected by copyright.",
     notOffer: "The site is not a public offer.",
-    licensed: "Licensed tour operator in Uzbekistan. We are officially registered in the national company registry.",
+    licensed: "Licensed tour operator in Uzbekistan. All rights reserved",
   },
   ru: {
-    main: "ГЛАВНАЯ",
+    main: "ГЛАВНАЯ СТРАНИЦА",
     programs: "ПРОГРАММЫ:",
     individualTours: "Индивидуальные туры",
     fiveDaysTour: "5 дней (группы)",
@@ -28,12 +28,12 @@ const translations = {
     documents: "ДОКУМЕНТЫ:",
     license: "Лицензия",
     privacyPolicy: "Политика конфиденциальности",
-    copyright: "© Все материалы сайта принадлежат Canaan Travel LLC и защищены авторским правом.",
+    copyright: "© Все материалы сайта принадлежат  Travelcations  ООО и защищены авторским правом.",
     notOffer: "Сайт не является публичной офертой.",
-    licensed: "Лицензированный туроператор в Узбекистане. Мы официально зарегистрированы в национальном реестре компаний.",
+    licensed: "Лицензированный туроператор по Узбекистану. Все права защищены",
   },
   uz: {
-    main: "ASOSIY",
+    main: "ASOSIY SAHIFA",
     programs: "DASTURLAR:",
     individualTours: "Individual turlar",
     fiveDaysTour: "5 kunlik (guruhlar)",
@@ -42,9 +42,9 @@ const translations = {
     documents: "HUJJATLAR:",
     license: "Litsenziya",
     privacyPolicy: "Maxfiylik siyosati",
-    copyright: "© Saytdagi barcha materiallar Canaan Travel LLC ga tegishli va mualliflik huquqi bilan himoyalangan.",
+    copyright: "© Saytdagi barcha materiallar Travelcations MCHJ ga tegishli va mualliflik huquqi bilan himoyalangan.",
     notOffer: "Sayt ommaviy taklif emas.",
-    licensed: "O'zbekistondagi litsenziyalangan turoperator. Biz milliy kompaniyalar reyestrida rasman ro'yxatdan o'tganmiz.",
+    licensed: "O'zbekistonda litsenziyalangan turoperator. Barcha huquqlar himoyalangan",
   },
 };
 
@@ -59,11 +59,7 @@ function Footer2() {
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start gap-12">
         {/* Logo va copyright */}
         <div className="flex flex-col space-y-4">
-          <img 
-            src="https://canaan.travel/static/images/Canaan-logo-1.png" 
-            alt="Canaan Travel" 
-            className="h-20 object-contain"
-          />
+          
           <p className="text-gray-400 text-xs max-w-[250px]">
             {t.copyright}
           </p>
@@ -71,7 +67,7 @@ function Footer2() {
 
         {/* Navigation Links */}
         <div className="flex flex-col space-y-3">
-          <h3 className="text-white text-base font-medium">
+          <h3 to="/" className="text-white text-base font-medium">
             {t.main}
           </h3>
         </div>
@@ -131,7 +127,7 @@ function Footer2() {
           {/* Social icons */}
           <div className="flex space-x-4">
             <a 
-              href="https://instagram.com/travelcationsuz" 
+              href="https://instagram.com/travelcations_uz" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-full p-2.5 hover:opacity-80 transition-opacity"
@@ -139,7 +135,7 @@ function Footer2() {
               <FaInstagram className="w-5 h-5 text-black" />
             </a>
             <a 
-              href="https://facebook.com/travelcationsuz" 
+              href="https://facebook.com/travelcations_uz" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-full p-2.5 hover:opacity-80 transition-opacity"
@@ -147,7 +143,7 @@ function Footer2() {
               <FaFacebook className="w-5 h-5 text-black" />
             </a>
             <a 
-              href="https://t.me/travelcationsuz" 
+              href="https://t.me/travelcations_uz" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-full p-2.5 hover:opacity-80 transition-opacity"

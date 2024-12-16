@@ -15,30 +15,30 @@ function Sayohatlar() {
 
   const tourContent = {
     en: {
-      pageTitle: 'Tours',
+      pageTitle: 'Private tours',
       tours: [
         {
-          id: 1,
-          title: '5-Day Samarkand Tour',
+          id: 5,
+          title: '5-Day Tour',
           description: 'Explore the ancient city and historical monuments',
           duration: '5 days',
-          price: '$500',
+          price: '$1000',
           buttonText: 'Order Now'
         },
         {
-          id: 2,
-          title: '6-Day Bukhara Tour',
+          id: 6,
+          title: '6-Day Tour',
           description: 'Visit madrasahs and historical sites',
           duration: '6 days',
-          price: '$600',
+          price: '$1200',
           buttonText: 'Order Now'
         },
         {
-          id: 3,
-          title: '10-Day Comprehensive Uzbekistan Tour',
+          id: 10,
+          title: '10-Day Tour',
           description: 'Travel around all of Uzbekistan',
           duration: '10 days',
-          price: '$1,000',
+          price: '$1890',
           buttonText: 'Order Now'
         }
       ]
@@ -47,27 +47,27 @@ function Sayohatlar() {
       pageTitle: 'Sayohatlar',
       tours: [
         {
-          id: 1,
+          id: 5,
           title: '5 kunlik Samarqand sayohati',
           description: 'Qadimiy shahar va tarixiy yodgorliklarni kashf eting',
           duration: '5 kun',
-          price: '$500',
+          price: '$1000',
           buttonText: 'Buyurtma berish'
         },
         {
-          id: 2,
+          id: 6,
           title: '6 kunlik Buxoro sayohati',
           description: 'Madrasalar va tarixiy joylarni ziyorat qiling',
           duration: '6 kun',
-          price: '$600',
+          price: '$1200',
           buttonText: 'Buyurtma berish'
         },
         {
-          id: 3,
+          id: 10,
           title: "10 kunlik O'zbekiston bo'ylab sayohat",
           description: "Butun O'zbekiston bo'ylab sayohat",
           duration: '10 kun',
-          price: '$1,000',
+          price: '$1890',
           buttonText: 'Buyurtma berish'
         }
       ]
@@ -76,27 +76,27 @@ function Sayohatlar() {
       pageTitle: 'Туры',
       tours: [
         {
-          id: 1,
-          title: '5-дневный тур по Самарканду',
+          id: 5,
+          title: '5-дневный тур',
           description: 'Исследуйте древний город и исторические памятники',
           duration: '5 дней',
-          price: '$500',
+          price: '$1000',
           buttonText: 'Заказать сейчас'
         },
         {
-          id: 2,
-          title: '6-дневный тур по Бухаре',
+          id: 6,
+          title: '6-дневный тур',
           description: 'Посетите медресе и исторические места',
           duration: '6 дней',
-          price: '$600',
+          price: '$1200',
           buttonText: 'Заказать сейчас'
         },
         {
-          id: 3,
-          title: '10-дневный тур по Узбекистану',
+          id: 10,
+          title: '10-дневный тур',
           description: 'Путешествие по всему Узбекистану',
           duration: '10 дней',
-          price: '$1,000',
+          price: '$1890',
           buttonText: 'Заказать сейчас'
         }
       ]

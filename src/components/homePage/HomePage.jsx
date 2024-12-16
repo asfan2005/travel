@@ -25,12 +25,10 @@ function HomePage() {
       <Home/>
       <Mashhur />
       <MashhurSayohat />
-      <Tavsiya />
       <Sharq />
       <Afzallig />
       <Zardoslar />
       <SharxPage />
-      <Footer />
     </div>
   );
 }
