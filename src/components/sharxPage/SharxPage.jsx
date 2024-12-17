@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 
 function SharxPage() {
   const [searchParams] = useSearchParams();
-  const lang = searchParams.get('lang') || 'uz'; // default to 'uz' if no lang parameter
+  const lang = searchParams.get('lang') || 'en'; // default to 'uz' if no lang parameter
 
   // Title translations
   const titles = {
@@ -14,7 +14,7 @@ function SharxPage() {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const images = [Image1, Image2, Image3, Image4,Image5,Image6,Image7,Image2];
+  const images = [Image2, Image3, Image4,Image6,Image7,Image2,Image3,Image4];
 
   // Responsive slides per view
   const getSlidesPerView = () => {

@@ -68,7 +68,7 @@ const zardoslarData = {
         features: "Suzani is mainly made in black and white, but festive pieces are decorated with colorful threads.",
         usage: "Used in weddings, celebrations, and home decoration.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVwkNm9qvuPJM3PIHIRHYtKfxBqy3hGDMzdQ&s"
     },
     {
       id: 6,
@@ -81,7 +81,7 @@ const zardoslarData = {
         features: "Pottery is mainly made in blue and turquoise colors, but festive pieces are decorated with various colors.",
         usage: "Used in daily life, celebrations, and as decorative items.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ny6ZrKefIohC4AUILAHd5YkKwEZMGgiC2w&s"
     }
   ],
 
@@ -149,7 +149,7 @@ const zardoslarData = {
         features: "Suzanalar asosan oq va qora rangda tikiladi, ammo bayramona suzanalar rangli iplar bilan bezatiladi.",
         usage: "To'y-marosimlarda, bayramlarda va uy bezagi sifatida qo'llaniladi.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVwkNm9qvuPJM3PIHIRHYtKfxBqy3hGDMzdQ&s"
     },
     {
       id: 6,
@@ -162,7 +162,7 @@ const zardoslarData = {
         features: "Kulolchilik buyumlari asosan ko'k va moviy rangda yasaladi, ammo bayramona buyumlar turli ranglar bilan bezatiladi.",
         usage: "Kundalik hayotda, bayramlarda va bezak buyumlari sifatida qo'llaniladi.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ny6ZrKefIohC4AUILAHd5YkKwEZMGgiC2w&s"
     }
   ],
 
@@ -171,7 +171,7 @@ const zardoslarData = {
       id: 1,
       title: "Тюбетейка",
       rating: 4.8,
-      mainDescription: "Традиционный головной убор восточных народов. Тюбетейка - один из древнейших и красивейших головных уборов узбекского наро��а. Это не просто украшение, а символ национальной идентичности.",
+      mainDescription: "Традиционный головной убор восточных народов. Тюбетейка - один из древнейших и красивейших головных уборов узбекского нароа. Это не просто украшение, а символ национальной идентичности.",
       details: {
         history: "История тюбетейки насчитывает тысячи лет. Каждый регион имеет свой уникальный стиль изготовления тюбетейки.",
         region: "Андижан, Маргилан, Чуст, Бухара и Самарканд считаются центрами изготовления тюбетеек.",
@@ -186,7 +186,7 @@ const zardoslarData = {
       rating: 4.2,
       mainDescription: "Атлас - самая известная ткань Узбекистана. Эта ткань, сотканная на основе древних традиций, известна во всем мире своими ярким цветами и уникальными узорами.",
       details: {
-        history: "История ткачества атласа насчитывает более 1500 лет. Эта ткань была важным торговым товаром на Великом Шелковом пути.",
+        history: "История ткачеств�� атласа насчитывает более 1500 лет. Эта ткань была важным торговым товаром на Великом Шелковом пути.",
         region: "Маргилан является крупнейшим центром ткачества атласа. Атлас также ткут в Намангане и Бухаре.",
         features: "Существует более 37 видов атласа. Каждый узор и цвет имеет свое значение.",
         usage: "Используется в изготовлении национальной одежды, штор и различных украшений.",
@@ -197,10 +197,10 @@ const zardoslarData = {
       id: 3,
       title: "Золотое шитье",
       rating: 4.5,
-      mainDescription: "Золотое шитье - искусство вышивки золотой нитью. Это древнее ремесло развивалось в Бухаре и Самарканде. Изделия золотого шитья высоко ценятся не только в Узбекистане, но и ��о всем мире.",
+      mainDescription: "Золотое шитье - искусство вышивки золотой нитью. Это древнее ремесло развивалось в Бухаре и Самарканде. Изделия золотого шитья высоко ценятся не только в Узбекистане, но ио всем мире.",
       details: {
         history: "История золотого шитья насчитывает тысячи лет. Каждый регион имеет свой уникальный стиль вышивки.",
-        region: "Бухара является крупнейшим центром золотого шитья. Это искусство также практикуется в Самарканде.",
+        region: "Бухара является крупнейшим центром золотого шитья. Это искусство также практикуется в С��марканде.",
         features: "Золотое шитье выполняется в основном золотой нитью, праздничные изделия украшаются цветными нитями.",
         usage: "Используется на свадьбах, праздниках и в повседневной жизни.",
       },
@@ -214,7 +214,7 @@ const zardoslarData = {
       details: {
         history: "История чапана насчитывает тысячи лет. Каждый регион имеет свой уникальный стиль изготовления чапана.",
         region: "Андижан, Маргилан, Чуст, Бухара и Самарканд являются центрами изготовления чапанов.",
-        features: "Чапаны в основном изготавливаются в черно-белых тонах, но праздничные чапаны украшаются разноцветными нитями.",
+        features: "Чапаны в основном изготавливаются в черно-белых тонах, но праздничны�� чапаны украшаются разноцветными нитями.",
         usage: "Используется на свадьбах, праздниках и в повседневной жизни.",
       },
       image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
@@ -228,9 +228,9 @@ const zardoslarData = {
         history: "История сюзане насчитывает тысячи лет. Каждый регион имеет свой уникальный стиль вышивки.",
         region: "Андижан, Маргилан, Чуст, Бухара и Самарканд являются центрами вышивки сюзане.",
         features: "Сюзане в основном изготавливаются в черно-белых тонах, но праздничные изделия украшаются разноцветными нитями.",
-        usage: "Используется на свадьбах, праздниках и в качестве домашнего украшения.",
+        usage: "Используется на свадьбах, пр��здниках и в качестве домашнего украшения.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVwkNm9qvuPJM3PIHIRHYtKfxBqy3hGDMzdQ&s"
     },
     {
       id: 6,
@@ -240,10 +240,10 @@ const zardoslarData = {
       details: {
         history: "История гончарного искусства насчитывает тысячи лет. Каждый регион имеет свой уникальный гончарный стиль.",
         region: "Риштан, Гиждуван, Хива и другие города считаются центрами гончарного искусства.",
-        features: "Гончарные изделия в основном изготавливаются �� синих и бирюзовых тонах, но праздничные изделия украшаются различными цветами.",
-        usage: "Используется в повседневной жизни, на праздниках и в качестве декоративных предметов.",
+        features: "Гончарные изделия в основном изготавливаются синих и бирюзовых тонах, но праздничные изделия украшаются различными цветами.",
+        usage: "Используется в ��овседневной жизни, на праздниках и в качестве декоративных предметов.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ny6ZrKefIohC4AUILAHd5YkKwEZMGgiC2w&s"
     }
   ]
 };
@@ -322,7 +322,7 @@ function Zardoslar() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % totalSlides);
-    }, 8000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [totalSlides]);
