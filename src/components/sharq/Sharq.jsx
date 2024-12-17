@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 function Sharq() {
   const [searchParams] = useSearchParams();
-  const currentLang = searchParams.get('lang') || 'uz';
+  const currentLang = searchParams.get('lang') || 'en';
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 

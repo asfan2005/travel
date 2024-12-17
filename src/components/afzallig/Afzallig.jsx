@@ -8,7 +8,7 @@ function Afzallig() {
 
   // Add language detection from URL
   const searchParams = new URLSearchParams(window.location.search);
-  const currentLang = searchParams.get('lang') || 'uz';
+  const currentLang = searchParams.get('lang') || 'en';
 
   // Add translations object
   const translations = {

@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 
 function Mashhur() {
   const [searchParams] = useSearchParams();
-  const currentLang = searchParams.get('lang') || 'uz';
+  const currentLang = searchParams.get('lang') || 'en';
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const translations = {
@@ -13,42 +13,42 @@ function Mashhur() {
         {
           id: 1,
           city: "Tashkent",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://t4.ftcdn.net/jpg/02/21/90/31/360_F_221903191_cdCRccy3dV6PSvtK88QsBO2XBjmOdGt6.jpg",
           description: "Tashkent is over 2000 years old. It has been the site of many important historical events and is considered the center of our culture.",
           rating: 4.8
         },
         {
           id: 2,
           city: "Bukhara",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Tdx2buUar-zjtu09iBaRFqYr9X1Khk_w8w&s",
           description: "Bukhara is famous for its attractions. Even one day is not enough to fully see the city.",
           rating: 4.5
         },
         {
           id: 3,
           city: "Samarkand",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://www.sayyoh.com/wp-content/uploads/2021/04/Registon.jpg",
           description: "Samarkand is known for its blue domes and has been famous around the world. There are many tales about this city.",
           rating: 4.7
         },
         {
           id: 4,
           city: "Khiva",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1668356485199-167557025c1f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2hpdmF8ZW58MHx8MHx8fDA%3D",
           description: "Khiva is one of the important cities of the Khorezm State, which is a part of the ancient Silk Road.",
           rating: 4.6
         },
         {
           id: 5,
           city: "Shakhrisabz",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://uzbek-travel.com/images/uz/Cities/Shakhrisabz/8322350072_6718ec2f0d_b.jpg",
           description: "Shakhrisabz is famous for being the birthplace of Amir Temur. It has a rich historical heritage.",
           rating: 4.9
         },
         {
           id: 6,
           city: "Termez",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ91vt6q3mob7ukGPEyiSazSNT3iEOgaR3Jmw&s",
           description: "Termez is one of the ancient Buddhist centers, located in the center of the Surkhandarya region.",
           rating: 4.8
         },
@@ -102,42 +102,42 @@ function Mashhur() {
         {
           id: 1,
           city: "Toshkent",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://t4.ftcdn.net/jpg/02/21/90/31/360_F_221903191_cdCRccy3dV6PSvtK88QsBO2XBjmOdGt6.jpg",
           description: "Toshkent 2000 yildan ortiq tarixga ega. Bu yerda ko'plab muhim tarixiy voqealar sodir bo'lgan va madaniyatimiz markazi hisoblanadi.",
           rating: 4.8
         },
         {
           id: 2,
           city: "Buxoro",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Tdx2buUar-zjtu09iBaRFqYr9X1Khk_w8w&s",
           description: "Buxoro o'zining diqqatga sazovor joylari bilan mashhur. Shaharni to'liq ko'rish uchun bir kun ham kamlik qiladi.",
           rating: 4.5
         },
         {
           id: 3,
           city: "Samarqand",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://www.sayyoh.com/wp-content/uploads/2021/04/Registon.jpg",
           description: "Samarqand o'zining moviy gumbazlari bilan tanilgan va dunyo bo'ylab mashhur. Bu shahar haqida ko'plab rivoyatlar bor.",
           rating: 4.7
         },
         {
           id: 4,
           city: "Xiva",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1668356485199-167557025c1f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2hpdmF8ZW58MHx8MHx8fDA%3D",
           description: "Xiva qadimgi Ipak yo'lining bir qismi bo'lgan Xorazm davlatining muhim shaharlaridan biri.",
           rating: 4.6
         },
         {
           id: 5,
           city: "Shahrisabz",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://uzbek-travel.com/images/uz/Cities/Shakhrisabz/8322350072_6718ec2f0d_b.jpg",
           description: "Shahrisabz Amir Temurning tug'ilgan joyi sifatida mashhur. Boy tarixiy merosga ega.",
           rating: 4.9
         },
         {
           id: 6,
           city: "Termiz",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ91vt6q3mob7ukGPEyiSazSNT3iEOgaR3Jmw&s",
           description: "Termiz Surxondaryo viloyatining markazida joylashgan qadimiy buddaviylik markazlaridan biri.",
           rating: 4.8
         },
@@ -191,42 +191,42 @@ function Mashhur() {
         {
           id: 1,
           city: "Ташкент",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://t4.ftcdn.net/jpg/02/21/90/31/360_F_221903191_cdCRccy3dV6PSvtK88QsBO2XBjmOdGt6.jpg",
           description: "Ташкенту более 2000 лет. Здесь произошло много важных исторических событий, и он считается центром нашей культуры.",
           rating: 4.8
         },
         {
           id: 2,
           city: "Бухара",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Tdx2buUar-zjtu09iBaRFqYr9X1Khk_w8w&s",
           description: "Бухара славится своими достопримечательностями. Даже одного дня недостаточно, чтобы полностью осмотреть город.",
           rating: 4.5
         },
         {
           id: 3,
           city: "Самарканд",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://www.sayyoh.com/wp-content/uploads/2021/04/Registon.jpg",
           description: "Самарканд известен своими голубыми куполами и славится по всему миру. Об этом городе существует много легенд.",
           rating: 4.7
         },
         {
           id: 4,
           city: "Хива",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://images.unsplash.com/photo-1668356485199-167557025c1f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2hpdmF8ZW58MHx8MHx8fDA%3D",
           description: "Хива - один из важных городов государства Хорезм, который является частью древнего Шелкового пути.",
           rating: 4.6
         },
         {
           id: 5,
           city: "Шахрисабз",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://uzbek-travel.com/images/uz/Cities/Shakhrisabz/8322350072_6718ec2f0d_b.jpg",
           description: "Шахрисабз известен как родина Амира Темура. Имеет богатое историческое наследие.",
           rating: 4.9
         },
         {
           id: 6,
           city: "Термез",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ91vt6q3mob7ukGPEyiSazSNT3iEOgaR3Jmw&s",
           description: "Термез - один из древних буддийских центров, расположенный в центре Сурхандарьинской области.",
           rating: 4.8
         },
@@ -281,7 +281,7 @@ function Mashhur() {
       setCurrentIndex((prevIndex) => 
         prevIndex + 4 >= translations[currentLang].places.length ? 0 : prevIndex + 4
       );
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(timer);
   }, [currentLang]);

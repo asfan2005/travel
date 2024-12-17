@@ -197,13 +197,13 @@ function Header() {
                   </svg>
                 </a>
                 <a
-                  href="mailto:travelcationsuz@gmail.com?subject=Canaan Travel - Inquiry&body=Hello,%0D%0A%0D%0AI am contacting you through the Canaan Travel website.%0D%0A%0D%0ABest regards,"
+                  href="https://mail.google.com/mail/u/0/#search/in%3Asent+travelcationsuz%40gmail.com"
                   className="flex items-center text-gray-700 hover:text-purple-700"
                   title="Send Email"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </a>
@@ -299,9 +299,11 @@ function Header() {
                     </svg>
                   </a>
                   <a
-                    href="mailto:asfan.coder@gmail.com"
+                    href="https://mail.google.com/mail/u/0/#search/in%3Asent+travelcationsuz%40gmail.com"
                     className="flex items-center text-gray-700 hover:text-purple-700"
-                    onClick={() => setIsOpen(false)}
+                    title="Send Email"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -355,7 +357,7 @@ function Header() {
                     </svg>
                   </a>
                   <a
-                    href="mailto:asfan.coder@gmail.com?subject=Canaan Travel - Inquiry&body=Hello,%0D%0A%0D%0AI am contacting you through the Canaan Travel website.%0D%0A%0D%0ABest regards,"
+                    href="https://mail.google.com/mail/u/0/#search/in%3Asent+travelcationsuz%40gmail.com"
                     className="flex items-center text-gray-700 hover:text-purple-700"
                     title="Send Email"
                     target="_blank"

@@ -28,7 +28,7 @@ function Home() {
 
   const translations = {
     uz: {
-      header: "Canaan Travel bilan O'zbekistonga sayohat qiling",
+      header: "TravelcationsUz bilan O'zbekistonga sayohat qiling",
       subHeader: "Afsonaviy Sharqni kashf eting!",
       searchPlaceholder: "Qayerga sayohat qilmoqchisiz?",
       searchButton: "Qidirish",
@@ -39,7 +39,7 @@ function Home() {
       },
     },
     ru: {
-      header: "Путешествуйте в Узбекистан с Canaan Travel",
+      header: "Путешествуйте в Узбекистан с TravelcationsUz",
       subHeader: "Откройте для себя легендарный Восток!",
       searchPlaceholder: "Куда вы хотите поехать?",
       searchButton: "Поиск",
@@ -50,7 +50,7 @@ function Home() {
       },
     },
     en: {
-      header: "Travel to Uzbekistan with Canaan Travel",
+      header: "Travel to Uzbekistan with TravelcationsUz",
       subHeader: "Discover the legendary East!",
       searchPlaceholder: "Where do you want to travel?",
       searchButton: "Search",
@@ -81,22 +81,11 @@ function Home() {
     const steps = 50; // Animation steps
     const interval = duration / steps;
 
-    const targetCounts = {
-      years: 18,
-      hotels: 500,
-      guides: 300,
-    };
-
     let currentStep = 0;
 
     const timer = setInterval(() => {
       currentStep++;
 
-      setCounts({
-        years: Math.min(Math.round((targetCounts.years * currentStep) / steps), targetCounts.years),
-        hotels: Math.min(Math.round((targetCounts.hotels * currentStep) / steps), targetCounts.hotels),
-        guides: Math.min(Math.round((targetCounts.guides * currentStep) / steps), targetCounts.guides),
-      });
 
       if (currentStep >= steps) {
         clearInterval(timer);
@@ -176,30 +165,6 @@ function Home() {
             >
               {t.searchButton}
             </button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid w-full max-w-2xl grid-cols-1 gap-4 md:grid-cols-3 md:bg-white md:rounded-lg md:p-6 relative">
-            <div className="text-center flex flex-col items-center">
-              <h2 className="mb-1 text-4xl font-bold text-white md:text-purple-600">{counts.years}</h2>
-              <p className="text-white md:text-purple-600">{t.stats.years}</p>
-            </div>
-
-            {/* Vertical divider - for desktop only */}
-            <div className="absolute left-1/3 top-1/4 h-1/2 w-px bg-purple-300 hidden md:block"></div>
-
-            <div className="text-center flex flex-col items-center">
-              <h2 className="mb-1 text-4xl font-bold text-white md:text-purple-600">{counts.hotels}+</h2>
-              <p className="text-white md:text-purple-600">{t.stats.hotels}</p>
-            </div>
-
-            {/* Vertical divider - for desktop only */}
-            <div className="absolute left-2/3 top-1/4 h-1/2 w-px bg-purple-300 hidden md:block"></div>
-
-            <div className="text-center flex flex-col items-center">
-              <h2 className="mb-1 text-4xl font-bold text-white md:text-purple-600">{counts.guides}+</h2>
-              <p className="text-white md:text-purple-600">{t.stats.guides}</p>
-            </div>
           </div>
         </div>
       </div>

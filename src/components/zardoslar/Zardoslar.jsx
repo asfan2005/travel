@@ -16,7 +16,7 @@ const zardoslarData = {
         features: "Doppis are mainly made in black and white, but festive Doppis are decorated with colorful threads.",
         usage: "Widely used in weddings, celebrations, and daily life.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://daryo.uz/cache/2018/01/1-11-680x383.jpg"
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const zardoslarData = {
         features: "There are more than 37 types of Atlas. Each pattern and color has its own meaning.",
         usage: "Used in making national clothes, curtains, and various decorations.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://daryo.uz/cache/2022/09/0B0A0719-1200x800.jpg"
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const zardoslarData = {
         features: "Gold embroidery is mainly done with golden thread, but festive pieces are decorated with colorful threads.",
         usage: "Used in weddings, celebrations, and daily life.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAh4J_oTsq0ZhTuVbWYug8SdIpExR0yMQzTQ&s"
     },
     {
       id: 4,
@@ -97,7 +97,7 @@ const zardoslarData = {
         features: "Do'ppilar asosan oq va qora rangda tikiladi, ammo bayramona do'ppilar rangli iplar bilan bezatiladi.",
         usage: "To'y-marosimlarda, bayramlarda va kundalik hayotda keng qo'llaniladi.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://daryo.uz/cache/2022/09/0B0A0719-1200x800.jpg"
     },
     {
       id: 2,
@@ -110,7 +110,7 @@ const zardoslarData = {
         features: "Atlasning 37 dan ortiq turi mavjud. Har bir naqsh va rangning o'z ma'nosi bor.",
         usage: "Milliy kiyimlar, pardalar va turli bezaklar tayyorlashda ishlatiladi.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://daryo.uz/cache/2022/09/0B0A0719-1200x800.jpg"
     },
     {
       id: 3,
@@ -123,7 +123,7 @@ const zardoslarData = {
         features: "Zardo'zlik asosan oltin ip bilan amalga oshiriladi, bayramona buyumlar esa rangli iplar bilan bezatiladi.",
         usage: "To'y-marosimlarda, bayramlarda va kundalik hayotda qo'llaniladi.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAh4J_oTsq0ZhTuVbWYug8SdIpExR0yMQzTQ&s"
     },
     {
       id: 4,
@@ -171,14 +171,14 @@ const zardoslarData = {
       id: 1,
       title: "Тюбетейка",
       rating: 4.8,
-      mainDescription: "Традиционный головной убор восточных народов. Тюбетейка - один из древнейших и красивейших головных уборов узбекского народа. Это не просто украшение, а символ национальной идентичности.",
+      mainDescription: "Традиционный головной убор восточных народов. Тюбетейка - один из древнейших и красивейших головных уборов узбекского наро��а. Это не просто украшение, а символ национальной идентичности.",
       details: {
         history: "История тюбетейки насчитывает тысячи лет. Каждый регион имеет свой уникальный стиль изготовления тюбетейки.",
         region: "Андижан, Маргилан, Чуст, Бухара и Самарканд считаются центрами изготовления тюбетеек.",
         features: "Тюбетейки в основном изготавливаются в черно-белых тонах, но праздничные тюбетейки украшаются разноцветными нитями.",
         usage: "Широко используется на свадьбах, праздниках и в повседневной жизни.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://daryo.uz/cache/2022/09/0B0A0719-1200x800.jpg"
     },
     {
       id: 2,
@@ -191,20 +191,20 @@ const zardoslarData = {
         features: "Существует более 37 видов атласа. Каждый узор и цвет имеет свое значение.",
         usage: "Используется в изготовлении национальной одежды, штор и различных украшений.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://daryo.uz/cache/2022/09/0B0A0719-1200x800.jpg"
     },
     {
       id: 3,
       title: "Золотое шитье",
       rating: 4.5,
-      mainDescription: "Золотое шитье - искусство вышивки золотой нитью. Это древнее ремесло развивалось в Бухаре и Самарканде. Изделия золотого шитья высоко ценятся не только в Узбекистане, но и во всем мире.",
+      mainDescription: "Золотое шитье - искусство вышивки золотой нитью. Это древнее ремесло развивалось в Бухаре и Самарканде. Изделия золотого шитья высоко ценятся не только в Узбекистане, но и ��о всем мире.",
       details: {
         history: "История золотого шитья насчитывает тысячи лет. Каждый регион имеет свой уникальный стиль вышивки.",
         region: "Бухара является крупнейшим центром золотого шитья. Это искусство также практикуется в Самарканде.",
         features: "Золотое шитье выполняется в основном золотой нитью, праздничные изделия украшаются цветными нитями.",
         usage: "Используется на свадьбах, праздниках и в повседневной жизни.",
       },
-      image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAh4J_oTsq0ZhTuVbWYug8SdIpExR0yMQzTQ&s"
     },
     {
       id: 4,
@@ -240,7 +240,7 @@ const zardoslarData = {
       details: {
         history: "История гончарного искусства насчитывает тысячи лет. Каждый регион имеет свой уникальный гончарный стиль.",
         region: "Риштан, Гиждуван, Хива и другие города считаются центрами гончарного искусства.",
-        features: "Гончарные изделия в основном изготавливаются в синих и бирюзовых тонах, но праздничные изделия украшаются различными цветами.",
+        features: "Гончарные изделия в основном изготавливаются �� синих и бирюзовых тонах, но праздничные изделия украшаются различными цветами.",
         usage: "Используется в повседневной жизни, на праздниках и в качестве декоративных предметов.",
       },
       image: "https://canaan.travel/media/articles/zolotoshveynoe-iskusstvo-uzbekistana-600x470.jpg"
@@ -572,7 +572,11 @@ function Zardoslar() {
                 type="text"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="Enter your name"
+                placeholder={
+                  currentLang === 'uz' ? "Ismingizni kiriting va familyangizni kiriting" : 
+                  currentLang === 'ru' ? "Введите ваше имя и фамилию" : 
+                  "Enter your name and surname"
+                }
                 className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 
                    focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent 
                    transition duration-200"
@@ -590,7 +594,11 @@ function Zardoslar() {
                 type="tel"
                 value={formData.phone}
                 onChange={handleInputChange}
-                placeholder="+998 90 123 45 67"
+                placeholder={
+                  currentLang === 'uz' ? "+998 90 123 45 67" : 
+                  currentLang === 'ru' ? "+7 (ХХХ) ХХХ-ХХ-ХХ" : 
+                  "+1 (XXX) XXX-XXXX"
+                }
                 className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 
                    focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent 
                    transition duration-200"
@@ -608,7 +616,11 @@ function Zardoslar() {
                 value={formData.message}
                 onChange={handleInputChange}
                 rows="3"
-                placeholder="Enter additional information..."
+                placeholder={
+                  currentLang === 'uz' ? "Qo'shimcha ma'lumotlarni kiriting..." : 
+                  currentLang === 'ru' ? "Введите дополнительную информацию..." : 
+                  "Enter additional information..."
+                }
                 className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 
                    focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent 
                    transition duration-200 resize-none"

@@ -324,7 +324,7 @@ const translations = {
 
 function PopularTours() {
   const [searchParams] = useSearchParams();
-  const currentLang = searchParams.get('lang') || 'uz';
+  const currentLang = searchParams.get('lang') || 'en';
 
   const settings = {
     dots: true,
