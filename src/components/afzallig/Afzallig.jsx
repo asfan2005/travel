@@ -46,7 +46,7 @@ function Afzallig() {
         description: "Каждое путешествие - новая история! 🌄 Величественные горные вершины, 🏞️ красивые долины, 🌺 исторические памятники и современные города - всё ждёт вас!"
       },
       card2: {
-        title: "Объекты Всемирного наследия",
+        title: "Объе��ты Всемирного наследия",
         description: "🏛️ Откройте для себя чудеса наследия ЮНЕСКО! Полюбуйтесь величественными куполами площади Регистан, 🏺 уникальным искусством гиждуванской керамики, ⚜️ и несравненной архитектурой Шахрисабза!"
       },
       card3: {
@@ -63,7 +63,7 @@ function Afzallig() {
       modal: {
         title: "🎊 Поздравляем! 🎊",
         description: "Ваша подписка успешно оформлена! Самые интересные предложения скоро появятся в вашей почте! ✨",
-        close: "Закрыть ✨"
+        close: "Закрыть ✨" 
       }
     },
     uz: {
@@ -74,7 +74,7 @@ function Afzallig() {
       },
       card2: {
         title: "Jahon Merosi Obidalari",
-        description: "🏛️ UNESCO merosi mo'jizalarini kashf eting! Registon maydonining hashamatli gumbazlari, 🏺 Gijduvon kulolchiligining noyob san'ati, ⚜️ va Shahrisabzning tengsiz me'morchiligi!"
+        description: "����️ UNESCO merosi mo'jizalarini kashf eting! Registon maydonining hashamatli gumbazlari, 🏺 Gijduvon kulolchiligining noyob san'ati, ⚜️ va Shahrisabzning tengsiz me'morchiligi!"
       },
       card3: {
         title: "Buyuk Ipak Yo'li Tarixi",
@@ -123,13 +123,18 @@ function Afzallig() {
     setLoading(true);
     
     try {
-      // Backend API'ga so'rov yuborish
+      // Backend API'ga so'rov yuborish (simulated)
       await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Open Telegram channel in a new tab
+      window.open('https://t.me/travelcations_uz', '_blank');
+      
       setShowModal(true);
       setEmail("");
       setError("");
     } catch (error) {
       console.error("Xatolik yuz berdi:", error);
+      setError("Subscription failed. Please try again.");
     } finally {
       setLoading(false);
     }
