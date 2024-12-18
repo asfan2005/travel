@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import axios from "axios";
 
 // Translations obyekti
 const translations = {
@@ -75,6 +76,7 @@ function Booking() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -89,24 +91,70 @@ function Booking() {
     setIsSubmitting(true);
     
     try {
-      // API call imitation
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      setSubmitStatus('success');
-      setFormData({
-        fullName: "",
-        date: "",
-        email: "",
-        phone: "",
-        message: "",
+      // Make actual POST request
+      const response = await axios.post('http://localhost:8080/bronQilish', formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
-      
-      setTimeout(() => setSubmitStatus(null), 3000);
+
+      // Check if the request was successful
+      if (response.status === 200 || response.status === 201) {
+        setSubmitStatus('success');
+        setShowModal(true);
+        
+        // Reset form
+        setFormData({
+          fullName: "",
+          date: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+
+        // Automatically close modal after 5 seconds
+        setTimeout(() => setShowModal(false), 5000);
+      } else {
+        throw new Error('Submission failed');
+      }
     } catch (error) {
+      console.error('Submission error:', error);
       setSubmitStatus('error');
+      
+      // Show error modal
+      setShowModal(true);
+      
+      // Automatically close error modal after 5 seconds
+      setTimeout(() => setShowModal(false), 5000);
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Modal Component
+  const Modal = ({ type }) => {
+    const modalContent = {
+      success: {
+        en: "Your request has been successfully submitted. The admin will contact you soon.",
+        uz: "Sizning so'rovingiz muvaffaqiyatli yuborildi. Admin siz bilan tez orada bog'lanadi.",
+        ru: "Ваш запрос успешно отправлен. Администратор свяжется с вами в ближайшее время."
+      },
+      error: {
+        en: "An error occurred. Please try again later.",
+        uz: "Xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.",
+        ru: "Произошла ошибка. Пожалуйста, попробуйте позже."
+      }
+    };
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="bg-white p-8 rounded-lg shadow-xl text-center max-w-md">
+          <p className={`text-lg font-semibold ${type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+            {modalContent[type][lang]}
+          </p>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -220,7 +268,8 @@ function Booking() {
         </div>
       </div>
 
-     
+      {/* Modal Rendering */}
+      {showModal && <Modal type={submitStatus} />}
     </div>
   );
 }

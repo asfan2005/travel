@@ -10,12 +10,97 @@ import {
   FaTimes,
   FaChevronLeft,
   FaChevronRight,
+  FaCheckCircle,
 } from "react-icons/fa";
+import axios from "axios"; // Make sure to install axios: npm install axios
+import { motion, AnimatePresence } from "framer-motion";
+
+// Success Modal Component
+const SuccessModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+        >
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.7, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="relative w-full max-w-md mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden"
+          >
+            {/* Close Button */}
+            <button 
+              onClick={onClose}
+              className="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors z-10"
+            >
+              <FaTimes className="w-6 h-6" />
+            </button>
+
+            {/* Modal Content */}
+            <div className="p-8 text-center">
+              {/* Success Icon */}
+              <div className="flex justify-center mb-6">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ 
+                    scale: [0, 1.2, 1],
+                    rotate: [0, 360]
+                  }}
+                  transition={{ 
+                    duration: 0.6,
+                    type: "spring"
+                  }}
+                >
+                  <FaCheckCircle className="text-green-500 w-20 h-20" />
+                </motion.div>
+              </div>
+
+              {/* Title */}
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Tour Request Submitted!
+              </h2>
+
+              {/* Description */}
+              <p className="text-gray-600 mb-6 text-lg">
+                Thank you for your interest in our tour. Our admin will contact you soon to confirm the details and provide further information.
+              </p>
+
+              {/* Additional Details */}
+              <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mb-6">
+                <p className="text-green-700 text-sm">
+                  <span className="font-bold">Expected Response Time:</span> 1-2 business days
+                </p>
+              </div>
+
+              {/* Close Button */}
+              <button 
+                onClick={onClose}
+                className="w-full py-3 bg-green-500 text-white rounded-lg 
+                hover:bg-green-600 transition-colors 
+                focus:outline-none focus:ring-2 focus:ring-green-300"
+              >
+                Close
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 function TenDaysTour() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [expandedDays, setExpandedDays] = useState({});
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   // Add new state for form
   const [formData, setFormData] = useState({
@@ -161,34 +246,81 @@ function TenDaysTour() {
     }));
   };
 
-  // Add submit handler
-  const handleSubmit = (e) => {
+  // Updated submit handler with axios POST request
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Log the form data
-    console.log('Form submitted with data:', formData);
-    
-    // Here you would typically send the data to your backend
-    // For now, we'll just log it and reset the form
-    
-    // Reset form
-    setFormData({
-      title: '',
-      firstName: '',
-      lastName: '',
-      citizenship: '',
-      email: '',
-      phone: '',
-      arrivingFrom: '',
-      startDate: '',
-      endDate: '',
-      accommodationType: '',
-      numberOfTravelers: '',
-      comments: ''
-    });
+    try {
+      // Validate form data
+      const requiredFields = [
+        'title', 'firstName', 'lastName', 'citizenship', 
+        'email', 'phone', 'startDate', 'endDate', 
+        'accommodationType', 'numberOfTravelers'
+      ];
+      
+      const missingFields = requiredFields.filter(field => !formData[field]);
+      
+      if (missingFields.length > 0) {
+        alert(`Please fill in the following required fields: ${missingFields.join(', ')}`);
+        return;
+      }
 
-    // Show success message
-    alert('Tour request submitted successfully!');
+      // Prepare data for submission with correct property names
+      const submissionData = {
+        title: formData.title,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        citizenShip: formData.citizenship,
+        email: formData.email,
+        phone: formData.phone,
+        arrivingFrom: formData.arrivingFrom || '',
+        startDate: formData.startDate,
+        endDate: formData.endDate,
+        accomodationType: formData.accommodationType,
+        numberOdTravelers: formData.numberOfTravelers,
+        comments: formData.comments || '',
+        turName: "10 kunlik Golden Road to Samarkand Tour"
+      };
+
+      // Send POST request
+      const response = await axios.post('http://localhost:8080/individual', submissionData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      // Handle successful submission
+      if (response.status === 200 || response.status === 201) {
+        // Show success modal
+        setShowSuccessModal(true);
+
+        // Reset form
+        setFormData({
+          title: '',
+          firstName: '',
+          lastName: '',
+          citizenship: '',
+          email: '',
+          phone: '',
+          arrivingFrom: '',
+          startDate: '',
+          endDate: '',
+          accommodationType: '',
+          numberOfTravelers: '',
+          comments: ''
+        });
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      
+      if (error.response) {
+        alert(`Submission failed: ${error.response.data.message || 'Please try again'}`);
+      } else if (error.request) {
+        alert('No response received from server. Please check your internet connection.');
+      } else {
+        alert('Error submitting form. Please try again.');
+      }
+    }
   };
 
     return (
@@ -1727,6 +1859,12 @@ function TenDaysTour() {
           </div>
         </form>
       </div>
+      
+      {/* Success Modal */}
+      <SuccessModal 
+        isOpen={showSuccessModal} 
+        onClose={() => setShowSuccessModal(false)} 
+      />
     </div>
   );
 }

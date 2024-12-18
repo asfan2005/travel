@@ -54,12 +54,16 @@ function Footer2() {
   const currentLang = searchParams.get("lang") || "en";
   const t = translations[currentLang];
 
+  // Helper function to navigate with language preservation
+  const navigateWithLang = (path) => {
+    navigate(`${path}?lang=${currentLang}`);
+  };
+
   return (
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start gap-12">
         {/* Logo va copyright */}
         <div className="flex flex-col space-y-4">
-          
           <p className="text-gray-400 text-xs max-w-[250px]">
             {t.copyright}
           </p>
@@ -67,7 +71,10 @@ function Footer2() {
 
         {/* Navigation Links */}
         <div className="flex flex-col space-y-3">
-          <h3 to="/" className="text-white text-base font-medium">
+          <h3 
+            onClick={() => navigateWithLang("/")} 
+            className="text-white text-base font-medium cursor-pointer hover:text-gray-300 transition-colors"
+          >
             {t.main}
           </h3>
         </div>
@@ -79,22 +86,34 @@ function Footer2() {
           </h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/individual-tours" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+              <Link 
+                to={`/individual-tours?lang=${currentLang}`} 
+                className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+              >
                 {t.individualTours}
               </Link>
             </li>
             <li>
-              <Link to="/5-days-tour" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+              <Link 
+                to={`/5-days-tour?lang=${currentLang}`} 
+                className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+              >
                 {t.fiveDaysTour}
               </Link>
             </li>
             <li>
-              <Link to="/6-days-tour" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+              <Link 
+                to={`/6-days-tour?lang=${currentLang}`} 
+                className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+              >
                 {t.sixDaysTour}
               </Link>
             </li>
             <li>
-              <Link to="/10-days-tour" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+              <Link 
+                to={`/10-days-tour?lang=${currentLang}`} 
+                className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+              >
                 {t.tenDaysTour}
               </Link>
             </li>
@@ -110,7 +129,10 @@ function Footer2() {
             <li className="text-gray-400 hover:text-white transition-colors">
               {t.license}
             </li>
-            <li onClick={() => navigate("/polise")} className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+            <li 
+              onClick={() => navigateWithLang("/polise")} 
+              className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+            >
               {t.privacyPolicy}
             </li>
           </ul>

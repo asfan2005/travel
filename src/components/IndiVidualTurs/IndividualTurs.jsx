@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import axios from 'axios';
 
 function IndividualTurs() {
   const [searchParams] = useSearchParams();
   const currentLang = searchParams.get("lang") || "en";
   
+  // Add state for modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Translations object
   const translations = {
     en: {
@@ -30,7 +34,10 @@ function IndividualTurs() {
       groupTour: "Group tour",
       comments: "Comments and additional information",
       sendRequest: "Send request",
-      successMessage: "Tour request submitted successfully!"
+      successMessage: "Tour request submitted successfully!",
+      modalTitle: "Request Submitted Successfully",
+      modalMessage: "Your tour request has been received. Our admin will contact you soon.",
+      modalClose: "Close"
     },
     ru: {
       tourRequest: "Заявка на тур",
@@ -55,7 +62,10 @@ function IndividualTurs() {
       groupTour: "Групповой тур",
       comments: "Комментарии и дополнительная информация",
       sendRequest: "Отправить заявку",
-      successMessage: "Заявка на тур успешно отправлена!"
+      successMessage: "Заявка на тур успешно отправлена!",
+      modalTitle: "Заявка успешно отправлена",
+      modalMessage: "Ваш запрос на тур получен. Наш администратор свяжется с вами в ближайшее время.",
+      modalClose: "Закрыть"
     },
     uz: {
       tourRequest: "Sayohat uchun ariza",
@@ -80,7 +90,10 @@ function IndividualTurs() {
       groupTour: "Guruh turi",
       comments: "Izohlar va qo'shimcha ma'lumotlar",
       sendRequest: "Arizani yuborish",
-      successMessage: "Sayohat uchun ariza muvaffaqiyatli yuborildi!"
+      successMessage: "Sayohat uchun ariza muvaffaqiyatli yuborildi!",
+      modalTitle: "Ariza muvaffaqiyatli yuborildi",
+      modalMessage: "Sizning sayohat arizangiz qabul qilindi. Admin tez orada siz bilan bog'lanadi.",
+      modalClose: "Yopish"
     }
   };
 
@@ -108,36 +121,97 @@ function IndividualTurs() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // Modal Component
+  const SuccessModal = () => {
+    return (
+      <div 
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ${isModalOpen ? 'block' : 'hidden'}`}
+        onClick={() => setIsModalOpen(false)}
+      >
+        <div 
+          className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full mx-4"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <h2 className="text-2xl font-bold mb-4 text-green-600">
+            {translations[currentLang].modalTitle}
+          </h2>
+          <p className="mb-6 text-gray-700">
+            {translations[currentLang].modalMessage}
+          </p>
+          <button 
+            onClick={() => setIsModalOpen(false)}
+            className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-colors"
+          >
+            {translations[currentLang].modalClose}
+          </button>
+        </div>
+      </div>
+    );
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Log the form data
-    console.log("Form submitted with data:", formData);
+    // Prepare the data in the format expected by the backend
+    const tourRequestData = {
+      title: formData.title,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      citizenShip: formData.citizenship,
+      email: formData.email,
+      phone: formData.phone,
+      arrivingFrom: formData.arrivingFrom,
+      startDate: formData.startDate,
+      endDate: formData.endDate,
+      accomodationType: formData.accommodationType,
+      numberOdTravelers: formData.numberOfTravelers,
+      comments: formData.comments,
+      turName:"Individual Tur"
+    };
 
-    // Here you would typically send the data to your backend
-    // For now, we'll just log it and reset the form
+    try {
+      // Send POST request to the backend
+      const response = await axios.post('http://localhost:8080/individual', tourRequestData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
-    // Reset form
-    setFormData({
-      title: "",
-      firstName: "",
-      lastName: "",
-      citizenship: "",
-      email: "",
-      phone: "",
-      arrivingFrom: "",
-      startDate: "",
-      endDate: "",
-      accommodationType: "",
-      numberOfTravelers: "",
-      comments: "",
-    });
+      // Handle successful submission
+      console.log('Tour request submitted successfully:', response.data);
 
-    // Show success message
-    alert(translations[currentLang].successMessage);
+      // Reset form
+      setFormData({
+        title: "",
+        firstName: "",
+        lastName: "",
+        citizenship: "",
+        email: "",
+        phone: "",
+        arrivingFrom: "",
+        startDate: "",
+        endDate: "",
+        accommodationType: "",
+        numberOfTravelers: "",
+        comments: "",
+      });
+
+      // Open success modal instead of alert
+      setIsModalOpen(true);
+
+    } catch (error) {
+      // Handle any errors during submission
+      console.error('Error submitting tour request:', error);
+      
+      // Optionally show an error message to the user
+      alert('Failed to submit tour request. Please try again.');
+    }
   };
   return (
     <div>
+      {/* Success Modal */}
+      <SuccessModal />
+
       {/* Tour Request Form Section */}
       <div className="mt-12 w-full max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-sm">
         <form onSubmit={handleSubmit}>

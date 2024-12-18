@@ -11,6 +11,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
+import axios from 'axios';
+
 function SixDaysTour() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
@@ -31,6 +33,8 @@ function SixDaysTour() {
     numberOfTravelers: '',
     comments: ''
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const images = [
     {
@@ -160,27 +164,62 @@ function SixDaysTour() {
   };
 
   // Add submit handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted with data:', formData);
+    
+    // Prepare the request data
+    const requestData = {
+      ...formData,
+      turName: "6-day Uzbekistan Express Tour", // Add the tour name
+      citizenShip: formData.citizenship // Match the backend property name
+    };
 
-    setFormData({
-      title: '',
-      firstName: '',
-      lastName: '',
-      citizenship: '',
-      email: '',
-      phone: '',
-      arrivingFrom: '',
-      startDate: '',
-      endDate: '',
-      accommodationType: '',
-      numberOfTravelers: '',
-      comments: ''
-    });
+    try {
+      // Send POST request
+      const response = await axios.post('http://localhost:8080/individual', requestData);
+      
+      // Reset form
+      setFormData({
+        title: '',
+        firstName: '',
+        lastName: '',
+        citizenship: '',
+        email: '',
+        phone: '',
+        arrivingFrom: '',
+        startDate: '',
+        endDate: '',
+        accommodationType: '',
+        numberOfTravelers: '',
+        comments: ''
+      });
 
-    alert('Tour request submitted successfully!');
+      // Open success modal
+      setIsModalOpen(true);
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
+
+  // Add modal component
+  const SuccessModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white p-8 rounded-lg shadow-xl text-center max-w-md w-full">
+        <h2 className="text-2xl font-bold text-green-600 mb-4">Tour Request Submitted</h2>
+        <p className="text-gray-600 mb-6">
+          Your tour request has been successfully sent. Our admin will contact you soon.
+        </p>
+        <button 
+          onClick={() => setIsModalOpen(false)}
+          className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
@@ -1400,6 +1439,8 @@ function SixDaysTour() {
           </div>
         </div>
       </div>
+
+      {isModalOpen && <SuccessModal />}
     </div>
   );
 }

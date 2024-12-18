@@ -29,3 +29,4 @@ export {default as Image7} from "../img/image7.jpg";
 export {default as BizHaqimizda} from "./BizHaqimizda/BizHaqimizda";
 export {default as IndividualTurs} from "./IndiVidualTurs/IndividualTurs";
 export {default as Sayohatlar} from "./sayohatlar/Sayohatlar";
+export {default as Admin} from "../admin/Admin";

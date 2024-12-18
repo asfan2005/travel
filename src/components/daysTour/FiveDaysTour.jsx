@@ -10,12 +10,15 @@ import {
   FaTimes,
   FaChevronLeft,
   FaChevronRight,
+  FaCheckCircle,
 } from "react-icons/fa";
+import axios from 'axios';
 
 function FiveDaysTour() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [expandedDays, setExpandedDays] = useState({});
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   // Add form state
   const [formData, setFormData] = useState({
@@ -160,27 +163,104 @@ function FiveDaysTour() {
     }));
   };
 
-  // Add submit handler
-  const handleSubmit = (e) => {
+  // Success Modal Component
+  const SuccessModal = () => {
+    return (
+      <div 
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
+        onClick={() => setIsSuccessModalOpen(false)}
+      >
+        <div 
+          className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full transform transition-all duration-300 ease-in-out scale-100 hover:scale-105"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex flex-col items-center space-y-6">
+            <FaCheckCircle className="text-green-500 text-6xl animate-bounce" />
+            
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                Tour Request Submitted!
+              </h2>
+              <p className="text-gray-600 text-sm">
+                Our travel experts will review your request and contact you shortly.
+              </p>
+            </div>
+
+            <div className="flex space-x-4">
+              <button 
+                onClick={() => setIsSuccessModalOpen(false)}
+                className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // Updated handleSubmit function
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted with data:', formData);
 
-    setFormData({
-      title: '',
-      firstName: '',
-      lastName: '',
-      citizenship: '',
-      email: '',
-      phone: '',
-      arrivingFrom: '',
-      startDate: '',
-      endDate: '',
-      accommodationType: '',
-      numberOfTravelers: '',
-      comments: ''
-    });
+    // Validate form fields
+    const requiredFields = [
+      'title', 'firstName', 'lastName', 'citizenship', 
+      'email', 'phone', 'startDate', 'endDate', 
+      'accommodationType', 'numberOfTravelers'
+    ];
 
-    alert('Tour request submitted successfully!');
+    const missingFields = requiredFields.filter(field => !formData[field]);
+
+    if (missingFields.length > 0) {
+      alert(`Please fill in the following fields: ${missingFields.join(', ')}`);
+      return;
+    }
+
+    const tourRequestData = {
+      title: formData.title,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      citizenShip: formData.citizenship,
+      email: formData.email,
+      phone: formData.phone,
+      arrivingFrom: formData.arrivingFrom || 'Not specified',
+      startDate: formData.startDate,
+      endDate: formData.endDate,
+      accomodationType: formData.accommodationType,
+      numberOdTravelers: formData.numberOfTravelers,
+      comments: formData.comments || 'No additional comments',
+      turName: "5 kunlik tur"
+    };
+
+    try {
+      // Send POST request
+      await axios.post('http://localhost:8080/individual', tourRequestData);
+
+      // Reset form
+      setFormData({
+        title: '',
+        firstName: '',
+        lastName: '',
+        citizenship: '',
+        email: '',
+        phone: '',
+        arrivingFrom: '',
+        startDate: '',
+        endDate: '',
+        accommodationType: '',
+        numberOfTravelers: '',
+        comments: ''
+      });
+
+      // Open success modal
+      setIsSuccessModalOpen(true);
+
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Failed to submit tour request. Please try again.');
+    }
   };
 
   return (
@@ -1334,6 +1414,9 @@ function FiveDaysTour() {
           </div>
         </div>
       </div>
+
+      {/* Success Modal Conditional Rendering */}
+      {isSuccessModalOpen && <SuccessModal />}
     </div>
   );
 }
