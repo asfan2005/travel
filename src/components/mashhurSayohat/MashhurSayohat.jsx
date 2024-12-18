@@ -16,7 +16,7 @@ const translations = {
       {
         id: 1,
         title: "New Year in Uzbekistan - 2024-2025",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/citys/5e53c06ca0049049451193.jpg",
         price: "774",
         duration: "7 days / 6 nights",
         rating: 4.8
@@ -24,7 +24,7 @@ const translations = {
       {
         id: 2,
         title: "Thousand and One Nights of Uzbekistan",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/noviy/kokand-3.jpg",
         price: "715",
         duration: "10 days / 9 nights",
         rating: 4.5
@@ -32,7 +32,7 @@ const translations = {
       {
         id: 3,
         title: "Along the Ancient Caravan Routes",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/Navoiy/cropped-images/IMG_20221027_143255_335-0-0-0-0-1728897390.jpg",
         price: "520",
         duration: "8 days / 7 nights",
         rating: 4.2
@@ -40,7 +40,7 @@ const translations = {
       {
         id: 4,
         title: "Journey Along the Great Silk Road",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/Qarshi/cropped-images/shutterstock_2155010593-0-0-0-0-1728646644.jpg",
         price: "850",
         duration: "12 days / 11 nights",
         rating: 4.7
@@ -48,7 +48,7 @@ const translations = {
       {
         id: 5,
         title: "Tashkent - Samarkand Tour",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/uploaded-files/samarkand-uzbekistan-kupol-mechet-ploshchad.png",
         price: "450",
         duration: "3 days / 2 nights",
         rating: 4.6
@@ -56,7 +56,7 @@ const translations = {
       {
         id: 6,
         title: "Through the History of Bukhara",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg",
         price: "580",
         duration: "4 days / 3 nights",
         rating: 4.4
@@ -64,7 +64,7 @@ const translations = {
       {
         id: 7,
         title: "Khiva - The Ancient City",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/2079897013-0-0-0-0-1728537570.jpg",
         price: "620",
         duration: "5 days / 4 nights",
         rating: 4.3
@@ -72,7 +72,7 @@ const translations = {
       {
         id: 8,
         title: "Through the Fergana Valley",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/11/DSC_6362-1024x683.jpg",
         price: "480",
         duration: "6 days / 5 nights",
         rating: 4.5
@@ -81,14 +81,14 @@ const translations = {
       {
         id: 9,
         title: "Termiz - History of Buddhism",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/noviy/DJI_0030.jpg",
         price: "590",
         duration: "4 days / 3 nights",
         rating: 4.2
       },{
         id: 10,
         title: "Shahrisabz - Homeland of Amir Temur",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/uploaded-files/photo_2024-07-01_12-11-20.jpg",
         price: "420",
         duration: "3 days / 2 nights",
         rating: 4.4
@@ -96,7 +96,7 @@ const translations = {
       {
         id: 11,
         title: "To the Nurota Mountains",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/06/DSC_5985-1024x683.jpg",
         price: "680",
         duration: "5 days / 4 nights",
         rating: 4.6
@@ -104,7 +104,7 @@ const translations = {
       {
         id: 12,
         title: "Through the Zarafshan Valley",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/03/DSC_4905-1024x683.jpg",
         price: "550",
         duration: "4 days / 3 nights",
         rating: 4.3
@@ -121,7 +121,7 @@ const translations = {
       {
         id: 1,
         title: "O'zbekistonda Yangi Yil - 2024-2025",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/citys/5e53c06ca0049049451193.jpg",
         price: "774",
         duration: "7 kun / 6 tun",
         rating: 4.8
@@ -129,7 +129,7 @@ const translations = {
       {
         id: 2,
         title: "O'zbekistonning Ming bir kechasi",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/noviy/kokand-3.jpg",
         price: "715",
         duration: "10 kun / 9 tun",
         rating: 4.5
@@ -137,7 +137,7 @@ const translations = {
       {
         id: 3,
         title: "Qadimiy karvon yo'llari bo'ylab",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/Navoiy/cropped-images/IMG_20221027_143255_335-0-0-0-0-1728897390.jpg",
         price: "520",
         duration: "8 kun / 7 tun",
         rating: 4.2
@@ -145,7 +145,7 @@ const translations = {
       {
         id: 4,
         title: "Buyuk Ipak yo'li bo'ylab sayohat",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/Qarshi/cropped-images/shutterstock_2155010593-0-0-0-0-1728646644.jpg",
         price: "850",
         duration: "12 kun / 11 tun",
         rating: 4.7
@@ -153,7 +153,7 @@ const translations = {
       {
         id: 5,
         title: "Toshkent - Samarqand sayohati",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/uploaded-files/samarkand-uzbekistan-kupol-mechet-ploshchad.png",
         price: "450",
         duration: "3 kun / 2 tun",
         rating: 4.6
@@ -161,7 +161,7 @@ const translations = {
       {
         id: 6,
         title: "Buxoro tarixi bo'ylab",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg",
         price: "580",
         duration: "4 kun / 3 tun",
         rating: 4.4
@@ -169,7 +169,7 @@ const translations = {
       {
         id: 7,
         title: "Xiva - Qadimiy shahar",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/2079897013-0-0-0-0-1728537570.jpg",
         price: "620",
         duration: "5 kun / 4 tun",
         rating: 4.3
@@ -177,7 +177,7 @@ const translations = {
       {
         id: 8,
         title: "Farg'ona vodiysi bo'ylab",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/11/DSC_6362-1024x683.jpg",
         price: "480",
         duration: "6 kun / 5 tun",
         rating: 4.5
@@ -185,7 +185,7 @@ const translations = {
       {
         id: 9,
         title: "Termiz - Buddizm tarixi",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/noviy/DJI_0030.jpg",
         price: "590",
         duration: "4 kun / 3 tun",
         rating: 4.2
@@ -193,7 +193,7 @@ const translations = {
       {
         id: 10,
         title: "Shahrisabz - Amir Temur vatani",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/uploaded-files/photo_2024-07-01_12-11-20.jpg",
         price: "420",
         duration: "3 kun / 2 tun",
         rating: 4.4
@@ -201,7 +201,7 @@ const translations = {
       {
         id: 11,
         title: "Nurota tog'lariga sayohat",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/06/DSC_5985-1024x683.jpg",
         price: "680",
         duration: "5 kun / 4 tun",
         rating: 4.6
@@ -209,7 +209,7 @@ const translations = {
       {
         id: 12,
         title: "Zarafshon vodiysi bo'ylab",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/03/DSC_4905-1024x683.jpg",
         price: "550",
         duration: "4 kun / 3 tun",
         rating: 4.3
@@ -225,7 +225,7 @@ const translations = {
       {
         id: 1,
         title: "Новый Год в Узбекистане - 2024-2025",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/citys/5e53c06ca0049049451193.jpg",
         price: "774",
         duration: "7 дней / 6 ночей",
         rating: 4.8
@@ -233,7 +233,7 @@ const translations = {
       {
         id: 2,
         title: "Тысяча и одна ночь Узбекистана",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/noviy/kokand-3.jpg",
         price: "715",
         duration: "10 дней / 9 ночей",
         rating: 4.5
@@ -241,7 +241,7 @@ const translations = {
       {
         id: 3,
         title: "По древним караванным путям",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/Navoiy/cropped-images/IMG_20221027_143255_335-0-0-0-0-1728897390.jpg",
         price: "520",
         duration: "8 дней / 7 ночей",
         rating: 4.2
@@ -249,7 +249,7 @@ const translations = {
       {
         id: 4,
         title: "Путешествие по Великому Шелковому пути",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/Qarshi/cropped-images/shutterstock_2155010593-0-0-0-0-1728646644.jpg",
         price: "850",
         duration: "12 дней / 11 ночей",
         rating: 4.7
@@ -257,7 +257,7 @@ const translations = {
       {
         id: 5,
         title: "Ташкент - Самарканд тур",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/uploaded-files/samarkand-uzbekistan-kupol-mechet-ploshchad.png",
         price: "450",
         duration: "3 дня / 2 ночи",
         rating: 4.6
@@ -265,7 +265,7 @@ const translations = {
       {
         id: 6,
         title: "По истории Бухары",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg",
         price: "580",
         duration: "4 дня / 3 ночи",
         rating: 4.4
@@ -273,7 +273,7 @@ const translations = {
       {
         id: 7,
         title: "Хива - Древний город",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/2079897013-0-0-0-0-1728537570.jpg",
         price: "620",
         duration: "5 дней / 4 ночи",
         rating: 4.3
@@ -281,7 +281,7 @@ const translations = {
       {
         id: 8,
         title: "По Ферганской долине",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/11/DSC_6362-1024x683.jpg",
         price: "480",
         duration: "6 дней / 5 ночей",
         rating: 4.5
@@ -289,7 +289,7 @@ const translations = {
       {
         id: 9,
         title: "Термез - История буддизма",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/noviy/DJI_0030.jpg",
         price: "590",
         duration: "4 дня / 3 ночи",
         rating: 4.2
@@ -297,7 +297,7 @@ const translations = {
       {
         id: 10,
         title: "Шахрисабз - Родина Амира Темура",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://uzbekistan.travel/storage/app/media/uploaded-files/photo_2024-07-01_12-11-20.jpg",
         price: "420",
         duration: "3 дня / 2 ночи",
         rating: 4.4
@@ -305,7 +305,7 @@ const translations = {
       {
         id: 11,
         title: "К горам Нураты",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/06/DSC_5985-1024x683.jpg",
         price: "680",
         duration: "5 дней / 4 ночи",
         rating: 4.6
@@ -313,7 +313,7 @@ const translations = {
       {
         id: 12,
         title: "По Зеравшанской долине",
-        image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d7de?q=80&w=1000",
+        image: "https://www.sayyoh.com/wp-content/uploads/2019/03/DSC_4905-1024x683.jpg",
         price: "550",
         duration: "4 дня / 3 ночи",
         rating: 4.3

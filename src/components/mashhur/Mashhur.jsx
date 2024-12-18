@@ -55,42 +55,42 @@ function Mashhur() {
         {
           id: 7,
           city: "Margilan",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://uzbekistan.travel/storage/app/media/nargiza/cropped-images/B52I4994-0-0-0-0-1583482646.jpg",
           description: "Margilan is a city of Atlas and Adras, which was the site of the Silk Road caravans. It has a rich historical heritage.",
           rating: 4.7
         },
         {
           id: 8,
           city: "Kokand",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipPBWp9Z-dSF912kRWO2X1XuTDJHhJ2BnDxmKpvg=w540-h312-n-k-no",
           description: "Kokand is a city with many mosques and madrassas. It is the capital of the Kokand region.",
           rating: 4.9
         },
         {
           id: 9,
           city: "Andijan",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipMwhVlJKS8K4QIH_e56ouUj3t-BUy6N6E8neHbS=w540-h312-n-k-no",
           description: "Andijan is one of the most important cities of Uzbekistan. It is a modern industrial center.",
           rating: 4.8
         },
         {
           id: 10,
           city: "Nukus",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSzCLFGAc0JGHeGSCtl7hJhBkuy-gY3sRq7Ob2rbXQF8RwhsUkGBMxD3tczDV7j3I2cPxQwKGHrjwMzuujaM-MLcWzYroSd20GXfhk4yw",
           description: "Nukus is the capital of the Karakalpakstan Republic. It is famous for the Savitsky Museum and the world's largest salt lake.",
           rating: 4.7
         },
         {
           id: 11,
           city: "Navoi",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipNDJZS9riDs5MSt8priuDvu5bwSkijDLLtKvLfv=w540-h312-n-k-no",
           description: "Navoi is a modern city with many large companies. It is a center for new construction projects.",
           rating: 4.9
         },
         {
           id: 12,
           city: "Jizzakh",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Jizzaxfountain.jpg/280px-Jizzaxfountain.jpg",
           description: "Jizzakh is a city on the ancient Silk Road. It has a rich historical heritage and is a modern industrial center.",
           rating: 4.8
         }
@@ -144,42 +144,42 @@ function Mashhur() {
         {
           id: 7,
           city: "Marg'ilon",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://uzbekistan.travel/storage/app/media/nargiza/cropped-images/B52I4994-0-0-0-0-1583482646.jpg",
           description: "Marg'ilon Atlas va Adras shahri, Ipak yo'li karvonlari to'xtagan joy. Boy tarixiy merosga ega.",
           rating: 4.7
         },
         {
           id: 8,
           city: "Qo'qon",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipPBWp9Z-dSF912kRWO2X1XuTDJHhJ2BnDxmKpvg=w540-h312-n-k-no",
           description: "Qo'qon ko'plab masjid va madrasalarga ega shahar. Qo'qon viloyatining poytaxti.",
           rating: 4.9
         },
         {
           id: 9,
           city: "Andijon",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipMwhVlJKS8K4QIH_e56ouUj3t-BUy6N6E8neHbS=w540-h312-n-k-no",
           description: "Andijon O'zbekistonning eng muhim shaharlaridan biri. Zamonaviy sanoat markazi.",
           rating: 4.8
         },
         {
           id: 10,
           city: "Nukus",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSzCLFGAc0JGHeGSCtl7hJhBkuy-gY3sRq7Ob2rbXQF8RwhsUkGBMxD3tczDV7j3I2cPxQwKGHrjwMzuujaM-MLcWzYroSd20GXfhk4yw",
           description: "Nukus Qoraqalpog'iston Respublikasining poytaxti. Savitskiy muzeyi va dunyodagi eng katta tuz ko'li bilan mashhur.",
           rating: 4.7
         },
         {
           id: 11,
           city: "Navoiy",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipNDJZS9riDs5MSt8priuDvu5bwSkijDLLtKvLfv=w540-h312-n-k-no",
           description: "Navoiy ko'plab yirik kompaniyalarga ega zamonaviy shahar. Yangi qurilish loyihalarining markazi.",
           rating: 4.9
         },
         {
           id: 12,
           city: "Jizzax",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Jizzaxfountain.jpg/280px-Jizzaxfountain.jpg",
           description: "Jizzax qadimgi Ipak yo'lidagi shahar. Boy tarixiy merosga ega va zamonaviy sanoat markazi.",
           rating: 4.8
         }
@@ -233,42 +233,42 @@ function Mashhur() {
         {
           id: 7,
           city: "Маргилан",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://uzbekistan.travel/storage/app/media/nargiza/cropped-images/B52I4994-0-0-0-0-1583482646.jpg",
           description: "Маргилан - город Атласа и Адраса, где останавливались караваны Шелкового пути. Имеет богатое историческое наследие.",
           rating: 4.7
         },
         {
           id: 8,
           city: "Коканд",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipPBWp9Z-dSF912kRWO2X1XuTDJHhJ2BnDxmKpvg=w540-h312-n-k-no",
           description: "Коканд - город со множеством мечетей и медресе. Является столицей Кокандского региона.",
           rating: 4.9
         },
         {
           id: 9,
           city: "Андижан",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipMwhVlJKS8K4QIH_e56ouUj3t-BUy6N6E8neHbS=w540-h312-n-k-no",
           description: "Андижан - один из важнейших городов Узбекистана. Это современный промышленный центр.",
           rating: 4.8
         },
         {
           id: 10,
           city: "Нукус",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSzCLFGAc0JGHeGSCtl7hJhBkuy-gY3sRq7Ob2rbXQF8RwhsUkGBMxD3tczDV7j3I2cPxQwKGHrjwMzuujaM-MLcWzYroSd20GXfhk4yw",
           description: "Нукус - столица Республики Каракалпакстан. Известен музеем Савицкого и крупнейшим в мире соленым озером.",
           rating: 4.7
         },
         {
           id: 11,
           city: "Навои",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://lh5.googleusercontent.com/p/AF1QipNDJZS9riDs5MSt8priuDvu5bwSkijDLLtKvLfv=w540-h312-n-k-no",
           description: "Навои - современный город со множеством крупных компаний. Является центром новых строительных проектов.",
           rating: 4.9
         },
         {
           id: 12,
           city: "Джизак",
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Jizzaxfountain.jpg/280px-Jizzaxfountain.jpg",
           description: "Джизак - город на древнем Шелковом пути. Имеет богатое историческое наследие и является современным промышленным центром.",
           rating: 4.8
         }

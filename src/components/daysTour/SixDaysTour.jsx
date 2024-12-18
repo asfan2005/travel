@@ -38,62 +38,62 @@ function SixDaysTour() {
 
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1615971304240-82c1793aa182?q=80&w=1200",
+      src: "https://media.gettyimages.com/id/1249451586/photo/panorama-samarkand-uzbekistan-registan-square-sher-dor-madrasah.jpg?s=612x612&w=0&k=20&c=62sJBnyyZjKRQYcRhzu632HJBpTdFhoV2fbY8RYw7uM=",
       alt: "Registan Square in Samarkand",
       location: "Samarkand",
     },
     {
-      src: "https://images.unsplash.com/photo-1615971304240-82c1793aa182?q=80&w=1200",
+      src: "https://uzbekistan.travel/storage/app/uploads/public/603/797/474/thumb_1594_600_0_0_0_auto.jpg",
       alt: "Tour route map",
       location: "Tour Map",
     },
     {
-      src: "https://images.unsplash.com/photo-1615971304240-82c1793aa182?q=80&w=1200",
+      src: "https://media.gettyimages.com/id/1184019772/photo/bukhara-uzbekistan-kalyan-minaret-and-madressa-sunset-twilight.jpg?s=612x612&w=0&k=20&c=gQofEvWI4u-NilQZcq_Uqea9iIqU7KxdiWqlbvFOjwg=",
       alt: "Bukhara City View",
       location: "Bukhara",
     },
     {
-      src: "https://images.unsplash.com/photo-1615971304240-82c1793aa182?q=80&w=1200",
+      src: "https://media.istockphoto.com/id/1189800495/photo/khiva-sunset-twilight-xiva-%D1%85%D0%B8%D0%B2%D0%B0-islam-khoja-minaret-uzbekistan.jpg?s=612x612&w=0&k=20&c=bx8HgpRRqg30AeC97fUuOqjw-862_OAwes7vVMaOuTM=",
       alt: "Khiva Old City",
       location: "Khiva",
     },
     {
-      src: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1200",
+      src: "https://media.istockphoto.com/id/1034587098/photo/tashkent-tv-tower-aerial-shot-during-sunset-in-uzbekistan.jpg?s=612x612&w=0&k=20&c=vos2bfAhLB8HuKgh91KnMkllxkZC6RYoXNt-F8Tz6Os=",
       alt: "Modern Tashkent",
       location: "Tashkent",
     },
     {
-      src: "https://images.unsplash.com/photo-1584646098378-0874589d76b1?q=80&w=1200",
+      src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/35/29/8f/viste.jpg?w=700&h=400&s=1",
       alt: "Shahrisabz View",
       location: "Shahrisabz",
     },
     {
-      src: "https://images.unsplash.com/photo-1614531341773-3bff8b7cb3fc?q=80&w=1200",
+      src: "https://adrastravel.com/wp-content/uploads/2021/06/gijduvan-shashlik-2.webp",
       alt: "Gijduvan Crafts",
       location: "Gijduvan",
     },
     {
-      src: "https://images.unsplash.com/photo-1578922746465-3a80a228f223?q=80&w=1200",
+      src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/63/ea/1c/bazar-chorsu.jpg?w=700&h=-1&s=1",
       alt: "Silk Road Bazaar",
       location: "Bazaar",
     },
     {
-      src: "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?q=80&w=1200",
+      src: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/2079897013-0-0-0-0-1728537570.jpg",
       alt: "Traditional Architecture",
       location: "Architecture",
     },
     {
-      src: "https://images.unsplash.com/photo-1600267185393-e158a98703de?q=80&w=1200",
+      src: "https://invest-in-uzbekistan.org/wp-content/uploads/The-minaret-and-the-fortress-of-Bukhara-14-1200x800_c.jpg",
       alt: "Local Cuisine",
       location: "Cuisine",
     },
     {
-      src: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?q=80&w=1200",
+      src: "https://uzbekistan.travel/storage/app/uploads/public/671/9de/24a/thumb_3967_1140_0_0_0_auto.jpg",
       alt: "Handicrafts",
       location: "Crafts",
     },
     {
-      src: "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?q=80&w=1200",
+      src: "https://taleof2backpackers.com/wp-content/uploads/2024/04/Things-to-do-in-Khiva-Travel-Guide.jpg",
       alt: "Cultural Performance",
       location: "Culture",
     },

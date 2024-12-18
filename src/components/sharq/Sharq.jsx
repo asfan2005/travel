@@ -21,7 +21,7 @@ function Sharq() {
             "Visited by thousands of tourists daily",
             "Ancient center of science and education"
           ],
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+          image: "https://media.gettyimages.com/id/1441687102/photo/registan-square-in-samarkand-at-night-uzbekistan.jpg?s=612x612&w=0&k=20&c=Kb5XJLaGFrRf2FM6-W2ZiWLt8ZZBNURRvVqQtmlKWao=",
         },
         {
           id: 2,
@@ -34,7 +34,7 @@ function Sharq() {
             "Inner city walls stretch for 2.2 km",
             "Example of ancient architecture"
           ],
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+          image: "https://media.gettyimages.com/id/1249922111/photo/aerial-panorama-khiva-islam-khodja-minaret-uzbekistan-sunset-twilight.jpg?s=612x612&w=0&k=20&c=u0R2cbImlADdHGuLkPNJLYOljhMWYu3mXZyKFQMvDdw=",
         },
         {
           id: 3,
@@ -47,7 +47,7 @@ function Sharq() {
             "Traditional crafts center",
             "Center for national cuisine"
           ],
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+          image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/63/ea/1c/bazar-chorsu.jpg?w=700&h=-1&s=1",
         },
         {
           id: 4,
@@ -60,7 +60,7 @@ function Sharq() {
             "Masterpiece of ancient architecture",
             "Symbol of Bukhara's history"
           ],
-          image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=1000",
+          image: "https://media.gettyimages.com/id/482326387/photo/citadelle-ark-bukhara-uzbekistan.jpg?s=612x612&w=0&k=20&c=xzikSN5w8RNAL4KGU5pIX8B5CBVRZBMQ1zwdTOixSgs=",
         }
       ]
     },
