@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Image1, Image2, Image3, Image4,Image5,Image6,Image7 } from "../index";
+import axios from "axios";
 import { useSearchParams } from 'react-router-dom';
 
 function SharxPage() {
   const [searchParams] = useSearchParams();
-  const lang = searchParams.get('lang') || 'en'; // default to 'uz' if no lang parameter
+  const lang = searchParams.get('lang') || 'en';
 
   // Title translations
   const titles = {
@@ -14,8 +14,8 @@ function SharxPage() {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const images = [Image2, Image3, Image4,Image6,Image7,Image2,Image3,Image4];
-
+  const [images, setImages] = useState([]);
+  
   // Responsive slides per view
   const getSlidesPerView = () => {
     if (window.innerWidth < 640) return 1;    // mobile
@@ -24,6 +24,28 @@ function SharxPage() {
   };
 
   const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
+
+  // Fetch images from backend
+  const fetchImages = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/images');
+      if (response.data && response.data.length > 0) {
+        // Convert images to base64
+        const processedImages = response.data.map(image => 
+          `data:${image.contentType};base64,${image.data}`
+        );
+        setImages(processedImages);
+      }
+    } catch (error) {
+      console.error('Error fetching images:', error);
+      alert('Failed to load images');
+    }
+  };
+
+  // Fetch images on component mount
+  useEffect(() => {
+    fetchImages();
+  }, []);
 
   // Add window resize listener
   useEffect(() => {

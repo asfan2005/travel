@@ -27,11 +27,23 @@ function Admin() {
     theme: 'light'
   })
 
+  // Updated comfort prices state to match backend model
+  const [comfortPrices, setComfortPrices] = useState({
+    days: 5,
+    ecom: '',
+    comf: '',
+    deluxe: '',
+    singleSupplement: '',
+    person: 1
+  });
+
   const menuItems = [
     { id: 'settings', label: 'Sozlamalar', icon: '⚙️' },
     { id: 'orders', label: 'Buyurtmalar', icon: '🛒' },
     { id: 'individual', label: 'Individual Turlar', icon: '🌍' },
-    { id: 'bron', label: 'Bron Qilish', icon: '📅' }
+    { id: 'bron', label: 'Bron Qilish', icon: '📅' },
+    { id: 'comfortprice', label: 'Narxlar', icon: '💰' },
+    { id: 'fileupload', label: 'Fayllar', icon: '📁' }
   ]
 
   // Buyurtmalarni olish funksiyasi
@@ -173,6 +185,48 @@ function Admin() {
     } catch (error) {
       console.error('Sozlamalarni saqlashda xatolik:', error);
       alert('Sozlamalarni saqlashda xatolik yuz berdi.');
+    }
+  }
+
+  // Save comfort prices handler with axios post
+  const saveComfortPrices = async () => {
+    // Validate inputs - convert to integers
+    const priceData = {
+      ecom: parseInt(comfortPrices.ecom),
+      comf: parseInt(comfortPrices.comf),
+      deluxe: parseInt(comfortPrices.deluxe),
+      person: parseInt(comfortPrices.person),
+      days: parseInt(comfortPrices.days),
+      singleSupplement: parseInt(comfortPrices.singleSupplement)
+    };    
+    // Check if all prices are valid numbers
+    const isValidInput = Object.values(priceData).every(value => !isNaN(value));
+    
+    if (isValidInput) {
+      try {
+        // Post to the specified endpoint
+        const response = await axios.post('http://localhost:8080/daysprice', priceData);
+        
+        // Check for successful response
+        if (response.status === 200 || response.status === 201) {
+          alert('Narxlar muvaffaqiyatli saqlandi!');
+          
+          // Clear all price inputs after successful save
+          setComfortPrices(prev => ({
+            ...prev,
+            ecom: '',
+            comf: '',
+            deluxe: '',
+            singleSupplement: ''
+          }));
+        }
+      } catch (error) {
+        // Handle any errors during the request
+        console.error('Narxlarni saqlashda xatolik:', error);
+        alert('Narxlarni saqlashda muammo yuz berdi.');
+      }
+    } else {
+      alert('Iltimos, barcha narx maydonlarini to\'g\'ri kiriting.');
     }
   }
 
@@ -562,6 +616,167 @@ function Admin() {
           </div>
         )
       
+      case 'comfortprice':
+        return (
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold mb-6 text-gray-800">Narxlar Sozlamalari</h2>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-gray-700 mb-2">Kunlar Soni</label>
+                <select 
+                  name="days"
+                  value={comfortPrices.days}
+                  onChange={(e) => setComfortPrices(prev => ({
+                    ...prev,
+                    days: parseInt(e.target.value)
+                  }))}
+                  className="w-full px-3 py-2 border rounded-md"
+                >
+                  <option value="5">5 kun</option>
+                  <option value="6">6 kun</option>
+                  <option value="10">10 kun</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2">Ecom Price</label>
+                <input 
+                  type="number" 
+                  name="ecom"
+                  value={comfortPrices.ecom}
+                  onChange={(e) => setComfortPrices(prev => ({
+                    ...prev,
+                    ecom: e.target.value
+                  }))}
+                  placeholder="Ecom narxini kiriting"
+                  className="w-full px-3 py-2 border rounded-md"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2">Comf Price</label>
+                <input 
+                  type="number" 
+                  name="comf"
+                  value={comfortPrices.comf}
+                  onChange={(e) => setComfortPrices(prev => ({
+                    ...prev,
+                    comf: e.target.value
+                  }))}
+                  placeholder="Comf narxini kiriting"
+                  className="w-full px-3 py-2 border rounded-md"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2">Deluxe Price</label>
+                <input 
+                  type="number" 
+                  name="deluxe"
+                  value={comfortPrices.deluxe}
+                  onChange={(e) => setComfortPrices(prev => ({
+                    ...prev,
+                    deluxe: e.target.value
+                  }))}
+                  placeholder="Deluxe narxini kiriting"
+                  className="w-full px-3 py-2 border rounded-md"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2">Single Supplement</label>
+                <input 
+                  type="number" 
+                  name="singleSupplement"
+                  value={comfortPrices.singleSupplement}
+                  onChange={(e) => setComfortPrices(prev => ({
+                    ...prev,
+                    singleSupplement: e.target.value
+                  }))}
+                  placeholder="Single supplement narxini kiriting"
+                  className="w-full px-3 py-2 border rounded-md"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2">Odamlar Soni</label>
+                <select 
+                  name="person"
+                  value={comfortPrices.person}
+                  onChange={(e) => setComfortPrices(prev => ({
+                    ...prev,
+                    person: parseInt(e.target.value)
+                  }))}
+                  className="w-full px-3 py-2 border rounded-md"
+                >
+                  <option value="1">1 odam</option>
+                  <option value="2">2 odam</option>
+                  <option value="3">3 odam</option>
+                  <option value="4">4 odam</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Saqlash tugmasi */}
+            <div className="mt-6 flex justify-end">
+              <button 
+                onClick={saveComfortPrices}
+                className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300"
+              >
+                Narxlarni Saqlash
+              </button>
+            </div>
+          </div>
+        )
+      
+      case 'fileupload':
+        return (
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold mb-6 text-gray-800">Fayllar Yuklash</h2>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label 
+                  htmlFor="fileUpload" 
+                  className="block text-gray-700 mb-2"
+                >
+                  Faylni tanlang
+                </label>
+                <input 
+                  type="file" 
+                  id="fileUpload"
+                  onChange={handleFileChange}
+                  className="w-full px-3 py-2 border rounded-md"
+                />
+                {selectedFile && (
+                  <div className="mt-4 p-3 bg-gray-100 rounded-md">
+                    <p><strong>Tanlangan fayl:</strong> {selectedFile.name}</p>
+                    <p><strong>Hajmi:</strong> {(selectedFile.size / 1024).toFixed(2)} KB</p>
+                  </div>
+                )}
+                <button 
+                  onClick={handleFileUpload}
+                  disabled={!selectedFile}
+                  className={`
+                    mt-4 w-full px-6 py-2 rounded-md transition duration-300
+                    ${selectedFile 
+                      ? 'bg-blue-500 text-white hover:bg-blue-600' 
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'}
+                  `}
+                >
+                  Faylni Yuklash
+                </button>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-gray-700">Yuklangan Fayllar</h3>
+                <ImageDisplay />
+              </div>
+            </div>
+          </div>
+        )
+      
       default:
         return <div>Tanlangan bo'lim</div>
     }
@@ -569,6 +784,115 @@ function Admin() {
 
   // Add mobile menu state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Add new state for file uploads
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  // File upload handler functions
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+  };
+
+  // Yuklangan fayllarni olish funksiyasi
+  const fetchUploadedFiles = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/images');
+      if (response.data && response.data.length > 0) {
+        // Rasmlarni base64 formatga o'girish
+        const processedImages = response.data.map(image => ({
+          id: image.id,
+          src: `data:${image.contentType};base64,${image.data}`,
+          name: image.name,
+          alt: image.name
+        }));
+        setUploadedFiles(processedImages);
+      }
+    } catch (error) {
+      console.error('Rasmlarni olishda xatolik:', error);
+      alert('Rasmlarni yuklab olishda muammo yuz berdi');
+    }
+  };
+
+  // Base64 ga o'girish yordamchi funksiyasi
+  const arrayBufferToBase64 = (buffer) => {
+    const uint8Array = new Uint8Array(buffer);
+    return btoa(String.fromCharCode.apply(null, uint8Array));
+  };
+
+  // useEffect orqali componentDidMount da chaqirish
+  useEffect(() => {
+    fetchUploadedFiles();
+  }, []);
+
+  // Faylni yuklash funksiyasiga qo'shimcha
+  const handleFileUpload = async () => {
+    if (!selectedFile) {
+      alert('Iltimos, rasm tanlang');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('name', selectedFile.name);
+    formData.append('file', selectedFile);
+
+    try {
+      const response = await axios.post('http://localhost:8080/api/images/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        // Yangi yuklangan fayllarni qayta olish
+        await fetchUploadedFiles();
+        
+        // Faylni tanlashni tozalash
+        setSelectedFile(null);
+        
+        // Muvaffaqiyat xabari
+        alert('Rasm muvaffaqiyatli yuklandi!');
+      }
+    } catch (error) {
+      console.error('Rasm yuklashda xatolik:', error);
+      
+      if (error.response) {
+        alert(`Xatolik: ${error.response.data.message || 'Rasm yuklashda muammo yuz berdi'}`);
+      } else {
+        alert('Rasm yuklashda muammo yuz berdi');
+      }
+    }
+  };
+
+  // Rasm ko'rsatish komponenti
+  const ImageDisplay = () => {
+    return (
+      <div className="grid grid-cols-2 gap-4">
+        {uploadedFiles.length > 0 ? (
+          uploadedFiles.map((image) => (
+            <div 
+              key={image.id} 
+              className="image-container overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src={image.src}
+                alt={image.alt || image.name}
+                className="w-full h-48 object-cover hover:scale-110 transition-transform duration-300"
+              />
+              <div className="p-2 text-center">
+                <p className="text-sm font-medium truncate">{image.name}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="col-span-full text-center text-gray-500 py-4">
+            Rasmlar topilmadi
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gray-100">
