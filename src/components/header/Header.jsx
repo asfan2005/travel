@@ -10,6 +10,7 @@ function Header() {
   const [adminUsername, setAdminUsername] = useState('');
   const [adminPassword, setAdminPassword] = useState('');
   const [loginError, setLoginError] = useState('');
+  const [showMobileAdminLoginModal, setShowMobileAdminLoginModal] = useState(false);
 
   // Get language from URL parameters
   const [selectedLanguage, setSelectedLanguage] = useState(() => {
@@ -401,6 +402,33 @@ function Header() {
                     </svg>
                   </div>
                 </div>
+
+                <div className="flex items-center justify-between py-2 border-t border-gray-100">
+                  <span className="text-gray-700 text-lg font-medium">{t.adminLogin}</span>
+                  <button
+                    onClick={() => {
+                      setShowMobileAdminLoginModal(true);
+                      setIsOpen(false); // Close mobile menu
+                    }}
+                    className="text-gray-700 hover:text-purple-700 transform hover:scale-110 transition-all duration-300"
+                    title="Admin Login"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           )}
@@ -566,6 +594,133 @@ function Header() {
 
                 <button
                   onClick={() => setShowAdminLoginModal(false)}
+                  className="mt-4 w-full text-gray-600 hover:text-gray-800 
+                  transition-colors duration-300 underline"
+                >
+                  {t.close}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {showMobileAdminLoginModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+              <div
+                className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl p-8 
+                transform transition-all duration-300 ease-in-out animate-scaleIn m-4"
+              >
+                <div className="text-center mb-6">
+                  <div className="mx-auto w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-12 w-12 text-purple-600"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-purple-800">
+                    {t.adminLogin}
+                  </h3>
+                </div>
+
+                <form onSubmit={handleAdminLogin} className="space-y-4">
+                  <div>
+                    <label
+                      htmlFor="mobile-username"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      {t.username}
+                    </label>
+                    <div className="relative">
+                      <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5 text-gray-400"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <input
+                        type="text"
+                        id="mobile-username"
+                        value={adminUsername}
+                        onChange={(e) => setAdminUsername(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg 
+                        focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        placeholder={t.username}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="mobile-password"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      {t.password}
+                    </label>
+                    <div className="relative">
+                      <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5 text-gray-400"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                      <input
+                        type="password"
+                        id="mobile-password"
+                        value={adminPassword}
+                        onChange={(e) => setAdminPassword(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg 
+                        focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        placeholder={t.password}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {loginError && (
+                    <p className="text-red-500 text-sm text-center animate-pulse">
+                      {loginError}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="w-full bg-purple-600 text-white py-3 rounded-lg 
+                    hover:bg-purple-700 transition-colors duration-300 
+                    transform hover:scale-105 active:scale-95 
+                    font-semibold shadow-md hover:shadow-lg"
+                  >
+                    {t.login}
+                  </button>
+                </form>
+
+                <button
+                  onClick={() => setShowMobileAdminLoginModal(false)}
                   className="mt-4 w-full text-gray-600 hover:text-gray-800 
                   transition-colors duration-300 underline"
                 >
