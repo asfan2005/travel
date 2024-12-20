@@ -168,7 +168,7 @@ function AboutUs() {
       {/* Main image */}
       <div className="mb-12">
         <img
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+          src="https://uzbekistan.travel/storage/app/media/nargiza/cropped-images/B52I5049-0-0-0-0-1583482818.jpg"
           alt="Advantour Team"
           className="w-full h-[250px] sm:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg"
         />

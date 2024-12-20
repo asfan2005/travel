@@ -23,7 +23,8 @@ function Sayohatlar() {
           description: 'Explore the ancient city and historical monuments',
           duration: '5 days',
           price: '$1000',
-          buttonText: 'Order Now'
+          buttonText: 'Order Now',
+          image:" https://lh5.googleusercontent.com/p/AF1QipNjZB5eixJGUpiTnFA5G5Jq6nZN9fvsc5iQQvgb=w540-h312-n-k-no"
         },
         {
           id: 6,
@@ -31,7 +32,8 @@ function Sayohatlar() {
           description: 'Visit madrasahs and historical sites',
           duration: '6 days',
           price: '$1200',
-          buttonText: 'Order Now'
+          buttonText: 'Order Now',
+           image:"https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg"
         },
         {
           id: 10,
@@ -39,7 +41,8 @@ function Sayohatlar() {
           description: 'Travel around all of Uzbekistan',
           duration: '10 days',
           price: '$1890',
-          buttonText: 'Order Now'
+          buttonText: 'Order Now',
+          image:"https://media.istockphoto.com/id/1034587098/photo/tashkent-tv-tower-aerial-shot-during-sunset-in-uzbekistan.jpg?s=612x612&w=0&k=20&c=vos2bfAhLB8HuKgh91KnMkllxkZC6RYoXNt-F8Tz6Os="
         }
       ]
     },
@@ -52,7 +55,8 @@ function Sayohatlar() {
           description: 'Qadimiy shahar va tarixiy yodgorliklarni kashf eting',
           duration: '5 kun',
           price: '$1000',
-          buttonText: 'Buyurtma berish'
+          buttonText: 'Buyurtma berish',
+          image:" https://lh5.googleusercontent.com/p/AF1QipNjZB5eixJGUpiTnFA5G5Jq6nZN9fvsc5iQQvgb=w540-h312-n-k-no"
         },
         {
           id: 6,
@@ -60,7 +64,8 @@ function Sayohatlar() {
           description: 'Madrasalar va tarixiy joylarni ziyorat qiling',
           duration: '6 kun',
           price: '$1200',
-          buttonText: 'Buyurtma berish'
+          buttonText: 'Buyurtma berish',
+           image:"https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg"
         },
         {
           id: 10,
@@ -68,7 +73,8 @@ function Sayohatlar() {
           description: "Butun O'zbekiston bo'ylab sayohat",
           duration: '10 kun',
           price: '$1890',
-          buttonText: 'Buyurtma berish'
+          buttonText: 'Buyurtma berish',
+          image:"https://media.istockphoto.com/id/1034587098/photo/tashkent-tv-tower-aerial-shot-during-sunset-in-uzbekistan.jpg?s=612x612&w=0&k=20&c=vos2bfAhLB8HuKgh91KnMkllxkZC6RYoXNt-F8Tz6Os=",
         }
       ]
     },
@@ -81,7 +87,8 @@ function Sayohatlar() {
           description: 'Исследуйте древний город и исторические памятники',
           duration: '5 дней',
           price: '$1000',
-          buttonText: 'Заказать сейчас'
+          buttonText: 'Заказать сейчас',
+          image:" https://lh5.googleusercontent.com/p/AF1QipNjZB5eixJGUpiTnFA5G5Jq6nZN9fvsc5iQQvgb=w540-h312-n-k-no"
         },
         {
           id: 6,
@@ -89,7 +96,8 @@ function Sayohatlar() {
           description: 'Посетите медресе и исторические места',
           duration: '6 дней',
           price: '$1200',
-          buttonText: 'Заказать сейчас'
+          buttonText: 'Заказать сейчас',
+          image:"https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/shutterstock_1007253181-0-0-0-0-1728474450.jpg"
         },
         {
           id: 10,
@@ -97,7 +105,8 @@ function Sayohatlar() {
           description: 'Путешествие по всему Узбекистану',
           duration: '10 дней',
           price: '$1890',
-          buttonText: 'Заказать сейчас'
+          buttonText: 'Заказать сейчас',
+          image:"https://media.istockphoto.com/id/1034587098/photo/tashkent-tv-tower-aerial-shot-during-sunset-in-uzbekistan.jpg?s=612x612&w=0&k=20&c=vos2bfAhLB8HuKgh91KnMkllxkZC6RYoXNt-F8Tz6Os=",
         }
       ]
     }
@@ -123,7 +132,7 @@ function Sayohatlar() {
           >
             <div className="relative pb-[56.25%]">
               <img 
-                src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=800&q=80"
+                src={tour.image}
                 alt={tour.title} 
                 className="absolute top-0 left-0 w-full h-full object-cover"
                 loading="lazy"
