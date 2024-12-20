@@ -3119,7 +3119,7 @@ function FiveDaysTour() {
       }
     },
     {
-      src: "https://invest-in-uzbekistan.org/wp-content/uploads/The-minaret-and-the-fortress-of-Bukhara-14-1200x800_c.jpg",
+      src: "https://www.advantour.com/img/uzbekistan/dishes/plov.jpg",
       alt: {
         en: "Local Cuisine",
         ru: "Национальная кухня",

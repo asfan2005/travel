@@ -8,10 +8,10 @@ function Admin() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [bookings, setBookings] = useState([])
-  
+
   const [selectedTour, setSelectedTour] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-
+  const [deleteImage, setDeleteImage] = useState(null);
   // Settings state
   const [settings, setSettings] = useState({
     companyName: 'Travel Agency',
@@ -119,11 +119,11 @@ function Admin() {
     if (!selectedTour) return null
 
     return (
-      <div 
+      <div
         className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4"
         onClick={closeTourDetailsModal}
       >
-        <div 
+        <div
           className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6"
           onClick={(e) => e.stopPropagation()}
         >
@@ -131,7 +131,7 @@ function Admin() {
             <h2 className="text-2xl font-bold text-gray-800">
               Individual Tur Tafsilotlari
             </h2>
-            <button 
+            <button
               onClick={closeTourDetailsModal}
               className="text-gray-600 hover:text-gray-900"
             >
@@ -157,7 +157,7 @@ function Admin() {
   // Settings update handler
   const handleSettingsChange = (e) => {
     const { name, value } = e.target;
-    
+
     // Handle nested social media fields
     if (name.startsWith('socialMedia.')) {
       const socialMediaKey = name.split('.')[1];
@@ -198,19 +198,19 @@ function Admin() {
       person: parseInt(comfortPrices.person),
       days: parseInt(comfortPrices.days),
       singleSupplement: parseInt(comfortPrices.singleSupplement)
-    };    
+    };
     // Check if all prices are valid numbers
     const isValidInput = Object.values(priceData).every(value => !isNaN(value));
-    
+
     if (isValidInput) {
       try {
         // Post to the specified endpoint
         const response = await axios.post('http://localhost:8080/daysprice', priceData);
-        
+
         // Check for successful response
         if (response.status === 200 || response.status === 201) {
           alert('Narxlar muvaffaqiyatli saqlandi!');
-          
+
           // Clear all price inputs after successful save
           setComfortPrices(prev => ({
             ...prev,
@@ -243,8 +243,8 @@ function Admin() {
             </div>
           ) : (
             items.map(item => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition duration-300"
               >
                 {type === 'orders' && (
@@ -256,9 +256,9 @@ function Admin() {
                       <p><strong>Ism:</strong> {item.name}</p>
                       <p><strong>Telefon Raqam:</strong> {item.phoneNumber}</p>
                       <p className="text-gray-600">
-                        <strong>Xabar:</strong> 
-                        {item.message.length > 100 
-                          ? `${item.message.substring(0, 100)}...` 
+                        <strong>Xabar:</strong>
+                        {item.message.length > 100
+                          ? `${item.message.substring(0, 100)}...`
                           : item.message}
                       </p>
                     </div>
@@ -269,7 +269,7 @@ function Admin() {
                   <>
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-bold text-blue-600">#{item.id}</span>
-                      <button 
+                      <button
                         className="bg-blue-500 text-white px-2 py-1 rounded text-sm hover:bg-blue-600"
                         onClick={() => openTourDetailsModal(item)}
                       >
@@ -295,9 +295,9 @@ function Admin() {
                       <p><strong>Email:</strong> {item.email}</p>
                       <p><strong>Telefon:</strong> {item.phone}</p>
                       <p className="text-gray-600">
-                        <strong>Xabar:</strong> 
-                        {item.message.length > 100 
-                          ? `${item.message.substring(0, 100)}...` 
+                        <strong>Xabar:</strong>
+                        {item.message.length > 100
+                          ? `${item.message.substring(0, 100)}...`
                           : item.message}
                       </p>
                     </div>
@@ -310,12 +310,12 @@ function Admin() {
       );
     };
 
-    switch(activeMenu) {
+    switch (activeMenu) {
       case 'settings':
         return (
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6 text-gray-800">Sozlamalar</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {/* Asosiy ma'lumotlar */}
               <div>
@@ -323,8 +323,8 @@ function Admin() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-gray-700 mb-2">Kompaniya Nomi</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="companyName"
                       value={settings.companyName}
                       onChange={handleSettingsChange}
@@ -333,8 +333,8 @@ function Admin() {
                   </div>
                   <div>
                     <label className="block text-gray-700 mb-2">Kontakt Email</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       name="contactEmail"
                       value={settings.contactEmail}
                       onChange={handleSettingsChange}
@@ -343,8 +343,8 @@ function Admin() {
                   </div>
                   <div>
                     <label className="block text-gray-700 mb-2">Telefon Raqam</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="phoneNumber"
                       value={settings.phoneNumber}
                       onChange={handleSettingsChange}
@@ -360,8 +360,8 @@ function Admin() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-gray-700 mb-2">Manzil</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="address"
                       value={settings.address}
                       onChange={handleSettingsChange}
@@ -370,8 +370,8 @@ function Admin() {
                   </div>
                   <div>
                     <label className="block text-gray-700 mb-2">Telegram Kanal</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="socialMedia.telegram"
                       value={settings.socialMedia.telegram}
                       onChange={handleSettingsChange}
@@ -380,8 +380,8 @@ function Admin() {
                   </div>
                   <div>
                     <label className="block text-gray-700 mb-2">Instagram Sahifasi</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="socialMedia.instagram"
                       value={settings.socialMedia.instagram}
                       onChange={handleSettingsChange}
@@ -396,7 +396,7 @@ function Admin() {
             <div className="mt-6 grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-gray-700 mb-2">Til</label>
-                <select 
+                <select
                   name="language"
                   value={settings.language}
                   onChange={handleSettingsChange}
@@ -409,7 +409,7 @@ function Admin() {
               </div>
               <div>
                 <label className="block text-gray-700 mb-2">Tema</label>
-                <select 
+                <select
                   name="theme"
                   value={settings.theme}
                   onChange={handleSettingsChange}
@@ -423,7 +423,7 @@ function Admin() {
 
             {/* Saqlash tugmasi */}
             <div className="mt-6 flex justify-end">
-              <button 
+              <button
                 onClick={saveSettings}
                 className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300"
               >
@@ -432,7 +432,7 @@ function Admin() {
             </div>
           </div>
         )
-      
+
       case 'orders':
         return (
           <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
@@ -463,16 +463,16 @@ function Admin() {
                         </tr>
                       ) : (
                         orders.map(order => (
-                          <tr 
-                            key={order.id} 
+                          <tr
+                            key={order.id}
                             className="hover:bg-gray-50 transition duration-200"
                           >
                             <td className="border p-3">{order.id}</td>
                             <td className="border p-3">{order.name}</td>
                             <td className="border p-3">{order.phoneNumber}</td>
                             <td className="border p-3 truncate max-w-xs">
-                              {order.message.length > 50 
-                                ? `${order.message.substring(0, 50)}...` 
+                              {order.message.length > 50
+                                ? `${order.message.substring(0, 50)}...`
                                 : order.message}
                             </td>
                           </tr>
@@ -481,7 +481,7 @@ function Admin() {
                     </tbody>
                   </table>
                 </div>
-                
+
                 {/* Mobile Card View */}
                 <div className="block md:hidden">
                   {renderCardView(orders, 'orders')}
@@ -490,7 +490,7 @@ function Admin() {
             )}
           </div>
         )
-      
+
       case 'individual':
         return (
           <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
@@ -522,8 +522,8 @@ function Admin() {
                         </tr>
                       ) : (
                         individualTours.map(tour => (
-                          <tr 
-                            key={tour.id} 
+                          <tr
+                            key={tour.id}
                             className="hover:bg-gray-50 transition duration-200"
                           >
                             <td className="border p-3">{tour.id}</td>
@@ -531,7 +531,7 @@ function Admin() {
                             <td className="border p-3">{tour.email}</td>
                             <td className="border p-3">{tour.phone}</td>
                             <td className="border p-3">
-                              <button 
+                              <button
                                 className="bg-blue-500 text-white px-2 py-1 rounded text-sm hover:bg-blue-600"
                                 onClick={() => openTourDetailsModal(tour)}
                               >
@@ -544,7 +544,7 @@ function Admin() {
                     </tbody>
                   </table>
                 </div>
-                
+
                 {/* Mobile Card View */}
                 <div className="block md:hidden">
                   {renderCardView(individualTours, 'individual')}
@@ -553,7 +553,7 @@ function Admin() {
             )}
           </div>
         )
-      
+
       case 'bron':
         return (
           <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
@@ -586,8 +586,8 @@ function Admin() {
                         </tr>
                       ) : (
                         bookings.map(booking => (
-                          <tr 
-                            key={booking.id} 
+                          <tr
+                            key={booking.id}
                             className="hover:bg-gray-50 transition duration-200"
                           >
                             <td className="border p-3">{booking.id}</td>
@@ -596,8 +596,8 @@ function Admin() {
                             <td className="border p-3">{booking.email}</td>
                             <td className="border p-3">{booking.phone}</td>
                             <td className="border p-3">
-                              {booking.message.length > 50 
-                                ? `${booking.message.substring(0, 50)}...` 
+                              {booking.message.length > 50
+                                ? `${booking.message.substring(0, 50)}...`
                                 : booking.message}
                             </td>
                           </tr>
@@ -606,7 +606,7 @@ function Admin() {
                     </tbody>
                   </table>
                 </div>
-                
+
                 {/* Mobile Card View */}
                 <div className="block md:hidden">
                   {renderCardView(bookings, 'bron')}
@@ -615,16 +615,16 @@ function Admin() {
             )}
           </div>
         )
-      
+
       case 'comfortprice':
         return (
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6 text-gray-800">Narxlar Sozlamalari</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-gray-700 mb-2">Kunlar Soni</label>
-                <select 
+                <select
                   name="days"
                   value={comfortPrices.days}
                   onChange={(e) => setComfortPrices(prev => ({
@@ -641,8 +641,8 @@ function Admin() {
 
               <div>
                 <label className="block text-gray-700 mb-2">Ecom Price</label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   name="ecom"
                   value={comfortPrices.ecom}
                   onChange={(e) => setComfortPrices(prev => ({
@@ -656,8 +656,8 @@ function Admin() {
 
               <div>
                 <label className="block text-gray-700 mb-2">Comf Price</label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   name="comf"
                   value={comfortPrices.comf}
                   onChange={(e) => setComfortPrices(prev => ({
@@ -671,8 +671,8 @@ function Admin() {
 
               <div>
                 <label className="block text-gray-700 mb-2">Deluxe Price</label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   name="deluxe"
                   value={comfortPrices.deluxe}
                   onChange={(e) => setComfortPrices(prev => ({
@@ -686,8 +686,8 @@ function Admin() {
 
               <div>
                 <label className="block text-gray-700 mb-2">Single Supplement</label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   name="singleSupplement"
                   value={comfortPrices.singleSupplement}
                   onChange={(e) => setComfortPrices(prev => ({
@@ -701,7 +701,7 @@ function Admin() {
 
               <div>
                 <label className="block text-gray-700 mb-2">Odamlar Soni</label>
-                <select 
+                <select
                   name="person"
                   value={comfortPrices.person}
                   onChange={(e) => setComfortPrices(prev => ({
@@ -720,7 +720,7 @@ function Admin() {
 
             {/* Saqlash tugmasi */}
             <div className="mt-6 flex justify-end">
-              <button 
+              <button
                 onClick={saveComfortPrices}
                 className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300"
               >
@@ -729,22 +729,22 @@ function Admin() {
             </div>
           </div>
         )
-      
+
       case 'fileupload':
         return (
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6 text-gray-800">Fayllar Yuklash</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label 
-                  htmlFor="fileUpload" 
+                <label
+                  htmlFor="fileUpload"
                   className="block text-gray-700 mb-2"
                 >
                   Faylni tanlang
                 </label>
-                <input 
-                  type="file" 
+                <input
+                  type="file"
                   id="fileUpload"
                   onChange={handleFileChange}
                   className="w-full px-3 py-2 border rounded-md"
@@ -755,20 +755,20 @@ function Admin() {
                     <p><strong>Hajmi:</strong> {(selectedFile.size / 1024).toFixed(2)} KB</p>
                   </div>
                 )}
-                <button 
+                <button
                   onClick={handleFileUpload}
                   disabled={!selectedFile}
                   className={`
                     mt-4 w-full px-6 py-2 rounded-md transition duration-300
-                    ${selectedFile 
-                      ? 'bg-blue-500 text-white hover:bg-blue-600' 
+                    ${selectedFile
+                      ? 'bg-blue-500 text-white hover:bg-blue-600'
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'}
                   `}
                 >
                   Faylni Yuklash
                 </button>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-700">Yuklangan Fayllar</h3>
                 <ImageDisplay />
@@ -776,7 +776,7 @@ function Admin() {
             </div>
           </div>
         )
-      
+
       default:
         return <div>Tanlangan bo'lim</div>
     }
@@ -847,16 +847,16 @@ function Admin() {
       if (response.status === 200 || response.status === 201) {
         // Yangi yuklangan fayllarni qayta olish
         await fetchUploadedFiles();
-        
+
         // Faylni tanlashni tozalash
         setSelectedFile(null);
-        
+
         // Muvaffaqiyat xabari
         alert('Rasm muvaffaqiyatli yuklandi!');
       }
     } catch (error) {
       console.error('Rasm yuklashda xatolik:', error);
-      
+
       if (error.response) {
         alert(`Xatolik: ${error.response.data.message || 'Rasm yuklashda muammo yuz berdi'}`);
       } else {
@@ -871,15 +871,30 @@ function Admin() {
       <div className="grid grid-cols-2 gap-4">
         {uploadedFiles.length > 0 ? (
           uploadedFiles.map((image) => (
-            <div 
-              key={image.id} 
-              className="image-container overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            <div
+              key={image.id}
+              className="relative image-container overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group"
             >
               <img
                 src={image.src}
                 alt={image.alt || image.name}
-                className="w-full h-48 object-cover hover:scale-110 transition-transform duration-300"
+                className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
               />
+              <button
+                onClick={() => handleImageDelete(image.id)}
+                className="
+                  absolute top-2 right-2 
+                  bg-red-500 text-white 
+                  rounded-full w-8 h-8 
+                  flex items-center justify-center 
+                  opacity-0 group-hover:opacity-100 
+                  transition-opacity duration-300 
+                  hover:bg-red-600
+                "
+                title="Rasmni o'chirish"
+              >
+                🗑️
+              </button>
               <div className="p-2 text-center">
                 <p className="text-sm font-medium truncate">{image.name}</p>
               </div>
@@ -894,12 +909,53 @@ function Admin() {
     );
   };
 
+  // Add this method inside your Admin component, near other handler methods
+  const handleImageDelete = async (imageId) => {
+    try {
+      // Add full configuration to axios delete request
+      const response = await axios.delete(`http://localhost:8080/api/images/${imageId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          // Add any additional headers if needed
+        }
+      });
+      
+      if (response.status === 200 || response.status === 204) {
+        // Remove the image from local state
+        setUploadedFiles(prevFiles => prevFiles.filter(file => file.id !== imageId));
+        
+        // Success notification
+        alert(`Rasm muvaffaqiyatli o'chirildi!`);
+        
+        // Log the deleted image ID
+        console.log(`Deleted image with ID: ${imageId}`);
+      }
+    } catch (error) {
+      console.error('Rasmni o\'chirishda xatolik:', error);
+      
+      // More detailed error handling
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        console.error('Server Error:', error.response.data);
+        alert(`Xatolik: ${error.response.data.message || 'Rasmni o\'chirishda muammo yuz berdi'}`);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error('Network Error:', error.request);
+        alert('Tarmoq xatosi. Iltimos, internetga ulanishingizni tekshiring.');
+      } else {
+        // Something happened in setting up the request
+        console.error('Error:', error.message);
+        alert('Noma\'lum xatolik yuz berdi');
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gray-100">
       {/* Mobile Header */}
       <div className="md:hidden bg-white shadow-md p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold text-blue-600">Admin Panel</h1>
-        <button 
+        <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="focus:outline-none"
         >
@@ -919,7 +975,7 @@ function Admin() {
         </div>
         <nav className="p-4">
           {menuItems.map(item => (
-            <button 
+            <button
               key={item.id}
               onClick={() => {
                 setActiveMenu(item.id)
@@ -927,8 +983,8 @@ function Admin() {
               }}
               className={`
                 w-full text-left p-3 rounded-lg mb-2 flex items-center
-                ${activeMenu === item.id 
-                  ? 'bg-blue-500 text-white' 
+                ${activeMenu === item.id
+                  ? 'bg-blue-500 text-white'
                   : 'hover:bg-blue-100 text-gray-700'}
                 transition duration-200
               `}
