@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import {
   FaWhatsapp,
   FaTelegram,
@@ -14,6 +15,8 @@ import {
 import axios from 'axios';
 
 function SixDaysTour() {
+  const location = useLocation();
+  const [language, setLanguage] = useState('en');
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [expandedDays, setExpandedDays] = useState({});
@@ -36,66 +39,176 @@ function SixDaysTour() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Multilingual content for tour title and description
+  const tourTitles = {
+    en: "6-day Uzbekistan Express Tour",
+    ru: "6-дневный экспресс-тур по Узбекистану",
+    uz: "O'zbekiston Express sayohati (6 kun)"
+  };
+
+  const tourDescriptions = {
+    en: "6-day Uzbekistan Express Tour is a perfect introduction to Uzbekistan's main highlights. You will explore the ancient cities of Samarkand and Bukhara, experience the modern capital Tashkent, and discover the rich cultural heritage of the Silk Road. This compact tour is ideal for those with limited time who want to see the essential sights of Uzbekistan.",
+    ru: "6-дневный экспресс-тур по Узбекистану - идеальное знакомство с основными достопримечательностями страны. Вы исследуете древние города Самарканд и Бухара, познакомитесь с современной столицей Ташкентом и откроете для себя богатое культурное наследие Шелкового пути. Этот компактный тур идеально подходит для тех, у кого ограничено время, но кто хочет увидеть самые важные достопримечательности Узбекистана.",
+    uz: "O'zbekiston Express sayohati (6 kun) - O'zbekistonning asosiy diqqatga sazovor joylarini tanishishning mukammal imkoniyati. Siz Samarqand va Buxoro kabi qadimiy shaharlarni kashf qilasiz, zamonaviy poytaxt Toshkentni ko'rasiz va Ipak yo'lining boy madaniy merosini o'rganasiz. Ushbu qisqa sayohat vaqti cheklangan, lekin O'zbekistonning eng muhim ko'rinishlarini ko'rmoqchi bo'lganlar uchun ideal."
+  };
+
+  // Multilingual images with localized descriptions
   const images = [
     {
       src: "https://media.gettyimages.com/id/1249451586/photo/panorama-samarkand-uzbekistan-registan-square-sher-dor-madrasah.jpg?s=612x612&w=0&k=20&c=62sJBnyyZjKRQYcRhzu632HJBpTdFhoV2fbY8RYw7uM=",
-      alt: "Registan Square in Samarkand",
-      location: "Samarkand",
+      alt: {
+        en: "Registan Square in Samarkand",
+        ru: "Площадь Регистан в Самарканде",
+        uz: "Samarqandda Registon maydoni"
+      },
+      location: {
+        en: "Samarkand",
+        ru: "Самарканд",
+        uz: "Samarqand"
+      }
     },
     {
       src: "https://uzbekistan.travel/storage/app/uploads/public/603/797/474/thumb_1594_600_0_0_0_auto.jpg",
-      alt: "Tour route map",
-      location: "Tour Map",
+      alt: {
+        en: "Tour route map",
+        ru: "Маршрут тура",
+        uz: "Sayohatning marshruti"
+      },
+      location: {
+        en: "Tour Map",
+        ru: "Маршрут тура",
+        uz: "Sayohatning marshruti"
+      }
     },
     {
       src: "https://media.gettyimages.com/id/1184019772/photo/bukhara-uzbekistan-kalyan-minaret-and-madressa-sunset-twilight.jpg?s=612x612&w=0&k=20&c=gQofEvWI4u-NilQZcq_Uqea9iIqU7KxdiWqlbvFOjwg=",
-      alt: "Bukhara City View",
-      location: "Bukhara",
+      alt: {
+        en: "Bukhara City View",
+        ru: "Вид Бухары",
+        uz: "Buxorada ko'rinishi"
+      },
+      location: {
+        en: "Bukhara",
+        ru: "Бухара",
+        uz: "Buxoro"
+      }
     },
     {
       src: "https://media.istockphoto.com/id/1189800495/photo/khiva-sunset-twilight-xiva-%D1%85%D0%B8%D0%B2%D0%B0-islam-khoja-minaret-uzbekistan.jpg?s=612x612&w=0&k=20&c=bx8HgpRRqg30AeC97fUuOqjw-862_OAwes7vVMaOuTM=",
-      alt: "Khiva Old City",
-      location: "Khiva",
+      alt: {
+        en: "Khiva Old City",
+        ru: "Старая Хива",
+        uz: "Xiva eski shahri"
+      },
+      location: {
+        en: "Khiva",
+        ru: "Хива",
+        uz: "Xiva"
+      }
     },
     {
       src: "https://media.istockphoto.com/id/1034587098/photo/tashkent-tv-tower-aerial-shot-during-sunset-in-uzbekistan.jpg?s=612x612&w=0&k=20&c=vos2bfAhLB8HuKgh91KnMkllxkZC6RYoXNt-F8Tz6Os=",
-      alt: "Modern Tashkent",
-      location: "Tashkent",
+      alt: {
+        en: "Modern Tashkent",
+        ru: "Современный Ташкент",
+        uz: "Zamonaviy Toshkent"
+      },
+      location: {
+        en: "Tashkent",
+        ru: "Ташкент",
+        uz: "Toshkent"
+      }
     },
     {
       src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/35/29/8f/viste.jpg?w=700&h=400&s=1",
-      alt: "Shahrisabz View",
-      location: "Shahrisabz",
+      alt: {
+        en: "Shahrisabz View",
+        ru: "Вид Шахрисабза",
+        uz: "Shahrisabz ko'rinishi"
+      },
+      location: {
+        en: "Shahrisabz",
+        ru: "Шахрисабз",
+        uz: "Shahrisabz"
+      }
     },
     {
       src: "https://adrastravel.com/wp-content/uploads/2021/06/gijduvan-shashlik-2.webp",
-      alt: "Gijduvan Crafts",
-      location: "Gijduvan",
+      alt: {
+        en: "Gijduvan Crafts",
+        ru: "Изделия из гиядувана",
+        uz: "Gijduvanda ishlari"
+      },
+      location: {
+        en: "Gijduvan",
+        ru: "Гийдуван",
+        uz: "Gijduvan"
+      }
     },
     {
       src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/63/ea/1c/bazar-chorsu.jpg?w=700&h=-1&s=1",
-      alt: "Silk Road Bazaar",
-      location: "Bazaar",
+      alt: {
+        en: "Silk Road Bazaar",
+        ru: "Базар Шелкового пути",
+        uz: "Ipak yo'lining bazar"
+      },
+      location: {
+        en: "Bazaar",
+        ru: "Базар",
+        uz: "Bazar"
+      }
     },
     {
       src: "https://uzbekistan.travel/storage/app/media/Otabek/asosiydagi%20rasmlar/cropped-images/2079897013-0-0-0-0-1728537570.jpg",
-      alt: "Traditional Architecture",
-      location: "Architecture",
+      alt: {
+        en: "Traditional Architecture",
+        ru: "Традиционная архитектура",
+        uz: "Traditsion arhitektura"
+      },
+      location: {
+        en: "Architecture",
+        ru: "Архитектура",
+        uz: "Arhitektura"
+      }
     },
     {
       src: "https://invest-in-uzbekistan.org/wp-content/uploads/The-minaret-and-the-fortress-of-Bukhara-14-1200x800_c.jpg",
-      alt: "Local Cuisine",
-      location: "Cuisine",
+      alt: {
+        en: "Local Cuisine",
+        ru: "Национальная кухня",
+        uz: "O'zbek ozi"
+      },
+      location: {
+        en: "Cuisine",
+        ru: "Кухня",
+        uz: "Ozi"
+      }
     },
     {
       src: "https://uzbekistan.travel/storage/app/uploads/public/671/9de/24a/thumb_3967_1140_0_0_0_auto.jpg",
-      alt: "Handicrafts",
-      location: "Crafts",
+      alt: {
+        en: "Handicrafts",
+        ru: "Художественная обработка",
+        uz: "Ishlab chiqarish"
+      },
+      location: {
+        en: "Crafts",
+        ru: "Художественная обработка",
+        uz: "Ishlab chiqarish"
+      }
     },
     {
       src: "https://taleof2backpackers.com/wp-content/uploads/2024/04/Things-to-do-in-Khiva-Travel-Guide.jpg",
-      alt: "Cultural Performance",
-      location: "Culture",
+      alt: {
+        en: "Cultural Performance",
+        ru: "Культурное выступление",
+        uz: "Madaniyat"
+      },
+      location: {
+        en: "Culture",
+        ru: "Культура",
+        uz: "Madaniyat"
+      }
     },
   ];
 
@@ -134,6 +247,16 @@ function SixDaysTour() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  useEffect(() => {
+    // Extract language from URL query parameter
+    const searchParams = new URLSearchParams(location.search);
+    const lang = searchParams.get('lang');
+    
+    if (['en', 'ru', 'uz'].includes(lang)) {
+      setLanguage(lang);
+    }
+  }, [location]);
 
   const toggleDay = (day) => {
     setExpandedDays((prev) => ({
@@ -221,17 +344,1069 @@ function SixDaysTour() {
     </div>
   );
 
+  const tourDetails = {
+    duration: {
+      en: "6 Days",
+      ru: "6 дней",
+      uz: "6 kun"
+    },
+    destinations: {
+      en: "Tashkent, Samarkand, Bukhara, Khiva",
+      ru: "Ташкент, Самарканд, Бухара, Хива",
+      uz: "Toshkent, Samarqand, Buxoro, Xiva"
+    }
+  };
+
+  const priceTableTexts = {
+    headers: {
+      en: {
+        title: "Prices per person",
+        columns: ["Persons", "Econ", "Comf", "Deluxe"],
+        rows: [
+          "1 person", 
+          "2 persons", 
+          "3 persons", 
+          "4 persons", 
+          "Single supplement"
+        ],
+        footer: "Prices are for 2025 in US$ per person, with discounted prices for larger groups available on request."
+      },
+      ru: {
+        title: "Цены за человека",
+        columns: ["Количество", "Эконом", "Комфорт", "Делюкс"],
+        rows: [
+          "1 человек", 
+          "2 человека", 
+          "3 человека", 
+          "4 человека", 
+          "Доплата за одноместный номер"
+        ],
+        footer: "Цены указаны за 2025 год в долларах США за человека, скидки для больших групп предоставляются по запросу."
+      },
+      uz: {
+        title: "Har bir kishi uchun narxlar",
+        columns: ["Kishilar", "Iqtisodiy", "Komfort", "Deluxe"],
+        rows: [
+          "1 kishi", 
+          "2 kishi", 
+          "3 kishi", 
+          "4 kishi", 
+          "Yagona joy uchun qo'shimcha narx"
+        ],
+        footer: "Narxlar 2025 yil uchun AQSh dollarida bir kishi uchun, katta guruhlar uchun chegirmalar so'rov asosida mavjud."
+      }
+    }
+  };
+
+  // Multilingual navigation buttons
+  const navigationButtons = {
+    en: {
+      itinerary: "ITINERARY",
+      prices: "PRICES", 
+      request: "REQUEST",
+      reviews: "REVIEWS"
+    },
+    ru: {
+      itinerary: "МАРШРУТ",
+      prices: "ЦЕНЫ", 
+      request: "ЗАПРОС",
+      reviews: "ОТЗЫВЫ"
+    },
+    uz: {
+      itinerary: "SAYOHAT MARSHRUTИ",
+      prices: "NARXLAR", 
+      request: "SO'ROV",
+      reviews: "SHARHLAR"
+    }
+  };
+
+  const dayOneContent = {
+    en: {
+      title: "Tashkent - Arrival",
+      timeline: [
+        {
+          time: "01:05-03:00",
+          description: "Arrival at Tashkent International Airport."
+        },
+        {
+          time: "03:00-04:00",
+          description: "Meeting at Tashkent airport (driver will be holding a sign with your name) and transfer to hotel."
+        },
+        {
+          time: "07:00-09:00",
+          description: "Breakfast at hotel."
+        },
+        {
+          time: "09:00-13:00",
+          description: "City sightseeing: Hazrat Imam Complex (Kafal Shashi Mausoleum, Muyi Muborak Madrasah, Barak Khan Madrasah, Namozgoh Mosque, Hazrat Imam Mosque), visit to Uzbek mahalla, ancient city of Mingtepa, Minor Mosque."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Lunch at local restaurant (Tashkent pilaf at Besh Qozon - pilaf center)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Continue exploring Tashkent: Amir Timur statue and museum, Monument of Courage, Independence Square, Tashkent TV Tower, Chorsu Bazaar."
+        },
+        {
+          time: "Evening",
+          description: "Dinner at local restaurant and overnight at hotel."
+        }
+      ]
+    },
+    ru: {
+      title: "Ташкент - Прибытие",
+      timeline: [
+        {
+          time: "01:05-03:00",
+          description: "Прибытие в �������еждународный аэропорт Ташкента."
+        },
+        {
+          time: "03:00-04:00",
+          description: "Встреча в аэропорту Ташкента (водитель будет держать табличку с вашим именем) и трансфер в отель."
+        },
+        {
+          time: "07:00-09:00",
+          description: "Завтрак в отеле."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Обзорная экскурсия по городу: Комплекс Хазрат Имам (Мавзолей Кафал Шаши, Медресе Муйи Мубарак, Медресе Барак-хана, М������четь На��о��гох, Мечеть Хазрат Имам), посещение узбекского махалля, древний город Мингтепа, Малая мечеть."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Обед в местном ресторане (Ташкентский плов в Беш Козон - центр плова)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Продолжение экскурсии по Ташкенту: Статуя и музей Амира Темура, Монумент Мужества, Площадь Независимости, Ташкентская телебашня, Базар Чорсу."
+        },
+        {
+          time: "Вечер",
+          description: "Ужин в местном ресторане и ночь в отеле."
+        }
+      ]
+    },
+    uz: {
+      title: "Toshkent - Kelish",
+      timeline: [
+        {
+          time: "01:05-03:00",
+          description: "Toshkent xalqaro aeroportiga kelish."
+        },
+        {
+          time: "03:00-04:00",
+          description: "Toshkent aeroportida kutib olish (haydovchi sizning ismingiz yozilgan plakat bilan turadi) va mehmonxonaga o'tkazish."
+        },
+        {
+          time: "07:00-09:00",
+          description: "Mehmonxonada nonushta."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Shahar sayohatи: Hazrat Imom majmuasi (Kafal Shashi maqbarasi, Muyi Muborak madrasasi, Barak Khan madrasasi, Namozgoh masjidi, Hazrat Imom masjidi), o'zbek mahallasiga tashrif, Mingtepa qadimiy shahri, Kichik masjid."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Mahalliy restoranda tushlik (Besh Qozon - plov markazi)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Toshkentni davomini ko'rib chiqish: Amir Temur haykali va muzeyi, Botirlik monumenti, Mustaqillik maydoni, Toshkent telebashtasi, Chorsu bozori."
+        },
+        {
+          time: "Kechqurun",
+          description: "Mahalliy restoranda kechki ovqat va mehmonxonada tunash."
+        }
+      ]
+    }
+  };
+
+  const dayTwoContent = {
+    en: {
+      title: "Tashkent - Samarkand",
+      timeline: [
+        {
+          time: "05:00-05:30",
+          description: "Check out from hotel (breakfast box can be arranged at reception). Transfer to railway station (driver will meet you at hotel reception)."
+        },
+        {
+          time: "06:03-08:21",
+          description: "High-speed train to Samarkand."
+        },
+        {
+          time: "08:21-09:00",
+          description: "Meeting at the station (the driver will show you a plate with your name and surname and transfer to the hotel (leave your luggage at the hotel reception you can leave it)."
+        },
+        {
+          time: "09:00-13:00",
+          description: "City attractions: Amir Cave (burial of Amir Temur and his family legendary mausoleum), Registon Square - 3 world-famous madrasahs (Ulugbek, Tillakori, Sherdon) complex, Bibi Khanim mosque - in Central Asia the largest mosque built, Siyob Bazar (local market)."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Lunch at local restaurant (Samarkand pilaf)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Continue exploring Samarkand: Shahizinda Necropolis (holy place and Tombs of the Timurid dynasty and the tomb of the Prophet Muhammad's cousin cemetery), Hazrat Khizr Mosque, Afrosyab Museum, 'Heritage of El' theatrical performance (History of the peoples of Central Asia)."
+        },
+        {
+          time: "Evening",
+          description: "Dinner at a local restaurant and overnight at the hotel."
+        }
+      ]
+    },
+    ru: {
+      title: "Ташкент - Самарканд",
+      timeline: [
+        {
+          time: "05:00-05:30",
+          description: "Выезд из отеля (завтрак-бокс может быть организован на стойке регистрации). Трансфер на железнодорожный вокзал (водитель встретит вас в холле отеля)."
+        },
+        {
+          time: "06:03-08:21",
+          description: "Скоростной поезд в Самарканд."
+        },
+        {
+          time: "08:21-09:00",
+          description: "Встреча на вокзале (водитель покажет табличку с вашим именем и фамилией и доставит в отель (можете оставить багаж на стойке регистрации отеля)."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Городские достопримечательности: Мавзолей Амира (захоронение Амира Темура и его семьи), Площадь Регистан - комплекс из 3 всемирно известных медресе (Улугбека, Тиллакори, Шердор), мечеть Биби-Ханым - крупнейшая мечеть в Центральной Азии, Сиёб Базар (местный рынок)."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Обед в местном ресторане (самаркандский плов)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Продолжение экскурсии по Самарканду: Некрополь Шахи-Зинда (святое место и кладбище с гробницами Тимуридов и могилой двоюродного брата пророка Мухаммада), мечеть Хазрат Хызр, Музей Афросиаба, театрализованное представление 'Наследие Эля' (История народов Центральной Азии)."
+        },
+        {
+          time: "Вечер",
+          description: "Ужин в местном ресторане и ночь в отеле."
+        }
+      ]
+    },
+    uz: {
+      title: "Toshkent - Samarqand",
+      timeline: [
+        {
+          time: "05:00-05:30",
+          description: "Mehmonxonadan chiqish (nonushta qutisi resepshnda tayyorlanishi mumkin). Temir yo'l vokzaliga o'tkazish (haydovchi mehmonxona resepshnda kutib oladi)."
+        },
+        {
+          time: "06:03-08:21",
+          description: "Tezkor poyezd bilan Samarqandga yo'l."
+        },
+        {
+          time: "08:21-09:00",
+          description: "Vokzalda kutib olish (haydovchi sizning ism va familiyangiz yozilgan plakat ko'rsatadi va mehmonxonaga olib boradi (yuklaringizni mehmonxona resepshnda qoldirishingiz mumkin)."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Shahar diqqatga sazovor joylar: Amir maqbarasi (Amir Temur va uning oilasining qabri), Registon maydoni - 3 jahon miqyosida mashhur madrasalar (Ulug'bek, Tillakori, Sherdor) majmuasi, Bibi Xonim masjidi - Markaziy Osiyodagi eng katta qurilgan masjid, Siyob Bozori (mahalliy bozar)."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Mahalliy restoranda tushlik (Samarqand oshi)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Samarqandni davom etib ko'rib chiqish: Shohи Zinda nekropoli (muqaddas joy va Temuriylar sulolasi qabrlari va Payg'ambar Muhammad's jiyan qabristoni), Hazrat Xizr masjidi, Afrosiyob Muzeyi, 'El Merosi' teatr ko'rsatuvи (Markaziy Osiyo xalqlari tarixi)."
+        },
+        {
+          time: "Kechqurun",
+          description: "Mahalliy restoranda kechki ovqat va mehmonxonada tunash."
+        }
+      ]
+    }
+  };
+
+  const dayThreeContent = {
+    en: {
+      title: "Samarkand - Bukhara",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Breakfast at the hotel. Leaving the hotel."
+        },
+        {
+          time: "09:00-13:00",
+          description: "City attractions: Khoja Daniyor mausoleum, Ulugbek Observatory and Museum, 'Konigil-Meros' silk paper production workshop."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Lunch at a local restaurant (Samarkand mantis and peas-salt)."
+        },
+        {
+          time: "14:00-14:30",
+          description: "Transfer to the railway station."
+        },
+        {
+          time: "15:00-17:00",
+          description: "High-speed train to Bukhara."
+        },
+        {
+          time: "17:00-17:30",
+          description: "Pick up by the driver in Bukhara and transfer to the hotel."
+        },
+        {
+          time: "Evening",
+          description: "Dinner at a local restaurant and overnight at the hotel."
+        }
+      ]
+    },
+    ru: {
+      title: "Самарканд - Бухара",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Завтрак в отеле. Выезд из отеля."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Городские достопримечательности: Мавзолей Ходжи Даниёра, Обсерватория и музей Улугбека, мастерская производства шелковой бумаги 'Конигил-Мерос'."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Обед в местном ресторане (самаркандские манты и горох-соль)."
+        },
+        {
+          time: "14:00-14:30",
+          description: "Трансфер на железнодорожный вокзал."
+        },
+        {
+          time: "15:00-17:00",
+          description: "Скоростной поезд в Бухару."
+        },
+        {
+          time: "17:00-17:30",
+          description: "Встреча водителем в Бухаре и трансфер в отель."
+        },
+        {
+          time: "Вечер",
+          description: "Ужин в местном ресторане и ночь в отеле."
+        }
+      ]
+    },
+    uz: {
+      title: "Samarqand - Buxoro",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Mehmonxonada nonushta. Mehmonxonadan chiqish."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Shahar diqqatga sazovor joylar: Xoja Doniyor maqbarasi, Ulug'bek Observatoriyasi va Muzeyi, 'Konigil-Meros' ipak qog'oz ishlab chiqarish ustaxonasi."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Mahalliy restoranda tushlik (Samarqand mantisi va noxat-tuz)."
+        },
+        {
+          time: "14:00-14:30",
+          description: "Temir yo'l vokzaliga o'tkazish."
+        },
+        {
+          time: "15:00-17:00",
+          description: "Tezkor poyezd bilan Buxoroga yo'l."
+        },
+        {
+          time: "17:00-17:30",
+          description: "Buxoroda haydovchi tomonidan kutib olish va mehmonxonaga o'tkazish."
+        },
+        {
+          time: "Kechqurun",
+          description: "Mahalliy restoranda kechki ovqat va mehmonxonada tunash."
+        }
+      ]
+    }
+  };
+
+  const dayFourContent = {
+    en: {
+      title: "Bukhara",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Breakfast at the hotel."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Sights of the city: Today the tour will be on foot, because most of the old city is a pedestrian zone. Labi-Pool complex (Nadir Devonbegi pool, house and madrasa, Kukaldosh madrasa), Magoki-Attori mosque, 3 shopping domes (Toki Sarrofon, Toki Telpakfurushon, Toki Zargoron), Ulugbek madrasa, Abdulaziz Khan madrasa, Kalon Tower and Mosque, Mir Arab Madrasah."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Lunch at a local restaurant (Bukhara pilaf - Oshi sofi)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "We will continue exploring the Old City of Bukhara: Ark Fortress, Bolo-Hovuz mosque, Chashmai-Ayub mausoleum, Somanii mausoleum."
+        },
+        {
+          time: "Evening",
+          description: "Dinner at a local restaurant and overnight at the hotel."
+        }
+      ]
+    },
+    ru: {
+      title: "Бухара",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Завтрак в отеле."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Достопримечательности города: Сегодня экскурсия будет пешей, так как большая часть старого города является пешеходной зоной. Комплекс Лаби-Пол (Нэдир Девонбеги бассейн, дом и медресе, Кукалдош медресе), Магоки-Аттори мечеть, 3 торговых купола (Токи Саррофон, Токи Телпакфурушон, Токи Заргорон), медресе Улугбека, медресе Абдулазиза, башня и мечеть Калон, Мир Араб медресе."
+      },
+        {
+          time: "13:00-14:00",
+          description: "Обед в местном ресторане (Бухарский плов - Оши софи)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Продолжение экскурсии по Старому городу Бухары: Крепость Арк, мечеть Боло-Ховуз, мавзолей Чашмай-Айюб, мавзолей Сомани."
+        },
+        {
+          time: "Вечер",
+          description: "Ужин в местном ресторане и ночь в отеле."
+        }
+      ]
+    },
+    uz: {
+      title: "Buxoro",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Mehmonxonada nonushta."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Shahar diqqatga sazovor joylar: Bugun sayohat piyoda bo'ladi, chunki ko'p qismi eski shahar piyoda zonasi. Labi-Pool kompleksi (Nadir Devonbegi havzi, uy va madrasa, Kukaldosh madrasasi), Magoki-Attori masjidi, 3 savdo gumbazi (Toki Sarrofon, Toki Telpakfurushon, Toki Zargoron), Ulug'bek madrasasi, Abdulaziz Khan madrasasi, Kalon bashtasi va masjidi, Mir Arab Madrasasi."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Mahalliy restoranda tushlik (Buxoro oshi - Oshi sofi)."
+        },
+        {
+          time: "14:00-17:00",
+          description: "Buxoroning Eski shahrini davom etib ko'rib chiqamiz: Ark qal'asi, Bolo-Hovuz masjidi, Chashmai-Ayub maqbarasi, Somanii maqbarasi."
+        },
+        {
+          time: "Kechqurun",
+          description: "Mahalliy restoranda kechki ovqat va mehmonxonada tunash."
+        }
+      ]
+    }
+  };
+
+  const dayFiveContent = {
+    en: {
+      title: "Bukhara - Tashkent (Departure)",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Breakfast at the hotel. Leaving the hotel."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Attractions in the village area: Bahavuddin Naqshband memorial-architectural complex (a saint and philosopher of the 14th century), Sitorai Mohi Khosa Palace (the summer residence of the last Bukhara emir - 20th century), Chor Bakr necropolis (16th century memorial-architectural complex)."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Lunch at a local restaurant (grilled meat)."
+        },
+        {
+          time: "14:00-14:30",
+          description: "Transfer to the airport."
+        },
+        {
+          time: "15:00-17:00",
+          description: "Flight to Tashkent."
+        },
+        {
+          time: "17:00-18:00",
+          description: "Arrival in Tashkent, transfer to the hotel."
+        },
+        {
+          time: "Evening",
+          description: "Farewell dinner at a local restaurant and overnight at the hotel."
+        }
+      ]
+    },
+    ru: {
+      title: "Бухара - Ташкент (Отъезд)",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Завтрак в отеле. Выезд из отеля."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Достопримечательности пригородной зоны: Мемориально-архитектурный комплекс Бахавуддина Нақшбанда (святой �� филосо�� 14-го века), Дворец Ситораи М��хи Хоса (летняя резиденция последнего бухарского эмира - 20-й век), Некрополь Чор Бакр (мемориально-архитектурный комплекс 16-го века)."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Обед в местном ресторане (жареное мясо)."
+        },
+        {
+          time: "14:00-14:30",
+          description: "Трансфер в аэропорт."
+        },
+        {
+          time: "15:00-17:00",
+          description: "Перелет в Ташкент."
+        },
+        {
+          time: "17:00-18:00",
+          description: "Прибытие в Ташкент, трансфер в отель."
+        },
+        {
+          time: "Вечер",
+          description: "Прощальный ужин в местном ресторане и ночь в отеле."
+        }
+      ]
+    },
+    uz: {
+      title: "Buxoro - Toshkent (Yo'lga chiqish)",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Mehmonxonada nonushta. Mehmonxonadan chiqish."
+        },
+        {
+          time: "09:00-13:00",
+          description: "Qishloq atrofidagi diqqatga sazovor joylar: Baxovuddin Naqshband memurial-arxitektura majmuasi (14-asr avliyosi va faylsufi), Sitorai Moxi Xosa saroyи (oxirgi Buxoro emirining yozgi rezidentsiyasi - 20-asr), Chor Bakr nekropoli (16-asr memurial-arxitektura majmuasi)."
+      },
+        {
+          time: "13:00-14:00",
+          description: "Mahalliy restoranda tushlik (kabob)."
+        },
+        {
+          time: "14:00-14:30",
+          description: "Aeroportga o'tkazish."
+        },
+        {
+          time: "15:00-17:00",
+          description: "Toshkentga parvoz."
+        },
+        {
+          time: "17:00-18:00",
+          description: "Toshkentga kelish, mehmonxonaga o'tkazish."
+        },
+        {
+          time: "Kechqurun",
+          description: "Xayrlashish kechki oshи mahalliy restoranda va mehmonxonada tunash."
+        }
+      ]
+    }
+  };
+
+  const daySixContent = {
+    en: {
+      title: "Tashkent - Departure",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Breakfast at the hotel. Preparation for departure."
+        },
+        {
+          time: "09:00-12:00",
+          description: "Final city tour of Tashkent: Independence Square, Earthquake Memorial Complex, Tashkent Metro (known for its beautiful stations), Applied Arts Museum, Chorsu Bazaar."
+        },
+        {
+          time: "12:00-13:00",
+          description: "Last-minute shopping and souvenir hunting at local markets and handicraft shops."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Farewell lunch at a traditional Uzbek restaurant featuring national cuisine."
+        },
+        {
+          time: "14:00-15:30",
+          description: "Transfer to Tashkent International Airport. Assistance with check-in procedures."
+        },
+        {
+          time: "15:30-17:00",
+          description: "Free time at the airport, last-minute shopping, relaxation."
+        },
+        {
+          time: "Evening",
+          description: "Departure from Tashkent International Airport. End of the tour."
+        }
+      ]
+    },
+    ru: {
+      title: "Ташкент - Отъезд",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Завтрак в отеле. Подготовка к отъезду."
+        },
+        {
+          time: "09:00-12:00",
+          description: "Заключительная экскурсия по Ташкенту: Площадь Независимости, Мемориальный комплекс Землетрясения, Ташкентское Метро (известное своими красивыми станциями), Музей прикладного искусства, Базар Чорсу."
+        },
+        {
+          time: "12:00-13:00",
+          description: "Последние покупки и поиск сувениров на местных рынках и в магазинах народных промыслов."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Прощальный обед в традиционном узбекском ресторане с национальной кухней."
+        },
+        {
+          time: "14:00-15:30",
+          description: "Трансфер в международный аэропорт Ташкента. Помощь в процедуре регистрации."
+        },
+        {
+          time: "15:30-17:00",
+          description: "Свободное время в аэропорту, последние покупки, отдых."
+        },
+        {
+          time: "Вечер",
+          description: "Вылет из международного аэропорта Ташкента. Окончание тура."
+        }
+      ]
+    },
+    uz: {
+      title: "Toshkent - Yo'lga chiqish",
+      timeline: [
+        {
+          time: "07:00-09:00",
+          description: "Mehmonxonada nonushta. Yo'lga tayyorgarlik."
+        },
+        {
+          time: "09:00-12:00",
+          description: "Toshkentning oxirgi sayohat turи: Mustaqillik maydoni, Zilzila Xotira Majmuasi, Toshkent Metrosи (chiroyli stansiyalari bilan mashhur), Qo'l san'ati Muzeyi, Chorsu Bozori."
+        },
+        {
+          time: "12:00-13:00",
+          description: "Mahalliy bozorlar va qo'l san'ati do'konlarida oxirgi sotib olishlar va suvenir izlash."
+        },
+        {
+          time: "13:00-14:00",
+          description: "Milliy oshxonali an'anaviy o'zbek restoranida xayrlashish tushлigi."
+        },
+        {
+          time: "14:00-15:30",
+          description: "Toshkent Xalqaro Aeroportiga o'tkazish. Registratsiya jarayonida yordam."
+        },
+        {
+          time: "15:30-17:00",
+          description: "Aeroportda bo'sh vaqt, oxirgi sotib olishlar, dam olish."
+        },
+        {
+          time: "Kechqurun",
+          description: "Toshkent Xalqaro Aeroportidan yo'lga chiqish. Sayohatning yakunи."
+        }
+      ]
+    }
+  };
+
+  const hotelAndTransferInfo = {
+    en: {
+      checkIn: {
+        time: "14:00",
+        note: "Standard check-out times apply. If needed, please inquire about luggage storage service at the hotel reception."
+      },
+      checkOut: {
+        time: "12:00",
+        note: "Standard check-out times apply. If needed, please inquire about luggage storage service at the hotel reception."
+      },
+      airportTransfer: {
+        meetingPoint: "The transfer driver will meet you in the arrival hall with a sign showing your name.",
+        additionalInfo: [
+          "Some airports have multiple exits from customs, so please look carefully for your driver.",
+          "If your flight is delayed by more than one hour or if you cannot find the driver, please call the number shown above.",
+          "Airport porter service may cost more than $3 per bag; luggage carts are not always available."
+        ]
+      },
+      railwayTransfer: {
+        meetingPoint: "When possible, the transfer driver will be on the platform next to your train car when you arrive.",
+        instructions: [
+          "Look for a sign with your name and surname when exiting the train.",
+          "Please wait at least five minutes at this location.",
+          "If you cannot contact the transfer agent, look towards the front of the train and wait at the station entrance.",
+          "Remember that luggage carts are not always available in many locations.",
+          "Railway station luggage handling service may cost more than $5 per bag."
+        ]
+      },
+      ticketDelivery: "All tickets are delivered by a local guide or driver.",
+      emergencyContact: "In case of emergency, contact the tour company office."
+    },
+    ru: {
+      checkIn: {
+        time: "14:00",
+        note: "Применяются стандартные времена заселения. При необходимости, пожалуйста, узнайте об услуге хранения багажа на стойке регистрации отеля."
+      },
+      checkOut: {
+        time: "12:00",
+        note: "Применяются стандартные времена выселения. При необходимости, пожалуйста, узнайте об услуге хранения багажа на стойке регистрации отеля."
+      },
+      airportTransfer: {
+        meetingPoint: "Водитель трансфера встретит вас в зале прилета с табличкой, показывающей ваше имя.",
+        additionalInfo: [
+          "В некоторых аэропортах есть несколько выходов из таможни, поэтому внимательно ищите своего водителя.",
+          "Если ваш рейс задерживается более чем на час или вы не можете найти водителя, пожалуйста, позвоните по номеру, указанному выше.",
+          "Услуга носильщика в аэропорту может стоить более $3 за сумку; тележки для багажа не всегда доступны."
+        ]
+      },
+      railwayTransfer: {
+        meetingPoint: "По возможности, водитель трансфера будет находиться на платформе рядом с вашим вагоном при вашем прибытии.",
+        instructions: [
+          "Ищите табличку со своим именем и фамилией при выходе из поезда.",
+          "Пожалуйста, подождите не менее пяти минут в этом месте.",
+          "Если вы не можете связаться с агентом трансфера, посмотрите в сторону передней части поезда и ждите у входа на вокзал.",
+          "Помните, что во многих местах тележки для багажа не всегда доступны.",
+          "Услуга транспортировки багажа на железнодорожном вокзале может стоить более $5 за сумку."
+        ]
+      },
+      ticketDelivery: "Все билеты доставляются местным гидом или водителем.",
+      emergencyContact: "В случае чрезвычайной ситуации свяжитесь с офисом туристической компании."
+    },
+    uz: {
+      checkIn: {
+        time: "14:00",
+        note: "Standart chiqish vaqtlari qo'llaniladi. Kerak bo'lsa, mehmonxona resepshndan yuklar saqlash xizmatini so'rang."
+      },
+      checkOut: {
+        time: "12:00",
+        note: "Standart chiqish vaqtlari qo'llaniladi. Kerak bo'lsa, mehmonxona resepshndan yuklar saqlash xizmatini so'rang."
+      },
+      airportTransfer: {
+        meetingPoint: "Transfer haydovchisi sizni ismingiz yozilgan plakat bilan aeroport kelish zalida kutib oladi.",
+        additionalInfo: [
+          "Ba'zi aeroportlarda gombozdan chiqishning bir nechta yo'nalishlari bo'ladi, shuning uchun haydovchingizni diqqat bilan qidiring.",
+          "Agar parvozingiz bir soatdan ko'proq kechiksa yoki haydovchini topa olmasangiz, yuqorida ko'rsatilgan raqamga qo'ng'iroq qiling.",
+          "Aeroport porter xizmati har bir sumka uchun $3 dan ko'proq bo'lishi mumkin; yuklar aravalari har doim mavjud bo'lavermaydi."
+        ]
+      },
+      railwayTransfer: {
+        meetingPoint: "Imkon qadar, transfer haydovchisi sizning poyezd vagoningiz yonida platformada bo'ladi.",
+        instructions: [
+          "Poyezddan tushganda ismingiz va familiyangiz yozilgan belgini qidiring.",
+          "Iltimos, bu joyda kamida besh daqiqa kuting.",
+          "Agar transfer agenti bilan bog'lana olmasangiz, poyezdning bosh qismiga qarab yuring va vokzal kirishida kuting.",
+          "Ko'p joylarda yuklar aravalari har doim mavjud bo'lavermaydi.",
+          "Temir yo'l vokzallarida yuklar tashish xizmati har bir sumka uchun $5 dan ortiq bo'lishi mumkin."
+        ]
+      },
+      ticketDelivery: "Barcha chipta va biletlar mahalliy gid yoki haydovchi tomonidan yetkazib beriladi.",
+      emergencyContact: "Favqulodda holatlarda turlar kompaniyasining ofisiga murojaat qiling."
+    }
+  };
+
+  const renderHotelAndTransferInfo = () => {
+    const info = hotelAndTransferInfo[language];
+    
+    return (
+      <div className="bg-gray-50 p-6 rounded-lg shadow-md space-y-4">
+        <div>
+          <h3 className="text-xl font-semibold text-blue-600 mb-2">
+            {language === 'en' ? 'Hotel Check-In/Out Times' : 
+             language === 'ru' ? 'Время заселения/выселения в отеле' : 
+             'Mehmonxonaga kirish/chiqish vaqtlari'}
+          </h3>
+          <div className="space-y-2">
+            <p>
+              <span className="font-medium">
+                {language === 'en' ? 'Check-in Time:' : 
+                 language === 'ru' ? 'Время заселения:' : 
+                 'Kirish vaqti:'}
+              </span> {info.checkIn.time}
+            </p>
+            <p>
+              <span className="font-medium">
+                {language === 'en' ? 'Check-out Time:' : 
+                 language === 'ru' ? 'Время выселения:' : 
+                 'Chiqish vaqti:'}
+              </span> {info.checkOut.time}
+            </p>
+            <p className="text-gray-600 text-sm">{info.checkIn.note}</p>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-blue-600 mb-2">
+            {language === 'en' ? 'Airport Transfer Information' : 
+             language === 'ru' ? 'Информация о трансфере в аэропорту' : 
+             'Aeroport transfer ma\'lumotlari'}
+          </h3>
+          <p className="mb-2">{info.airportTransfer.meetingPoint}</p>
+          <ul className="list-disc list-inside text-gray-600 text-sm space-y-1">
+            {info.airportTransfer.additionalInfo.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-blue-600 mb-2">
+            {language === 'en' ? 'Railway Station Transfer Information' : 
+             language === 'ru' ? 'Информация о трансфере на железнодорожном вокзале' : 
+             'Temir yo\'l vokzali transfer ma\'lumotlari'}
+          </h3>
+          <p className="mb-2">{info.railwayTransfer.meetingPoint}</p>
+          <ul className="list-disc list-inside text-gray-600 text-sm space-y-1">
+            {info.railwayTransfer.instructions.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="bg-blue-50 p-4 rounded-lg">
+          <p className="mb-2"><strong>{language === 'en' ? 'Ticket Delivery:' : 
+                                       language === 'ru' ? 'Доставка билетов:' : 
+                                       'Chipta yetkazish:'}</strong> {info.ticketDelivery}</p>
+          <p><strong>{language === 'en' ? 'Emergency Contact:' : 
+                       language === 'ru' ? 'Экстренный контакт:' : 
+                       'Favqulodda aloqa:'}</strong> {info.emergencyContact}</p>
+        </div>
+      </div>
+    );
+  };
+
+  const tourPriceDetails = {
+    en: {
+      ticketDelivery: "All tickets are delivered by a local guide or driver.",
+      emergencyContact: "In case of emergency, contact the tour company office.",
+      priceIncludes: {
+        title: "The tour price includes:",
+        items: [
+          "Accommodation in 3* hotels in Tashkent, Samarkand, Bukhara and Khiva in SGL/DBL/TWN rooms with breakfast;",
+          "Tashkent-Samarkand economic train ticket (Africa/East) depending on ticket availability on the day of visit;",
+          "Samarkand-Bukhara economic train ticket (Africa/East) depending on ticket availability on the day of visit;",
+          "Bukhara-Khiva-Urganch transfer by comfortable sedan car;",
+          "Urganch-Tashkent domestic flight;",
+          "Professional English-speaking guide services in all cities;",
+          "All transfers, tours, and city tours according to the program by air-conditioned sedan car/minibus/bus."
+        ]
+      },
+      priceDoesNotInclude: {
+        title: "Tour price does not include:",
+        items: [
+          "International air tickets;",
+          "Tourist e-visa fees;",
+          "Early entry and late exit;",
+          "Lunch and dinner;",
+          "Payments for additional services in hotels;",
+          "Payments for taking photos and videos in places of interest;",
+          "Personal insurance;",
+          "Tea money and service fees;",
+          "Any services not included in the program above.",
+          "Entrance fees to attractions are at your own expense."
+        ]
+      }
+    },
+    ru: {
+      ticketDelivery: "Все билеты доставляются местным гидом или водителем.",
+      emergencyContact: "В случае чрезвычайной ситуации свяжитесь с офисом туристической компании.",
+      priceIncludes: {
+        title: "В стоимость тура входит:",
+        items: [
+          "Проживание в отелях 3* в Ташкенте, Самарканде, Бухаре и Хиве в номерах SGL/DBL/TWN с завтраком;",
+          "Экономический железнодорожный билет Ташкент-Самарканд (Африка/Восток) в зависимости от наличия билетов в день посещения;",
+          "Экономический железнодорожный билет Самарканд-Бухара (Африка/Восток) в зависимости от наличия билетов в день посещения;",
+          "Трансфер Бухара-Хива-Ургенч комфортабельным седаном;",
+          "Внутренний авиаперелет Ургенч-Ташкент;",
+          "Услуги профессионального англоговорящего гида в�� всех городах;",
+          "Все трансферы, туры и городские экскурсии по программе на кондиционированном седане/микроавтобусе/автобусе."
+        ]
+      },
+      priceDoesNotInclude: {
+        title: "В стоимость тура не входит:",
+        items: [
+          "Международные авиабилеты;",
+          "Сборы за туристическую электронную визу;",
+          "Ранний заезд и поздний выезд;",
+          "Обед и ужин;",
+          "Оплата дополнительных услуг в отелях;",
+          "Оплата фото- и видеосъемки в достопримечательностях;",
+          "Личное страхование;",
+          "Чаевые и сервисные сборы;",
+          "Любые услуги, не включенные в программу выше.",
+          "Входные билеты в достопримечательности оплачиваются отдельно."
+        ]
+      }
+    },
+    uz: {
+      ticketDelivery: "Barcha chipta va biletlar mahalliy gid yoki haydovchi tomonidan yetkazib beriladi.",
+      emergencyContact: "Favqulodda holatlarda turlar kompaniyasining ofisiga murojaat qiling.",
+      priceIncludes: {
+        title: "Tur narxiga kiritilgan:",
+        items: [
+          "Toshkent, Samarqand, Buxoro va Xivadagi 3* mehmonxonalarda SGL/DBL/TWN xonalarda nonushta bilan joylashish;",
+          "Toshkent-Samarqand iqtisodiy poyezd chipta (Afrika/Sharq) tashrif kunidagi chipta mavjudligiga bog'liq;",
+          "Samarqand-Buxoro iqtisodiy poyezd chipta (Afrika/Sharq) tashrif kunidagi chipta mavjudligiga bog'liq;",
+          "Buxoro-Xiva-Urganch qulay sedan avtomobilida o'tkazish;",
+          "Urganch-Toshkent ichki parvoz;",
+          "Barcha shaharlarda professional ingliz tilida gid xizmatlari;",
+          "Dastur bo'yicha konditsioner sedan/mikroavtobus/avtobus bilan barcha transfer, turlar va shahar ekskursiyalari."
+        ]
+      },
+      priceDoesNotInclude: {
+        title: "Tur narxiga kiritilmagan:",
+        items: [
+          "Xalqaro aviachiptalar;",
+          "Turist elektron vizasi to'lovlari;",
+          "Erta kirish va kech chiqish;",
+          "Tushlik va kechki ovqat;",
+          "Mehmonxonalardagi qo'shimcha xizmatlar to'lovlari;",
+          "Diqqatga sazovor joylardan foto va video olish to'lovlari;",
+          "Shaxsiy sug'urta;",
+          "Choy puli va xizmat to'lovlari;",
+          "Yuqorida ko'rsatilgan dasturga kiritilmagan har qanday xizmatlar.",
+          "Diqqatga sazovor joylarga kirish to'lovlari o'z hisobingizga."
+        ]
+      }
+    }
+  };
+
+  const renderTourPriceDetails = () => {
+    // Ensure language is defined and has a valid value
+    if (!language || !tourPriceDetails[language]) {
+      // Fallback to English if language is not set
+      const details = tourPriceDetails['en'];
+      
+      return (
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-green-50 p-6 rounded-lg">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              {details.priceIncludes.title}
+            </h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-600">
+              {details.priceIncludes.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="bg-red-50 p-6 rounded-lg">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              {details.priceDoesNotInclude.title}
+            </h3>
+            <ol className="list-decimal list-inside space-y-2 text-gray-600">
+              {details.priceDoesNotInclude.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ol>
+            <p className="mt-4 text-gray-600">
+              Entrance fees to attractions are at your own expense.
+            </p>
+          </div>
+        </div>
+      );
+    }
+
+    // Normal rendering with selected language
+    const details = tourPriceDetails[language];
+    
+    return (
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-green-50 p-6 rounded-lg">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">
+            {details.priceIncludes.title}
+          </h3>
+          <ol className="list-decimal list-inside space-y-2 text-gray-600">
+            {details.priceIncludes.items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="bg-red-50 p-6 rounded-lg">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">
+            {details.priceDoesNotInclude.title}
+          </h3>
+          <ol className="list-decimal list-inside space-y-2 text-gray-600">
+            {details.priceDoesNotInclude.items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ol>
+          <p className="mt-4 text-gray-600">
+            {language === 'en' ? 'Entrance fees to attractions are at your own expense.' :
+             language === 'ru' ? 'Входные билеты в достопримечательности оплачиваются отдельно.' :
+             'Diqqatga sazovor joylarga kirish to\'lovlari o\'z hisobingizga.'}
+          </p>
+        </div>
+      </div>
+    );
+  };
+
+  const renderTicketAndEmergencyInfo = () => {
+    const ticketInfo = {
+      en: {
+        ticketDelivery: "All tickets are delivered by a local guide or driver.",
+        emergencyContact: "In case of emergency, contact the tour company office."
+      },
+      ru: {
+        ticketDelivery: "Все билеты доставляются местным гидом или водителем.",
+        emergencyContact: "В случае чрезвычайной ситуации свяжитесь с офисом туристической компании."
+      },
+      uz: {
+        ticketDelivery: "Barcha chipta va biletlar mahalliy gid yoki haydovchi tomonidan yetkazib beriladi.",
+        emergencyContact: "Favqulodda holatlarda turlar kompaniyasining ofisiga murojaat qiling."
+      }
+    };
+
+    // Use the current language, fallback to English if not set
+    const currentLanguage = language in ticketInfo ? language : 'en';
+    const { ticketDelivery, emergencyContact } = ticketInfo[currentLanguage];
+
+    return (
+      <div className="bg-gray-50 p-6 rounded-lg">
+        <div className="space-y-2">
+          <p className="text-gray-600 flex items-center">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5 mr-2 text-blue-500" 
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" 
+                clipRule="evenodd" 
+              />
+            </svg>
+            {ticketDelivery}
+          </p>
+          <p className="text-gray-600 flex items-center">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5 mr-2 text-red-500" 
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+            >
+              <path 
+                fillRule="evenodd" 
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" 
+                clipRule="evenodd" 
+              />
+            </svg>
+            {emergencyContact}
+          </p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
       {/* Tour Header */}
       <div className="mb-4 sm:mb-6 md:mb-8">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-500 mb-2">
-          6-day Uzbekistan Express Tour
+          {tourTitles[language]}
         </h1>
         <div className="flex flex-col sm:flex-row sm:items-center text-gray-600 text-xs sm:text-sm">
-          <span>6 Days</span>
+          <span>{tourDetails.duration[language]}</span>
           <span className="hidden sm:block mx-2">|</span>
-          <span>Tashkent, Samarkand, Bukhara, Khiva</span>
+          <span>{tourDetails.destinations[language]}</span>
         </div>
       </div>
 
@@ -253,11 +1428,11 @@ function SixDaysTour() {
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
               <img
                 src={images[currentImage].src}
-                alt={images[currentImage].alt}
+                alt={images[currentImage].alt[language]}
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
               <div className="absolute bottom-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
-                {images[currentImage].location}
+                {images[currentImage].location[language]}
               </div>
 
               {/* Navigation Buttons */}
@@ -289,7 +1464,7 @@ function SixDaysTour() {
               >
                 <img
                   src={image.src}
-                  alt={image.alt}
+                  alt={image.alt[language]}
                   className="w-full h-full object-cover"
                 />
                 <div
@@ -305,23 +1480,27 @@ function SixDaysTour() {
         <div className="w-full lg:w-1/3 mt-4 lg:mt-0">
           <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6 sticky top-4">
             <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-600">
-              Prices per person
+              {priceTableTexts.headers[language].title}
             </h2>
 
             <div className="overflow-x-auto -mx-3 sm:mx-0">
               <table className="w-full min-w-[300px]">
                 <thead>
                   <tr className="border-b-2">
-                    <th className="py-2 text-left">Persons</th>
-                    <th className="py-2 text-right">Econ</th>
-                    <th className="py-2 text-right">Comf</th>
-                    <th className="py-2 text-right">Deluxe</th>
+                    {priceTableTexts.headers[language].columns.map((column, index) => (
+                      <th 
+                        key={index} 
+                        className={`py-2 ${index === 0 ? 'text-left' : 'text-right'}`}
+                      >
+                        {column}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {Object.keys(prices.economy).map((key) => (
+                  {Object.keys(prices.economy).map((key, index) => (
                     <tr key={key} className="border-b">
-                      <td className="py-2">{key}</td>
+                      <td className="py-2">{priceTableTexts.headers[language].rows[index]}</td>
                       <td className="py-2 text-right">${prices.economy[key]}</td>
                       <td className="py-2 text-right">${prices.comfort[key]}</td>
                       <td className="py-2 text-right">${prices.deluxe[key]}</td>
@@ -332,7 +1511,7 @@ function SixDaysTour() {
             </div>
 
             <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">
-            Prices are for 2025 in US$ per person, with discounted prices for larger groups available on request.
+              {priceTableTexts.headers[language].footer}
             </p>
 
             <button className="mt-4 sm:mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg transition-all hover:scale-105 text-sm sm:text-base">
@@ -359,7 +1538,7 @@ function SixDaysTour() {
                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50
                   active:translate-y-[1px]"
                 >
-                  ITINERARY
+                  {navigationButtons[language].itinerary}
                 </button>
 
                 <button
@@ -371,7 +1550,7 @@ function SixDaysTour() {
                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50
                   active:translate-y-[1px]"
                 >
-                  PRICES
+                  {navigationButtons[language].prices}
                 </button>
 
                 <button
@@ -383,7 +1562,7 @@ function SixDaysTour() {
                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50
                   active:translate-y-[1px]"
                 >
-                  REQUEST
+                  {navigationButtons[language].request}
                 </button>
 
                 <button
@@ -395,7 +1574,7 @@ function SixDaysTour() {
                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50
                   active:translate-y-[1px]"
                 >
-                  REVIEWS
+                  {navigationButtons[language].reviews}
                 </button>
               </div>
             </nav>
@@ -404,10 +1583,7 @@ function SixDaysTour() {
           {/* Tour Description */}
           <div className="border-t border-b border-gray-200 py-4 my-6">
             <p className="text-gray-600 italic text-base leading-relaxed">
-              6-day Uzbekistan Express Tour is a perfect introduction to Uzbekistan's main highlights.
-              You will explore the ancient cities of Samarkand and Bukhara, experience the modern capital Tashkent,
-              and discover the rich cultural heritage of the Silk Road. This compact tour is ideal for those with limited time
-              who want to see the essential sights of Uzbekistan.
+              {tourDescriptions[language]}
             </p>
           </div>
 
@@ -435,388 +1611,120 @@ function SixDaysTour() {
             {[
               {
                 day: 1,
-                title: "Tashkent - Arrival",
+                title: dayOneContent[language].title,
                 content: (
                   <div className="text-gray-600 space-y-4">
                     <div className="space-y-2">
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          01:05-03:00
-                        </span>
-                        <p>Arrival at Tashkent International Airport.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          03:00-04:00
-                        </span>
-                        <p>
-                          Meeting at Tashkent airport (driver will be holding a sign with your name)
-                          and transfer to hotel.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          07:00-09:00
-                        </span>
-                        <p>Breakfast at hotel.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          09:00-13:00
-                        </span>
-                        <p>
-                          City sightseeing: Hazrat Imam Complex (Kafal Shashi Mausoleum,
-                          Muyi Muborak Madrasah, Barak Khan Madrasah, Namozgoh Mosque,
-                          Hazrat Imam Mosque), visit to Uzbek mahalla, ancient city of Mingtepa,
-                          Minor Mosque.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          13:00-14:00
-                        </span>
-                        <p>
-                          Lunch at local restaurant (Tashkent pilaf at Besh Qozon - pilaf center).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          14:00-17:00
-                        </span>
-                        <p>
-                          Continue exploring Tashkent: Amir Timur statue and museum,
-                          Monument of Courage, Independence Square, Tashkent TV Tower,
-                          Chorsu Bazaar.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          Evening
-                        </span>
-                        <p>Dinner at local restaurant and overnight at hotel.</p>
-                      </div>
+                      {dayOneContent[language].timeline.map((item, index) => (
+                        <div key={index} className="flex items-start">
+                          <span className="font-medium text-blue-500 w-24 flex-shrink-0">
+                            {item.time}
+                          </span>
+                          <p>{item.description}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ),
               },
               {
                 day: 2,
-                title: "Tashkent - Samarkand",
+                title: dayTwoContent[language].title,
                 content: (
                   <div className="text-gray-600 space-y-4">
                     <div className="space-y-2">
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          05:00-05:30
-                        </span>
-                        <p>
-                          Check out from hotel (breakfast box can be arranged at reception).
-                          Transfer to railway station (driver will meet you at hotel reception).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          06:03-08:21
-                        </span>
-                        <p>High-speed train to Samarkand.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          08:21-09:00
-                        </span>
-                        <p>
-                          Meeting at the station (the driver will show you a plate with your name and surname
-                          and transfer to the hotel (leave your luggage at the hotel reception
-                          you can leave it).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          09:00-13:00
-                        </span>
-                        <p>
-                          City attractions: Amir Cave (burial of Amir Temur and his family
-                          legendary mausoleum), Registon Square - 3 world-famous madrasahs
-                          (Ulugbek, Tillakori, Sherdon) complex, Bibi Khanim mosque - in Central Asia
-                          the largest mosque built, Siyob Bazar (local market).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          13:00-14:00
-                        </span>
-                        <p>
-                          Mahalliy restoranda tushlik (Samarqand oshi - "Zigʻir osh").
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          14:00-17:00
-                        </span>
-                        <p>
-                          We will continue exploring Samarkand: Shahizinda Necropolis (holy place and
-                          Tombs of the Timurid dynasty and the tomb of the Prophet Muhammad's cousin
-                          cemetery), Hazrat Khizr Mosque, Afrosyab Museum, "Heritage of El"
-                          theatrical performance (History of the peoples of Central Asia).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          In the evening
-                        </span>
-                        <p>Dinner at a local restaurant and overnight at the hotel.</p>
-                      </div>
+                      {dayTwoContent[language].timeline.map((item, index) => (
+                        <div key={index} className="flex items-start">
+                          <span className="font-medium text-blue-500 w-24 flex-shrink-0">
+                            {item.time}
+                          </span>
+                          <p>{item.description}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ),
               },
               {
                 day: 3,
-                title: "Samarqand - Buxoro",
+                title: dayThreeContent[language].title,
                 content: (
                   <div className="text-gray-600 space-y-4">
                     <div className="space-y-2">
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          07:00-09:00
-                        </span>
-                        <p>Breakfast at the hotel. Leaving the hotel.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          09:00-13:00
-                        </span>
-                        <p>
-                          City attractions: Khoja Daniyor mausoleum,
-                          Ulugbek Observatory and Museum, "Konigil-Meros" silk paper
-                          production workshop.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          13:00-14:00
-                        </span>
-                        <p>
-                          Lunch at a local restaurant (Samarkand mantis and peas-salt).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          14:00-14:30
-                        </span>
-                        <p>Transfer to the railway station.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          15:00-17:00
-                        </span>
-                        <p>High-speed train to Bukhara.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          17:00-17:30
-                        </span>
-                        <p>
-                          Pick up by the driver in Bukhara and transfer to the hotel.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          Kechqurun
-                        </span>
-                        <p>Dinner at a local restaurant and overnight at the hotel.</p>
-                      </div>
+                      {dayThreeContent[language].timeline.map((item, index) => (
+                        <div key={index} className="flex items-start">
+                          <span className="font-medium text-blue-500 w-24 flex-shrink-0">
+                            {item.time}
+                          </span>
+                          <p>{item.description}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ),
               },
               {
                 day: 4,
-                title: "Buxoro",
+                title: dayFourContent[language].title,
                 content: (
                   <div className="text-gray-600 space-y-4">
                     <div className="space-y-2">
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          07:00-09:00
-                        </span>
-                        <p>Breakfast at the hotel.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          09:00-13:00
-                        </span>
-                        <p>
-                          Sights of the city: Today the tour will be on foot, because Old
-                          most of the city is a pedestrian zone. Labi-Pool complex
-                          (Nadir Devonbegi pool, house and madrasa, Kukaldosh madrasa),
-                          Magoki-Attori mosque, 3 shopping domes (Toki Sarrofon, Toki
-                          Telpakfurushon, Toki Zargoron), Ulugbek madrasa, Abdulaziz Khan madrasa,
-                          Kalon Tower and Mosque, Mir Arab Madrasah.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          13:00-14:00
-                        </span>
-                        <p>
-                          Lunch at a local restaurant (Bukhara oshi - Oshi sofi).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          14:00-17:00
-                        </span>
-                        <p>
-                          We will continue exploring the Old City of Bukhara: Ark Fortress,
-                          Bolo-Hovuz mosque, Chashmai-Ayub mausoleum, Somanii mausoleum.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          In the evening
-                        </span>
-                        <p>Dinner at a local restaurant and overnight at the hotel.</p>
-                      </div>
+                      {dayFourContent[language].timeline.map((item, index) => (
+                        <div key={index} className="flex items-start">
+                          <span className="font-medium text-blue-500 w-24 flex-shrink-0">
+                            {item.time}
+                          </span>
+                          <p>{item.description}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ),
               },
               {
                 day: 5,
-                title: "Buxoro - Toshkent (Jo'nash)",
+                title: dayFiveContent[language].title,
                 content: (
                   <div className="text-gray-600 space-y-4">
                     <div className="space-y-2">
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          07:00-09:00
-                        </span>
-                        <p>Breakfast at the hotel. Leaving the hotel.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          09:00-13:00
-                        </span>
-                        <p>
-                          Attractions in the village area: Bahavuddin Naqshband
-                          memorial-architectural complex (a saint and philosopher of the 14th century),
-                          Sitorai Mohi Khosa Palace (the summer residence of the last Bukhara emir -
-                          20th century), Chor Bakr necropolis (16th century memorial-architectural complex).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          13:00-14:00
-                        </span>
-                        <p>
-                          Lunch at a local restaurant (grilled meat).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          14:00-14:30
-                        </span>
-                        <p>Transfer to the airport.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          15:00-17:00
-                        </span>
-                        <p>Toshkentga uchish.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          18:00-21:30
-                        </span>
-                        <p>Fly to your country.</p>
-                      </div>
+                      {dayFiveContent[language].timeline.map((item, index) => (
+                        <div key={index} className="flex items-start">
+                          <span className="font-medium text-blue-500 w-24 flex-shrink-0">
+                            {item.time}
+                          </span>
+                          <p>{item.description}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ),
               },
               {
                 day: 6,
-                title: "Toshkent - Jo'nash",
+                title: daySixContent[language].title,
                 content: (
                   <div className="text-gray-600 space-y-4">
                     <div className="space-y-2">
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          07:00-09:00
-                        </span>
-                        <p>Breakfast at the hotel. Leaving the hotel.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          09:00-13:00
-                        </span>
-                        <p>
-                          Getting to know the modern part of the city of Tashkent: Independence Square,
-                          Amir Temur Avenue, Tashkent TV Tower, Metro Tour.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          13:00-14:00
-                        </span>
-                        <p>
-                          Lunch at a local restaurant.
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          14:00-17:00
-                        </span>
-                        <p>
-                          Chorsu Bazaar, Kukeldash Madrasah, Hazrat Imam Complex
-                          (Madrasa of Barak Khan, Mausoleum of Kaffar Oshii, Madrasa of Muyi Mubarak).
-                        </p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          17:00-18:00
-                        </span>
-                        <p>Aeroportga transfer.</p>
-                      </div>
-
-                      <div className="flex items-start">
-                        <span className="font-medium text-blue-500 w-24 flex-shrink-0">
-                          20:00-23:00
-                        </span>
-                        <p>Getting on an international flight.</p>
-                      </div>
+                      {daySixContent[language].timeline.map((item, index) => (
+                        <div key={index} className="flex items-start">
+                          <span className="font-medium text-blue-500 w-24 flex-shrink-0">
+                            {item.time}
+                          </span>
+                          <p>{item.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4 bg-blue-50 p-4 rounded-lg">
+                      <h3 className="text-lg font-semibold text-blue-700 mb-2">
+                        {language === 'en' ? 'Tour Conclusion' : 
+                         language === 'ru' ? 'Заключение тура' : 
+                         'Sayohat yakunи'}
+                      </h3>
+                      <p className="text-gray-600">
+                        {language === 'en' ? 'Thank you for choosing our Uzbekistan Express Tour. We hope you enjoyed your journey through the historic Silk Road cities.' : 
+                         language === 'ru' ? 'Благодарим вас за выбор нашего экспресс-тура по Узбекистану. Надеемся, вам понравилось путешествие по историческим городам Шелкового пути.' : 
+                         'O\'zbekiston Express sayohatini tanlaganingiz uchun rahmat. Ipak yo\'li shaharlarida sayohatdan zavq olganingizga umid qilamiz.'}
+                      </p>
                     </div>
                   </div>
                 ),
@@ -862,123 +1770,13 @@ function SixDaysTour() {
 
           {/* Additional Information Section */}
           <div className="mt-8 space-y-8">
-            {/* Check-in/Check-out Information */}
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                Hotel Information
-              </h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>Check-in time – 14:00</li>
-                <li>Check-out time – 12:00</li>
-                <li>
-                  (Standard check-out times apply. If needed, please inquire about
-                  luggage storage service at the hotel reception)
-                </li>
-              </ul>
-            </div>
-
-            {/* Transfer Information */}
-            <div className="space-y-6">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                  AIRPORT TRANSFER INFORMATION
-                </h3>
-                <p className="text-gray-600">
-                  The transfer driver will meet you in the arrival hall with a sign showing your name.
-                  Some airports have multiple exits from customs, so please look carefully for your driver.
-                  If your flight is delayed by more than one hour or if you cannot find the driver,
-                  please call the number shown above. Airport porter service may cost more than $3 per bag;
-                  luggage carts are not always available.
-                </p>
-              </div>
-
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                  RAILWAY STATION TRANSFER INFORMATION
-                </h3>
-                <p className="text-gray-600">
-                  When possible, the transfer driver will be on the platform next to your train car when you
-                  Imkon qadar, transfer haydovchisi poyezddan tushganingizda
-                  platformada vagoningiz yonida bo'ladi. Poyezddan tushganda
-                  ismingiz va familiyangiz yozilgan belgini qidiring. Iltimos, bu
-                  joyda kamida besh daqiqa kuting. Agar transfer agenti bilan
-                  bog'lana olmasangiz, poyezdning bosh qismiga qarab yuring va
-                  vokzal kirishida kuting. Ko'p joylarda yuklar aravalari mavjud
-                  emasligini unutmang. Temir yo'l vokzallarida yuklar tashish
-                  xizmati har bir sumka uchun $5 dan ortiq bo'lishi mumkin.
-                </p>
-              </div>
-            </div>
+            {renderHotelAndTransferInfo()}
 
             {/* Tickets and Emergency Information */}
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-600 mb-4">
-                All tickets are delivered by a local guide or driver.
-              </p>
-              <p className="text-gray-600">
-                In case of emergency, the tour company mentioned above
-                contact the office.
-              </p>
-            </div>
+            {renderTicketAndEmergencyInfo()}
 
             {/* Tour Cost Information */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                  The tour price includes:
-                </h3>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>
-                    In 3* hotels in Tashkent, Samarkand, Bukhara and Khiva
-                    SGL/DBL/TWN room accommodation with breakfast;
-                  </li>
-                  <li>
-                    Tashkent-Samarkand economic train ticket (Africa/East)
-                    depending on the availability of tickets on the day of the visit;
-                  </li>
-                  <li>
-                    Samarkand-Bukhara economic train ticket (Africa/East)
-                    depending on the availability of tickets on the day of the visit;
-                  </li>
-                  <li>Bukhara-Khiva-Urganch in a comfortable sedan car;</li>
-                  <li>Urganch-Tashkent domestic flight;</li>
-                  <li>
-                    Professional English speaking guide in all cities
-                    services;
-                  </li>
-                  <li>
-                    All transfers, tours, city tours
-                    to the program by air-conditioned sedan car/minibus/bus
-                    according to
-                  </li>
-                </ol>
-              </div>
-
-              <div className="bg-red-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                  Tour price does not include:
-                </h3>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>International air tickets;</li>
-                  <li>Tourist e-visa fees;</li>
-                  <li>Early entry and late exit;</li>
-                  <li>Lunch and dinner;</li>
-                  <li>Payments for additional services in hotels;</li>
-                  <li>
-                    To take photos and videos in places of interest
-                    payments;
-                  </li>
-                  <li>Personal insurance;</li>
-                  <li>Tea money and service fees;</li>
-                  <li>Any services not included in the program above.</li>
-                </ol>
-                <p className="mt-4 text-gray-600">
-                  Entrance fees to attractions are at your own expense.
-                </p>
-              </div>
-            </div>
-
-
+            {renderTourPriceDetails()}
 
             {/* Tour Request Form Section */}
             <div className="mt-12 w-full max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-sm">

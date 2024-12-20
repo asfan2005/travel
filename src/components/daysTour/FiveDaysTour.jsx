@@ -3358,104 +3358,148 @@ function FiveDaysTour() {
     return trainStationInfo;
   };
 
-  const tourPriceIncludes = {
-    en: [
-      "Accommodation in 3* hotels in Tashkent, Samarkand, Bukhara with breakfast in SGL/DBL/TWN rooms",
-      "Tashkent-Samarqand economic train ticket (Afrosiyob/Sharq) depending on ticket availability",
-      "Samarkand-Bukhara economic train ticket (Africa/East) depending on ticket availability",
-      "Bukhara-Khiva-Urganch in a comfortable sedan car",
-      "Urganch-Tashkent domestic flight",
-      "Professional English speaking guide in all cities",
-      "All transfers, tours, city tours by air-conditioned sedan car/minibus/bus according to the program"
-    ],
-    ru: [
-      "Размещение в отелях 3* в Ташкенте, Самарканде, Бухаре с завтраком в SGL/DBL/TWN номерах",
-      "Экономический железнодорожный билет Ташкент-Самарканд (Афросиаб/Шарк) в зависимости от наличия билетов",
-      "Экономический железнодорожный билет Самарканд-Бухара (Африка/Восток) в зависимости от наличия билетов",
-      "Бухара-Хива-Ургенч на комфортабельном седане",
-      "Внутренний рейс Ургенч-Ташкент",
-      "Профессиональный англоговорящий гид во всех городах",
-      "Все трансферы, туры, городские экскурсии на кондиционированном седане/микроавтобусе/автобусе согласно программе"
-    ],
-    uz: [
-      "Toshkent, Samarqand, Buxoroda 3* mehmonxonalarda nonushta bilan SGL/DBL/TWN xonalarda joylashish",
-      "Chiptalar mavjudligiga qarab Toshkent-Samarqand iqtisodiy poyezd chipta (Afrosiyob/Sharq)",
-      "Chiptalar mavjudligiga qarab Samarqand-Buxoro iqtisodiy poyezd chipta (Afrika/Sharq)",
-      "Buxoro-Xiva-Urganch qulay sedan avtomobilida",
-      "Urganch-Toshkent ichki parvozi",
-      "Barcha shaharlarda professional ingliz tilida gid xizmatlari",
-      "Dasturga muvofiq konditsioner sedan/mikroavtobus/avtobus bilan barcha transferlar, turlar, shahar ekskursiyalari"
-    ]
+  const tourPriceDetails = {
+    en: {
+      ticketDelivery: "All tickets are delivered by a local guide or driver.",
+      emergencyContact: "In case of emergency, contact the tour company office.",
+      priceIncludes: {
+        title: "The tour price includes:",
+        items: [
+          "Accommodation in 3* hotels in Tashkent, Samarkand, Bukhara and Khiva in SGL/DBL/TWN rooms with breakfast;",
+          "Tashkent-Samarkand economic train ticket (Africa/East) depending on ticket availability on the day of visit;",
+          "Samarkand-Bukhara economic train ticket (Africa/East) depending on ticket availability on the day of visit;",
+          "Bukhara-Khiva-Urganch transfer by comfortable sedan car;",
+          "Urganch-Tashkent domestic flight;",
+          "Professional English-speaking guide services in all cities;",
+          "All transfers, tours, and city tours according to the program by air-conditioned sedan car/minibus/bus."
+        ]
+      },
+      priceDoesNotInclude: {
+        title: "Tour price does not include:",
+        items: [
+          "International air tickets;",
+          "Tourist e-visa fees;",
+          "Early entry and late exit;",
+          "Lunch and dinner;",
+          "Payments for additional services in hotels;",
+          "Payments for taking photos and videos in places of interest;",
+          "Personal insurance;",
+          "Tea money and service fees;",
+          "Any services not included in the program above.",
+          "Entrance fees to attractions are at your own expense."
+        ]
+      }
+    },
+    ru: {
+      ticketDelivery: "Все билеты доставляются местным гидом или водителем.",
+      emergencyContact: "В случае чрезвычайной ситуации свяжитесь с офисом туристической компании.",
+      priceIncludes: {
+        title: "В стоимость тура входит:",
+        items: [
+          "Проживание в отелях 3* в Ташкенте, Самарканде, Бухаре и Хиве в номерах SGL/DBL/TWN с завтраком;",
+          "Экономический железнодорожный билет Ташкент-Самарканд (Африка/Восток) в зависимости от наличия билетов в день посещения;",
+          "Экономический железнодорожный билет Самарканд-Бухара (Африка/Восток) в зависимости от наличия билетов в день посещения;",
+          "Трансфер Бухара-Хива-Ургенч комфортабельным седаном;",
+          "Внутренний авиаперелет Ургенч-Ташкент;",
+          "Услуги профессионального англоговорящего гида во всех городах;",
+          "Все трансферы, туры и городские экскурсии по программе на кондиционированном седане/микроавтобусе/автобусе."
+        ]
+      },
+      priceDoesNotInclude: {
+        title: "В стоимость тура не входит:",
+        items: [
+          "Международные авиабилеты;",
+          "Сборы за туристическую электронную визу;",
+          "Ранний заезд и поздний выезд;",
+          "Обед и ужин;",
+          "Оплата дополнительных услуг в отелях;",
+          "Оплата фото- и видеосъемки в достопримечательностях;",
+          "Личное страхование;",
+          "Чаевые и сервисные сборы;",
+          "Любые услуги, не включенные в программу выше.",
+          "Входные билеты в достопримечательности оплачиваются отдельно."
+        ]
+      }
+    },
+    uz: {
+      ticketDelivery: "Barcha chipta va biletlar mahalliy gid yoki haydovchi tomonidan yetkazib beriladi.",
+      emergencyContact: "Favqulodda holatlarda turlar kompaniyasining ofisiga murojaat qiling.",
+      priceIncludes: {
+        title: "Tur narxiga kiritilgan:",
+        items: [
+          "Toshkent, Samarqand, Buxoro va Xivadagi 3* mehmonxonalarda SGL/DBL/TWN xonalarda nonushta bilan joylashish;",
+          "Toshkent-Samarqand iqtisodiy poyezd chipta (Afrika/Sharq) tashrif kunidagi chipta mavjudligiga bog'liq;",
+          "Samarqand-Buxoro iqtisodiy poyezd chipta (Afrika/Sharq) tashrif kunidagi chipta mavjudligiga bog'liq;",
+          "Buxoro-Xiva-Urganch qulay sedan avtomobilida o'tkazish;",
+          "Urganch-Toshkent ichki parvoz;",
+          "Barcha shaharlarda professional ingliz tilida gid xizmatlari;",
+          "Dastur bo'yicha konditsioner sedan/mikroavtobus/avtobus bilan barcha transfer, turlar va shahar ekskursiyalari."
+        ]
+      },
+      priceDoesNotInclude: {
+        title: "Tur narxiga kiritilmagan:",
+        items: [
+          "Xalqaro aviachiptalar;",
+          "Turist elektron vizasi to'lovlari;",
+          "Erta kirish va kech chiqish;",
+          "Tushlik va kechki ovqat;",
+          "Mehmonxonalardagi qo'shimcha xizmatlar to'lovlari;",
+          "Diqqatga sazovor joylardan foto va video olish to'lovlari;",
+          "Shaxsiy sug'urta;",
+          "Choy puli va xizmat to'lovlari;",
+          "Yuqorida ko'rsatilgan dasturga kiritilmagan har qanday xizmatlar.",
+          "Diqqatga sazovor joylarga kirish to'lovlari o'z hisobingizga."
+        ]
+      }
+    }
   };
 
-  const tourPriceExcludes = {
-    en: [
-      "International air tickets",
-      "Tourist e-visa fees",
-      "Early entry and late exit",
-      "Lunch and dinner",
-      "Payments for additional services in hotels",
-      "Payments for taking photos and videos in places of interest",
-      "Personal insurance",
-      "Tea money and service fees",
-      "Any services not included in the program above"
-    ],
-    ru: [
-      "Международные авиабилеты",
-      "Сборы за туристическую электронную визу",
-      "Ранний заезд и поздний выезд",
-      "Обед и ужин",
-      "Оплата дополнительных услуг в отелях",
-      "Оплата фото- и видеосъемки в достопримечательностях",
-      "Личное страхование",
-      "Чаевые и сборы за услуги",
-      "Любые услуги, не включенные в программу выше"
-    ],
-    uz: [
-      "Xalqaro aviachiptalar",
-      "Turist elektron vizasi to'lovlari",
-      "Erta kirish va kech chiqish",
-      "Tushlik va kechki ovqat",
-      "Mehmonxonalardagi qo'shimcha xizmatlar uchun to'lovlar",
-      "Qiziqarli joylardan foto va video olish uchun to'lovlar",
-      "Shaxsiy sug'urta",
-      "Choy puli va xizmat to'lovlari",
-      "Yuqoridagi dasturga kiritilmagan har qanday xizmatlar"
-    ]
-  };
-
-  // In your component, you can use it like this:
-  const renderTourPriceIncludes = () => {
+  // In your component's render method or return statement
+  const renderTourPriceDetails = () => {
+    const details = tourPriceDetails[language];
+    
     return (
-      <div className="bg-green-50 p-6 rounded-lg">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Tour price includes:
-        </h3>
-        <ol className="list-decimal list-inside space-y-2 text-gray-600">
-          {tourPriceIncludes[language].map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ol>
-      </div>
-    );
-  };
+      <div className="bg-white rounded-lg shadow-md p-6 space-y-6">
+        <div className="bg-blue-50 p-4 rounded-lg">
+          <p className="mb-2">
+            <strong>
+              {language === 'en' ? 'Ticket Delivery:' : 
+               language === 'ru' ? 'Доставка билетов:' : 
+               'Chipta yetkazish:'}
+            </strong> 
+            {details.ticketDelivery}
+          </p>
+          <p>
+            <strong>
+              {language === 'en' ? 'Emergency Contact:' : 
+               language === 'ru' ? 'Экстренный контакт:' : 
+               'Favqulodda aloqa:'}
+            </strong> 
+            {details.emergencyContact}
+          </p>
+        </div>
 
-  const renderTourPriceExcludes = () => {
-    return (
-      <div className="bg-red-50 p-6 rounded-lg">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Tour price does not include:
-        </h3>
-        <ol className="list-decimal list-inside space-y-2 text-gray-600">
-          {tourPriceExcludes[language].map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ol>
-        <p className="mt-4 text-gray-600">
-          {language === 'en' ? 'Entrance fees to attractions are at your own expense.' :
-            language === 'ru' ? 'Входные билеты в достопримечательности оплачиваются отдельно.' :
-              'Diqqatga sazovor joylar kirish to\'lovlari o\'z hisobingizga.'}
-        </p>
+        <div>
+          <h3 className="text-xl font-semibold text-blue-600 mb-4">
+            {details.priceIncludes.title}
+          </h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            {details.priceIncludes.items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-red-600 mb-4">
+            {details.priceDoesNotInclude.title}
+          </h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            {details.priceDoesNotInclude.items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   };
@@ -3749,8 +3793,7 @@ function FiveDaysTour() {
 
             {/* Tour Cost Information */}
             <div className="grid md:grid-cols-2 gap-6">
-              {renderTourPriceIncludes()}
-              {renderTourPriceExcludes()}
+              {renderTourPriceDetails()}
             </div>
 
             {/* Tour Request Form Section */}
@@ -3808,6 +3851,7 @@ function FiveDaysTour() {
 
                       {/* Rest of the form would follow the same pattern */}
                       {/* Citizenship dropdown */}
+                      
                       <div className="w-full">
                         <select
                           name="citizenship"
@@ -4098,7 +4142,6 @@ function FiveDaysTour() {
                           </optgroup>
                         </select>
                       </div>
-
                       {/* Email and Phone */}
                       <div className="flex flex-col md:flex-row gap-4">
                         <input
