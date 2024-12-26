@@ -39,6 +39,9 @@ function SixDaysTour() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Add state for prices
+  const [priceData, setPriceData] = useState([]);
+
   // Multilingual content for tour title and description
   const tourTitles = {
     en: "10-day Uzbekistan Express Tour",
@@ -258,6 +261,23 @@ function SixDaysTour() {
     }
   }, [location]);
 
+  useEffect(() => {
+    const fetchPrices = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/daysprice');
+        // Filter only 10-day tour prices
+        const tenDayPrices = response.data.filter(price => price.days === 10);
+        // Sort by person number to ensure correct order
+        const sortedPrices = tenDayPrices.sort((a, b) => a.person - b.person);
+        setPriceData(sortedPrices);
+      } catch (error) {
+        console.error('Error fetching prices:', error);
+      }
+    };
+
+    fetchPrices();
+  }, []);
+
   const toggleDay = (day) => {
     setExpandedDays((prev) => ({
       ...prev,
@@ -471,7 +491,7 @@ function SixDaysTour() {
         },
         {
           time: "09:00-13:00",
-          description: "Обзорная экскурсия по городу: Комплекс Хазрат Имам (Мавзолей Кафал Шаши, Медресе Муйи Мубарак, Медресе Барак-хана, М����������четь На��о��гох, Мечеть Хазрат Имам), посещение узбекского махалля, древний город Мингтепа, Малая мечеть."
+          description: "Обзорн��я экскурсия по городу: Комплекс Хазрат Имам (Мавзолей Кафал Шаши, Медресе Муйи Мубарак, Медресе Барак-хана, М����������четь На��о��гох, Мечеть Хазрат Имам), посещение узбекского махалля, древний город Мингтепа, Малая мечеть."
         },
         {
           time: "13:00-14:00",
@@ -479,7 +499,7 @@ function SixDaysTour() {
         },
         {
           time: "14:00-17:00",
-          description: "Продолжение экскурсии по Ташкенту: Статуя и музей Амира Темура, Монумент Мужества, Площадь Независимости, Ташкентская телебашня, Базар Чорсу."
+          description: "Продолжение экскурсии по Ташкенту: Статуя и музей Амира Темура, Монумент Мужества, Площ��дь Независимости, Ташкентская телебашня, Базар Чорсу."
         },
         {
           time: "Вечер",
@@ -843,7 +863,7 @@ function SixDaysTour() {
       timeline: [
         {
           time: "07:00-09:00",
-          description: "Завтрак в отеле. Выезд из отеля."
+          description: "Завтрак в ��теле. Выезд из отеля."
         },
         {
           time: "09:00-13:00",
@@ -1039,7 +1059,7 @@ function SixDaysTour() {
       ]
     },
     ru: {
-      title: "Бухара - Пустынный Оазис",
+      title: "Бухара - Пустынный О��зис",
       timeline: [
         {
           time: "07:00-09:00",
@@ -1441,11 +1461,11 @@ function SixDaysTour() {
         ]
       },
       railwayTransfer: {
-        meetingPoint: "По возможности, водитель трансфера будет находиться на платформе рядом с вашим вагоном при вашем прибытии.",
+        meetingPoint: "По возможности, водит��ль трансфера будет находиться на платформе рядом с вашим вагоном при вашем прибытии.",
         instructions: [
           "Ищите табличку со своим именем и фамилией при выходе из поезда.",
           "Пожалуйста, подождите не менее пяти минут в этом месте.",
-          "Если вы не можете связаться с агентом трансфера, посмотрите в сторону передней части поезда и ждите у входа на вокзал.",
+          "Если вы не можете связаться с агентом трансфера, посмотрите в сторону передней части поезда и ждите у в��ода на вокзал.",
           "Помните, что во многих местах тележки для багажа не всегда доступны.",
           "Услуга транспортировки багажа на железнодорожном вокзале может стоить более $5 за сумку."
         ]
@@ -1598,7 +1618,7 @@ function SixDaysTour() {
           "Экономический железнодорожный билет Самарканд-Бухара (Африка/Восток) в зависимости от наличия билетов в день посещения;",
           "Трансфер Бухара-Хива-Ургенч комфортабельным седаном;",
           "Внутренний авиаперелет Ургенч-Ташкент;",
-          "Услуги профессионального англоговорящего гида в�� всех городах;",
+          "Услуги профессионального англоговорящего гида в всех городах;",
           "Все трансферы, туры и городские экскурсии по программе на кондиционированном седане/микроавтобусе/автобусе."
         ]
       },
@@ -2554,6 +2574,95 @@ function SixDaysTour() {
     );
   };
 
+  const renderPriceTable = () => {
+    return (
+      <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6 sticky top-4">
+        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-600">
+          {language === 'en' ? 'Prices per person' :
+           language === 'ru' ? 'Цены на человека' :
+           'Kishi boshiga narxlar'}
+        </h2>
+
+        <div className="overflow-x-auto -mx-3 sm:mx-0">
+          <table className="w-full min-w-[300px]">
+            <thead>
+              <tr className="border-b-2">
+                <th className="py-2 text-left">
+                  {language === 'en' ? 'Persons' :
+                   language === 'ru' ? 'Человек' :
+                   'Kishilar'}
+                </th>
+                <th className="py-2 text-right">
+                  {language === 'en' ? 'Economy' :
+                   language === 'ru' ? 'Эконом' :
+                   'Ekonom'}
+                </th>
+                <th className="py-2 text-right">
+                  {language === 'en' ? 'Comfort' :
+                   language === 'ru' ? 'Комфорт' :
+                   'Komfort'}
+                </th>
+                <th className="py-2 text-right">
+                  {language === 'en' ? 'Deluxe' :
+                   language === 'ru' ? 'Делюкс' :
+                   'Delyuks'}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* Main prices */}
+              {priceData.map((price) => (
+                <tr key={price.id} className="border-b">
+                  <td className="py-2">
+                    {price.person} {language === 'en' ? 'person' :
+                                   language === 'ru' ? 'человек' :
+                                   'kishi'}
+                  </td>
+                  <td className="py-2 text-right">${price.ecom}</td>
+                  <td className="py-2 text-right">${price.comf}</td>
+                  <td className="py-2 text-right">${price.deluxe}</td>
+                </tr>
+              ))}
+
+              {/* Single Supplement section */}
+              <tr className="border-t-2 border-gray-200">
+                <th colSpan="4" className="py-3 text-left font-semibold text-gray-700">
+                  {language === 'en' ? 'Single Supplement' :
+                   language === 'ru' ? 'Доплата за одноместный номер' :
+                   'Yakka joylashuv uchun qo\'shimcha'}
+                </th>
+              </tr>
+              {priceData.map((price) => (
+                <tr key={`supplement-${price.id}`} className="border-b">
+                  <td className="py-2">
+                    {price.person} {language === 'en' ? 'person' :
+                                   language === 'ru' ? 'человек' :
+                                   'kishi'}
+                  </td>
+                  <td colSpan="3" className="py-2 text-right">
+                    ${price.singleSupplement}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">
+          {language === 'en' ? 'Prices are in USD and may vary based on season' :
+           language === 'ru' ? 'Цены указаны в долларах США и могут меняться в зависимости от сезона' :
+           'Narxlar AQSh dollarida va mavsumga qarab o\'zgarishi mumkin'}
+        </p>
+
+        <button className="mt-4 sm:mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg transition-all hover:scale-105 text-sm sm:text-base">
+          {language === 'en' ? 'Request Tour' :
+           language === 'ru' ? 'Запросить тур' :
+           'Turni so\'rash'}
+        </button>
+      </div>
+    );
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
       {/* Tour Header */}
@@ -2636,46 +2745,7 @@ function SixDaysTour() {
 
         {/* Right Side - Pricing Table */}
         <div className="w-full lg:w-1/3 mt-4 lg:mt-0">
-          <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6 sticky top-4">
-            <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-600">
-              {priceTableTexts.headers[language].title}
-            </h2>
-
-            <div className="overflow-x-auto -mx-3 sm:mx-0">
-              <table className="w-full min-w-[300px]">
-                <thead>
-                  <tr className="border-b-2">
-                    {priceTableTexts.headers[language].columns.map((column, index) => (
-                      <th 
-                        key={index} 
-                        className={`py-2 ${index === 0 ? 'text-left' : 'text-right'}`}
-                      >
-                        {column}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.keys(prices.economy).map((key, index) => (
-                    <tr key={key} className="border-b">
-                      <td className="py-2">{priceTableTexts.headers[language].rows[index]}</td>
-                      <td className="py-2 text-right">${prices.economy[key]}</td>
-                      <td className="py-2 text-right">${prices.comfort[key]}</td>
-                      <td className="py-2 text-right">${prices.deluxe[key]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">
-              {priceTableTexts.headers[language].footer}
-            </p>
-
-            <button className="mt-4 sm:mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg transition-all hover:scale-105 text-sm sm:text-base">
-              Request Tour
-            </button>
-          </div>
+          {renderPriceTable()}
         </div>
       </div>
 

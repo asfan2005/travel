@@ -39,6 +39,25 @@ function SixDaysTour() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Add new state for API prices
+  const [apiPrices, setApiPrices] = useState([]);
+
+  // Add useEffect to fetch prices
+  useEffect(() => {
+    const fetchPrices = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/daysprice');
+        // Filter only 6-day tour prices
+        const sixDayPrices = response.data.filter(price => price.days === 6);
+        setApiPrices(sixDayPrices);
+      } catch (error) {
+        console.error('Error fetching prices:', error);
+      }
+    };
+
+    fetchPrices();
+  }, []);
+
   // Multilingual content for tour title and description
   const tourTitles = {
     en: "6-day Uzbekistan Express Tour",
@@ -2170,6 +2189,58 @@ function SixDaysTour() {
     );
   };
 
+  // Replace the static prices object with a function that renders API prices
+  const renderPriceTable = () => {
+    const headers = priceTableTexts.headers[language];
+    
+    return (
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr>
+              <th colSpan="4" className="px-4 py-2 text-center bg-blue-50 border-b">
+                {headers.title}
+              </th>
+            </tr>
+            <tr>
+              {headers.columns.map((column, index) => (
+                <th key={index} className="px-4 py-2 border-b">
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {apiPrices.map((price, index) => (
+              <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                <td className="px-4 py-2 border">{`${price.person} ${price.person === 1 ? 'person' : 'persons'}`}</td>
+                <td className="px-4 py-2 border">${price.ecom}</td>
+                <td className="px-4 py-2 border">${price.comf}</td>
+                <td className="px-4 py-2 border">${price.deluxe}</td>
+              </tr>
+            ))}
+            {/* Single supplement row */}
+            {apiPrices.length > 0 && (
+              <tr className={apiPrices.length % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                <td className="px-4 py-2 border">{headers.rows[4]}</td>
+                <td className="px-4 py-2 border">${apiPrices[0].singleSupplement}</td>
+                <td className="px-4 py-2 border">${apiPrices[0].singleSupplement}</td>
+                <td className="px-4 py-2 border">${apiPrices[0].singleSupplement}</td>
+              </tr>
+            )}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan="4" className="px-4 py-2 text-sm text-gray-600 border-t">
+                {headers.footer}
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    );
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
       {/* Tour Header */}
@@ -2258,35 +2329,8 @@ function SixDaysTour() {
             </h2>
 
             <div className="overflow-x-auto -mx-3 sm:mx-0">
-              <table className="w-full min-w-[300px]">
-                <thead>
-                  <tr className="border-b-2">
-                    {priceTableTexts.headers[language].columns.map((column, index) => (
-                      <th 
-                        key={index} 
-                        className={`py-2 ${index === 0 ? 'text-left' : 'text-right'}`}
-                      >
-                        {column}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.keys(prices.economy).map((key, index) => (
-                    <tr key={key} className="border-b">
-                      <td className="py-2">{priceTableTexts.headers[language].rows[index]}</td>
-                      <td className="py-2 text-right">${prices.economy[key]}</td>
-                      <td className="py-2 text-right">${prices.comfort[key]}</td>
-                      <td className="py-2 text-right">${prices.deluxe[key]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              {renderPriceTable()}
             </div>
-
-            <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">
-              {priceTableTexts.headers[language].footer}
-            </p>
 
             <button className="mt-4 sm:mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg transition-all hover:scale-105 text-sm sm:text-base">
               Request Tour

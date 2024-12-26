@@ -37,6 +37,9 @@ function Admin() {
     person: 1
   });
 
+  // Add this new state and function near your other state declarations
+  const [pricesList, setPricesList] = useState([]);
+
   const menuItems = [
     { id: 'settings', label: 'Sozlamalar', icon: '⚙️' },
     { id: 'orders', label: 'Buyurtmalar', icon: '🛒' },
@@ -91,6 +94,66 @@ function Admin() {
     }
   }
 
+  // Add this new function near your other fetch functions
+  const fetchPricesList = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get('http://localhost:8080/daysprice');
+      setPricesList(response.data);
+    } catch (error) {
+      console.error('Narxlarni olishda xatolik:', error);
+      alert('Narxlarni yangilashda xatolik yuz berdi');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Add this new function for handling deletion
+  const handleDeletePrice = async (id) => {
+    try {
+      // Add confirmation dialog
+      const isConfirmed = window.confirm("Rostdan ham bu narxni o'chirmoqchimisiz?");
+      
+      if (!isConfirmed) {
+        return; // If user cancels, don't proceed with deletion
+      }
+
+      // Show loading state
+      setLoading(true);
+
+      // Send delete request
+      const response = await axios.delete(`http://localhost:8080/daysprice/${id}`, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      
+      if (response.status === 200 || response.status === 204) {
+        // Remove the deleted item from the local state
+        setPricesList(prevPrices => prevPrices.filter(price => price.id !== id));
+        
+        // Show success message
+        alert('Narx muvaffaqiyatli o\'chirildi!');
+        
+        // Refresh the prices list
+        fetchPricesList();
+      }
+    } catch (error) {
+      console.error('Narxni o\'chirishda xatolik:', error);
+      
+      // More detailed error handling
+      if (error.response) {
+        alert(`Xatolik: ${error.response.data.message || 'Narxni o\'chirishda muammo yuz berdi'}`);
+      } else if (error.request) {
+        alert('Tarmoq xatosi. Iltimos, internetga ulanishingizni tekshiring.');
+      } else {
+        alert('Noma\'lum xatolik yuz berdi');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Menyu o'zgarganda ma'lumotlarni yuklab olish
   useEffect(() => {
     if (activeMenu === 'orders') {
@@ -101,6 +164,13 @@ function Admin() {
       fetchBookings()
     }
   }, [activeMenu])
+
+  // Add useEffect to fetch prices when the component mounts or when activeMenu changes
+  useEffect(() => {
+    if (activeMenu === 'comfortprice') {
+      fetchPricesList();
+    }
+  }, [activeMenu]);
 
   // Function to open modal with tour details
   const openTourDetailsModal = (tour) => {
@@ -726,6 +796,143 @@ function Admin() {
               >
                 Narxlarni Saqlash
               </button>
+            </div>
+
+            {/* Add this new section below the existing form */}
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold mb-4 text-gray-700 text-center">Mavjud Narxlar</h3>
+              
+              {/* Desktop Table View */}
+              <div className="hidden md:block overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-200">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="border p-3 text-center">ID</th>
+                      <th className="border p-3 text-center">Kunlar</th>
+                      <th className="border p-3 text-center">Ecom</th>
+                      <th className="border p-3 text-center">Comf</th>
+                      <th className="border p-3 text-center">Deluxe</th>
+                      <th className="border p-3 text-center">Odamlar soni</th>
+                      <th className="border p-3 text-center">Single Supplement</th>
+                      <th className="border p-3 text-center">Amallar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pricesList.length === 0 ? (
+                      <tr>
+                        <td colSpan="8" className="text-center p-4 text-gray-500">
+                          Narxlar mavjud emas
+                        </td>
+                      </tr>
+                    ) : (
+                      pricesList.map(price => (
+                        <tr key={price.id} className="hover:bg-gray-50">
+                          <td className="border p-3 text-center font-medium">{price.id}</td>
+                          <td className="border p-3 text-center">{price.days} kun</td>
+                          <td className="border p-3 text-center">${price.ecom}</td>
+                          <td className="border p-3 text-center">${price.comf}</td>
+                          <td className="border p-3 text-center">${price.deluxe}</td>
+                          <td className="border p-3 text-center">{price.person} kishi</td>
+                          <td className="border p-3 text-center">${price.singleSupplement}</td>
+                          <td className="border p-3 text-center">
+                            <button
+                              onClick={() => handleDeletePrice(price.id)}
+                              disabled={loading}
+                              className={`
+                                px-4 py-2 rounded transition duration-200
+                                ${loading 
+                                  ? 'bg-gray-400 cursor-not-allowed' 
+                                  : 'bg-red-500 hover:bg-red-600'}
+                                text-white
+                              `}
+                            >
+                              {loading ? 'O\'chirilmoqda...' : 'O\'chirish'}
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Mobile Card View */}
+              <div className="block md:hidden">
+                <div className="grid grid-cols-1 gap-6 px-4">
+                  {pricesList.length === 0 ? (
+                    <div className="text-center p-6 bg-gray-50 rounded-lg text-gray-500">
+                      Narxlar mavjud emas
+                    </div>
+                  ) : (
+                    pricesList.map(price => (
+                      <div key={price.id} className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <div className="flex justify-between items-center mb-4 pb-2 border-b border-gray-200">
+                          <h4 className="text-lg font-semibold text-blue-600">ID: {price.id}</h4>
+                          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                            {price.days} kun
+                          </span>
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <div className="grid grid-cols-2 gap-2 py-2 border-b border-gray-100">
+                            <div className="text-gray-600">Ecom Narxi:</div>
+                            <div className="text-right font-medium">${price.ecom}</div>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 gap-2 py-2 border-b border-gray-100">
+                            <div className="text-gray-600">Comf Narxi:</div>
+                            <div className="text-right font-medium">${price.comf}</div>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 gap-2 py-2 border-b border-gray-100">
+                            <div className="text-gray-600">Deluxe Narxi:</div>
+                            <div className="text-right font-medium">${price.deluxe}</div>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 gap-2 py-2 border-b border-gray-100">
+                            <div className="text-gray-600">Odamlar soni:</div>
+                            <div className="text-right font-medium">{price.person} kishi</div>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 gap-2 py-2 border-b border-gray-100">
+                            <div className="text-gray-600">Single Supplement:</div>
+                            <div className="text-right font-medium">${price.singleSupplement}</div>
+                          </div>
+                        </div>
+                        
+                        <div className="mt-6">
+                          <button
+                            onClick={() => handleDeletePrice(price.id)}
+                            disabled={loading}
+                            className={`
+                              w-full py-3 px-4 rounded-lg transition duration-200
+                              flex items-center justify-center space-x-2
+                              ${loading 
+                                ? 'bg-gray-400 cursor-not-allowed' 
+                                : 'bg-red-500 hover:bg-red-600'}
+                              text-white
+                            `}
+                          >
+                            <span>{loading ? 'O\'chirilmoqda...' : 'O\'chirish'}</span>
+                            <svg 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              className={`h-5 w-5 ${loading ? 'animate-spin' : ''}`} 
+                              viewBox="0 0 20 20" 
+                              fill="currentColor"
+                            >
+                              <path 
+                                fillRule="evenodd" 
+                                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" 
+                                clipRule="evenodd" 
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         )

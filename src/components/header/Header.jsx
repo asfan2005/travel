@@ -168,7 +168,6 @@ function Header() {
 
       // Navigate to admin dashboard
       navigate("/admin");
-
       // Reset form and modals
       setShowAdminLoginModal(false);
       setAdminUsername('');

@@ -2677,7 +2677,7 @@ const content = {
         <div className="flex items-start space-x-2">
           <span className="font-medium text-blue-500">⚠️</span>
           <p>
-            Если ваш рейс задерживается более чем на час или вы не можете найти водителя, пожалуйста, позвоните по номеру, указанному выше.
+            Если ваш рейс задерживается более чем на час или вы не можете найти водителя, пожалуйста, п��звоните по номеру, указанному выше.
           </p>
         </div>
         <div className="flex items-start space-x-2">
@@ -3083,7 +3083,7 @@ function FiveDaysTour() {
       src: "https://adrastravel.com/wp-content/uploads/2021/06/gijduvan-shashlik-2.webp",
       alt: {
         en: "Gijduvan Crafts",
-        ru: "Изделия из гиядува��а",
+        ru: "Изделия из гиядуваа",
         uz: "Gijduvan mahsulotlari"
       },
       location: {
@@ -3504,6 +3504,24 @@ function FiveDaysTour() {
     );
   };
 
+  const [pricingData, setPricingData] = useState([]);
+
+  // Add this useEffect to fetch pricing data
+  useEffect(() => {
+    const fetchPricing = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/daysprice');
+        // Filter only 5 day tour prices
+        const fiveDayPrices = response.data.filter(price => price.days === 5);
+        setPricingData(fiveDayPrices);
+      } catch (error) {
+        console.error('Error fetching pricing data:', error);
+      }
+    };
+
+    fetchPricing();
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
       {/* Tour Header */}
@@ -3590,35 +3608,101 @@ function FiveDaysTour() {
             </h2>
 
             <div className="overflow-x-auto -mx-3 sm:mx-0">
-              <table className="w-full min-w-[300px]">
-                <thead>
-                  <tr className="border-b-2">
-                    <th className="py-2 text-left">{content[language].pricesSection.headers.persons}</th>
-                    <th className="py-2 text-right">{content[language].pricesSection.headers.economy}</th>
-                    <th className="py-2 text-right">{content[language].pricesSection.headers.comfort}</th>
-                    <th className="py-2 text-right">{content[language].pricesSection.headers.deluxe}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {content[language].pricesSection.priceRows.map((row, index) => (
-                    <tr key={index} className="border-b">
-                      <td className="py-2">{row.category}</td>
-                      <td className="py-2 text-right">${row.economy}</td>
-                      <td className="py-2 text-right">${row.comfort}</td>
-                      <td className="py-2 text-right">${row.deluxe}</td>
+              {pricingData.length > 0 ? (
+                <table className="w-full min-w-[800px] border-collapse">
+                  <thead>
+                    <tr className="bg-blue-50">
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-blue-600 border-b-2 border-blue-100">
+                        {content[language].pricesSection.headers.persons}
+                      </th>
+                      <th className="px-6 py-4 text-center text-sm font-semibold text-blue-600 border-b-2 border-blue-100">
+                        {content[language].pricesSection.headers.economy}
+                      </th>
+                      <th className="px-6 py-4 text-center text-sm font-semibold text-blue-600 border-b-2 border-blue-100">
+                        {content[language].pricesSection.headers.comfort}
+                      </th>
+                      <th className="px-6 py-4 text-center text-sm font-semibold text-blue-600 border-b-2 border-blue-100">
+                        {content[language].pricesSection.headers.deluxe}
+                      </th>
+                      <th className="px-6 py-4 text-center text-sm font-semibold text-blue-600 border-b-2 border-blue-100">
+                        Single Supplement
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {pricingData.map((price, index) => (
+                      <tr 
+                        key={price.id}
+                        className={`
+                          transition-colors hover:bg-gray-50
+                          ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
+                        `}
+                      >
+                        <td className="px-6 py-4 border-b border-gray-200">
+                          <div className="flex items-center">
+                            <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                              <span className="text-blue-600 font-semibold">{price.person}</span>
+                            </div>
+                            <span className="text-gray-700 font-medium">
+                              {price.person === 1 ? 'Person' : 'Persons'}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-center border-b border-gray-200">
+                          <div className="inline-flex flex-col">
+                            <span className="text-lg font-bold text-gray-800">
+                              ${price.ecom}
+                            </span>
+                            <span className="text-xs text-gray-500">Economy</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-center border-b border-gray-200">
+                          <div className="inline-flex flex-col">
+                            <span className="text-lg font-bold text-gray-800">
+                              ${price.comf}
+                            </span>
+                            <span className="text-xs text-gray-500">Comfort</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-center border-b border-gray-200">
+                          <div className="inline-flex flex-col">
+                            <span className="text-lg font-bold text-gray-800">
+                              ${price.deluxe}
+                            </span>
+                            <span className="text-xs text-gray-500">Deluxe</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-center border-b border-gray-200">
+                          <div className="inline-flex items-center justify-center">
+                            <div className="px-3 py-1 bg-blue-50 rounded-full">
+                              <span className="text-blue-600 font-semibold">
+                                +${price.singleSupplement}
+                              </span>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <div className="flex items-center justify-center py-8">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mr-3"></div>
+                  <span className="text-gray-600">Loading pricing data...</span>
+                </div>
+              )}
             </div>
 
-            <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">
-              {content[language].pricesSection.disclaimer}
-            </p>
-
-            <button className="mt-4 sm:mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg transition-all hover:scale-105 text-sm sm:text-base">
-              Request Tour
-            </button>
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-start space-x-2">
+                <svg className="w-5 h-5 text-blue-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p className="text-sm text-gray-600">
+                  {content[language].pricesSection.disclaimer}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
