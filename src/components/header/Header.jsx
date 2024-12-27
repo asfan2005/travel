@@ -160,9 +160,9 @@ function Header() {
 
   // Admin login handler
   const handleAdminLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     // Updated login validation
-    if (adminUsername === 'admin' && adminPassword === '12345678+-') {
+    if (adminUsername === 'Travelcations' && adminPassword === 'eternalbukhara2024@') {
       // Successful login logic
       console.log('Admin logged in');
 
