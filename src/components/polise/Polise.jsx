@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const translations = {
@@ -775,6 +775,10 @@ function Polise() {
     if (content && content[lang]) {
       return content[lang];
     }
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
     
     // Agar content array bo'lsa
     if (Array.isArray(content)) {
