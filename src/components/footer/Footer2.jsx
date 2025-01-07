@@ -131,7 +131,7 @@ function Footer2() {
             {t.documents}
           </h3>
           <ul className="space-y-2">
-            <li className="text-gray-800 hover:text-gray-950 transition-colors">
+            <li onClick={()=>navigateWithLang("/license")} className="text-gray-800 hover:text-gray-950 transition-colors">
               {t.license}
             </li>
             <li
@@ -162,7 +162,7 @@ function Footer2() {
               <FaInstagram className="w-5 h-5 text-gray-900" />
             </a>
             <a
-              href="https://facebook.com/travelcations_uz"
+              href="https://facebook.com/travelcationsuz"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-200 rounded-full p-2.5 hover:bg-gray-300 transition-colors"

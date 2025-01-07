@@ -55,6 +55,8 @@ function Admin() {
     try {
       const response = await axios.get('http://localhost:8080/buyurtma')
       setOrders(response.data)
+      console.log(response.data);
+      
       setError(null)
     } catch (err) {
       setError('Buyurtmalarni olishda xatolik yuz berdi')

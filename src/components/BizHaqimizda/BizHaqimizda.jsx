@@ -138,22 +138,22 @@ function AboutUs() {
   const lang = searchParams.get('lang') || 'en';
 
   const titles = {
-    en: "TravelCations - Your Trusted Travel Partner in Uzbekistan",
-    ru: "TravelCations - Ваш надежный партнер по путешествиям в Узбекистане",
-    uz: "TravelCations - O'zbekistondagi ishonchli sayohat hamkoringiz"
+    en: "Travelcations - Your Trusted Travel Partner in Uzbekistan",
+    ru: "Travelcations - Ваш надежный партнер по путешествиям в Узбекистане",
+    uz: "Travelcations - O'zbekistondagi ishonchli sayohat hamkoringiz"
   };
 
   const introText = {
     en: {
-      p1: "Established on December 10, 2024, our travel company offers the highest level of service on all routes across Uzbekistan while maintaining affordable prices.",
+      p1: "Our travel company offers the highest level of service on all routes across Uzbekistan while maintaining affordable prices.",
       p2: "We specialize in hosting guests from Europe, Asia, and America, as well as providing local tourism services. For residents and visitors of our beautiful republic, we develop interesting routes and exciting tours throughout Uzbekistan."
     },
     ru: {
-      p1: "Основанная 10 декабря 2024 года, наша туристическая компания предлагает высочайший уровень обслуживания на всех маршрутах по Узбекистану по доступным ценам.",
-      p2: "Мы специализируемся на приеме гостей из Европы, Азии и Америки, а также предоставляем услуги местного туризма. Для жителей и го��тей нашей прекрасной республики мы разрабатываем интересные маршруты и увлекательные туры по всему Узбекистану."
+      p1: "Наша туристическая компания предлагает высочайший уровень обслуживания на всех маршрутах по Узбекистану по доступным ценам.",
+      p2: "Мы специализируемся на приеме гостей из Европы, Азии и Америки, а также предоставляем услуги местного туризма. Для жителей и гоcтей нашей прекрасной республики мы разрабатываем интересные маршруты и увлекательные туры по всему Узбекистану."
     },
     uz: {
-      p1: "2024-yil 10-dekabrda tashkil etilgan sayohat kompaniyamiz O'zbekiston bo'ylab barcha yo'nalishlarda arzon narxlarni saqlab qolgan holda eng yuqori darajadagi xizmatlarni taqdim etadi.",
+      p1: " Bizning sayohat kompaniyamiz O'zbekiston bo'ylab barcha yo'nalishlarda arzon narxlarni saqlab qolgan holda eng yuqori darajadagi xizmatlarni taqdim etadi.",
       p2: "Biz Yevropa, Osiyo va Amerikadan kelgan mehmonlarni kutib olishga va mahalliy turizm xizmatlarini ko'rsatishga ixtisoslashganmiz. Go'zal respublikamizning aholisi va mehmonlari uchun O'zbekiston bo'ylab qiziqarli marshrutlar va ajoyib sayohatlarni ishlab chiqamiz."
     }
   };

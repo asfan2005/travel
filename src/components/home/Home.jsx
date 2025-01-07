@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
+import Ark from "../../images/Ark.jpg";
 function Home() {
   const location = useLocation();
   const [selectedLanguage, setSelectedLanguage] = useState(() => {
@@ -28,7 +28,7 @@ function Home() {
 
   const translations = {
     uz: {
-      header: "TravelcationsUz bilan O'zbekistonga sayohat qiling",
+      header: "Travelcations bilan O'zbekistonga sayohat qiling",
       subHeader: "Afsonaviy Sharqni kashf eting!",
       searchPlaceholder: "Qayerga sayohat qilmoqchisiz?",
       searchButton: "Qidirish",
@@ -39,7 +39,7 @@ function Home() {
       },
     },
     ru: {
-      header: "Путешествуйте в Узбекистан с TravelcationsUz",
+      header: "Путешествуйте в Узбекистан с Travelcations",
       subHeader: "Откройте для себя легендарный Восток!",
       searchPlaceholder: "Куда вы хотите поехать?",
       searchButton: "Поиск",
@@ -50,7 +50,7 @@ function Home() {
       },
     },
     en: {
-      header: "Travel to Uzbekistan with TravelcationsUz",
+      header: "Travel to Uzbekistan with Travelcations",
       subHeader: "Discover the legendary East!",
       searchPlaceholder: "Where do you want to travel?",
       searchButton: "Search",
@@ -105,7 +105,7 @@ function Home() {
 
   return (
     <div className="w-full">
-      <div className="min-h-screen w-full bg-[url('https://ufez.uz/wp-content/uploads/2021/06/d65209f1-0218-450f-b28b-3c7c72cee23b.jpeg')] bg-cover bg-center bg-no-repeat">
+      <div className="min-h-screen w-full" style={{ backgroundImage: `url(${Ark})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         {/* Content */}
         <div className="flex min-h-screen flex-col items-center justify-center px-4 text-center text-white">
           {/* Header */}

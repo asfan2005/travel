@@ -9,6 +9,14 @@ function IndividualTurs() {
   // Add state for modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Add useEffect for scroll to top
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []); // Empty dependency array means this runs once when component mounts
+
   // Translations object
   const translations = {
     en: {
@@ -124,7 +132,7 @@ function IndividualTurs() {
   // Modal Component
   const SuccessModal = () => {
     return (
-      <div 
+      <div  
         className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ${isModalOpen ? 'block' : 'hidden'}`}
         onClick={() => setIsModalOpen(false)}
       >
@@ -203,12 +211,12 @@ function IndividualTurs() {
       // Handle any errors during submission
       console.error('Error submitting tour request:', error);
       
-      // Optionally show an error message to the user
+      // Optionally show an error message to the use
       alert('Failed to submit tour request. Please try again.');
     }
   };
   return (
-    <div>
+    <div style={{marginTop:"90px"}}>
       {/* Success Modal */}
       <SuccessModal />
 

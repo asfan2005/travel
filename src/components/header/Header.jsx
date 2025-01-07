@@ -319,7 +319,7 @@ function Header() {
               <div className="flex flex-col space-y-4 px-4 w-full">
                 <Link
                   to="/tours"
-                  className="w-full block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100 hover:bg-purple-50 rounded-lg px-3"
+                  className="w-full block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100 hover:bg-purple-50 rounded-lg ml-4"
                   onClick={() => setIsOpen(false)}
                 >
                   {t.tours}
@@ -327,7 +327,7 @@ function Header() {
 
                 <Link
                   to="/individual-tours"
-                  className="w-full block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100 hover:bg-purple-50 rounded-lg px-3"
+                  className="w-full block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100 hover:bg-purple-50 rounded-lg ml-4"
                   onClick={() => setIsOpen(false)}
                 >
                   {t.individualTours}
@@ -337,7 +337,7 @@ function Header() {
                   href="https://bukharatourism.blogspot.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100"
+                  className="w-full block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100 hover:bg-purple-50 rounded-lg ml-4"
                   onClick={() => setIsOpen(false)}
                 >
                   {t.blog}
@@ -345,13 +345,13 @@ function Header() {
 
                 <Link
                   to="/our-mission"
-                  className="block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100"
+                  className="w-full block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100 hover:bg-purple-50 rounded-lg ml-4"
                   onClick={() => setIsOpen(false)}
                 >
                   {t.aboutUs}
                 </Link>
 
-                <div className="flex items-center space-x-4 py-2">
+                <div className="flex items-center space-x-4 py-2 ml-4">
                   <a
                     href="tel:+998918218195"
                     className="flex items-center text-gray-700 hover:text-purple-700"
@@ -376,7 +376,7 @@ function Header() {
 
                 <Link
                   to="/booking"
-                  className="block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg text-lg"
+                  className="block text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg text-lg mx-4"
                   onClick={() => setIsOpen(false)}
                 >
                   {t.bookNow}

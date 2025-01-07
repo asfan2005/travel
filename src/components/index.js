@@ -30,3 +30,4 @@ export {default as BizHaqimizda} from "./BizHaqimizda/BizHaqimizda";
 export {default as IndividualTurs} from "./IndiVidualTurs/IndividualTurs";
 export {default as Sayohatlar} from "./sayohatlar/Sayohatlar";
 export {default as Admin} from "../admin/Admin";
+export {default as License} from "./License/License";

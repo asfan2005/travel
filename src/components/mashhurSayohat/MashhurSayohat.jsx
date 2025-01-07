@@ -361,9 +361,11 @@ function PopularTours() {
       <div className="py-12 px-4 w-full max-w-[1920px] mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+         
+            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
               {currentTranslation.pageTitle}
             </span>
+
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
             {currentTranslation.subtitle}

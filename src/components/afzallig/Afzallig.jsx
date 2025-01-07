@@ -46,7 +46,7 @@ function Afzallig() {
         description: "Каждое путешествие - новая история! 🌄 Величественные горные вершины, 🏞️ красивые долины, 🌺 исторические памятники и современные города - всё ждёт вас!"
       },
       card2: {
-        title: "Объе��ты Всемирного наследия",
+        title: "Объекты Всемирного наследия",
         description: "🏛️ Откройте для себя чудеса наследия ЮНЕСКО! Полюбуйтесь величественными куполами площади Регистан, 🏺 уникальным искусством гиждуванской керамики, ⚜️ и несравненной архитектурой Шахрисабза!"
       },
       card3: {
@@ -74,7 +74,7 @@ function Afzallig() {
       },
       card2: {
         title: "Jahon Merosi Obidalari",
-        description: "����️ UNESCO merosi mo'jizalarini kashf eting! Registon maydonining hashamatli gumbazlari, 🏺 Gijduvon kulolchiligining noyob san'ati, ⚜️ va Shahrisabzning tengsiz me'morchiligi!"
+        description: "UNESCO merosi mo'jizalarini kashf eting! Registon maydonining hashamatli gumbazlari, 🏺 Gijduvon kulolchiligining noyob san'ati, ⚜️ va Shahrisabzning tengsiz me'morchiligi!"
       },
       card3: {
         title: "Buyuk Ipak Yo'li Tarixi",
@@ -142,14 +142,14 @@ function Afzallig() {
 
   return (
     <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-20 bg-gradient-to-b from-purple-50 to-white">
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-center mb-8 lg:mb-16 hover:scale-105 transition-transform cursor-pointer animate-gradient">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-center mb-8 lg:mb-16 hover:scale-105 transition-transform cursor-pointer animate-gradient">
         {t.title}
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
         {/* First card */}
-        <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-purple-500 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-blue-500 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           <div className="flex justify-center mb-4 lg:mb-8">
             <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-purple-100 to-pink-50 rounded-2xl group-hover:rotate-6 transition-transform duration-300">
               <svg className="w-20 h-20 text-purple-600 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -157,7 +157,7 @@ function Afzallig() {
               </svg>
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 bg-clip-text text-transparent">
+          <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 bg-clip-text text-transparent">
             {t.card1.title}
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
@@ -166,8 +166,8 @@ function Afzallig() {
         </div>
 
         {/* Second card */}
-        <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-purple-500 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-blue-500 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           <div className="flex justify-center mb-4 lg:mb-8">
             <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-purple-100 to-pink-50 rounded-2xl group-hover:rotate-6 transition-transform duration-300">
               <svg className="w-20 h-20 text-purple-600 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -175,7 +175,7 @@ function Afzallig() {
               </svg>
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
+          <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
             {t.card2.title}
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
@@ -184,8 +184,8 @@ function Afzallig() {
         </div>
 
         {/* Third card */}
-        <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-purple-500 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        <div className="group bg-white rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-b-4 border-blue-500 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
           <div className="flex justify-center mb-4 lg:mb-8">
             <div className="p-3 sm:p-4 lg:p-6 bg-gradient-to-br from-purple-100 to-pink-50 rounded-2xl group-hover:rotate-6 transition-transform duration-300">
               <svg className="w-20 h-20 text-purple-600 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -194,7 +194,7 @@ function Afzallig() {
               </svg>
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
+          <h3 className="text-2xl font-bold text-center mb-4 bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
             {t.card3.title}
           </h3>
           <p className="text-gray-600 text-center text-lg leading-relaxed">
@@ -205,7 +205,7 @@ function Afzallig() {
 
       {/* Email subscription form */}
       <div className="max-w-2xl mx-auto mt-8 sm:mt-12 lg:mt-20 bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 transform hover:scale-[1.02] transition-all duration-300">
-        <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 bg-clip-text text-transparent">
+        <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 bg-clip-text text-transparent">
           {t.subscribe.title}
         </h3>
         <p className="text-gray-600 text-center mb-6">
@@ -228,7 +228,7 @@ function Afzallig() {
               <button
                 type="submit"
                 disabled={loading || error || !email}
-                className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap transform hover:scale-105 active:scale-95"
+                className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap transform hover:scale-105 active:scale-95"
               >
                 {loading ? t.subscribe.sending : t.subscribe.button}
               </button>
@@ -271,7 +271,7 @@ function Afzallig() {
               </p>
               <button
                 onClick={() => setShowModal(false)}
-                className="mt-6 px-8 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95"
+                className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 text-white rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95"
               >
                 {t.modal.close}
               </button>

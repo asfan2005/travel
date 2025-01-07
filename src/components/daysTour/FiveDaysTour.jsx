@@ -339,9 +339,9 @@ const content = {
             <div className="flex items-start">
               <span className="font-medium text-blue-500 w-24 flex-shrink-0">Дневная экскурсия</span>
               <p>
-                Продолжение знакомства с Самаркандом: некрополь Шахи-З��нда (святое мест ����� кл��дбище с могилами
+                Продолжение знакомства с Самаркандом: некрополь Шахи-Зинда (святое место, кладбище с могилами
                 dynastie Темуридов и могила двоюродного брата пророка Мухаммеда), мечеть Хазрати Хизр,
-                музей Афрасиаб, театральное пре��ставление "Эль мероси" (история народов Центральной Азии).
+                музей Афрасиаб, театральное представление "Эль мероси" (история народов Центральной Азии).
               </p>
             </div>
 
@@ -2025,7 +2025,7 @@ const content = {
             <div className="flex items-start">
               <span className="font-medium text-blue-500 w-24 flex-shrink-0">Дневная экскурсия</span>
               <p>
-                Продолжение знакомства с Самаркандом: некрополь Шахи-З��нда (святое мест и кладбище с могилами
+                Продолжение знакомства с Самаркандом: некрополь Шахи-Зинда (святое мест и кладбище с могилами
                 dynastie Темуридов и могила двоюродного брата пророка Мухаммеда), мечеть Хазрати Хизр,
                 музей Афрасиаб, театральное представление "Эль мероси" (история народов Центральной Азии).
               </p>
@@ -2677,7 +2677,7 @@ const content = {
         <div className="flex items-start space-x-2">
           <span className="font-medium text-blue-500">⚠️</span>
           <p>
-            Если ваш рейс задерживается более чем на час или вы не можете найти водителя, пожалуйста, п��звоните по номеру, указанному выше.
+            Если ваш рейс задерживается более чем на час или вы не можете найти водителя, пожалуйста, позвоните по номеру, указанному выше.
           </p>
         </div>
         <div className="flex items-start space-x-2">
@@ -3244,7 +3244,7 @@ function FiveDaysTour() {
     };
 
     return (
-      <div
+      <div 
         className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={() => setIsSuccessModalOpen(false)}
       >
@@ -3523,7 +3523,7 @@ function FiveDaysTour() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
+    <div style={{marginTop:"80px"}} className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
       {/* Tour Header */}
       <div className="mb-4 sm:mb-6 md:mb-8">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-500 mb-2">
