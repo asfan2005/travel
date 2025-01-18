@@ -37,11 +37,11 @@ const additionalServices = {
     tourTypes: {
       title: "Tour Types",
       types: ["Mountain tours", "Hiking tours", "Horse riding tours", "Camel tours", 
-              "Cycling tours", "Agritourism", "Botanical tours", "Business tours"]
+              "Cycling tours", "Agrotourism", "Botanical tours", "Business tours"]
     },
     entertainment: {
       title: "Entertainment Programs",
-      description: "We offer various entertainment programs in excursion cities including folklore shows, factory visits, pottery workshops, and airport/station transfers with national artists"
+      description: "We offer various entertainment programs in excursion cities including folklore shows, factory visits, pottery workshops, and airport/station transfers."
     }
   },
   ru: {
@@ -57,7 +57,7 @@ const additionalServices = {
     },
     entertainment: {
       title: "Развлекательные программы",
-      description: "Мы предлагаем различные развлекательные программы в экскурсионных городах, включая фольклорные шоу, посещение фабрик, гончарные мастер-классы и трансферы аэропорт/вокзал с национальными артистами"
+      description: "Мы предлагаем различные развлекательные программы в экскурсионных городах, включая фольклорные шоу, посещение фабрик, гончарные мастер-классы и трансферы аэропорт/вокзал."
     }
   },
   uz: {
@@ -73,7 +73,7 @@ const additionalServices = {
     },
     entertainment: {
       title: "Ko'ngilochar dasturlar",
-      description: "Biz ekskursiya shaharlarida turli xil ko'ngilochar dasturlarni taklif etamiz, jumladan folklor tomoshalari, zavod tashrifi, kulolchilik ustaxonalari va milliy san'atkorlar bilan aeroportdan/vokzaldan transfer xizmatlari"
+      description: "Biz ekskursiya shaharlarida turli xil ko'ngilochar dasturlarni taklif etamiz, jumladan folklor tomoshalari, zavod tashrifi, kulolchilik ustaxonalari va aeroportdan/vokzaldan transfer xizmatlari"
     }
   }
 };
@@ -88,7 +88,7 @@ const contactInfo = {
     },
     hours: {
       title: "Working Hours:",
-      weekdays: "Monday - Saturday: 9:00 - 18:00",
+      weekdays: "Monday - Saturday: 9:00 - 17:00",
       sunday: "Sunday: Closed"
     }
   },
@@ -101,7 +101,7 @@ const contactInfo = {
     },
     hours: {
       title: "Часы работы:",
-      weekdays: "Понедельник - Суббота: 9:00 - 18:00",
+      weekdays: "Понедельник - Суббота: 9:00 - 17:00",
       sunday: "Воскресенье: Выходной"
     }
   },
@@ -114,7 +114,7 @@ const contactInfo = {
     },
     hours: {
       title: "Ish vaqti:",
-      weekdays: "Dushanba - Shanba: 9:00 - 18:00",
+      weekdays: "Dushanba - Shanba: 9:00 - 17:00",
       sunday: "Yakshanba: Dam olish kuni"
     }
   }
@@ -146,15 +146,15 @@ function AboutUs() {
   const introText = {
     en: {
       p1: "Our travel company offers the highest level of service on all routes across Uzbekistan while maintaining affordable prices.",
-      p2: "We specialize in hosting guests from Europe, Asia, and America, as well as providing local tourism services. For residents and visitors of our beautiful republic, we develop interesting routes and exciting tours throughout Uzbekistan."
+      p2: "We specialize in hosting guests from Europe, Asia, and America as well as providing local tourism services. For residents and visitors of our beautiful country, we develop interesting routes and exciting tours throughout Uzbekistan."
     },
     ru: {
       p1: "Наша туристическая компания предлагает высочайший уровень обслуживания на всех маршрутах по Узбекистану по доступным ценам.",
-      p2: "Мы специализируемся на приеме гостей из Европы, Азии и Америки, а также предоставляем услуги местного туризма. Для жителей и гоcтей нашей прекрасной республики мы разрабатываем интересные маршруты и увлекательные туры по всему Узбекистану."
+      p2: "Мы специализируемся на приеме гостей из Европы, Азии и Америки, а также предоставляем услуги местного туризма. Для жителей и гоcтей нашей прекрасной страни мы разрабатываем интересные маршруты и увлекательные туры по всему Узбекистану."
     },
     uz: {
       p1: " Bizning sayohat kompaniyamiz O'zbekiston bo'ylab barcha yo'nalishlarda arzon narxlarni saqlab qolgan holda eng yuqori darajadagi xizmatlarni taqdim etadi.",
-      p2: "Biz Yevropa, Osiyo va Amerikadan kelgan mehmonlarni kutib olishga va mahalliy turizm xizmatlarini ko'rsatishga ixtisoslashganmiz. Go'zal respublikamizning aholisi va mehmonlari uchun O'zbekiston bo'ylab qiziqarli marshrutlar va ajoyib sayohatlarni ishlab chiqamiz."
+      p2: "Biz Yevropa, Osiyo va Amerikadan kelgan mehmonlarni kutib olishga va mahalliy turizm xizmatlarini ko'rsatishga ixtisoslashganmiz. Go'zal mamalakatimizning aholisi va mehmonlari uchun O'zbekiston bo'ylab qiziqarli marshrutlar va ajoyib sayohatlarni ishlab chiqamiz."
     }
   };
 
@@ -174,12 +174,7 @@ function AboutUs() {
         />
       </div>
 
-      {/* Statistics */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-        {stats[lang].map((stat, index) => (
-          <StatCounter key={index} {...stat} />
-        ))}
-      </div>
+     
 
       {/* Company Introduction */}
       <div className="mb-16 bg-gradient-to-r from-blue-50 to-white p-6 sm:p-8 rounded-xl shadow-lg">

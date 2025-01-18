@@ -44,6 +44,13 @@ const content = {
       ],
       disclaimer: "Prices are for 2025 in US$ per person, with discounted prices for larger groups available on request."
     },
+    dayTitles: {
+      day1: "Day 1: Tashkent - Arrival",
+      day2: "Day 2: Tashkent - Samarkand", 
+      day3: "Day 3: Samarkand - Bukhara",
+      day4: "Day 4: Bukhara",
+      day5: "Day 5: Bukhara - Tashkent (Departure)"
+    },
     day1Title: "Tashkent - Arrival",
     day1Content: {
       en: (
@@ -242,7 +249,7 @@ const content = {
         </div>
       )
     },
-    day2Title: "Tashkent - Samarqand",
+    day2Title: "Tashkent - Samarkand",
     day2Content: {
       en: (
         <div className="text-gray-600 space-y-4">
@@ -339,7 +346,7 @@ const content = {
             <div className="flex items-start">
               <span className="font-medium text-blue-500 w-24 flex-shrink-0">Дневная экскурсия</span>
               <p>
-                Продолжение знакомства с Самаркандом: некрополь Шахи-Зинда (святое место, кладбище с могилами
+                Продолжение знакомства с Самаркандом: некрополь Шахи-Зинда (святое мест и кладбище с могилами
                 dynastie Темуридов и могила двоюродного брата пророка Мухаммеда), мечеть Хазрати Хизр,
                 музей Афрасиаб, театральное представление "Эль мероси" (история народов Центральной Азии).
               </p>
@@ -407,7 +414,7 @@ const content = {
         </div>
       )
     },
-    day3Title: "Samarqand - Buxoro",
+    day3Title: "Samarqand - Bukhara",
     day3Content: {
       en: (
         <div className="text-gray-600 space-y-4">
@@ -593,7 +600,7 @@ const content = {
         </div>
       )
     },
-    day4Title: "Buxoro",
+    day4Title: "Bukhara",
     day4Content: {
       en: (
         <div className="text-gray-600 space-y-4">
@@ -749,7 +756,7 @@ const content = {
         </div>
       )
     },
-    day5Title: "Buxoro - Tashkent (Jo'nash)",
+    day5Title: "Bukhara - Tashkent (Departure)",
     day5Content: {
       en: (
         <div className="text-gray-600 space-y-4">
@@ -914,6 +921,9 @@ const content = {
         </div>
       )
     },
+    tourItinerary: "Tour itinerary:",
+    expandAll: "Expand All",
+    collapseAll: "Collapse All"
   },
   ru: {
     tourTitle: "5-дневный экспресс-тур по Узбекистану",
@@ -941,6 +951,13 @@ const content = {
         { category: "Доплата за одноместный", economy: 280, comfort: 300, deluxe: 330 }
       ],
       disclaimer: "Цены указаны за 2025 год в долларах США за человека, возможны скидки для больших групп по запросу."
+    },
+    dayTitles: {
+      day1: "День 1: Ташкент - Прибытие",
+      day2: "День 2: Ташкент - Самарканд",
+      day3: "День 3: Самарканд - Бухара",
+      day4: "День 4: Бухара",
+      day5: "День 5: Бухара - Ташкент (Отъезд)"
     },
     day1Title: "Ташкент - Прибытие",
     day1Content: {
@@ -1537,7 +1554,7 @@ const content = {
         </div>
       )
     },
-    day5Title: "Бухара - Ташкент (Jo'nash)",
+    day5Title: "Бухара - Ташкент (Отъезд)",
     day5Content: {
       en: (
         <div className="text-gray-600 space-y-4">
@@ -1702,6 +1719,9 @@ const content = {
         </div>
       )
     },
+    tourItinerary: "Программа тура:",
+    expandAll: "Развернуть все",
+    collapseAll: "Свернуть все"
   },
   uz: {
     tourTitle: "5 kunlik O'zbekiston Ekspress Sayohati",
@@ -1729,6 +1749,13 @@ const content = {
         { category: "Yagona joy uchun qo'shimcha", economy: 280, comfort: 300, deluxe: 330 }
       ],
       disclaimer: "Narxlar 2025 yil uchun dollar/kishi hisobida bo'lib, katta guruhlar uchun chegirmalar mavjud."
+    },
+    dayTitles: {
+      day1: "1-kun: Toshkent - Kelish",
+      day2: "2-kun: Toshkent - Samarqand",
+      day3: "3-kun: Samarqand - Buxoro",
+      day4: "4-kun: Buxoro", 
+      day5: "5-kun: Buxoro - Toshkent (Jo'nash)"
     },
     day1Title: "Toshkent - Kelish",
     day1Content: {
@@ -2435,7 +2462,7 @@ const content = {
         </div>
       )
     },
-    day5Title: "Buxoro - Tashkent (Jo'nash)",
+    day5Title: "Buxoro - Toshkent (Jo'nash)",
     day5Content: {
       en: (
         <div className="text-gray-600 space-y-4">
@@ -2600,6 +2627,9 @@ const content = {
         </div>
       )
     },
+    tourItinerary: "Sayohat dasturi:",
+    expandAll: "Hammasini ochish",
+    collapseAll: "Hammasini yopish"
   },
   hotelInformation: {
     en: (
@@ -3314,7 +3344,7 @@ function FiveDaysTour() {
 
     try {
       // Send POST request
-      await axios.post('http://localhost:8080/individual', tourRequestData);
+      await axios.post('https://backend.travelcations.uz//individual', tourRequestData);
 
       // Reset form
       setFormData({
@@ -3510,7 +3540,7 @@ function FiveDaysTour() {
   useEffect(() => {
     const fetchPricing = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/daysprice');
+        const response = await axios.get('https://backend.travelcations.uz//daysprice');
         // Filter only 5 day tour prices
         const fiveDayPrices = response.data.filter(price => price.days === 5);
         setPricingData(fiveDayPrices);
@@ -3521,6 +3551,11 @@ function FiveDaysTour() {
 
     fetchPricing();
   }, []);
+
+  // Render titles based on selected language
+  const renderDayTitle = (dayTitle) => {
+    return content[language][dayTitle];
+  }
 
   return (
     <div style={{marginTop:"80px"}} className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
@@ -3754,20 +3789,20 @@ function FiveDaysTour() {
 
           <div className="mb-4 flex justify-between items-center">
             <h2 className="text-xl sm:text-2xl font-bold text-blue-600">
-              Tour itinerary:
+              {content[language].tourItinerary}
             </h2>
             <div className="space-x-4">
               <button
                 onClick={expandAll}
                 className="text-blue-500 hover:text-blue-700 text-sm font-medium hover:underline transition-colors"
               >
-                Expand All
+                {content[language].expandAll}
               </button>
               <button
                 onClick={collapseAll}
                 className="text-blue-500 hover:text-blue-700 text-sm font-medium hover:underline transition-colors"
               >
-                Collapse All
+                {content[language].collapseAll}
               </button>
             </div>
           </div>
@@ -3776,31 +3811,31 @@ function FiveDaysTour() {
             {[
               {
                 day: 1,
-                title: getSafeContent('day1Title'),
+                title: renderDayTitle('day1Title'),
                 content: getSafeContent('day1Content')[language] ||
                   getSafeContent('day1Content')['en']
               },
               {
                 day: 2,
-                title: getSafeContent('day2Title'),
+                title: renderDayTitle('day2Title'),
                 content: getSafeContent('day2Content')[language] ||
                   getSafeContent('day2Content')['en']
               },
               {
                 day: 3,
-                title: getSafeContent('day3Title'),
+                title: renderDayTitle('day3Title'),
                 content: getSafeContent('day3Content')[language] ||
                   getSafeContent('day3Content')['en']
               },
               {
                 day: 4,
-                title: getSafeContent('day4Title'),
+                title: renderDayTitle('day4Title'),
                 content: getSafeContent('day4Content')[language] ||
                   getSafeContent('day4Content')['en']
               },
               {
                 day: 5,
-                title: getSafeContent('day5Title'),
+                title: renderDayTitle('day5Title'),
                 content: getSafeContent('day5Content')[language] ||
                   getSafeContent('day5Content')['en']
               },
@@ -3849,12 +3884,9 @@ function FiveDaysTour() {
             {/* Check-in/Check-out Information */}
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                {content[language].hotelInformation ?
-                  <div className="flex items-start">
-                    <span className="font-medium text-blue-500 w-24 flex-shrink-0">Hotel Information</span>
-                  </div> :
-                  "Hotel Information"
-                }
+                {language === 'en' ? 'Hotel Information' :
+                 language === 'ru' ? 'Информация об отеле' :
+                 'Mehmonxona haqida ma\'lumot'}
               </h3>
               {renderHotelInformation()}
             </div>

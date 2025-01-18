@@ -264,7 +264,7 @@ function SixDaysTour() {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/daysprice');
+        const response = await axios.get('https://backend.travelcations.uz//daysprice');
         // Filter only 10-day tour prices
         const tenDayPrices = response.data.filter(price => price.days === 10);
         // Sort by person number to ensure correct order
@@ -319,7 +319,7 @@ function SixDaysTour() {
 
     try {
       // Send POST request
-      const response = await axios.post('http://localhost:8080/individual', requestData);
+      const response = await axios.post('https://backend.travelcations.uz//individual', requestData);
       
       // Reset form
       setFormData({

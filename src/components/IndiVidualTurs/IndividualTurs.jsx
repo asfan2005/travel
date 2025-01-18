@@ -179,7 +179,7 @@ function IndividualTurs() {
 
     try {
       // Send POST request to the backend
-      const response = await axios.post('http://localhost:8080/individual', tourRequestData, {
+      const response = await axios.post('https://backend.travelcations.uz//individual', tourRequestData, {
         headers: {
           'Content-Type': 'application/json'
         }

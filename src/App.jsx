@@ -18,7 +18,7 @@ function App() {
           <Route path="/our-mission" element={<BizHaqimizda/>}/>
           <Route path="/individual-tours" element={<IndividualTurs/>}/>
           <Route path="/tours" element={<Sayohatlar/>}/>
-          <Route path="/admin" element={<Admin/>}/>
+        <Route path="/admin" element={<Admin/>}/>
           <Route path="/license" element={<License/>}/>
         </Routes>
       </main>

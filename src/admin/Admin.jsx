@@ -53,7 +53,7 @@ function Admin() {
   const fetchOrders = async () => {
     setLoading(true)
     try {
-      const response = await axios.get('http://localhost:8080/buyurtma')
+      const response = await axios.get('https://backend.travelcations.uz//buyurtma')
       setOrders(response.data)
       console.log(response.data);
       
@@ -70,7 +70,7 @@ function Admin() {
   const fetchIndividualTours = async () => {
     setLoading(true)
     try {
-      const response = await axios.get('http://localhost:8080/individual')
+      const response = await axios.get('https://backend.travelcations.uz//individual')
       setIndividualTours(response.data)
       setError(null)
     } catch (err) {
@@ -85,7 +85,7 @@ function Admin() {
   const fetchBookings = async () => {
     setLoading(true)
     try {
-      const response = await axios.get('http://localhost:8080/bronQilish')
+      const response = await axios.get('https://backend.travelcations.uz//bronQilish')
       setBookings(response.data)
       setError(null)
     } catch (err) {
@@ -100,7 +100,7 @@ function Admin() {
   const fetchPricesList = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:8080/daysprice');
+      const response = await axios.get('https://backend.travelcations.uz//daysprice');
       setPricesList(response.data);
     } catch (error) {
       console.error('Narxlarni olishda xatolik:', error);
@@ -124,7 +124,7 @@ function Admin() {
       setLoading(true);
 
       // Send delete request
-      const response = await axios.delete(`http://localhost:8080/daysprice/${id}`, {
+      const response = await axios.delete(`https://backend.travelcations.uz//daysprice/${id}`, {
         headers: {
           'Content-Type': 'application/json',
         }
@@ -277,7 +277,7 @@ function Admin() {
     if (isValidInput) {
       try {
         // Post to the specified endpoint
-        const response = await axios.post('http://localhost:8080/daysprice', priceData);
+        const response = await axios.post('https://backend.travelcations.uz//daysprice', priceData);
 
         // Check for successful response
         if (response.status === 200 || response.status === 201) {
@@ -1007,7 +1007,7 @@ function Admin() {
   // Yuklangan fayllarni olish funksiyasi
   const fetchUploadedFiles = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/images');
+      const response = await axios.get('https://backend.travelcations.uz//api/images');
       if (response.data && response.data.length > 0) {
         // Rasmlarni base64 formatga o'girish
         const processedImages = response.data.map(image => ({
@@ -1047,7 +1047,7 @@ function Admin() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:8080/api/images/upload', formData, {
+      const response = await axios.post('https://backend.travelcations.uz//api/images/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -1122,7 +1122,7 @@ function Admin() {
   const handleImageDelete = async (imageId) => {
     try {
       // Add full configuration to axios delete request
-      const response = await axios.delete(`http://localhost:8080/api/images/${imageId}`, {
+      const response = await axios.delete(`https://backend.travelcations.uz//api/images/${imageId}`, {
         headers: {
           'Content-Type': 'application/json',
           // Add any additional headers if needed

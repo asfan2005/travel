@@ -28,7 +28,7 @@ function SharxPage() {
   // Fetch images from backend
   const fetchImages = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/images');
+      const response = await axios.get('https://backend.travelcations.uz//api/images');
       if (response.data && response.data.length > 0) {
         // Convert images to base64
         const processedImages = response.data.map(image => 

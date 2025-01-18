@@ -211,7 +211,7 @@ function Header() {
 
               <div className="relative group">
                 <a
-                  href="https://bukharatourism.blogspot.com/"
+                  href="https://travelcationsuz.blogspot.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 group-hover:text-blue-600 text-lg font-medium transition-colors duration-300"
@@ -334,7 +334,7 @@ function Header() {
                 </Link>
 
                 <a
-                  href="https://bukharatourism.blogspot.com/"
+                  href="https://travelcationsuz.blogspot.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full block py-2 text-gray-700 hover:text-blue-600 text-lg font-medium transition-colors duration-300 border-b border-gray-100 hover:bg-purple-50 rounded-lg ml-4"
@@ -353,7 +353,7 @@ function Header() {
 
                 <div className="flex items-center space-x-4 py-2 ml-4">
                   <a
-                    href="tel:+998918218195"
+                    href="tel:+998907113338"
                     className="flex items-center text-gray-700 hover:text-purple-700"
                     onClick={() => setIsOpen(false)}
                   >
@@ -438,7 +438,7 @@ function Header() {
                 <h3 className="text-lg font-semibold mb-4">{t.contactUs}</h3>
                 <div className="space-y-4">
                   <a
-                    href="tel:+998918218195"
+                    href="tel:+998907113338"
                     className="flex items-center text-gray-700 hover:text-purple-700"
                     title="Call"
                   >

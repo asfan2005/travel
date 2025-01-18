@@ -92,7 +92,7 @@ function Booking() {
     
     try {
       // Make actual POST request
-      const response = await axios.post('http://localhost:8080/bronQilish', formData, {
+      const response = await axios.post('https://backend.travelcations.uz//bronQilish', formData, {
         headers: {
           'Content-Type': 'application/json'
         }

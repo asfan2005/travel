@@ -349,7 +349,7 @@ function Zardoslar() {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post('http://localhost:8080/buyurtma', {
+      const response = await axios.post('https://backend.travelcations.uz//buyurtma', {
         name: formData.name,
         phoneNumber: formData.phone,
         message: formData.message
