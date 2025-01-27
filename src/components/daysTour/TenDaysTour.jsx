@@ -854,7 +854,7 @@ function SixDaysTour() {
         },
         {
           time: "Evening",
-          description: "Farewell dinner at a local restaurant and overnight at the hotel."
+          description: "dinner at a local restaurant and overnight at the hotel."
         }
       ]
     },
@@ -944,7 +944,7 @@ function SixDaysTour() {
         },
         {
           time: "13:00-14:00",
-          description: "Farewell lunch at a traditional Uzbek restaurant featuring national cuisine."
+          description: "lunch at a traditional Uzbek restaurant featuring national cuisine."
         },
         {
           time: "14:00-15:30",
@@ -1563,14 +1563,7 @@ function SixDaysTour() {
           </ul>
         </div>
 
-        <div className="bg-blue-50 p-4 rounded-lg">
-          <p className="mb-2"><strong>{language === 'en' ? 'Ticket Delivery:' : 
-                                       language === 'ru' ? 'Доставка билетов:' : 
-                                       'Chipta yetkazish:'}</strong> {info.ticketDelivery}</p>
-          <p><strong>{language === 'en' ? 'Emergency Contact:' : 
-                       language === 'ru' ? 'Экстренный контакт:' : 
-                       'Favqulodda aloqa:'}</strong> {info.emergencyContact}</p>
-        </div>
+        
       </div>
     );
   };
@@ -1583,8 +1576,8 @@ function SixDaysTour() {
         title: "The tour price includes:",
         items: [
           "Accommodation in 3* hotels in Tashkent, Samarkand, Bukhara and Khiva in SGL/DBL/TWN rooms with breakfast;",
-          "Tashkent-Samarkand economic train ticket (Africa/East) depending on ticket availability on the day of visit;",
-          "Samarkand-Bukhara economic train ticket (Africa/East) depending on ticket availability on the day of visit;",
+          "Tashkent-Samarkand economic train ticket (Afrosiyob/Sharq) depending on ticket availability on the day of visit;",
+          "Samarkand-Bukhara economic train ticket (Afrosiyob/Sharq) depending on ticket availability on the day of visit;",
           "Bukhara-Khiva-Urganch transfer by comfortable sedan car;",
           "Urganch-Tashkent domestic flight;",
           "Professional English-speaking guide services in all cities;",
@@ -1614,8 +1607,8 @@ function SixDaysTour() {
         title: "В стоимость тура входит:",
         items: [
           "Проживание в отелях 3* в Ташкенте, Самарканде, Бухаре и Хиве в номерах SGL/DBL/TWN с завтраком;",
-          "Экономический железнодорожный билет Ташкент-Самарканд (Африка/Восток) в зависимости от наличия билетов в день посещения;",
-          "Экономический железнодорожный билет Самарканд-Бухара (Африка/Восток) в зависимости от наличия билетов в день посещения;",
+          "Экономический железнодорожный билет Ташкент-Самарканд (Афрасиаб/Шарк) в зависимости от наличия билетов в день посещения;",
+          "Экономический железнодорожный билет Самарканд-Бухара (Афрасиаб/Шарк) в зависимости от наличия билетов в день посещения;",
           "Трансфер Бухара-Хива-Ургенч комфортабельным седаном;",
           "Внутренний авиаперелет Ургенч-Ташкент;",
           "Услуги профессионального англоговорящего гида в всех городах;",
@@ -2686,8 +2679,7 @@ function SixDaysTour() {
             {/* Price Badge */}
             <div className="absolute top-2 left-2 z-10 sm:top-4 sm:left-4">
               <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg sm:px-4 sm:py-2">
-                <span className="text-xs sm:text-sm text-gray-600">Private Tour from </span>
-                <span className="font-bold text-blue-600">US$ 1,330</span>
+              
               </div>
             </div>
 

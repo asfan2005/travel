@@ -49,7 +49,7 @@ function Header() {
   const translations = {
     en: {
       tours: "Private tours",
-      individualTours: "Individual Tours",
+      individualTours: "Individual tours",
       blog: "Blog",
       aboutUs: "About Us",
       bookNow: "Book Now",
